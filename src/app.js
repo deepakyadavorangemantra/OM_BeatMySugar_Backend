@@ -496,15 +496,29 @@ const GetDoctorWebSix_NewBackoffice = require("./api/routes/Backoffice-New-Api/W
 const GetNutritionistWebSix_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetNutritionistWebSix")
 const GetDoctorWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetDoctorWeb")
 const GetNutritionistWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetNutritionistWeb")
+const GetDoctorDetailsWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetDoctorDetailsWeb")
+const GetSocialPosts_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocialPosts")
+const GetNutritionistDetailsWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetNutritionistDetailsWeb")
+const GetBlogCategoryWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetBlogCategoryWebsite")
+const GetBlogDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetBlogDetails")
+const GetBlogWithCategoryWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetBlogWithCategoryWebsite")
+const GetContributorsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetContributorsWebsite")
+const GetContributorDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetContributorDetailsWebsite")
+const IfEmailExists_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/IfEmailExists")
 
+const VerifyMailMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/VerifyMailMailer")
+const VerifyMobileOTP_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/VerifyMobileOTP")
+const RegisterCustomer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/RegisterCustomer")
+const CustomerRegistrationMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerRegistrationMailer")
+const CustomerRegistrationMobileOTP_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerRegistrationMobileOTP")
 
+const AddUserLoginSession_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddUserLoginSession")
+const ForgotPasswordMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/ForgotPasswordMailer")
+const UpdateCustomerPassword_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateCustomerPassword")
+const CustomerLoginAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerLoginAuth")
 
-
-
-
-
-
-
+const AddCustomerBlogLikeStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddCustomerBlogLikeStatus")
+const UpdateLikeCount_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateLikeCount")
 //-----------------------------------------New API -------------------------------------------------------------
 
 
@@ -1003,9 +1017,7 @@ app.use("/BackofficeApi/UpdateSocksItemMaster",UpdateSocksItemMaster_NewBackoffi
 
 
 //-------------------------Web----------------------------------------------
-app.use("/BackofficeApi/GetBlogNine",GetBlogNine_NewBackoffice);
-app.use("/BackofficeApi/GetDoctorWebSix",GetDoctorWebSix_NewBackoffice);
-app.use("/BackofficeApi/GetNutritionistWebSix",GetNutritionistWebSix_NewBackoffice);
+
 app.use("/BackofficeApi/AddFoodItemMaster",AddFoodItemMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateFoodItemMaster",UpdateFoodItemMaster_NewBackoffice);
 app.use("/BackofficeApi/AddBookItemMaster",AddBookItemMaster_NewBackoffice);
@@ -1016,18 +1028,26 @@ app.use("/BackofficeApi/GetDoctorWebSix",GetDoctorWebSix_NewBackoffice);
 app.use("/BackofficeApi/GetNutritionistWebSix",GetNutritionistWebSix_NewBackoffice);
 app.use("/BackofficeApi/GetDoctorWeb",GetDoctorWeb_NewBackoffice);
 app.use("/BackofficeApi/GetNutritionistWeb",GetNutritionistWeb_NewBackoffice);
-
-
-
-
-
-
-
-
-
-
-
-
+app.use("/BackofficeApi/GetDoctorDetailsWeb",GetDoctorDetailsWeb_NewBackoffice);
+app.use("/BackofficeApi/GetSocialPosts",GetSocialPosts_NewBackoffice);
+app.use("/BackofficeApi/GetNutritionistDetailsWeb",GetNutritionistDetailsWeb_NewBackoffice);
+app.use("/BackofficeApi/GetBlogCategoryWebsite",GetBlogCategoryWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetBlogDetails",GetBlogDetails_NewBackoffice);
+app.use("/BackofficeApi/GetBlogWithCategoryWebsite",GetBlogWithCategoryWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetContributorDetailsWebsite",GetContributorDetailsWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetContributorsWebsite",GetContributorsWebsite_NewBackoffice);
+app.use("/BackofficeApi/IfEmailExists",IfEmailExists_NewBackoffice);
+app.use("/BackofficeApi/VerifyMailMailer",VerifyMailMailer_NewBackoffice);
+app.use("/BackofficeApi/VerifyMobileOTP",VerifyMobileOTP_NewBackoffice);
+app.use("/BackofficeApi/RegisterCustomer",RegisterCustomer_NewBackoffice);
+app.use("/BackofficeApi/CustomerRegistrationMailer",CustomerRegistrationMailer_NewBackoffice);
+app.use("/BackofficeApi/CustomerRegistrationMobileOTP",CustomerRegistrationMobileOTP_NewBackoffice);
+app.use("/BackofficeApi/AddUserLoginSession",AddUserLoginSession_NewBackoffice);
+app.use("/BackofficeApi/ForgotPasswordMailer",ForgotPasswordMailer_NewBackoffice);
+app.use("/BackofficeApi/UpdateCustomerPassword",UpdateCustomerPassword_NewBackoffice);
+app.use("/BackofficeApi/CustomerLoginAuth",CustomerLoginAuth_NewBackoffice);
+app.use("/BackofficeApi/AddCustomerBlogLikeStatus",AddCustomerBlogLikeStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateLikeCount",UpdateLikeCount_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
 
 
