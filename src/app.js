@@ -365,6 +365,8 @@ const GetSpecialisation_NewBackoffice = require("./api/routes/Backoffice-New-Api
 
 const GetDoctorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetDoctorList")
 
+const GetPackagingTypeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetPackagingTypeData")
+
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -1019,6 +1021,7 @@ app.use("/BackofficeApi/GetSocksItemMaster",GetSocksItemMaster_NewBackoffice);
 app.use("/BackofficeApi/GetSocksTypeMaster",GetSocksTypeMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksItemMaster",UpdateSocksItemMaster_NewBackoffice);
 
+app.use("/BackofficeApi/GetPackagingTypeData",GetPackagingTypeData_NewBackoffice);
 
 //-------------------------Web----------------------------------------------
 
