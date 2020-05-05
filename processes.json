@@ -1,6 +1,7 @@
 {
     "apps" : [{
-    "name"        : "bms-api",
+    // "name"        : "bms-api",
+    "name"        : "bms-api-test",
     "script"      : "./src/server.js",
     "watch"       : "../",
     "log_date_format"  : "YYYY-MM-DD HH:mm Z"
