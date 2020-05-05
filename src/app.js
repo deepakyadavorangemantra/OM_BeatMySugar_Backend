@@ -1047,17 +1047,14 @@ app.use("/BackofficeApi/GetSocksTypeMasterGrid",GetSocksTypeMasterGrid_NewBackof
 app.use("/BackofficeApi/DeleteSocksTypeMaster",DeleteSocksTypeMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksTypeMaster",UpdateSocksTypeMaster_NewBackoffice);
 
-<<<<<<< HEAD
 app.use("/BackofficeApi/GetHealthCenterDietitianMappingList",GetHealthCenterDietitianMappingList_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterDoctorMappingList",GetHealthCenterDoctorMappingList_NewBackoffice);
-=======
 
 app.use("/BackofficeApi/AddHealthCenterFacilitiesMaster",AddHealthCenterFacilitiesMaster_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterFacilitiesMaster",GetHealthCenterFacilitiesMaster_NewBackoffice);
 app.use("/BackofficeApi/DeleteHealthCenterFacilitiesMaster",DeleteHealthCenterFacilitiesMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateHealthCenterFacilitiesMaster",UpdateHealthCenterFacilitiesMaster_NewBackoffice);
 
->>>>>>> 40e2f98725ae39c9ea66048a4715edc565cf2b59
 
 app.use("/BackofficeApi/AddHealthCenterServicesMaster",AddHealthCenterServicesMaster_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterServicesMaster",GetHealthCenterServicesMaster_NewBackoffice);
