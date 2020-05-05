@@ -1048,10 +1048,6 @@ app.use("/BackofficeApi/DeleteHealthCenterFacilitiesMaster",DeleteHealthCenterFa
 app.use("/BackofficeApi/UpdateHealthCenterFacilitiesMaster",UpdateHealthCenterFacilitiesMaster_NewBackoffice);
 
 
-// Get_HealthCenterFacilitiesMaster
-// Delete_HealthCenterFacilitiesMaster
-// Update_HealthCenterFacilitiesMaster
-
 //-------------------------Web----------------------------------------------
 
 app.use("/BackofficeApi/AddFoodItemMaster",AddFoodItemMaster_NewBackoffice);
