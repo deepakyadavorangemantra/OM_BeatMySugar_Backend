@@ -1,6 +1,5 @@
 {
     "apps" : [{
-    // "name"        : "bms-api",
     "name"        : "bms-api-test",
     "script"      : "./src/server.js",
     "watch"       : "../",
