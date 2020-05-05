@@ -346,6 +346,8 @@ const AddFoodVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffi
 const AddHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterDoctorMapping")
 const AddHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterDietitianMapping")
 
+const DeleteHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDoctorMapping")
+const DeleteHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDietitianMapping")
 //----------- GET ------------------
 
 const GetCompany_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCompany")
@@ -367,6 +369,9 @@ const GetDoctorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get
 const GetPackagingTypeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetPackagingTypeData")
 const GetVendorData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorData")
 const GetHealthCenterData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterData")
+
+const GetHealthCenterDoctorMappingList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDoctorMappingList")
+const GetHealthCenterDietitianMappingList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMappingList")
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -1019,7 +1024,8 @@ app.use("/BackofficeApi/GetHealthCenterData",GetHealthCenterData_NewBackoffice);
 
 app.use("/BackofficeApi/AddHealthCenterDietitianMapping",AddHealthCenterDietitianMapping_NewBackoffice);
 app.use("/BackofficeApi/AddHealthCenterDoctorMapping",AddHealthCenterDoctorMapping_NewBackoffice);
-
+app.use("/BackofficeApi/DeleteHealthCenterDietitianMapping",DeleteHealthCenterDietitianMapping_NewBackoffice);
+app.use("/BackofficeApi/DeleteHealthCenterDoctorMapping",DeleteHealthCenterDoctorMapping_NewBackoffice);
 
 
 
@@ -1029,7 +1035,8 @@ app.use("/BackofficeApi/GetSocksTypeMaster",GetSocksTypeMaster_NewBackoffice);
 app.use("/BackofficeApi/DeleteSocksTypeMaster",DeleteSocksTypeMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksTypeMaster",UpdateSocksTypeMaster_NewBackoffice);
 
-
+app.use("/BackofficeApi/GetHealthCenterDietitianMappingList",GetHealthCenterDietitianMappingList_NewBackoffice);
+app.use("/BackofficeApi/GetHealthCenterDoctorMappingList",GetHealthCenterDoctorMappingList_NewBackoffice);
 
 
 
