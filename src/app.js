@@ -319,31 +319,25 @@ const AddTagMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddT
 const AddArticleCategoryMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddArticleCategoryMaster")
 const AddArticleSubCategoryMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddArticleSubCategoryMaster")
 const AddFlavourMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFlavourMaster")
-
-
 const AddArticle_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddArticle")
 const AddArticleTagMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddArticleTagMapping")
-
 const AddDoctor_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddDoctor")
 const AddDoctorQualificationMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddDoctorQualificationMapping")
 const AddDoctorSpecialisationMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddDoctorSpecialisationMapping")
 const AddDoctorCertificateMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddDoctorCertificateMapping")
-
 const AddDietitian_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddDietitian")
 const AddDietitianQualificationMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddDietitianQualificationMapping")
 const AddDietitianCertificateMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddDietitianCertificateMapping")
-
 const AddHealthCenter_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenter")
 const AddHealthCenterServicesMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterServicesMapping")
 const AddHealthCenterTimingsMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterTimingsMapping")
 const AddHealthCenterFacilitiesMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterFacilitiesMapping")
-
 const AddFoodItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFoodItemMaster")
 const AddBookItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookItemMaster")
 const AddFoodItemMaster_FilterMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFoodItemMaster_FilterMapping")
 const AddFootwearItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFootwearItemMaster")
-
 const AddSocksItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksItemMaster")
+const AddSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksTypeMaster")
 
 //----------- GET ------------------
 
@@ -362,9 +356,7 @@ const GetBlogContributors_NewBackoffice = require("./api/routes/Backoffice-New-A
 const GetArticleList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetArticleList")
 const GetQualification_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetQualification")
 const GetSpecialisation_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSpecialisation")
-
 const GetDoctorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetDoctorList")
-
 const GetPackagingTypeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetPackagingTypeData")
 
 //----------- GET MASTER ------------------
@@ -405,7 +397,7 @@ const GetFoodItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api
 const GetFootwearTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearTypeMaster")
 const GetFootwearItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearItemMaster")
 const GetSocksItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksItemMaster")
-const GetSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearTypeMaster")
+const GetSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksTypeMaster")
 
 
 //-------------- UPDATE ---------------
@@ -437,19 +429,14 @@ const UpdateBrandMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api
 const UpdateContributorPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateContributorPhoto")
 const UpdateArticlePreviewPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateArticlePreviewPhoto")
 const UpdateArticleCoverPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateArticleCoverPhoto")
-
-
 const UpdateDietitianPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDietitianPhoto")
 const UpdateDietitianConsent_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDietitianConsent")
 const UpdateDietitianPdf_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDietitianPdf")
-
-
 const UpdateDoctorPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDoctorPhoto")
 const UpdateDoctorConsent_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDoctorConsent")
 const UpdateDoctorPdf_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDoctorPdf")
 const UpdateStaffPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateStaffPhoto")
 const UpdateDoctor_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDoctor")
-
 const UpdateArticle_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateArticle")
 const UpdateHealthCenter_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenter")
 const UpdateDietitian_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDietitian")
@@ -457,7 +444,7 @@ const UpdateBookItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-
 const UpdateFoodItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFoodItemMaster")
 const UpdateFootwearItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearItemMaster")
 const UpdateSocksItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMaster")
-
+const UpdateSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksTypeMaster")
 
 
 //-------------- DELETE ---------------
@@ -484,10 +471,9 @@ const DeleteTagMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/D
 const DeleteArticleCategoryMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteArticleCategoryMaster")
 const DeleteArticleSubCategoryMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteArticleSubCategoryMaster")
 const DeleteFlavourMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteFlavourMaster")
-
 const DeleteDoctorCertificate_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteDoctorCertificate")
 const DeleteDietitianCertificate_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteDietitianCertificate")
-
+const DeleteSocksTypeMaster_NewBackoffice =  require("./api/routes/Backoffice-New-Api/DeleteSocksTypeMaster")
 
 
 
@@ -1018,10 +1004,22 @@ app.use("/BackofficeApi/UpdateFootwearItemMaster",UpdateFootwearItemMaster_NewBa
 
 app.use("/BackofficeApi/AddSocksItemMaster",AddSocksItemMaster_NewBackoffice);
 app.use("/BackofficeApi/GetSocksItemMaster",GetSocksItemMaster_NewBackoffice);
-app.use("/BackofficeApi/GetSocksTypeMaster",GetSocksTypeMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksItemMaster",UpdateSocksItemMaster_NewBackoffice);
 
 app.use("/BackofficeApi/GetPackagingTypeData",GetPackagingTypeData_NewBackoffice);
+
+
+
+
+
+app.use("/BackofficeApi/AddSocksTypeMaster",AddSocksTypeMaster_NewBackoffice);
+app.use("/BackofficeApi/GetSocksTypeMaster",GetSocksTypeMaster_NewBackoffice);
+app.use("/BackofficeApi/DeleteSocksTypeMaster",DeleteSocksTypeMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateSocksTypeMaster",UpdateSocksTypeMaster_NewBackoffice);
+
+
+
+
 
 //-------------------------Web----------------------------------------------
 
