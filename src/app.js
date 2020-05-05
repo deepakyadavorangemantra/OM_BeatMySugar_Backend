@@ -344,7 +344,7 @@ const AddFoodVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-A
 const AddFoodVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFoodVariantVendorPricing")
 const AddHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterDoctorMapping")
 const AddHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterDietitianMapping")
-
+const AddHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterServicesMaster")
 
 
 
@@ -412,7 +412,7 @@ const GetSocksItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const GetSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksTypeMaster")
 const GetSocksTypeMasterGrid_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksTypeMasterGrid")
 const GetHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterFacilitiesMaster")
-
+const GetHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterServicesMaster")
 
 
 
@@ -463,7 +463,7 @@ const UpdateFootwearItemMaster_NewBackoffice = require("./api/routes/Backoffice-
 const UpdateSocksItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMaster")
 const UpdateSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksTypeMaster")
 const UpdateHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterFacilitiesMaster")
-
+const UpdateHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterServicesMaster")
 
 
 
@@ -493,7 +493,7 @@ const DeleteDoctorCertificate_NewBackoffice = require("./api/routes/Backoffice-N
 const DeleteDietitianCertificate_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteDietitianCertificate")
 const DeleteSocksTypeMaster_NewBackoffice =  require("./api/routes/Backoffice-New-Api/DeleteSocksTypeMaster")
 const DeleteHealthCenterFacilitiesMaster_NewBackoffice =  require("./api/routes/Backoffice-New-Api/DeleteHealthCenterFacilitiesMaster")
-
+const DeleteHealthCenterServicesMaster_NewBackoffice =  require("./api/routes/Backoffice-New-Api/DeleteHealthCenterServicesMaster")
 
 
 
@@ -1046,6 +1046,12 @@ app.use("/BackofficeApi/AddHealthCenterFacilitiesMaster",AddHealthCenterFaciliti
 app.use("/BackofficeApi/GetHealthCenterFacilitiesMaster",GetHealthCenterFacilitiesMaster_NewBackoffice);
 app.use("/BackofficeApi/DeleteHealthCenterFacilitiesMaster",DeleteHealthCenterFacilitiesMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateHealthCenterFacilitiesMaster",UpdateHealthCenterFacilitiesMaster_NewBackoffice);
+
+
+app.use("/BackofficeApi/AddHealthCenterServicesMaster",AddHealthCenterServicesMaster_NewBackoffice);
+app.use("/BackofficeApi/GetHealthCenterServicesMaster",GetHealthCenterServicesMaster_NewBackoffice);
+app.use("/BackofficeApi/DeleteHealthCenterServicesMaster",DeleteHealthCenterServicesMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateHealthCenterServicesMaster",UpdateHealthCenterServicesMaster_NewBackoffice);
 
 
 //-------------------------Web----------------------------------------------
