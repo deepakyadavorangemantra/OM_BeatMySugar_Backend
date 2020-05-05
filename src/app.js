@@ -339,13 +339,16 @@ const AddFootwearItemMaster_NewBackoffice = require("./api/routes/Backoffice-New
 const AddSocksItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksItemMaster")
 const AddSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksTypeMaster")
 const AddHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterFacilitiesMaster")
-
 const AddFoodVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFoodVariant")
 const AddFoodVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFoodVariantImage")
 const AddFoodVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFoodVariantVendorPricing")
-
 const AddHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterDoctorMapping")
 const AddHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterDietitianMapping")
+
+
+
+
+
 
 //----------- GET ------------------
 
@@ -408,6 +411,11 @@ const GetFootwearItemMaster_NewBackoffice = require("./api/routes/Backoffice-New
 const GetSocksItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksItemMaster")
 const GetSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksTypeMaster")
 const GetSocksTypeMasterGrid_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksTypeMasterGrid")
+const GetHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterFacilitiesMaster")
+
+
+
+
 
 //-------------- UPDATE ---------------
 
@@ -454,11 +462,12 @@ const UpdateFoodItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-
 const UpdateFootwearItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearItemMaster")
 const UpdateSocksItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMaster")
 const UpdateSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksTypeMaster")
+const UpdateHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterFacilitiesMaster")
+
+
 
 
 //-------------- DELETE ---------------
-
-
 
 const DeleteCompanyMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteCompanyMaster")
 const DeleteBrandMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteBrandMaster")
@@ -483,6 +492,10 @@ const DeleteFlavourMaster_NewBackoffice = require("./api/routes/Backoffice-New-A
 const DeleteDoctorCertificate_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteDoctorCertificate")
 const DeleteDietitianCertificate_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteDietitianCertificate")
 const DeleteSocksTypeMaster_NewBackoffice =  require("./api/routes/Backoffice-New-Api/DeleteSocksTypeMaster")
+const DeleteHealthCenterFacilitiesMaster_NewBackoffice =  require("./api/routes/Backoffice-New-Api/DeleteHealthCenterFacilitiesMaster")
+
+
+
 
 
 
@@ -1030,11 +1043,14 @@ app.use("/BackofficeApi/UpdateSocksTypeMaster",UpdateSocksTypeMaster_NewBackoffi
 
 
 app.use("/BackofficeApi/AddHealthCenterFacilitiesMaster",AddHealthCenterFacilitiesMaster_NewBackoffice);
-// app.use("/BackofficeApi/GetSocksTypeMaster",GetSocksTypeMaster_NewBackoffice);
-// app.use("/BackofficeApi/DeleteSocksTypeMaster",DeleteSocksTypeMaster_NewBackoffice);
-// app.use("/BackofficeApi/UpdateSocksTypeMaster",UpdateSocksTypeMaster_NewBackoffice);
+app.use("/BackofficeApi/GetHealthCenterFacilitiesMaster",GetHealthCenterFacilitiesMaster_NewBackoffice);
+app.use("/BackofficeApi/DeleteHealthCenterFacilitiesMaster",DeleteHealthCenterFacilitiesMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateHealthCenterFacilitiesMaster",UpdateHealthCenterFacilitiesMaster_NewBackoffice);
 
 
+// Get_HealthCenterFacilitiesMaster
+// Delete_HealthCenterFacilitiesMaster
+// Update_HealthCenterFacilitiesMaster
 
 //-------------------------Web----------------------------------------------
 
