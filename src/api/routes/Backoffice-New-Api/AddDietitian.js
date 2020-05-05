@@ -40,7 +40,7 @@ router.post("/", function(request, response){
         req.input('title',sql.NVarChar(10), title);
         req.input('name',sql.NVarChar(100), name);
         req.input('practicestartdate',sql.NVarChar(100), practicestartdate);
-        req.input('overallexp',sql.Int, overallexp);
+        req.input('overallexp',sql.NVarChar(200), overallexp);
         req.input('profile',sql.NVarChar, profile);
         req.input('association',sql.NVarChar(500), association);
         req.input('recognition',sql.NVarChar(500), recognition);
