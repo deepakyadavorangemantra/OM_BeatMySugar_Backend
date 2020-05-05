@@ -47,8 +47,8 @@ router.post("/", function(request, response){
         req.input('medicleid',sql.NVarChar(200), medicleid);
         req.input('practicestartdate',sql.NVarChar(100), practicestartdate);
         req.input('diabetesstartdate',sql.NVarChar(100), diabetesstartdate);
-        req.input('diabeticexp',sql.Int, diabeticexp);
-        req.input('overallexp',sql.Int, overallexp);
+        req.input('diabeticexp',sql.NVarChar(200), diabeticexp);
+        req.input('overallexp',sql.NVarChar(200), overallexp);
         req.input('profile',sql.NVarChar, profile);
         req.input('association',sql.NVarChar(500), association);
         req.input('recognition',sql.NVarChar(500), recognition);
