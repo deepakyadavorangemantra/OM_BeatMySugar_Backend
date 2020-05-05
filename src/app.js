@@ -365,6 +365,8 @@ const GetSpecialisation_NewBackoffice = require("./api/routes/Backoffice-New-Api
 
 const GetDoctorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetDoctorList")
 
+const GetPackagingTypeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetPackagingTypeData")
+
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -519,6 +521,10 @@ const CustomerLoginAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api
 
 const AddCustomerBlogLikeStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddCustomerBlogLikeStatus")
 const UpdateLikeCount_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateLikeCount")
+const GetBlogCustomerLikedStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetBlogCustomerLikedStatus")
+const GetBlogComments_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetBlogComments")
+const AddBlogComments_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddBlogComments")
+const GetBlogTags_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetBlogTags")
 //-----------------------------------------New API -------------------------------------------------------------
 
 
@@ -1015,6 +1021,7 @@ app.use("/BackofficeApi/GetSocksItemMaster",GetSocksItemMaster_NewBackoffice);
 app.use("/BackofficeApi/GetSocksTypeMaster",GetSocksTypeMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksItemMaster",UpdateSocksItemMaster_NewBackoffice);
 
+app.use("/BackofficeApi/GetPackagingTypeData",GetPackagingTypeData_NewBackoffice);
 
 //-------------------------Web----------------------------------------------
 
@@ -1048,6 +1055,11 @@ app.use("/BackofficeApi/UpdateCustomerPassword",UpdateCustomerPassword_NewBackof
 app.use("/BackofficeApi/CustomerLoginAuth",CustomerLoginAuth_NewBackoffice);
 app.use("/BackofficeApi/AddCustomerBlogLikeStatus",AddCustomerBlogLikeStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateLikeCount",UpdateLikeCount_NewBackoffice);
+app.use("/BackofficeApi/AddCustomerBlogLikedStatus",AddCustomerBlogLikeStatus_NewBackoffice);
+app.use("/BackofficeApi/GetBlogCustomerLikedStatus",GetBlogCustomerLikedStatus_NewBackoffice);
+app.use("/BackofficeApi/GetBlogComments",GetBlogComments_NewBackoffice);
+app.use("/BackofficeApi/AddBlogComments",AddBlogComments_NewBackoffice);
+app.use("/BackofficeApi/GetBlogTags",GetBlogTags_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
 
 

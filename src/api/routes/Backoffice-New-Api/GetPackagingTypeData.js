@@ -5,24 +5,12 @@ const dbConnection = require("../../../utilities/db1");
 
 
 
-router.post("/", function(request, response){
+router.get("/", function(request, response){
    
- 
-    var filterid = request.body.filterid;
-    var foodid = request.body.foodid;
-    var updatedby = request.body.updatedby;
-    var updatedon = request.body.updatedon;
 
     try{
         const req = new sql.Request(dbConnection);
-
-
-        req.input('filterid',sql.Int, filterid);
-        req.input('foodid',sql.Int, foodid);
-        req.input('updatedon',sql.NVarChar(100), updatedon);
-        req.input('updatedby',sql.Int, updatedby);
-
-        req.execute("dbo.Add_FoodItemMaster_FilterMapping", function(err, data){
+        req.execute("dbo.Get_PackagingTypeData", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

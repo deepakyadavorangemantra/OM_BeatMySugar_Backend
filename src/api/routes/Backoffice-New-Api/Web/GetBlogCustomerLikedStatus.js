@@ -1,34 +1,34 @@
 const express = require("express");
 const router = express.Router();
 const sql = require("mssql");
-const dbConnection = require("../../../utilities/db1");
 
+const dbConnection = require("../../../../utilities/db1");
 
 
 router.post("/", function(request, response){
    
- 
-    var filterid = request.body.filterid;
-    var foodid = request.body.foodid;
-    var updatedby = request.body.updatedby;
-    var updatedon = request.body.updatedon;
+    var user_email= request.body.user_email;
+    var blog_id= request.body.blog_id;
+    
 
+
+  
     try{
         const req = new sql.Request(dbConnection);
-
-
-        req.input('filterid',sql.Int, filterid);
-        req.input('foodid',sql.Int, foodid);
-        req.input('updatedon',sql.NVarChar(100), updatedon);
-        req.input('updatedby',sql.Int, updatedby);
-
-        req.execute("dbo.Add_FoodItemMaster_FilterMapping", function(err, data){
+    
+        req.input('user_email',sql.NVarChar(100), user_email);
+        req.input('blog_id',sql.Int, blog_id);
+       
+       
+    
+        req.execute("dbo.Get_CustomerBlogLikedStatus", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
                     data:err.message
                 });
             }else{
+         
                 response.status(200).json({
                     data: data.recordset
                 });

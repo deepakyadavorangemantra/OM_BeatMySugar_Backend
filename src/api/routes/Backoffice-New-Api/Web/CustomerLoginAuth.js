@@ -47,7 +47,7 @@ router.post("/", function(request, response){
                             data:err2.message
                         });
                     }else{
-                        console.log(data2.recordset)
+                        // console.log(data2.recordset)
                 response.status(200).json({
                     data: data2.recordset
                 });
