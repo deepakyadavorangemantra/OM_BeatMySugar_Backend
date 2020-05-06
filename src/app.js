@@ -376,6 +376,8 @@ const GetHealthCenterData_NewBackoffice = require("./api/routes/Backoffice-New-A
 
 const GetHealthCenterDoctorMappingList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDoctorMappingList")
 const GetHealthCenterDietitianMappingList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMappingList")
+
+const GetFoodVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodVariantList")
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -1074,6 +1076,7 @@ app.use("/BackofficeApi/AddFoodVariant",AddFoodVariant_NewBackoffice);
 app.use("/BackofficeApi/AddFoodVariantImage",AddFoodVariantImage_NewBackoffice);
 app.use("/BackofficeApi/AddFoodVariantVendorPricing",AddFoodVariantVendorPricing_NewBackoffice);
 app.use("/BackofficeApi/GetVendorData",GetVendorData_NewBackoffice);
+app.use("/BackofficeApi/GetFoodVariantList",GetFoodVariantList_NewBackoffice);
 //-------------------------Web----------------------------------------------
 app.use("/BackofficeApi/GetBlogNine",GetBlogNine_NewBackoffice);
 app.use("/BackofficeApi/GetDoctorWebSix",GetDoctorWebSix_NewBackoffice);

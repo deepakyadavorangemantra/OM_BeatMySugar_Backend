@@ -16,6 +16,7 @@ router.post("/", function(request, response){
     var updatedon = request.body.updatedon;
 
 
+    console.log(request.body)
 
     try{
         const req = new sql.Request(dbConnection);
