@@ -348,6 +348,15 @@ const AddHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backof
 
 
 
+const AddBookVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookVariant")
+const AddBookVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookVariantImage")
+const AddBookVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookVariantVendorPricing")
+
+
+
+
+
+
 
 
 const DeleteHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDoctorMapping")
@@ -378,6 +387,11 @@ const GetHealthCenterDoctorMappingList_NewBackoffice = require("./api/routes/Bac
 const GetHealthCenterDietitianMappingList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMappingList")
 
 const GetFoodVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodVariantList")
+
+const GetBookLanguageData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookLanguageData")
+const GetBookTypeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookTypeData")
+
+const GetBookVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookVariantList")
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -1077,6 +1091,16 @@ app.use("/BackofficeApi/AddFoodVariantImage",AddFoodVariantImage_NewBackoffice);
 app.use("/BackofficeApi/AddFoodVariantVendorPricing",AddFoodVariantVendorPricing_NewBackoffice);
 app.use("/BackofficeApi/GetVendorData",GetVendorData_NewBackoffice);
 app.use("/BackofficeApi/GetFoodVariantList",GetFoodVariantList_NewBackoffice);
+
+app.use("/BackofficeApi/GetBookTypeData",GetBookTypeData_NewBackoffice);
+app.use("/BackofficeApi/GetBookLanguageData",GetBookLanguageData_NewBackoffice);
+
+app.use("/BackofficeApi/AddBookVariant",AddBookVariant_NewBackoffice);
+app.use("/BackofficeApi/AddBookVariantImage",AddBookVariantImage_NewBackoffice);
+app.use("/BackofficeApi/AddBookVariantVendorPricing",AddBookVariantVendorPricing_NewBackoffice);
+
+app.use("/BackofficeApi/GetBookVariantList",GetBookVariantList_NewBackoffice);
+
 //-------------------------Web----------------------------------------------
 app.use("/BackofficeApi/GetBlogNine",GetBlogNine_NewBackoffice);
 app.use("/BackofficeApi/GetDoctorWebSix",GetDoctorWebSix_NewBackoffice);

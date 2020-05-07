@@ -8,9 +8,10 @@ const dbConnection = require("../../../utilities/db1");
 router.post("/", function(request, response){
    
 
-    var foodid = request.body.foodid;
-    var name = request.body.name;
-    var packagingtypeid = request.body.packagingtypeid;
+    var bookid = request.body.bookid;
+    var sku = request.body.sku;
+    var typeid = request.body.typeid;
+    var languageid = request.body.languageid;
     var length = request.body.length;
     var breadth = request.body.breadth;
     var height = request.body.height;
@@ -18,8 +19,6 @@ router.post("/", function(request, response){
     var volweight = request.body.volweight;
     var packunit = request.body.packunit;
     var packweight = request.body.packweight;
-    var produnit = request.body.produnit;
-    var prodweight = request.body.prodweight;
     var price = request.body.price;
     var discountpercent = request.body.discountpercent;
     var discountprice = request.body.discountprice;
@@ -38,9 +37,10 @@ router.post("/", function(request, response){
     try{
         const req = new sql.Request(dbConnection);
     
-        req.input('foodid',sql.Int, foodid);
-        req.input('name',sql.NVarChar(200), name);
-        req.input('packagingtypeid',sql.Int, packagingtypeid);
+        req.input('bookid',sql.Int, bookid);
+        req.input('sku',sql.NVarChar(200), sku);
+        req.input('typeid',sql.Int, typeid);
+        req.input('languageid',sql.Int, languageid);
         req.input('length',sql.Decimal(18,2), length);
         req.input('breadth',sql.Decimal(18,2), breadth);
         req.input('height',sql.Decimal(18,2), height);
@@ -48,8 +48,6 @@ router.post("/", function(request, response){
         req.input('volweight',sql.Decimal(18,2), volweight);
         req.input('packunit',sql.NVarChar(10), packunit);
         req.input('packweight',sql.Decimal(18,2), packweight);
-        req.input('produnit',sql.NVarChar(10), produnit);
-        req.input('prodweight',sql.Decimal(18,2), prodweight);
         req.input('price',sql.Decimal(18,2), price);
         req.input('discountpercent',sql.Decimal(18,2), discountpercent);
         req.input('discountprice',sql.Decimal(18,2), discountprice);
@@ -63,7 +61,7 @@ router.post("/", function(request, response){
         req.input('updatedby',sql.Int, updatedby);
        
     
-        req.execute("dbo.Add_FoodVariant", function(err, data){
+        req.execute("dbo.Add_BookVariant", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
