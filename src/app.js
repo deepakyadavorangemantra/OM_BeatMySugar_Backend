@@ -350,6 +350,8 @@ const AddHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backof
 
 
 
+const DeleteHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDoctorMapping")
+const DeleteHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDietitianMapping")
 //----------- GET ------------------
 
 const GetCompany_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCompany")
@@ -371,6 +373,11 @@ const GetDoctorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get
 const GetPackagingTypeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetPackagingTypeData")
 const GetVendorData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorData")
 const GetHealthCenterData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterData")
+
+const GetHealthCenterDoctorMappingList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDoctorMappingList")
+const GetHealthCenterDietitianMappingList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMappingList")
+
+const GetFoodVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodVariantList")
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -1033,7 +1040,8 @@ app.use("/BackofficeApi/GetHealthCenterData",GetHealthCenterData_NewBackoffice);
 
 app.use("/BackofficeApi/AddHealthCenterDietitianMapping",AddHealthCenterDietitianMapping_NewBackoffice);
 app.use("/BackofficeApi/AddHealthCenterDoctorMapping",AddHealthCenterDoctorMapping_NewBackoffice);
-
+app.use("/BackofficeApi/DeleteHealthCenterDietitianMapping",DeleteHealthCenterDietitianMapping_NewBackoffice);
+app.use("/BackofficeApi/DeleteHealthCenterDoctorMapping",DeleteHealthCenterDoctorMapping_NewBackoffice);
 
 app.use("/BackofficeApi/AddSocksTypeMaster",AddSocksTypeMaster_NewBackoffice);
 app.use("/BackofficeApi/GetSocksTypeMaster",GetSocksTypeMaster_NewBackoffice);
@@ -1041,6 +1049,8 @@ app.use("/BackofficeApi/GetSocksTypeMasterGrid",GetSocksTypeMasterGrid_NewBackof
 app.use("/BackofficeApi/DeleteSocksTypeMaster",DeleteSocksTypeMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksTypeMaster",UpdateSocksTypeMaster_NewBackoffice);
 
+app.use("/BackofficeApi/GetHealthCenterDietitianMappingList",GetHealthCenterDietitianMappingList_NewBackoffice);
+app.use("/BackofficeApi/GetHealthCenterDoctorMappingList",GetHealthCenterDoctorMappingList_NewBackoffice);
 
 app.use("/BackofficeApi/AddHealthCenterFacilitiesMaster",AddHealthCenterFacilitiesMaster_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterFacilitiesMaster",GetHealthCenterFacilitiesMaster_NewBackoffice);
@@ -1069,6 +1079,7 @@ app.use("/BackofficeApi/AddFoodVariant",AddFoodVariant_NewBackoffice);
 app.use("/BackofficeApi/AddFoodVariantImage",AddFoodVariantImage_NewBackoffice);
 app.use("/BackofficeApi/AddFoodVariantVendorPricing",AddFoodVariantVendorPricing_NewBackoffice);
 app.use("/BackofficeApi/GetVendorData",GetVendorData_NewBackoffice);
+app.use("/BackofficeApi/GetFoodVariantList",GetFoodVariantList_NewBackoffice);
 //-------------------------Web----------------------------------------------
 app.use("/BackofficeApi/GetBlogNine",GetBlogNine_NewBackoffice);
 app.use("/BackofficeApi/GetDoctorWebSix",GetDoctorWebSix_NewBackoffice);

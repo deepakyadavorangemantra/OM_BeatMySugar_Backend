@@ -7,30 +7,18 @@ const dbConnection = require("../../../utilities/db1");
 
 router.post("/", function(request, response){
    
- 
     var dietitianid = request.body.dietitianid;
-    var qualification = request.body.qualification;
-    var institute = request.body.institute;
-    var completionyear = request.body.completionyear;
-    var updatedby = request.body.updatedby;
-    var updatedon = request.body.updatedon;
-
-
-    console.log(request.body)
+    var healthcenterid = request.body.healthcenterid;
+  
 
     try{
         const req = new sql.Request(dbConnection);
 
-
         req.input('dietitianid',sql.Int, dietitianid);
-        req.input('qualification',sql.NVarChar(100), qualification);
-        req.input('institute',sql.NVarChar(500), institute);
-        req.input('completionyear',sql.NVarChar(100), completionyear);
-        req.input('updatedon',sql.NVarChar(100), updatedon);
-        req.input('updatedby',sql.Int, updatedby);
+        req.input('healthcenterid',sql.Int, healthcenterid);
+ 
 
-
-        req.execute("dbo.Add_DietitianQualificationMapping", function(err, data){
+        req.execute("dbo.Delete_HealthCenterDietitianMapping", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
