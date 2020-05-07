@@ -413,7 +413,7 @@ const GetSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const GetSocksTypeMasterGrid_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksTypeMasterGrid")
 const GetHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterFacilitiesMaster")
 const GetHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterServicesMaster")
-
+const GetCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCareer")
 
 
 
@@ -1054,6 +1054,9 @@ app.use("/BackofficeApi/DeleteHealthCenterServicesMaster",DeleteHealthCenterServ
 app.use("/BackofficeApi/UpdateHealthCenterServicesMaster",UpdateHealthCenterServicesMaster_NewBackoffice);
 
 
+app.use("/BackofficeApi/GetCareer",GetCareer_NewBackoffice);
+// app.use("/BackofficeApi/UpdateHealthCenterServicesMaster",UpdateHealthCenterServicesMaster_NewBackoffice);
+// app.use("/BackofficeApi/UpdateHealthCenterServicesMaster",UpdateHealthCenterServicesMaster_NewBackoffice);
 //-------------------------Web----------------------------------------------
 
 app.use("/BackofficeApi/AddFoodItemMaster",AddFoodItemMaster_NewBackoffice);
