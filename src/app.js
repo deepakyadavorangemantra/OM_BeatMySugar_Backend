@@ -345,7 +345,7 @@ const AddFoodVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffi
 const AddHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterDoctorMapping")
 const AddHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterDietitianMapping")
 const AddHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterServicesMaster")
-
+const AddCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddCareer")
 
 
 const AddBookVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookVariant")
@@ -434,7 +434,7 @@ const GetSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const GetSocksTypeMasterGrid_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksTypeMasterGrid")
 const GetHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterFacilitiesMaster")
 const GetHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterServicesMaster")
-
+const GetCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCareer")
 
 
 
@@ -485,7 +485,7 @@ const UpdateSocksItemMaster_NewBackoffice = require("./api/routes/Backoffice-New
 const UpdateSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksTypeMaster")
 const UpdateHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterFacilitiesMaster")
 const UpdateHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterServicesMaster")
-
+const UpdateCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateCareer")
 
 
 //-------------- DELETE ---------------
@@ -1077,6 +1077,10 @@ app.use("/BackofficeApi/GetHealthCenterServicesMaster",GetHealthCenterServicesMa
 app.use("/BackofficeApi/DeleteHealthCenterServicesMaster",DeleteHealthCenterServicesMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateHealthCenterServicesMaster",UpdateHealthCenterServicesMaster_NewBackoffice);
 
+
+app.use("/BackofficeApi/GetCareer",GetCareer_NewBackoffice);
+app.use("/BackofficeApi/AddCareer",AddCareer_NewBackoffice);
+app.use("/BackofficeApi/UpdateCareer",UpdateCareer_NewBackoffice);
 
 //-------------------------Web----------------------------------------------
 
