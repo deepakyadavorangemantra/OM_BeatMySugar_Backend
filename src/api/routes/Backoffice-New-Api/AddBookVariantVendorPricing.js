@@ -11,6 +11,8 @@ router.post("/", function(request, response){
     var bookvariantid = request.body.bookvariantid;
     var vendorid = request.body.vendorid;
     var sku = request.body.sku;
+    var marginon = request.body.marginon;
+    var vendorselling = request.body.vendorselling;
     var margin = request.body.margin;
     var marginpercent = request.body.marginpercent;
     var updatedon = request.body.updatedon;
@@ -25,6 +27,8 @@ router.post("/", function(request, response){
         req.input('bookvariantid',sql.Int, bookvariantid);
         req.input('vendorid',sql.Int, vendorid);
         req.input('sku',sql.NVarChar(100), sku);
+        req.input('marginon',sql.NVarChar(100), marginon);
+        req.input('vendorselling',sql.Decimal(18,2), vendorselling);
         req.input('margin',sql.Decimal(18,2), margin);
         req.input('marginpercent',sql.Decimal(18,2), marginpercent);
         req.input('updatedon',sql.NVarChar(200), updatedon);
