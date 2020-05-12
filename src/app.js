@@ -352,12 +352,9 @@ const AddBookVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Ad
 const AddBookVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookVariantImage")
 const AddBookVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookVariantVendorPricing")
 
-
-
-
-
-
-
+const AddFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFootwearVariant")
+const AddFootwearVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFootwearVariantImage")
+const AddFootwearVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFootwearVariantVendorPricing")
 
 const DeleteHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDoctorMapping")
 const DeleteHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDietitianMapping")
@@ -392,6 +389,13 @@ const GetBookLanguageData_NewBackoffice = require("./api/routes/Backoffice-New-A
 const GetBookTypeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookTypeData")
 
 const GetBookVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookVariantList")
+const GetFootwearColorData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearColorData")
+const GetFootwearSizeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearSizeData")
+
+const GetSocksColorData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksColorData")
+const GetSocksSizeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksSizeData")
+
+const GetFootwearVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearVariantList")
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -1081,6 +1085,19 @@ app.use("/BackofficeApi/UpdateHealthCenterServicesMaster",UpdateHealthCenterServ
 app.use("/BackofficeApi/GetCareer",GetCareer_NewBackoffice);
 app.use("/BackofficeApi/AddCareer",AddCareer_NewBackoffice);
 app.use("/BackofficeApi/UpdateCareer",UpdateCareer_NewBackoffice);
+
+
+app.use("/BackofficeApi/GetFootwearColorData",GetFootwearColorData_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearSizeData",GetFootwearSizeData_NewBackoffice);
+
+app.use("/BackofficeApi/GetSocksSizeData",GetSocksSizeData_NewBackoffice);
+app.use("/BackofficeApi/GetSocksColorData",GetSocksColorData_NewBackoffice);
+
+
+app.use("/BackofficeApi/AddFootwearVariant",AddFootwearVariant_NewBackoffice);
+app.use("/BackofficeApi/AddFootwearVariantImage",AddFootwearVariantImage_NewBackoffice);
+app.use("/BackofficeApi/AddFootwearVariantVendorPricing",AddFootwearVariantVendorPricing_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearVariantList",GetFootwearVariantList_NewBackoffice);
 
 //-------------------------Web----------------------------------------------
 
