@@ -356,8 +356,22 @@ const AddFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const AddFootwearVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFootwearVariantImage")
 const AddFootwearVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFootwearVariantVendorPricing")
 
+const AddSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksVariant")
+const AddSocksVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksVariantImage")
+const AddSocksVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksVariantVendorPricing")
+
 const DeleteHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDoctorMapping")
 const DeleteHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDietitianMapping")
+
+
+const AddVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendor")
+const UpdateVendorLogo_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorLogo")
+const AddVendorFacilitiesMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorFacilitiesMapping")
+const AddVendorLicenseMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorLicenseMapping")
+const AddVendorAccreditationmapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorAccreditationmapping")
+const UpdateVendorCheque_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorCheque")
+const AddVendorTimingMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorTimingMapping")
+const AddVendorContactPersonMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorContactPersonMapping")
 //----------- GET ------------------
 
 const GetCompany_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCompany")
@@ -396,6 +410,11 @@ const GetSocksColorData_NewBackoffice = require("./api/routes/Backoffice-New-Api
 const GetSocksSizeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksSizeData")
 
 const GetFootwearVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearVariantList")
+const GetSocksVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksVariantList")
+
+const GetVendorFacilitiesData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorFacilitiesData")
+const GetVendorLicenseData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorLicenseData")
+const GetVendorAccreditationData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorAccreditationData")
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -1087,6 +1106,16 @@ app.use("/BackofficeApi/AddCareer",AddCareer_NewBackoffice);
 app.use("/BackofficeApi/UpdateCareer",UpdateCareer_NewBackoffice);
 
 
+app.use("/BackofficeApi/AddVendor",AddVendor_NewBackoffice);
+app.use("/BackofficeApi/UpdateVendorLogo",UpdateVendorLogo_NewBackoffice);
+app.use("/BackofficeApi/AddVendorFacilitiesMapping",AddVendorFacilitiesMapping_NewBackoffice);
+app.use("/BackofficeApi/AddVendorLicenseMapping",AddVendorLicenseMapping_NewBackoffice);
+app.use("/BackofficeApi/AddVendorAccreditationmapping",AddVendorAccreditationmapping_NewBackoffice);
+app.use("/BackofficeApi/UpdateVendorCheque",UpdateVendorCheque_NewBackoffice);
+app.use("/BackofficeApi/AddVendorTimingMapping",AddVendorTimingMapping_NewBackoffice);
+app.use("/BackofficeApi/AddVendorContactPersonMapping",AddVendorContactPersonMapping_NewBackoffice);
+
+
 app.use("/BackofficeApi/GetFootwearColorData",GetFootwearColorData_NewBackoffice);
 app.use("/BackofficeApi/GetFootwearSizeData",GetFootwearSizeData_NewBackoffice);
 
@@ -1099,6 +1128,14 @@ app.use("/BackofficeApi/AddFootwearVariantImage",AddFootwearVariantImage_NewBack
 app.use("/BackofficeApi/AddFootwearVariantVendorPricing",AddFootwearVariantVendorPricing_NewBackoffice);
 app.use("/BackofficeApi/GetFootwearVariantList",GetFootwearVariantList_NewBackoffice);
 
+app.use("/BackofficeApi/AddSocksVariant",AddSocksVariant_NewBackoffice);
+app.use("/BackofficeApi/AddSocksVariantImage",AddSocksVariantImage_NewBackoffice);
+app.use("/BackofficeApi/AddSocksVariantVendorPricing",AddSocksVariantVendorPricing_NewBackoffice);
+app.use("/BackofficeApi/GetSocksVariantList",GetSocksVariantList_NewBackoffice);
+
+app.use("/BackofficeApi/GetVendorFacilitiesData",GetVendorFacilitiesData_NewBackoffice);
+app.use("/BackofficeApi/GetVendorLicenseData",GetVendorLicenseData_NewBackoffice);
+app.use("/BackofficeApi/GetVendorAccreditationData",GetVendorAccreditationData_NewBackoffice);
 //-------------------------Web----------------------------------------------
 
 app.use("/BackofficeApi/AddFoodItemMaster",AddFoodItemMaster_NewBackoffice);
