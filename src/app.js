@@ -362,11 +362,8 @@ const AddVendorAccreditationmapping_NewBackoffice = require("./api/routes/Backof
 const AddVendorTimingMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorTimingMapping")
 const AddVendorContactPersonMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorContactPersonMapping")
 const AddSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksColorMaster")
-<<<<<<< HEAD
 const UpdateVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendor")
-=======
 const AddVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorLicenseMaster")
->>>>>>> 5563cd105a19b21dd56da08f0beab84eb0cf34c3
 
 
 
