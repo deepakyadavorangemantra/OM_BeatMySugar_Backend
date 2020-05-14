@@ -415,6 +415,8 @@ const GetSocksVariantList_NewBackoffice = require("./api/routes/Backoffice-New-A
 const GetVendorFacilitiesData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorFacilitiesData")
 const GetVendorLicenseData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorLicenseData")
 const GetVendorAccreditationData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorAccreditationData")
+
+const GetVendorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorList")
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -1114,6 +1116,7 @@ app.use("/BackofficeApi/AddVendorAccreditationmapping",AddVendorAccreditationmap
 app.use("/BackofficeApi/UpdateVendorCheque",UpdateVendorCheque_NewBackoffice);
 app.use("/BackofficeApi/AddVendorTimingMapping",AddVendorTimingMapping_NewBackoffice);
 app.use("/BackofficeApi/AddVendorContactPersonMapping",AddVendorContactPersonMapping_NewBackoffice);
+app.use("/BackofficeApi/GetVendorList",GetVendorList_NewBackoffice);
 
 
 app.use("/BackofficeApi/GetFootwearColorData",GetFootwearColorData_NewBackoffice);
