@@ -8,7 +8,6 @@ const dbConnection = require("../../../utilities/db1");
 router.post("/", function(request, response){
    
     var id = request.body.id;
-    var logo = request.body.logo;
     var name = request.body.name;
     var status = request.body.status;
     var updatedby = request.body.updatedby;
@@ -18,7 +17,6 @@ router.post("/", function(request, response){
         const req = new sql.Request(dbConnection);
 
         req.input('id',sql.Int, id);
-        req.input('logo',sql.NVarChar(200), logo);
         req.input('name',sql.NVarChar(100), name);
         req.input('status',sql.NVarChar(10), status);
         req.input('updatedon',sql.NVarChar(100), updatedon);
