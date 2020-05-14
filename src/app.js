@@ -528,7 +528,7 @@ const UpdateVendorLogo_NewBackoffice = require("./api/routes/Backoffice-New-Api/
 const UpdateSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksColorMaster")
 const UpdateVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorLicenseMaster")
 const UpdateAccreditationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateAccreditationMaster")
-
+const UpdateAccreditationMasterLogo_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateAccreditationMasterLogo")
 
 
 
@@ -1192,7 +1192,7 @@ app.use("/BackofficeApi/AddAccreditationMaster",AddAccreditationMaster_NewBackof
 app.use("/BackofficeApi/GetAccreditationMasterList",GetAccreditationMasterList_NewBackoffice);
 app.use("/BackofficeApi/DeleteAccreditationMaster",DeleteAccreditationMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateAccreditationMaster",UpdateAccreditationMaster_NewBackoffice);
-
+app.use("/BackofficeApi/UpdateAccreditationMasterLogo",UpdateAccreditationMasterLogo_NewBackoffice);
 
 
 
