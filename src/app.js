@@ -346,32 +346,35 @@ const AddHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoff
 const AddHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterDietitianMapping")
 const AddHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddHealthCenterServicesMaster")
 const AddCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddCareer")
-
-
 const AddBookVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookVariant")
 const AddBookVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookVariantImage")
 const AddBookVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBookVariantVendorPricing")
-
 const AddFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFootwearVariant")
 const AddFootwearVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFootwearVariantImage")
 const AddFootwearVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFootwearVariantVendorPricing")
-
 const AddSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksVariant")
 const AddSocksVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksVariantImage")
 const AddSocksVariantVendorPricing_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksVariantVendorPricing")
-
-const DeleteHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDoctorMapping")
-const DeleteHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDietitianMapping")
-
-
 const AddVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendor")
-const UpdateVendorLogo_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorLogo")
 const AddVendorFacilitiesMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorFacilitiesMapping")
 const AddVendorLicenseMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorLicenseMapping")
 const AddVendorAccreditationmapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorAccreditationmapping")
-const UpdateVendorCheque_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorCheque")
 const AddVendorTimingMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorTimingMapping")
 const AddVendorContactPersonMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorContactPersonMapping")
+const AddSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksColorMaster")
+const UpdateVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendor")
+
+
+
+
+
+
+
+
+
+
+
+
 //----------- GET ------------------
 
 const GetCompany_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCompany")
@@ -393,25 +396,18 @@ const GetDoctorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get
 const GetPackagingTypeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetPackagingTypeData")
 const GetVendorData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorData")
 const GetHealthCenterData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterData")
-
 const GetHealthCenterDoctorMappingList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDoctorMappingList")
 const GetHealthCenterDietitianMappingList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMappingList")
-
 const GetFoodVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodVariantList")
-
 const GetBookLanguageData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookLanguageData")
 const GetBookTypeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookTypeData")
-
 const GetBookVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookVariantList")
 const GetFootwearColorData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearColorData")
 const GetFootwearSizeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearSizeData")
-
 const GetSocksColorData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksColorData")
 const GetSocksSizeData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksSizeData")
-
 const GetFootwearVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearVariantList")
 const GetSocksVariantList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksVariantList")
-
 const GetVendorFacilitiesData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorFacilitiesData")
 const GetVendorLicenseData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorLicenseData")
 const GetVendorAccreditationData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorAccreditationData")
@@ -460,6 +456,18 @@ const GetSocksTypeMasterGrid_NewBackoffice = require("./api/routes/Backoffice-Ne
 const GetHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterFacilitiesMaster")
 const GetHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterServicesMaster")
 const GetCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCareer")
+const GetSocksColorMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksColorMasterList")
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -511,6 +519,17 @@ const UpdateSocksTypeMaster_NewBackoffice = require("./api/routes/Backoffice-New
 const UpdateHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterFacilitiesMaster")
 const UpdateHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterServicesMaster")
 const UpdateCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateCareer")
+const UpdateVendorCheque_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorCheque")
+const UpdateVendorLogo_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorLogo")
+const UpdateSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksColorMaster")
+
+
+
+
+
+
+
+
 
 
 //-------------- DELETE ---------------
@@ -540,6 +559,17 @@ const DeleteDietitianCertificate_NewBackoffice = require("./api/routes/Backoffic
 const DeleteSocksTypeMaster_NewBackoffice =  require("./api/routes/Backoffice-New-Api/DeleteSocksTypeMaster")
 const DeleteHealthCenterFacilitiesMaster_NewBackoffice =  require("./api/routes/Backoffice-New-Api/DeleteHealthCenterFacilitiesMaster")
 const DeleteHealthCenterServicesMaster_NewBackoffice =  require("./api/routes/Backoffice-New-Api/DeleteHealthCenterServicesMaster")
+const DeleteHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDoctorMapping")
+const DeleteHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDietitianMapping")
+const DeleteSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSocksColorMaster")
+
+
+
+
+
+
+
+
 
 
 
@@ -1139,6 +1169,15 @@ app.use("/BackofficeApi/GetSocksVariantList",GetSocksVariantList_NewBackoffice);
 app.use("/BackofficeApi/GetVendorFacilitiesData",GetVendorFacilitiesData_NewBackoffice);
 app.use("/BackofficeApi/GetVendorLicenseData",GetVendorLicenseData_NewBackoffice);
 app.use("/BackofficeApi/GetVendorAccreditationData",GetVendorAccreditationData_NewBackoffice);
+
+
+app.use("/BackofficeApi/AddSocksColorMaster",AddSocksColorMaster_NewBackoffice);
+app.use("/BackofficeApi/GetSocksColorMasterList",GetSocksColorMasterList_NewBackoffice);
+app.use("/BackofficeApi/DeleteSocksColorMaster",DeleteSocksColorMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateSocksColorMaster",UpdateSocksColorMaster_NewBackoffice);
+
+app.use("/BackofficeApi/UpdateVendor",UpdateVendor_NewBackoffice);
+
 //-------------------------Web----------------------------------------------
 
 app.use("/BackofficeApi/AddFoodItemMaster",AddFoodItemMaster_NewBackoffice);
