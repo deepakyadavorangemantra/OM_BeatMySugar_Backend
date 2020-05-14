@@ -1199,7 +1199,7 @@ app.use("/BackofficeApi/UpdateAccreditationMaster",UpdateAccreditationMaster_New
 
 
 
-GetAccreditationMasterList
+
 
 
 
