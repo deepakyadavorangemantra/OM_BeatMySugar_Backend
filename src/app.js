@@ -362,7 +362,7 @@ const AddVendorAccreditationmapping_NewBackoffice = require("./api/routes/Backof
 const AddVendorTimingMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorTimingMapping")
 const AddVendorContactPersonMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorContactPersonMapping")
 const AddSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSocksColorMaster")
-
+const AddVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorLicenseMaster")
 
 
 
@@ -469,7 +469,7 @@ const GetHealthCenterFacilitiesMaster_NewBackoffice = require("./api/routes/Back
 const GetHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterServicesMaster")
 const GetCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCareer")
 const GetSocksColorMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksColorMasterList")
-
+const GetVendorLicenseMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorLicenseMasterList")
 
 
 
@@ -534,8 +534,7 @@ const UpdateCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Upda
 const UpdateVendorCheque_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorCheque")
 const UpdateVendorLogo_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorLogo")
 const UpdateSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksColorMaster")
-
-
+const UpdateVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorLicenseMaster")
 
 
 
@@ -574,7 +573,7 @@ const DeleteHealthCenterServicesMaster_NewBackoffice =  require("./api/routes/Ba
 const DeleteHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDoctorMapping")
 const DeleteHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterDietitianMapping")
 const DeleteSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSocksColorMaster")
-
+const DeleteVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteVendorLicenseMaster")
 
 
 
@@ -1187,7 +1186,10 @@ app.use("/BackofficeApi/GetSocksColorMasterList",GetSocksColorMasterList_NewBack
 app.use("/BackofficeApi/DeleteSocksColorMaster",DeleteSocksColorMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksColorMaster",UpdateSocksColorMaster_NewBackoffice);
 
-
+app.use("/BackofficeApi/AddVendorLicenseMaster",AddVendorLicenseMaster_NewBackoffice);
+app.use("/BackofficeApi/GetVendorLicenseMasterList",GetVendorLicenseMasterList_NewBackoffice);
+app.use("/BackofficeApi/DeleteVendorLicenseMaster",DeleteVendorLicenseMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateVendorLicenseMaster",UpdateVendorLicenseMaster_NewBackoffice);
 
 //-------------------------Web----------------------------------------------
 

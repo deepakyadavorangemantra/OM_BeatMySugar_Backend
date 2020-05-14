@@ -5,12 +5,18 @@ const dbConnection = require("../../../utilities/db1");
 
 
 
-router.get("/", function(request, response){
+router.post("/", function(request, response){
    
+    var vendorlicenseid = request.body.vendorlicenseid;
+
 
     try{
         const req = new sql.Request(dbConnection);
-        req.execute("dbo.Get_SocksColorList", function(err, data){
+
+        req.input('vendorlicenseid',sql.Int, vendorlicenseid);
+
+
+        req.execute("dbo.Delete_VendorLicenseMaster", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

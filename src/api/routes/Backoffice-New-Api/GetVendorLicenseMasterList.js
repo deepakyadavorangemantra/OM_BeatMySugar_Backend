@@ -10,7 +10,7 @@ router.get("/", function(request, response){
 
     try{
         const req = new sql.Request(dbConnection);
-        req.execute("dbo.Get_SocksColorList", function(err, data){
+        req.execute("dbo.Get_VendorLicenseMasterList", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
