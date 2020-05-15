@@ -530,7 +530,7 @@ const UpdateVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice
 const UpdateAccreditationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateAccreditationMaster")
 const UpdateAccreditationMasterLogo_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateAccreditationMasterLogo")
 
-
+const UpdateFoodVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFoodVariant")
 
 
 
@@ -569,7 +569,7 @@ const DeleteSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-Ne
 const DeleteVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteVendorLicenseMaster")
 const DeleteAccreditationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteAccreditationMaster")
 
-
+const DeleteFoodVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteFoodVariantImage")
 
 
 
@@ -1196,8 +1196,8 @@ app.use("/BackofficeApi/UpdateAccreditationMasterLogo",UpdateAccreditationMaster
 
 
 
-
-
+app.use("/BackofficeApi/DeleteFoodVariantImage",DeleteFoodVariantImage_NewBackoffice);
+app.use("/BackofficeApi/UpdateFoodVariant",UpdateFoodVariant_NewBackoffice);
 
 
 
