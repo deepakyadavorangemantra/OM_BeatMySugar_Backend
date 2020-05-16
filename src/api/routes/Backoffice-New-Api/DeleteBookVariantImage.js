@@ -8,18 +8,18 @@ const dbConnection = require("../../../utilities/db1");
 router.post("/", function(request, response){
    
 
-    var foodvariantid = request.body.foodvariantid;
+    var bookvariantid = request.body.bookvariantid;
     var imageurl = request.body.imageurl;
 
     
     try{
         const req = new sql.Request(dbConnection);
     
-        req.input('foodvariantid',sql.Int, foodvariantid);
+        req.input('bookvariantid',sql.Int, bookvariantid);
         req.input('imageurl',sql.NVarChar(200), imageurl);
        
     
-        req.execute("dbo.Delete_FoodVariantImage", function(err, data){
+        req.execute("dbo.Delete_BookVariantImage", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
