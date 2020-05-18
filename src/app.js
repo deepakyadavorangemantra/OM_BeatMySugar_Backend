@@ -365,7 +365,8 @@ const AddSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-A
 const UpdateVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendor")
 const AddVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorLicenseMaster")
 const AddAccreditationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddAccreditationMaster")
-
+const AddVendorFacilityMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorFacilityMaster")
+const AddQualificationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddQualificationMaster")
 
 
 
@@ -461,9 +462,9 @@ const GetCareer_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCare
 const GetSocksColorMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksColorMasterList")
 const GetVendorLicenseMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorLicenseMasterList")
 const GetAccreditationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAccreditationMasterList")
-
-
-
+const GetVendorFacilitiesMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorFacilitiesMasterList")
+const GetQualificationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetQualificationMasterList")
+const GetSpecialisationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSpecialisationMasterList")
 
 
 
@@ -529,10 +530,20 @@ const UpdateSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-Ne
 const UpdateVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorLicenseMaster")
 const UpdateAccreditationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateAccreditationMaster")
 const UpdateAccreditationMasterLogo_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateAccreditationMasterLogo")
-
 const UpdateFoodVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFoodVariant")
 const UpdateBookVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBookVariant")
 const UpdateFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearVariant")
+const UpdateVendorFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorFacilitiesMaster")
+const UpdateQualificationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateQualificationMaster")
+const UpdateSpecialisationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSpecialisationMaster_NewBackoffice")
+
+
+
+
+
+
+
+
 
 
 
@@ -569,12 +580,12 @@ const DeleteHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/B
 const DeleteSocksColorMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSocksColorMaster")
 const DeleteVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteVendorLicenseMaster")
 const DeleteAccreditationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteAccreditationMaster")
-
 const DeleteFoodVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteFoodVariantImage")
 const DeleteBookVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteBookVariantImage")
 const DeleteFootwearVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteFootwearVariantImage")
-
-
+const DeleteHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterServicesMaster")
+const DeleteQualificationMaster_NewBackoffice  = require("./api/routes/Backoffice-New-Api/DeleteQualificationMaster")
+const DeleteSpecialisationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSpecialisationMaster")
 
 
 
@@ -1196,6 +1207,21 @@ app.use("/BackofficeApi/UpdateAccreditationMaster",UpdateAccreditationMaster_New
 app.use("/BackofficeApi/UpdateAccreditationMasterLogo",UpdateAccreditationMasterLogo_NewBackoffice);
 
 
+app.use("/BackofficeApi/AddVendorFacilityMaster",AddVendorFacilityMaster_NewBackoffice);
+app.use("/BackofficeApi/GetVendorFacilitiesMasterList",GetVendorFacilitiesMasterList_NewBackoffice);
+app.use("/BackofficeApi/DeleteVendorFacilityMaster",DeleteVendorFacilityMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateVendorFacilitiesMaster",UpdateVendorFacilitiesMaster_NewBackoffice);
+
+
+app.use("/BackofficeApi/AddQualificationMaster",AddQualificationMaster_NewBackoffice);
+app.use("/BackofficeApi/GetQualificationMasterList",GetQualificationMasterList_NewBackoffice);
+app.use("/BackofficeApi/DeleteQualificationMaster",DeleteQualificationMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateQualificationMaster",UpdateQualificationMaster_NewBackoffice);
+
+app.use("/BackofficeApi/AddSpecialisationMaster",AddSpecialisationMaster_NewBackoffice);
+app.use("/BackofficeApi/GetSpecialisationMasterList",GetSpecialisationMasterList_NewBackoffice);
+app.use("/BackofficeApi/DeleteSpecialisationMaster",DeleteSpecialisationMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateSpecialisationMaster",UpdateSpecialisationMaster_NewBackoffice);
 
 app.use("/BackofficeApi/DeleteFoodVariantImage",DeleteFoodVariantImage_NewBackoffice);
 app.use("/BackofficeApi/UpdateFoodVariant",UpdateFoodVariant_NewBackoffice);
