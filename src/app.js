@@ -533,7 +533,7 @@ const UpdateAccreditationMasterLogo_NewBackoffice = require("./api/routes/Backof
 const UpdateFoodVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFoodVariant")
 const UpdateBookVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBookVariant")
 const UpdateFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearVariant")
-
+const UpdateSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksVariant")
 
 
 
@@ -573,7 +573,7 @@ const DeleteAccreditationMaster_NewBackoffice = require("./api/routes/Backoffice
 const DeleteFoodVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteFoodVariantImage")
 const DeleteBookVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteBookVariantImage")
 const DeleteFootwearVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteFootwearVariantImage")
-
+const DeleteSocksVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSocksVariantImage")
 
 
 
@@ -1207,6 +1207,9 @@ app.use("/BackofficeApi/UpdateBookVariant",UpdateBookVariant_NewBackoffice);
 
 app.use("/BackofficeApi/DeleteFootwearVariantImage",DeleteFootwearVariantImage_NewBackoffice);
 app.use("/BackofficeApi/UpdateFootwearVariant",UpdateFootwearVariant_NewBackoffice);
+
+app.use("/BackofficeApi/DeleteSocksVariantImage",DeleteSocksVariantImage_NewBackoffice);
+app.use("/BackofficeApi/UpdateSocksVariant",UpdateSocksVariant_NewBackoffice);
 
 
 //-------------------------Web----------------------------------------------
