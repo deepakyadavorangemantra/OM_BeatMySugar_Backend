@@ -16,6 +16,7 @@ router.post("/", function(request, response){
     var dob = request.body.dob;
     var age = request.body.age;
     var source = request.body.source;
+    var totalsugarkubs = request.body.totalsugarkubs;
     var login_type = request.body.login_type;
     var updated_on = request.body.updated_on;
     var updated_by = request.body.updated_by;
@@ -33,6 +34,7 @@ router.post("/", function(request, response){
         req.input('dob',sql.NVarChar(200), dob);
         req.input('age',sql.NVarChar(10), age);
         req.input('source',sql.NVarChar(100), source);
+        req.input('totalsugarkubs',sql.Int, totalsugarkubs);
         req.input('login_type',sql.NVarChar(100), login_type);
         req.input('updated_on',sql.NVarChar(200), updated_on);
         req.input('updated_by',sql.Int, updated_by);
