@@ -1212,7 +1212,6 @@ app.use("/BackofficeApi/GetVendorFacilitiesMasterList",GetVendorFacilitiesMaster
 app.use("/BackofficeApi/DeleteVendorFacilityMaster",DeleteVendorFacilityMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateVendorFacilitiesMaster",UpdateVendorFacilitiesMaster_NewBackoffice);
 
-
 app.use("/BackofficeApi/AddQualificationMaster",AddQualificationMaster_NewBackoffice);
 app.use("/BackofficeApi/GetQualificationMasterList",GetQualificationMasterList_NewBackoffice);
 app.use("/BackofficeApi/DeleteQualificationMaster",DeleteQualificationMaster_NewBackoffice);

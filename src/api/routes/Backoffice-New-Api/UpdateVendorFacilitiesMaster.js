@@ -9,6 +9,7 @@ router.post("/", function(request, response){
    
     var id = request.body.id;
     var facility = request.body.facility;
+    var status = request.body.status;
     var updatedby = request.body.updatedby;
     var updatedon = request.body.updatedon;
 
@@ -17,6 +18,7 @@ router.post("/", function(request, response){
 
         req.input('id',sql.Int, id);
         req.input('facility',sql.NVarChar(100), facility);
+        req.input('status',sql.NVarChar(10), status);
         req.input('updatedon',sql.NVarChar(100), updatedon);
         req.input('updatedby',sql.Int, updatedby);
 
