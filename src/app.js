@@ -367,7 +367,7 @@ const AddVendorLicenseMaster_NewBackoffice = require("./api/routes/Backoffice-Ne
 const AddAccreditationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddAccreditationMaster")
 const AddVendorFacilityMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorFacilityMaster")
 const AddQualificationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddQualificationMaster")
-const AddSpecialisationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSpecialisationMaster")
+const AddSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSpecialisationMaster")
 
 
 
@@ -464,7 +464,7 @@ const GetVendorLicenseMasterList_NewBackoffice = require("./api/routes/Backoffic
 const GetAccreditationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAccreditationMasterList")
 const GetVendorFacilitiesMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorFacilitiesMasterList")
 const GetQualificationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetQualificationMasterList")
-const GetSpecialisationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSpecialisationMasterList")
+const GetSpecializationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSpecialisationMasterList")
 
 
 
@@ -536,7 +536,7 @@ const UpdateFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New
 const UpdateSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksVariant")
 const UpdateVendorFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorFacilitiesMaster")
 const UpdateQualificationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateQualificationMaster")
-const UpdateSpecialisationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSpecialisationMaster")
+const UpdateSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSpecialisationMaster")
 
 
 
@@ -589,7 +589,7 @@ const DeleteSocksVariantImage_NewBackoffice = require("./api/routes/Backoffice-N
 
 const DeleteHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterServicesMaster")
 const DeleteQualificationMaster_NewBackoffice  = require("./api/routes/Backoffice-New-Api/DeleteQualificationMaster")
-const DeleteSpecialisationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSpecialisationMaster")
+const DeleteSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSpecialisationMaster")
 const DeleteVendorFacilityMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteVendorFacilityMaster")
 
 
@@ -1221,10 +1221,10 @@ app.use("/BackofficeApi/GetQualificationMasterList",GetQualificationMasterList_N
 app.use("/BackofficeApi/DeleteQualificationMaster",DeleteQualificationMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateQualificationMaster",UpdateQualificationMaster_NewBackoffice);
 
-app.use("/BackofficeApi/AddSpecialisationMaster",AddSpecialisationMaster_NewBackoffice);
-app.use("/BackofficeApi/GetSpecialisationMasterList",GetSpecialisationMasterList_NewBackoffice);
-app.use("/BackofficeApi/DeleteSpecialisationMaster",DeleteSpecialisationMaster_NewBackoffice);
-app.use("/BackofficeApi/UpdateSpecialisationMaster",UpdateSpecialisationMaster_NewBackoffice);
+app.use("/BackofficeApi/AddSpecializationMaster",AddSpecializationMaster_NewBackoffice);
+app.use("/BackofficeApi/GetSpecializationMasterList",GetSpecializationMasterList_NewBackoffice);
+app.use("/BackofficeApi/DeleteSpecializationMaster",DeleteSpecializationMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateSpecializationMaster",UpdateSpecializationMaster_NewBackoffice);
 
 app.use("/BackofficeApi/DeleteFoodVariantImage",DeleteFoodVariantImage_NewBackoffice);
 app.use("/BackofficeApi/UpdateFoodVariant",UpdateFoodVariant_NewBackoffice);
