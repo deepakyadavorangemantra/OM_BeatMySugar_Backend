@@ -541,7 +541,7 @@ const UpdateSpecializationMaster_NewBackoffice = require("./api/routes/Backoffic
 const UpdateDoctorApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDoctorApprovalStatus")
 const UpdateDietitianApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDietitianApprovalStatus")
 const UpdateHealthCenterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterApprovalStatus")
-
+const UpdateVendorApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorApprovalStatus")
 
 
 
@@ -1247,6 +1247,7 @@ app.use("/BackofficeApi/UpdateSocksVariant",UpdateSocksVariant_NewBackoffice);
 app.use("/BackofficeApi/UpdateDoctorApprovalStatus",UpdateDoctorApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateDietitianApprovalStatus",UpdateDietitianApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateHealthCenterApprovalStatus",UpdateHealthCenterApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateVendorApprovalStatus",UpdateVendorApprovalStatus_NewBackoffice);
 
 //-------------------------Web----------------------------------------------
 
