@@ -468,13 +468,24 @@ const GetSpecialisationMasterList_NewBackoffice = require("./api/routes/Backoffi
 
 
 
+const GetUserMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserMenu")
+const GetUserSubMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserSubMenu")
+
+const GetMenuList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetMenuList")
+const GetSubMenuList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSubMenuList")
+
+const AddUserMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserMenu")
+const AddUserSubMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserSubMenu")
+
+const GetUserSubMenuAccessRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserSubMenuAccessRights")
 
 
+const GetUserMenuList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserMenuList")
+const GetUserSubMenuList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserSubMenuList")
 
 
-
-
-
+const UpdateMenuRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateMenuRights")
+const UpdateSubMenuRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSubMenuRights")
 
 //-------------- UPDATE ---------------
 
@@ -1241,6 +1252,24 @@ app.use("/BackofficeApi/UpdateFootwearVariant",UpdateFootwearVariant_NewBackoffi
 app.use("/BackofficeApi/DeleteSocksVariantImage",DeleteSocksVariantImage_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksVariant",UpdateSocksVariant_NewBackoffice);
 
+
+app.use("/BackofficeApi/GetUserMenu",GetUserMenu_NewBackoffice);
+app.use("/BackofficeApi/GetUserSubMenu",GetUserSubMenu_NewBackoffice);
+
+app.use("/BackofficeApi/GetMenuList",GetMenuList_NewBackoffice);
+app.use("/BackofficeApi/GetSubMenuList",GetSubMenuList_NewBackoffice);
+
+app.use("/BackofficeApi/AddUserMenu",AddUserMenu_NewBackoffice);
+app.use("/BackofficeApi/AddUserSubMenu",AddUserSubMenu_NewBackoffice);
+
+app.use("/BackofficeApi/GetUserSubMenuAccessRights",GetUserSubMenuAccessRights_NewBackoffice);
+
+
+app.use("/BackofficeApi/GetUserMenuList",GetUserMenuList_NewBackoffice);
+app.use("/BackofficeApi/GetUserSubMenuList",GetUserSubMenuList_NewBackoffice)
+
+app.use("/BackofficeApi/UpdateMenuRights",UpdateMenuRights_NewBackoffice);
+app.use("/BackofficeApi/UpdateSubMenuRights",UpdateSubMenuRights_NewBackoffice)
 
 //-------------------------Web----------------------------------------------
 
