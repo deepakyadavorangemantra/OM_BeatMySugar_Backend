@@ -557,9 +557,10 @@ const UpdateFoodItemMasterApprovalStatus_NewBackoffice = require("./api/routes/B
 const UpdateFootwearItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearItemMasterApprovalStatus")
 const UpdateBooksItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBooksItemMasterApprovalStatus")
 const UpdateSocksItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMasterApprovalStatus")
-
-
-
+const UpdateFoodVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFoodVariantApprovalStatus")
+const UpdateFootwearVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearItemMasterApprovalStatus")
+const UpdateBookVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBooksItemMasterApprovalStatus")
+const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMasterApprovalStatus")
 
 
 
@@ -1281,6 +1282,15 @@ app.use("/BackofficeApi/UpdateFoodItemMasterApprovalStatus",UpdateFoodItemMaster
 app.use("/BackofficeApi/UpdateFootwearItemMasterApprovalStatus",UpdateFootwearItemMasterApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateBooksItemMasterApprovalStatus",UpdateBooksItemMasterApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksItemMasterApprovalStatus",UpdateSocksItemMasterApprovalStatus_NewBackoffice)
+app.use("/BackofficeApi/UpdateFoodVariantApprovalStatus",UpdateFoodVariantApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateFootwearVariantApprovalStatus",UpdateFootwearVariantApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateBookVariantApprovalStatus",UpdateBookVariantApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateSocksVariantApprovalStatus",UpdateSocksVariantApprovalStatus_NewBackoffice)
+
+
+
+
+
 
 
 
