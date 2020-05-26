@@ -558,9 +558,9 @@ const UpdateFootwearItemMasterApprovalStatus_NewBackoffice = require("./api/rout
 const UpdateBooksItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBooksItemMasterApprovalStatus")
 const UpdateSocksItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMasterApprovalStatus")
 const UpdateFoodVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFoodVariantApprovalStatus")
-const UpdateFootwearVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearItemMasterApprovalStatus")
+const UpdateFootwearVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearVariantApprovalStatus")
 const UpdateBookVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBooksItemMasterApprovalStatus")
-const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMasterApprovalStatus")
+const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksVariantApprovalStatus")
 
 
 
