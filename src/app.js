@@ -542,9 +542,10 @@ const UpdateDoctorApprovalStatus_NewBackoffice = require("./api/routes/Backoffic
 const UpdateDietitianApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDietitianApprovalStatus")
 const UpdateHealthCenterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterApprovalStatus")
 const UpdateVendorApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorApprovalStatus")
-
-
-
+const UpdateFoodItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFoodItemMasterApprovalStatus")
+const UpdateFootwearItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearItemMasterApprovalStatus")
+const UpdateBooksItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBooksItemMasterApprovalStatus")
+const UpdateSocksItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMasterApprovalStatus")
 
 
 
@@ -1248,6 +1249,19 @@ app.use("/BackofficeApi/UpdateDoctorApprovalStatus",UpdateDoctorApprovalStatus_N
 app.use("/BackofficeApi/UpdateDietitianApprovalStatus",UpdateDietitianApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateHealthCenterApprovalStatus",UpdateHealthCenterApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateVendorApprovalStatus",UpdateVendorApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateFoodItemMasterApprovalStatus",UpdateFoodItemMasterApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateFootwearItemMasterApprovalStatus",UpdateFootwearItemMasterApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateBooksItemMasterApprovalStatus",UpdateBooksItemMasterApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateSocksItemMasterApprovalStatus",UpdateSocksItemMasterApprovalStatus_NewBackoffice)
+
+
+
+
+
+
+
+
+
 
 //-------------------------Web----------------------------------------------
 
