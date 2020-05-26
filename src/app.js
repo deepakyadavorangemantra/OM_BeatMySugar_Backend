@@ -538,6 +538,11 @@ const UpdateVendorFacilitiesMaster_NewBackoffice = require("./api/routes/Backoff
 const UpdateQualificationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateQualificationMaster")
 const UpdateSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSpecialisationMaster")
 
+const UpdateDoctorApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDoctorApprovalStatus")
+const UpdateDietitianApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDietitianApprovalStatus")
+const UpdateHealthCenterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterApprovalStatus")
+
+
 
 
 
@@ -585,8 +590,6 @@ const DeleteFoodVariantImage_NewBackoffice = require("./api/routes/Backoffice-Ne
 const DeleteBookVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteBookVariantImage")
 const DeleteFootwearVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteFootwearVariantImage")
 const DeleteSocksVariantImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSocksVariantImage")
-
-
 const DeleteHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteHealthCenterServicesMaster")
 const DeleteQualificationMaster_NewBackoffice  = require("./api/routes/Backoffice-New-Api/DeleteQualificationMaster")
 const DeleteSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSpecialisationMaster")
@@ -1240,6 +1243,10 @@ app.use("/BackofficeApi/UpdateFootwearVariant",UpdateFootwearVariant_NewBackoffi
 app.use("/BackofficeApi/DeleteSocksVariantImage",DeleteSocksVariantImage_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksVariant",UpdateSocksVariant_NewBackoffice);
 
+
+app.use("/BackofficeApi/UpdateDoctorApprovalStatus",UpdateDoctorApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateDietitianApprovalStatus",UpdateDietitianApprovalStatus_NewBackoffice);
+app.use("/BackofficeApi/UpdateHealthCenterApprovalStatus",UpdateHealthCenterApprovalStatus_NewBackoffice);
 
 //-------------------------Web----------------------------------------------
 
