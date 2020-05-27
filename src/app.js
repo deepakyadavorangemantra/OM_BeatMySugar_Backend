@@ -465,6 +465,7 @@ const GetAccreditationMasterList_NewBackoffice = require("./api/routes/Backoffic
 const GetVendorFacilitiesMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorFacilitiesMasterList")
 const GetQualificationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetQualificationMasterList")
 const GetSpecializationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSpecialisationMasterList")
+const GetUserInfoData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserInfoData")
 
 
 
@@ -1286,6 +1287,9 @@ app.use("/BackofficeApi/UpdateFoodVariantApprovalStatus",UpdateFoodVariantApprov
 app.use("/BackofficeApi/UpdateFootwearVariantApprovalStatus",UpdateFootwearVariantApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateBookVariantApprovalStatus",UpdateBookVariantApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateSocksVariantApprovalStatus",UpdateSocksVariantApprovalStatus_NewBackoffice)
+
+app.use("/BackofficeApi/GetUserInfoData",GetUserInfoData_NewBackoffice)
+
 
 
 
