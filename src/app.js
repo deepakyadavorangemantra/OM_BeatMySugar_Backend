@@ -469,13 +469,24 @@ const GetUserInfoData_NewBackoffice = require("./api/routes/Backoffice-New-Api/G
 
 
 
+const GetUserMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserMenu")
+const GetUserSubMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserSubMenu")
+
+const GetMenuList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetMenuList")
+const GetSubMenuList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSubMenuList")
+
+const AddUserMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserMenu")
+const AddUserSubMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserSubMenu")
+
+const GetUserSubMenuAccessRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserSubMenuAccessRights")
 
 
+const GetUserMenuList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserMenuList")
+const GetUserSubMenuList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserSubMenuList")
 
 
-
-
-
+const UpdateMenuRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateMenuRights")
+const UpdateSubMenuRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSubMenuRights")
 
 //-------------- UPDATE ---------------
 
@@ -548,9 +559,9 @@ const UpdateFootwearItemMasterApprovalStatus_NewBackoffice = require("./api/rout
 const UpdateBooksItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBooksItemMasterApprovalStatus")
 const UpdateSocksItemMasterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMasterApprovalStatus")
 const UpdateFoodVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFoodVariantApprovalStatus")
-const UpdateFootwearVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearItemMasterApprovalStatus")
+const UpdateFootwearVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearVariantApprovalStatus")
 const UpdateBookVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBooksItemMasterApprovalStatus")
-const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksItemMasterApprovalStatus")
+const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksVariantApprovalStatus")
 
 
 
@@ -1247,6 +1258,23 @@ app.use("/BackofficeApi/DeleteSocksVariantImage",DeleteSocksVariantImage_NewBack
 app.use("/BackofficeApi/UpdateSocksVariant",UpdateSocksVariant_NewBackoffice);
 
 
+app.use("/BackofficeApi/GetUserMenu",GetUserMenu_NewBackoffice);
+app.use("/BackofficeApi/GetUserSubMenu",GetUserSubMenu_NewBackoffice);
+
+app.use("/BackofficeApi/GetMenuList",GetMenuList_NewBackoffice);
+app.use("/BackofficeApi/GetSubMenuList",GetSubMenuList_NewBackoffice);
+
+app.use("/BackofficeApi/AddUserMenu",AddUserMenu_NewBackoffice);
+app.use("/BackofficeApi/AddUserSubMenu",AddUserSubMenu_NewBackoffice);
+
+app.use("/BackofficeApi/GetUserSubMenuAccessRights",GetUserSubMenuAccessRights_NewBackoffice);
+
+
+app.use("/BackofficeApi/GetUserMenuList",GetUserMenuList_NewBackoffice);
+app.use("/BackofficeApi/GetUserSubMenuList",GetUserSubMenuList_NewBackoffice)
+
+app.use("/BackofficeApi/UpdateMenuRights",UpdateMenuRights_NewBackoffice);
+app.use("/BackofficeApi/UpdateSubMenuRights",UpdateSubMenuRights_NewBackoffice)
 app.use("/BackofficeApi/UpdateDoctorApprovalStatus",UpdateDoctorApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateDietitianApprovalStatus",UpdateDietitianApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateHealthCenterApprovalStatus",UpdateHealthCenterApprovalStatus_NewBackoffice);
