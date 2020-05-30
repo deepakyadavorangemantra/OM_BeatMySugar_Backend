@@ -664,6 +664,11 @@ const GetFootwearGenderListingWebsite_NewBackoffice = require("./api/routes/Back
 const GetSocksMasterDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksMasterDetailsWebsite")
 const GetSocksVariantDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksVariantDetailsWebsite")
 const GetSocksGenderListingWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksGenderListingWebsite")
+
+
+const GetFilterFootwearListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFilterFootwearListing")
+
+const GetFilterSocksListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFilterSocksListing")
 //-----------------------------------------New API -------------------------------------------------------------
 
 
@@ -1393,6 +1398,9 @@ app.use("/BackofficeApi/GetFootwearGenderListingWebsite",GetFootwearGenderListin
 app.use("/BackofficeApi/GetSocksMasterDetailsWebsite",GetSocksMasterDetailsWebsite_NewBackoffice);
 app.use("/BackofficeApi/GetSocksVariantDetailsWebsite",GetSocksVariantDetailsWebsite_NewBackoffice);
 app.use("/BackofficeApi/GetSocksGenderListingWebsite",GetSocksGenderListingWebsite_NewBackoffice);
+
+app.use("/BackofficeApi/GetFilterFootwearListing",GetFilterFootwearListing_NewBackoffice);
+app.use("/BackofficeApi/GetFilterSocksListing",GetFilterSocksListing_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
 
 
