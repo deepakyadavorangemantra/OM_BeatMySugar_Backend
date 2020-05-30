@@ -647,6 +647,23 @@ const GetBlogCustomerLikedStatus_NewBackoffice = require("./api/routes/Backoffic
 const GetBlogComments_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetBlogComments")
 const AddBlogComments_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddBlogComments")
 const GetBlogTags_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetBlogTags")
+
+
+const GetFootwearListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearListing")
+const GetFootwearBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearBrandData")
+const GetFoodCategoryWebsiteData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodCategoryWebsiteData")
+const GetFoodListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodListing")
+
+const GetSocksListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksListing")
+const GetSocksBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksBrandData")
+
+const GetFootwearMasterDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearMasterDetailsWebsite")
+const GetFootwearVariantDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearVariantDetailsWebsite")
+const GetFootwearGenderListingWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearGenderListingWebsite")
+
+const GetSocksMasterDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksMasterDetailsWebsite")
+const GetSocksVariantDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksVariantDetailsWebsite")
+const GetSocksGenderListingWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksGenderListingWebsite")
 //-----------------------------------------New API -------------------------------------------------------------
 
 
@@ -1359,6 +1376,23 @@ app.use("/BackofficeApi/GetBlogCustomerLikedStatus",GetBlogCustomerLikedStatus_N
 app.use("/BackofficeApi/GetBlogComments",GetBlogComments_NewBackoffice);
 app.use("/BackofficeApi/AddBlogComments",AddBlogComments_NewBackoffice);
 app.use("/BackofficeApi/GetBlogTags",GetBlogTags_NewBackoffice);
+
+
+app.use("/BackofficeApi/GetFootwearListing",GetFootwearListing_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearBrandData",GetFootwearBrandData_NewBackoffice);
+app.use("/BackofficeApi/GetFoodCategoryWebsiteData",GetFoodCategoryWebsiteData_NewBackoffice);
+app.use("/BackofficeApi/GetFoodListing",GetFoodListing_NewBackoffice);
+
+app.use("/BackofficeApi/GetSocksListing",GetSocksListing_NewBackoffice);
+app.use("/BackofficeApi/GetSocksBrandData",GetSocksBrandData_NewBackoffice);
+
+app.use("/BackofficeApi/GetFootwearMasterDetailsWebsite",GetFootwearMasterDetailsWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearVariantDetailsWebsite",GetFootwearVariantDetailsWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearGenderListingWebsite",GetFootwearGenderListingWebsite_NewBackoffice);
+
+app.use("/BackofficeApi/GetSocksMasterDetailsWebsite",GetSocksMasterDetailsWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetSocksVariantDetailsWebsite",GetSocksVariantDetailsWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetSocksGenderListingWebsite",GetSocksGenderListingWebsite_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
 
 
