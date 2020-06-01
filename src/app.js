@@ -669,6 +669,12 @@ const GetSocksGenderListingWebsite_NewBackoffice = require("./api/routes/Backoff
 const GetFilterFootwearListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFilterFootwearListing")
 
 const GetFilterSocksListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFilterSocksListing")
+const GetFoodBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodBrandData")
+
+const GetFoodMasterDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodMasterDetailsWebsite")
+const GetFoodCategoryListingWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodCategoryListingWebsite")
+const GetFoodVariantDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodVariantDetailsWebsite")
+const GetFilterFoodListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFilterFoodListing")
 //-----------------------------------------New API -------------------------------------------------------------
 
 
@@ -1401,6 +1407,12 @@ app.use("/BackofficeApi/GetSocksGenderListingWebsite",GetSocksGenderListingWebsi
 
 app.use("/BackofficeApi/GetFilterFootwearListing",GetFilterFootwearListing_NewBackoffice);
 app.use("/BackofficeApi/GetFilterSocksListing",GetFilterSocksListing_NewBackoffice);
+app.use("/BackofficeApi/GetFoodBrandData",GetFoodBrandData_NewBackoffice);
+
+app.use("/BackofficeApi/GetFoodMasterDetailsWebsite",GetFoodMasterDetailsWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFoodCategoryListingWebsite",GetFoodCategoryListingWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFoodVariantDetailsWebsite",GetFoodVariantDetailsWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFilterFoodListing",GetFilterFoodListing_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
 
 
