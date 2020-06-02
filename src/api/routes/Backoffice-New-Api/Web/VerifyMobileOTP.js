@@ -23,6 +23,7 @@ router.post("/", function(request, response){
         if(error) {
             console.log(error);
             // response.status(500);
+            // response.send(response.statusCode)
         } else {
             // response.status(200);
             console.log(response.statusCode, body);
