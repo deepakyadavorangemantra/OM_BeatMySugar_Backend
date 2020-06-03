@@ -5,12 +5,17 @@ const dbConnection = require("../../../utilities/db1");
 
 
 
-router.get("/", function(request, response){
+router.post("/", function(request, response){
    
-console.log(dbConnection);
+    var dietitianid = request.body.dietitianid;
+
     try{
         const req = new sql.Request(dbConnection);
-        req.execute("dbo.Get_Country", function(err, data){
+
+        req.input('dietitianid',sql.Int, dietitianid);
+
+
+        req.execute("dbo.Get_DietitianHealthCenterApp", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

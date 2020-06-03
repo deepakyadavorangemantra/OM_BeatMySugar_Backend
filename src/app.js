@@ -477,8 +477,8 @@ const GetQualificationMasterList_NewBackoffice = require("./api/routes/Backoffic
 const GetSpecializationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSpecialisationMasterList")
 const GetUserInfoData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserInfoData")
 const GetOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOffer")
-
-
+const GetHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDoctorMapping")
+const GetHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMapping")
 
 
 
@@ -1437,6 +1437,11 @@ app.use("/BackofficeApi/GetFoodCategoryListingWebsite",GetFoodCategoryListingWeb
 app.use("/BackofficeApi/GetFoodVariantDetailsWebsite",GetFoodVariantDetailsWebsite_NewBackoffice);
 app.use("/BackofficeApi/GetFilterFoodListing",GetFilterFoodListing_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
+
+app.use("/BackofficeApi/GetHealthCenterDoctorMapping",GetHealthCenterDoctorMapping_NewBackoffice);
+app.use("/BackofficeApi/GetHealthCenterDietitianMapping",GetHealthCenterDietitianMapping_NewBackoffice);
+
+
 
 
 module.exports = app;
