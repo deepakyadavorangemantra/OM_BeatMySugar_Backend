@@ -707,6 +707,8 @@ const DeleteItemShoppingCart_NewBackoffice = require("./api/routes/Backoffice-Ne
 const ClearShoppingCart_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/ClearShoppingCart")
 const GetExtraCharges_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetExtraCharges")
 const GetOfferWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetOfferWebsite")
+
+const GetAddressCustomer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetAddressCustomer")
 //-----------------------------------------New API -------------------------------------------------------------
 
 
@@ -1463,11 +1465,15 @@ app.use("/BackofficeApi/DeleteItemShoppingCart",DeleteItemShoppingCart_NewBackof
 app.use("/BackofficeApi/ClearShoppingCart",ClearShoppingCart_NewBackoffice);
 app.use("/BackofficeApi/GetExtraCharges",GetExtraCharges_NewBackoffice);
 app.use("/BackofficeApi/GetOfferWebsite",GetOfferWebsite_NewBackoffice);
+
+app.use("/BackofficeApi/GetAddressCustomer",GetAddressCustomer_NewBackoffice);
+
 //-----------------------------------------New API -------------------------------------------------------------
 
 app.use("/BackofficeApi/GetHealthCenterDoctorMapping",GetHealthCenterDoctorMapping_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterDietitianMapping",GetHealthCenterDietitianMapping_NewBackoffice);
 app.use("/BackofficeApi/IfEmailExistsSocial",IfEmailExistsSocial_NewBackoffice);
+
 
 
 

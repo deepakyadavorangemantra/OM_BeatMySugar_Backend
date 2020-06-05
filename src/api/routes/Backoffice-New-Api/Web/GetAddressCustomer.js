@@ -1,16 +1,21 @@
 const express = require("express");
 const router = express.Router();
 const sql = require("mssql");
-const dbConnection = require("../../../utilities/db1");
+const dbConnection = require("../../../../utilities/db1");
 
 
-
-router.get("/", function(request, response){
+router.post("/", function(request, response){
    
+    var customer_id = request.body.customer_id;
+    
+
     try{
-        
         const req = new sql.Request(dbConnection);
-        req.execute("dbo.Get_Country", function(err, data){
+
+        req.input('customer_id',sql.Int, customer_id);
+       
+
+        req.execute("dbo.Get_GetAddressCustomer", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
