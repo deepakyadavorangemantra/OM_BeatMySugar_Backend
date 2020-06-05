@@ -675,6 +675,19 @@ const GetFoodMasterDetailsWebsite_NewBackoffice = require("./api/routes/Backoffi
 const GetFoodCategoryListingWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodCategoryListingWebsite")
 const GetFoodVariantDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodVariantDetailsWebsite")
 const GetFilterFoodListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFilterFoodListing")
+
+const AddShoppingCart_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddShoppingCart")
+
+const GetCartFoodVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartFoodVariant")
+const GetCartSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartSocksVariant")
+const GetCartFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartFootwearVariant")
+
+const DeductShoppingCart_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/DeductShoppingCart")
+const DeleteItemShoppingCart_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/DeleteItemShoppingCart")
+
+const ClearShoppingCart_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/ClearShoppingCart")
+const GetExtraCharges_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetExtraCharges")
+const GetOfferWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetOfferWebsite")
 //-----------------------------------------New API -------------------------------------------------------------
 
 
@@ -1413,6 +1426,20 @@ app.use("/BackofficeApi/GetFoodMasterDetailsWebsite",GetFoodMasterDetailsWebsite
 app.use("/BackofficeApi/GetFoodCategoryListingWebsite",GetFoodCategoryListingWebsite_NewBackoffice);
 app.use("/BackofficeApi/GetFoodVariantDetailsWebsite",GetFoodVariantDetailsWebsite_NewBackoffice);
 app.use("/BackofficeApi/GetFilterFoodListing",GetFilterFoodListing_NewBackoffice);
+
+
+app.use("/BackofficeApi/AddShoppingCart",AddShoppingCart_NewBackoffice);
+
+app.use("/BackofficeApi/GetCartFoodVariant",GetCartFoodVariant_NewBackoffice);
+app.use("/BackofficeApi/GetCartFootwearVariant",GetCartFootwearVariant_NewBackoffice);
+app.use("/BackofficeApi/GetCartSocksVariant",GetCartSocksVariant_NewBackoffice);
+
+app.use("/BackofficeApi/DeductShoppingCart",DeductShoppingCart_NewBackoffice);
+app.use("/BackofficeApi/DeleteItemShoppingCart",DeleteItemShoppingCart_NewBackoffice);
+
+app.use("/BackofficeApi/ClearShoppingCart",ClearShoppingCart_NewBackoffice);
+app.use("/BackofficeApi/GetExtraCharges",GetExtraCharges_NewBackoffice);
+app.use("/BackofficeApi/GetOfferWebsite",GetOfferWebsite_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
 
 
