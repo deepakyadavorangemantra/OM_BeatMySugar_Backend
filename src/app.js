@@ -370,8 +370,8 @@ const AddQualificationMaster_NewBackoffice = require("./api/routes/Backoffice-Ne
 const AddSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSpecialisationMaster")
 const AddOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOffer")
 const AddUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserAddressMapping")
-
-
+const AddOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrder")
+const AddOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrderDetail")
 
 
 
@@ -1393,6 +1393,8 @@ app.use("/BackofficeApi/AddBookVariantImage",AddBookVariantImage_NewBackoffice);
 app.use("/BackofficeApi/AddBookVariantVendorPricing",AddBookVariantVendorPricing_NewBackoffice);
 
 app.use("/BackofficeApi/GetBookVariantList",GetBookVariantList_NewBackoffice);
+app.use("/BackofficeApi/AddOrder",AddOrder_NewBackoffice);
+app.use("/BackofficeApi/AddOrderDetail",AddOrderDetail_NewBackoffice);
 
 //-------------------------Web----------------------------------------------
 app.use("/BackofficeApi/GetBlogNine",GetBlogNine_NewBackoffice);
