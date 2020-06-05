@@ -479,7 +479,7 @@ const GetUserInfoData_NewBackoffice = require("./api/routes/Backoffice-New-Api/G
 const GetOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOffer")
 const GetHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDoctorMapping")
 const GetHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMapping")
-
+const IfEmailExistsSocial_NewBackoffice = require("./api/routes/Backoffice-New-Api/IfEmailExistsSocial")
 
 
 
@@ -1440,6 +1440,8 @@ app.use("/BackofficeApi/GetFilterFoodListing",GetFilterFoodListing_NewBackoffice
 
 app.use("/BackofficeApi/GetHealthCenterDoctorMapping",GetHealthCenterDoctorMapping_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterDietitianMapping",GetHealthCenterDietitianMapping_NewBackoffice);
+app.use("/BackofficeApi/IfEmailExistsSocial",IfEmailExistsSocial_NewBackoffice);
+
 
 
 

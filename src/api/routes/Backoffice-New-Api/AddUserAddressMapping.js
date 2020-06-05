@@ -16,7 +16,6 @@ router.post("/", function(request, response){
     var state = request.body.state;
     var city = request.body.city;
     var pincode = request.body.pincode;
-    var type = request.body.type;
     var updated_by = request.body.updated_by;
     var updated_on = request.body.updated_on;
 
@@ -33,7 +32,6 @@ router.post("/", function(request, response){
         req.input('state',sql.NVarChar(50), state);
         req.input('city',sql.NVarChar(50), city);
         req.input('pincode',sql.NVarChar(10), pincode);
-        req.input('type',sql.NVarChar(100), type);
         req.input('updated_on',sql.NVarChar(200), updated_on);
         req.input('updated_by',sql.Int,updated_by);
 
