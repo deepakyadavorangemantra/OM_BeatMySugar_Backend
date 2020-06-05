@@ -1,23 +1,30 @@
 const express = require("express");
 const router = express.Router();
 const sql = require("mssql");
+
 const dbConnection = require("../../../utilities/db1");
 
 
-
-router.get("/", function(request, response){
+router.post("/", function(request, response){
    
-console.log(dbConnection);
+    var email = request.body.email;
+
+ 
+
     try{
-        
         const req = new sql.Request(dbConnection);
-        req.execute("dbo.Get_Country", function(err, data){
+    
+        req.input('email',sql.NVarChar(100), email);
+    
+    
+        req.execute("dbo.Get_IfEmailExistsSocial", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
                     data:err.message
                 });
             }else{
+         
                 response.status(200).json({
                     data: data.recordset
                 });

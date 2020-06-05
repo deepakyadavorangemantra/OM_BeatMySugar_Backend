@@ -368,8 +368,8 @@ const AddAccreditationMaster_NewBackoffice = require("./api/routes/Backoffice-Ne
 const AddVendorFacilityMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorFacilityMaster")
 const AddQualificationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddQualificationMaster")
 const AddSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSpecialisationMaster")
-
-
+const AddOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOffer")
+const AddUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserAddressMapping")
 
 
 
@@ -414,8 +414,18 @@ const GetSocksVariantList_NewBackoffice = require("./api/routes/Backoffice-New-A
 const GetVendorFacilitiesData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorFacilitiesData")
 const GetVendorLicenseData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorLicenseData")
 const GetVendorAccreditationData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorAccreditationData")
-
 const GetVendorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorList")
+const GetUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserAddressMapping")
+
+
+
+
+
+
+
+
+
+
 //----------- GET MASTER ------------------
 
 const GetBookCategoryList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBookCategoryList")
@@ -466,6 +476,15 @@ const GetVendorFacilitiesMasterList_NewBackoffice = require("./api/routes/Backof
 const GetQualificationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetQualificationMasterList")
 const GetSpecializationMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSpecialisationMasterList")
 const GetUserInfoData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserInfoData")
+const GetOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOffer")
+const GetHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDoctorMapping")
+const GetHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMapping")
+const IfEmailExistsSocial_NewBackoffice = require("./api/routes/Backoffice-New-Api/IfEmailExistsSocial")
+
+
+
+
+
 
 
 
@@ -562,7 +581,7 @@ const UpdateFoodVariantApprovalStatus_NewBackoffice = require("./api/routes/Back
 const UpdateFootwearVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFootwearVariantApprovalStatus")
 const UpdateBookVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBooksItemMasterApprovalStatus")
 const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksVariantApprovalStatus")
-
+const UpdateOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateOffer")
 
 
 
@@ -608,7 +627,7 @@ const DeleteHealthCenterServicesMaster_NewBackoffice = require("./api/routes/Bac
 const DeleteQualificationMaster_NewBackoffice  = require("./api/routes/Backoffice-New-Api/DeleteQualificationMaster")
 const DeleteSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSpecialisationMaster")
 const DeleteVendorFacilityMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteVendorFacilityMaster")
-
+const DeleteUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteUserAddressMapping")
 
 
 
@@ -1332,10 +1351,14 @@ app.use("/BackofficeApi/UpdateSocksVariantApprovalStatus",UpdateSocksVariantAppr
 app.use("/BackofficeApi/GetUserInfoData",GetUserInfoData_NewBackoffice)
 
 
+app.use("/BackofficeApi/AddOffer",AddOffer_NewBackoffice)
+app.use("/BackofficeApi/GetOffer",GetOffer_NewBackoffice)
+app.use("/BackofficeApi/UpdateOffer",UpdateOffer_NewBackoffice)
 
 
-
-
+app.use("/BackofficeApi/AddUserAddressMapping",AddUserAddressMapping_NewBackoffice)
+app.use("/BackofficeApi/GetUserAddressMapping",GetUserAddressMapping_NewBackoffice)
+app.use("/BackofficeApi/DeleteUserAddressMapping",DeleteUserAddressMapping_NewBackoffice)
 
 
 
@@ -1441,6 +1464,13 @@ app.use("/BackofficeApi/ClearShoppingCart",ClearShoppingCart_NewBackoffice);
 app.use("/BackofficeApi/GetExtraCharges",GetExtraCharges_NewBackoffice);
 app.use("/BackofficeApi/GetOfferWebsite",GetOfferWebsite_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
+
+app.use("/BackofficeApi/GetHealthCenterDoctorMapping",GetHealthCenterDoctorMapping_NewBackoffice);
+app.use("/BackofficeApi/GetHealthCenterDietitianMapping",GetHealthCenterDietitianMapping_NewBackoffice);
+app.use("/BackofficeApi/IfEmailExistsSocial",IfEmailExistsSocial_NewBackoffice);
+
+
+
 
 
 module.exports = app;
