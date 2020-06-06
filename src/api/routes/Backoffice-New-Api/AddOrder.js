@@ -16,6 +16,7 @@ router.post("/", function(request, response){
     var orderdate = request.body.orderdate;
     var ordervalue = request.body.ordervalue;
     var paymentmode = request.body.paymentmode;
+    var netcost = request.body.netcost;
     var numofitems = request.body.numofitems;
     var customerid = request.body.customerid;
     var billingaddress = request.body.billingaddress;
@@ -55,6 +56,7 @@ router.post("/", function(request, response){
         req.input('orderdate',sql.NVarChar(200), orderdate);
         req.input('ordervalue',sql.Decimal(18,2), ordervalue);
         req.input('paymentmode',sql.NVarChar(100), paymentmode);
+        req.input('netcost',sql.Int, netcost);
         req.input('numofitems',sql.Int, numofitems);
         req.input('customerid',sql.Int, customerid);
         req.input('billingaddress',sql.NVarChar(200), billingaddress);
