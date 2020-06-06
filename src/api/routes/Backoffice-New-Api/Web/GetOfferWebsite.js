@@ -1,16 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const sql = require("mssql");
-const dbConnection = require("../../../utilities/db1");
+const dbConnection = require("../../../../utilities/db1");
 
 
 
 router.get("/", function(request, response){
    
+
     try{
         
         const req = new sql.Request(dbConnection);
-        req.execute("dbo.Get_Country", function(err, data){
+        req.execute("dbo.Get_OfferWebsite", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

@@ -44,12 +44,13 @@ router.post("/", function(request, response){
     var billingpincode = request.body.billingpincode;
     var billingmobile = request.body.billingmobile;
 
+    console.log(request.body)
 
     try{
         const req = new sql.Request(dbConnection);
     
         req.input('offerid',sql.Int, offerid);
-        req.input('offeramount ',sql.NVarChar(200), offeramount );
+        req.input('offeramount',sql.NVarChar(200), offeramount );
         req.input('shippingcharges',sql.NVarChar(200), shippingcharges);
         req.input('coddeliverycharges',sql.NVarChar(200), coddeliverycharges);
 
@@ -102,6 +103,7 @@ router.post("/", function(request, response){
         });
 
     }catch (err){
+        // console.log(err)
         response.status(500);
         response.send(err.message);
     }
