@@ -44,7 +44,6 @@ router.post("/", function(request, response){
     var billingpincode = request.body.billingpincode;
     var billingmobile = request.body.billingmobile;
 
-    console.log(request.body)
 
     try{
         const req = new sql.Request(dbConnection);
