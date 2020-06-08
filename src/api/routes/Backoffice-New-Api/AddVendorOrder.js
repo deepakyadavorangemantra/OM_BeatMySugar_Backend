@@ -9,6 +9,7 @@ router.post("/", function(request, response){
    
        
     var offerid = request.body.offerid;
+    var orderid = request.body.orderid;
     var offeramount = request.body.offeramount;
     var shippingcharges = request.body.shippingcharges;
     var coddeliverycharges = request.body.coddeliverycharges;
@@ -25,6 +26,9 @@ router.post("/", function(request, response){
     var status = request.body.status;
     var updated_on = request.body.updated_on;
     var updated_by = request.body.updated_by;
+
+    var staffid = request.body.staffid;    
+    var vendorid = request.body.vendorid;
 
     var shippingname = request.body.shippingname;
     var shippingstreet = request.body.shippingstreet;
@@ -49,6 +53,7 @@ router.post("/", function(request, response){
         const req = new sql.Request(dbConnection);
     
         req.input('offerid',sql.Int, offerid);
+        req.input('orderid',sql.Int, orderid);
         req.input('offeramount',sql.NVarChar(200), offeramount );
         req.input('shippingcharges',sql.NVarChar(200), shippingcharges);
         req.input('coddeliverycharges',sql.NVarChar(200), coddeliverycharges);
@@ -65,6 +70,9 @@ router.post("/", function(request, response){
         req.input('status',sql.NVarChar(50), status);
         req.input('updated_on',sql.NVarChar(200), updated_on);
         req.input('updated_by',sql.Int, updated_by);
+
+        req.input('staffid',sql.Int, staffid);
+        req.input('vendorid',sql.Int, vendorid);
 
         req.input('shippingname',sql.NVarChar(100), shippingname);
         req.input('shippingstreet',sql.NVarChar(200), shippingstreet);
@@ -87,7 +95,7 @@ router.post("/", function(request, response){
        
    
     
-        req.execute("dbo.Add_Order", function(err, data){
+        req.execute("dbo.Add_VendorOrder", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

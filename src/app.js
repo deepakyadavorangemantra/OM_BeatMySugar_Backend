@@ -292,7 +292,7 @@ const TestDeleteImage = require("./api/routes/TestDeleteImage");
 //----------- AUTH-----------------
 
 const AuthenticateStaff_NewBackoffice = require("./api/routes/Backoffice-New-Api/AuthenticateStaff")
-
+const VendorAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/VendorAuth")
 //----------- ADD ------------------
 
 const AddStaffLoginSession_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddStaffLoginSession")
@@ -508,7 +508,7 @@ const UpdateMenuRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/
 const UpdateSubMenuRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSubMenuRights")
 
 //-------------- UPDATE ---------------
-
+const ChangeVendorPassword_NewBackoffice = require("./api/routes/Backoffice-New-Api/ChangeVendorPassword")
 const ChangePassword_NewBackoffice = require("./api/routes/Backoffice-New-Api/ChangePassword")
 const UpdateStaff_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateStaff")
 const UpdateContributor_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateContributor")
@@ -716,6 +716,12 @@ const GetFoodOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const GetSocksOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksOrderDetail")
 const GetFootwearOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearOrderDetail")
 //-----------------------------------------New API -------------------------------------------------------------
+
+//---------------------------Vendor-------------------------
+
+const AddVendorOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorOrder")
+const AddVendorOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorOrderDetail")
+
 
 
 
@@ -1489,7 +1495,9 @@ app.use("/BackofficeApi/IfEmailExistsSocial",IfEmailExistsSocial_NewBackoffice);
 
 
 
-
-
-
+//-----------------------Vendor-----------------------
+app.use("/BackofficeApi/VendorAuth",VendorAuth_NewBackoffice);
+app.use("/BackofficeApi/ChangeVendorPassword",ChangeVendorPassword_NewBackoffice);
+app.use("/BackofficeApi/AddVendorOrder",AddVendorOrder_NewBackoffice);
+app.use("/BackofficeApi/AddVendorOrderDetail",AddVendorOrderDetail_NewBackoffice);
 module.exports = app;
