@@ -292,7 +292,7 @@ const TestDeleteImage = require("./api/routes/TestDeleteImage");
 //----------- AUTH-----------------
 
 const AuthenticateStaff_NewBackoffice = require("./api/routes/Backoffice-New-Api/AuthenticateStaff")
-
+const VendorAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/VendorAuth")
 //----------- ADD ------------------
 
 const AddStaffLoginSession_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddStaffLoginSession")
@@ -1478,7 +1478,8 @@ app.use("/BackofficeApi/IfEmailExistsSocial",IfEmailExistsSocial_NewBackoffice);
 
 
 
-
+//-----------------------Vendor-----------------------
+app.use("/BackofficeApi/VendorAuth",VendorAuth_NewBackoffice);
 
 
 module.exports = app;
