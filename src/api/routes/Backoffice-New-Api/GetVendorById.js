@@ -7,16 +7,16 @@ const dbConnection = require("../../utilities/db");
 
 router.post("/", function(request, response){
    
-    var vendorid= request.body.vendorid;
+    var foodid= request.body.foodid;
 
     try{
         const req = new sql.Request(dbConnection);
     
 
-        req.input('vendorid',sql.Int, vendorid);
+        req.input('foodid',sql.Int, foodid);
      
     
-        req.execute("dbo.Get_VendorById", function(err, data){
+        req.execute("dbo.Get_FoodImageMapping", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
