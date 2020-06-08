@@ -508,7 +508,7 @@ const UpdateMenuRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/
 const UpdateSubMenuRights_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSubMenuRights")
 
 //-------------- UPDATE ---------------
-
+const ChangeVendorPassword_NewBackoffice = require("./api/routes/Backoffice-New-Api/ChangeVendorPassword")
 const ChangePassword_NewBackoffice = require("./api/routes/Backoffice-New-Api/ChangePassword")
 const UpdateStaff_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateStaff")
 const UpdateContributor_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateContributor")
@@ -1480,6 +1480,6 @@ app.use("/BackofficeApi/IfEmailExistsSocial",IfEmailExistsSocial_NewBackoffice);
 
 //-----------------------Vendor-----------------------
 app.use("/BackofficeApi/VendorAuth",VendorAuth_NewBackoffice);
-
+app.use("/BackofficeApi/ChangeVendorPassword",ChangeVendorPassword_NewBackoffice);
 
 module.exports = app;
