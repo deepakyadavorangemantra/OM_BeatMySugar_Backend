@@ -711,6 +711,12 @@ const GetOfferWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/W
 const GetAddressCustomer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetAddressCustomer")
 //-----------------------------------------New API -------------------------------------------------------------
 
+//---------------------------Vendor-------------------------
+
+const AddVendorOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorOrder")
+const AddVendorOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorOrderDetail")
+
+
 
 
 const app = express();
@@ -1481,5 +1487,6 @@ app.use("/BackofficeApi/IfEmailExistsSocial",IfEmailExistsSocial_NewBackoffice);
 //-----------------------Vendor-----------------------
 app.use("/BackofficeApi/VendorAuth",VendorAuth_NewBackoffice);
 app.use("/BackofficeApi/ChangeVendorPassword",ChangeVendorPassword_NewBackoffice);
-
+app.use("/BackofficeApi/AddVendorOrder",AddVendorOrder_NewBackoffice);
+app.use("/BackofficeApi/AddVendorOrderDetail",AddVendorOrderDetail_NewBackoffice);
 module.exports = app;
