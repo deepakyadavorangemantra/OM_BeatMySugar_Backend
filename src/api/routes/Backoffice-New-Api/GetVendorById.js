@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const sql = require("mssql");
 
-const dbConnection = require("../../../utilities/db");
+const dbConnection = require("../../../utilities/db1");
 
 
 router.post("/", function(request, response){
