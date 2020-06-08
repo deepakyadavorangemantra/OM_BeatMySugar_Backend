@@ -709,6 +709,12 @@ const GetExtraCharges_NewBackoffice = require("./api/routes/Backoffice-New-Api/W
 const GetOfferWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetOfferWebsite")
 
 const GetAddressCustomer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetAddressCustomer")
+
+const GetNewOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetNewOrders")
+const GetOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetOrderDetail")
+const GetFoodOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodOrderDetail")
+const GetSocksOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksOrderDetail")
+const GetFootwearOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearOrderDetail")
 //-----------------------------------------New API -------------------------------------------------------------
 
 
@@ -1469,7 +1475,12 @@ app.use("/BackofficeApi/GetExtraCharges",GetExtraCharges_NewBackoffice);
 app.use("/BackofficeApi/GetOfferWebsite",GetOfferWebsite_NewBackoffice);
 
 app.use("/BackofficeApi/GetAddressCustomer",GetAddressCustomer_NewBackoffice);
+app.use("/BackofficeApi/GetNewOrders",GetNewOrders_NewBackoffice);
+app.use("/BackofficeApi/GetOrderDetail",GetOrderDetail_NewBackoffice);
 
+app.use("/BackofficeApi/GetFoodOrderDetail",GetFoodOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetSocksOrderDetail",GetSocksOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearOrderDetail",GetFootwearOrderDetail_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
 
 app.use("/BackofficeApi/GetHealthCenterDoctorMapping",GetHealthCenterDoctorMapping_NewBackoffice);
