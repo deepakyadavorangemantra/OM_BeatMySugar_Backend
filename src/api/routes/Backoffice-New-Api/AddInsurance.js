@@ -21,8 +21,8 @@ router.post("/", function(request, response){
     var selfdisclousre = request.body.selfdisclousre;
     var height = request.body.height;
     var weight = request.body.weight;
-    var updated_on = request.body.updated_on;
-    var updated_by = request.body.updated_by;
+    var updatedon = request.body.updatedon;
+    var updatedby = request.body.updatedby;
 
 
     try{
@@ -43,8 +43,8 @@ router.post("/", function(request, response){
         req.input('selfdisclousre',sql.NVarChar(500), selfdisclousre);
         req.input('height',sql.NVarChar(100), height);
         req.input('weight',sql.NVarChar(100), weight);
-        req.input('updated_on',sql.NVarChar(200), updated_on);
-        req.input('updated_by',sql.Int, updated_by);
+        req.input('updatedon',sql.NVarChar(200), updatedon);
+        req.input('updatedby',sql.Int, updatedby);
        
    
     
