@@ -372,7 +372,7 @@ const AddOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOffer
 const AddUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserAddressMapping")
 const AddOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrder")
 const AddOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrderDetail")
-const AddSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSellWithUs")
+const AddSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/ AddSellWithUs")
 
 
 
@@ -418,14 +418,11 @@ const GetVendorLicenseData_NewBackoffice = require("./api/routes/Backoffice-New-
 const GetVendorAccreditationData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorAccreditationData")
 const GetVendorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorList")
 const GetUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserAddressMapping")
-<<<<<<< HEAD
 const GetVendorOrderById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorOrderById")
 const GetOrderVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOrderVendor")
 
-=======
 const GetVendorOrderById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorOrderByID")
->>>>>>> c68e9760f3d583ae041e2fab66239bf3da6f095c
-
+const GetSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSellWithUs")
 
 
 
@@ -1394,7 +1391,7 @@ app.use("/BackofficeApi/GetOrderVendor",GetOrderVendor_NewBackoffice)
 
 
 app.use("/BackofficeApi/AddSellWithUs",AddSellWithUs_NewBackoffice)
-
+app.use("/BackofficeApi/GetSellWithUs",GetSellWithUs_NewBackoffice)
 
 
 
