@@ -721,7 +721,7 @@ const GetFootwearOrderDetail_NewBackoffice = require("./api/routes/Backoffice-Ne
 
 const AddVendorOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorOrder")
 const AddVendorOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddVendorOrderDetail")
-
+const GetVendorById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorById")
 
 
 
@@ -1500,4 +1500,5 @@ app.use("/BackofficeApi/VendorAuth",VendorAuth_NewBackoffice);
 app.use("/BackofficeApi/ChangeVendorPassword",ChangeVendorPassword_NewBackoffice);
 app.use("/BackofficeApi/AddVendorOrder",AddVendorOrder_NewBackoffice);
 app.use("/BackofficeApi/AddVendorOrderDetail",AddVendorOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetVendorById",GetVendorById_NewBackoffice);
 module.exports = app;
