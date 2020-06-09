@@ -1380,7 +1380,7 @@ app.use("/BackofficeApi/GetVendorOrderById",GetVendorOrderById_NewBackoffice)
 
 
 
-app.use("/BackofficeApi/GetOrderVendo",GetOrderVendor_NewBackoffice)
+app.use("/BackofficeApi/GetOrderVendor",GetOrderVendor_NewBackoffice)
 
 
 app.use("/BackofficeApi/AddSellWithUs",AddSellWithUs_NewBackoffice)
