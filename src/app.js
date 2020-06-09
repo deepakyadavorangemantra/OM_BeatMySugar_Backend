@@ -373,7 +373,7 @@ const AddUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New
 const AddOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrder")
 const AddOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrderDetail")
 const AddSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSellWithUs")
-
+const AddInsurance_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddInsurance")
 
 
 
@@ -1392,7 +1392,7 @@ app.use("/BackofficeApi/GetOrderVendor",GetOrderVendor_NewBackoffice)
 
 app.use("/BackofficeApi/AddSellWithUs",AddSellWithUs_NewBackoffice)
 app.use("/BackofficeApi/GetSellWithUs",GetSellWithUs_NewBackoffice)
-
+app.use("/BackofficeApi/AddInsurance",AddInsurance_NewBackoffice)
 
 
 
