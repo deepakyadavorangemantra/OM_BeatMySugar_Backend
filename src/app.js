@@ -372,7 +372,7 @@ const AddOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOffer
 const AddUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserAddressMapping")
 const AddOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrder")
 const AddOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrderDetail")
-const AddSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/ AddSellWithUs")
+const AddSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSellWithUs")
 
 
 
