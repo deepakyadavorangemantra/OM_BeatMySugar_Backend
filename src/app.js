@@ -419,6 +419,8 @@ const GetVendorAccreditationData_NewBackoffice = require("./api/routes/Backoffic
 const GetVendorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorList")
 const GetUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserAddressMapping")
 const GetVendorOrderById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorOrderById")
+const GetOrderVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOrderVendor")
+
 
 
 
@@ -1378,6 +1380,7 @@ app.use("/BackofficeApi/GetVendorOrderById",GetVendorOrderById_NewBackoffice)
 
 
 
+app.use("/BackofficeApi/GetOrderVendo",GetOrderVendor_NewBackoffice)
 
 
 app.use("/BackofficeApi/AddSellWithUs",AddSellWithUs_NewBackoffice)
