@@ -10,6 +10,7 @@ router.post("/", function(request, response){
        
     var offerid = request.body.offerid;
     var offeramount = request.body.offeramount;
+    var offerpercent = request.body.offerpercent;
     var shippingcharges = request.body.shippingcharges;
     var coddeliverycharges = request.body.coddeliverycharges;
 
@@ -50,6 +51,7 @@ router.post("/", function(request, response){
     
         req.input('offerid',sql.Int, offerid);
         req.input('offeramount',sql.NVarChar(200), offeramount );
+        req.input('offerpercent',sql.NVarChar(200), offerpercent );
         req.input('shippingcharges',sql.NVarChar(200), shippingcharges);
         req.input('coddeliverycharges',sql.NVarChar(200), coddeliverycharges);
 
