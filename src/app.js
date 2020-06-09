@@ -418,6 +418,7 @@ const GetVendorLicenseData_NewBackoffice = require("./api/routes/Backoffice-New-
 const GetVendorAccreditationData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorAccreditationData")
 const GetVendorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorList")
 const GetUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserAddressMapping")
+const GetVendorOrderById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorOrderById")
 
 
 
@@ -1371,6 +1372,9 @@ app.use("/BackofficeApi/GetUserAddressMapping",GetUserAddressMapping_NewBackoffi
 app.use("/BackofficeApi/DeleteUserAddressMapping",DeleteUserAddressMapping_NewBackoffice)
 
 
+
+
+app.use("/BackofficeApi/GetVendorOrderById",GetVendorOrderById_NewBackoffice)
 
 
 
