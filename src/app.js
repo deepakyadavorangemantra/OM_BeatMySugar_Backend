@@ -418,9 +418,13 @@ const GetVendorLicenseData_NewBackoffice = require("./api/routes/Backoffice-New-
 const GetVendorAccreditationData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorAccreditationData")
 const GetVendorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorList")
 const GetUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserAddressMapping")
+<<<<<<< HEAD
 const GetVendorOrderById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorOrderById")
 const GetOrderVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOrderVendor")
 
+=======
+const GetVendorOrderById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorOrderByID")
+>>>>>>> c68e9760f3d583ae041e2fab66239bf3da6f095c
 
 
 
@@ -714,6 +718,12 @@ const GetExtraCharges_NewBackoffice = require("./api/routes/Backoffice-New-Api/W
 const GetOfferWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetOfferWebsite")
 
 const GetAddressCustomer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetAddressCustomer")
+
+const GetNewOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetNewOrders")
+const GetOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetOrderDetail")
+const GetFoodOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodOrderDetail")
+const GetSocksOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksOrderDetail")
+const GetFootwearOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearOrderDetail")
 //-----------------------------------------New API -------------------------------------------------------------
 
 //---------------------------Vendor-------------------------
@@ -1492,7 +1502,12 @@ app.use("/BackofficeApi/GetExtraCharges",GetExtraCharges_NewBackoffice);
 app.use("/BackofficeApi/GetOfferWebsite",GetOfferWebsite_NewBackoffice);
 
 app.use("/BackofficeApi/GetAddressCustomer",GetAddressCustomer_NewBackoffice);
+app.use("/BackofficeApi/GetNewOrders",GetNewOrders_NewBackoffice);
+app.use("/BackofficeApi/GetOrderDetail",GetOrderDetail_NewBackoffice);
 
+app.use("/BackofficeApi/GetFoodOrderDetail",GetFoodOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetSocksOrderDetail",GetSocksOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearOrderDetail",GetFootwearOrderDetail_NewBackoffice);
 //-----------------------------------------New API -------------------------------------------------------------
 
 app.use("/BackofficeApi/GetHealthCenterDoctorMapping",GetHealthCenterDoctorMapping_NewBackoffice);
