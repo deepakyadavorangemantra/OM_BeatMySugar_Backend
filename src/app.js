@@ -426,7 +426,7 @@ const GetVendorOrderById_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const GetSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSellWithUs")
 const GetInsurance_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetInsurance")
 const GetCareerByID_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCareerByID")
-
+const GetUserInfoByID_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserInfoByID")
 
 
 
@@ -1400,7 +1400,7 @@ app.use("/BackofficeApi/GetInsurance",GetInsurance_NewBackoffice)
 
 app.use("/BackofficeApi/AddUserFamilyInfoMapping",AddUserFamilyInfoMapping_NewBackoffice)
 app.use("/BackofficeApi/UpdateUserInfoBasic",UpdateUserInfoBasic_NewBackoffice)
-
+app.use("/BackofficeApi/GetUserInfoByID",GetUserInfoByID_NewBackoffice)
 
 
 
