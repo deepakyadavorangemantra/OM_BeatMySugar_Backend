@@ -9,7 +9,7 @@ router.post("/", function(request, response){
    
  
     var companyname = request.body.companyname;
-    var address = request.body.division;
+    var address = request.body.address;
     var country = request.body.country;
     var state = request.body.state;
     var city = request.body.city;

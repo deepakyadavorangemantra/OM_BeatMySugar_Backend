@@ -373,7 +373,8 @@ const AddUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New
 const AddOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrder")
 const AddOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddOrderDetail")
 const AddSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSellWithUs")
-
+const AddInsurance_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddInsurance")
+const AddUserFamilyInfoMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserFamilyInfoMapping")
 
 
 
@@ -418,10 +419,13 @@ const GetVendorLicenseData_NewBackoffice = require("./api/routes/Backoffice-New-
 const GetVendorAccreditationData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorAccreditationData")
 const GetVendorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorList")
 const GetUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserAddressMapping")
+
+const GetOrderVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOrderVendor")
+
 const GetVendorOrderById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorOrderByID")
-
-
-
+const GetSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSellWithUs")
+const GetInsurance_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetInsurance")
+const GetCareerByID_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCareerByID")
 
 
 
@@ -571,7 +575,6 @@ const UpdateSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const UpdateVendorFacilitiesMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateVendorFacilitiesMaster")
 const UpdateQualificationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateQualificationMaster")
 const UpdateSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSpecialisationMaster")
-
 const UpdateDoctorApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDoctorApprovalStatus")
 const UpdateDietitianApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateDietitianApprovalStatus")
 const UpdateHealthCenterApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateHealthCenterApprovalStatus")
@@ -585,7 +588,7 @@ const UpdateFootwearVariantApprovalStatus_NewBackoffice = require("./api/routes/
 const UpdateBookVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateBooksItemMasterApprovalStatus")
 const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksVariantApprovalStatus")
 const UpdateOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateOffer")
-
+const UpdateUserInfoBasic_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserInfoBasic")
 
 
 
@@ -1248,6 +1251,7 @@ app.use("/BackofficeApi/DeleteHealthCenterServicesMaster",DeleteHealthCenterServ
 app.use("/BackofficeApi/UpdateHealthCenterServicesMaster",UpdateHealthCenterServicesMaster_NewBackoffice);
 
 
+app.use("/BackofficeApi/GetCareerByID",GetCareerByID_NewBackoffice);
 app.use("/BackofficeApi/GetCareer",GetCareer_NewBackoffice);
 app.use("/BackofficeApi/AddCareer",AddCareer_NewBackoffice);
 app.use("/BackofficeApi/UpdateCareer",UpdateCareer_NewBackoffice);
@@ -1384,15 +1388,18 @@ app.use("/BackofficeApi/GetVendorOrderById",GetVendorOrderById_NewBackoffice)
 
 
 
+app.use("/BackofficeApi/GetOrderVendor",GetOrderVendor_NewBackoffice)
 
 
 app.use("/BackofficeApi/AddSellWithUs",AddSellWithUs_NewBackoffice)
+app.use("/BackofficeApi/GetSellWithUs",GetSellWithUs_NewBackoffice)
+app.use("/BackofficeApi/AddInsurance",AddInsurance_NewBackoffice)
+app.use("/BackofficeApi/GetInsurance",GetInsurance_NewBackoffice)
 
 
 
-
-
-
+app.use("/BackofficeApi/AddUserFamilyInfoMapping",AddUserFamilyInfoMapping_NewBackoffice)
+app.use("/BackofficeApi/UpdateUserInfoBasic",UpdateUserInfoBasic_NewBackoffice)
 
 
 
