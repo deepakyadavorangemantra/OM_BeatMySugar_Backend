@@ -14,16 +14,6 @@ router.post("/", function(request, response){
     var maritalstatus = request.body.maritalstatus;
     var occuption = request.body.occuption;
     var profileimage = request.body.profileimage;
-    var address = request.body.address;
-    var landmark = request.body.landmark;
-    var city = request.body.city;
-    var state = request.body.state;
-    var country = request.body.country;
-    var pincode = request.body.pincode;
-    var areyoudiabetic = request.body.areyoudiabetic;
-    var typeofdiabetic = request.body.typeofdiabetic;
-    var typeofdiabetic = request.body.typeofdiabetic;
-    var diagnosed = request.body.diagnosed;
     var updatedon = request.body.updatedon;
     var updatedby = request.body.updatedby;
 
@@ -39,15 +29,6 @@ router.post("/", function(request, response){
         req.input('maritalstatus',sql.NVarChar(10), maritalstatus);
         req.input('occuption',sql.NVarChar(100), occuption);
         req.input('profileimage',sql.NVarChar(100), profileimage);
-        req.input('address',sql.NVarChar(200), address);
-        req.input('landmark',sql.NVarChar(500), landmark);
-        req.input('city',sql.NVarChar(50), city);
-        req.input('state',sql.NVarChar(50), state);
-        req.input('country',sql.NVarChar(50), country);
-        req.input('pincode',sql.NVarChar(10), pincode);
-        req.input('areyoudiabetic',sql.NVarChar(10), areyoudiabetic);
-        req.input('typeofdiabetic',sql.NVarChar(50), typeofdiabetic);
-        req.input('diagnosed',sql.NVarChar(200), diagnosed);
         req.input('updatedon',sql.NVarChar(200), updatedon);
         req.input('updatedby',sql.Int, updatedby);
 
