@@ -424,7 +424,7 @@ const GetOrderVendor_NewBackoffice = require("./api/routes/Backoffice-New-Api/Ge
 const GetVendorOrderById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorOrderByID")
 const GetSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSellWithUs")
 const GetInsurance_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetInsurance")
-
+const GetCareerByID_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCareerByID")
 
 
 
@@ -1251,6 +1251,7 @@ app.use("/BackofficeApi/DeleteHealthCenterServicesMaster",DeleteHealthCenterServ
 app.use("/BackofficeApi/UpdateHealthCenterServicesMaster",UpdateHealthCenterServicesMaster_NewBackoffice);
 
 
+app.use("/BackofficeApi/GetCareerByID",GetCareerByID_NewBackoffice);
 app.use("/BackofficeApi/GetCareer",GetCareer_NewBackoffice);
 app.use("/BackofficeApi/AddCareer",AddCareer_NewBackoffice);
 app.use("/BackofficeApi/UpdateCareer",UpdateCareer_NewBackoffice);
