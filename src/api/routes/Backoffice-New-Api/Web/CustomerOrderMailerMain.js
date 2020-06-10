@@ -15,58 +15,61 @@ var CheckVal = ''
 router.post("/", function(request, response){
 
 
-    var orderdate = request.body.orderdate;
+
     var ordernumber = request.body.ordernumber;
+    var offerid = request.body.offerid;
+    var offeramount = request.body.offeramount;
+    var offerpercent = request.body.offerpercent;
+    var shippingcharges = request.body.shippingcharges;
+    var coddeliverycharges = request.body.coddeliverycharges;
+
+    var orderdate = request.body.orderdate;
+    var ordervalue = request.body.ordervalue;
+    var paymentmode = request.body.paymentmode;
+    var netcost = request.body.netcost;
+    var numofitems = request.body.numofitems;
+    var customeremail = request.body.customeremail;
+    var customername = request.body.customername;
+    var customermobile = request.body.customermobile;
+    var billingaddress = request.body.billingaddress;
+    var deliveryaddress = request.body.deliveryaddress;
+    var ordersource = request.body.ordersource;
+    var status = request.body.status;
+    var updated_on = request.body.updated_on;
+    var updated_by = request.body.updated_by;
 
     var shippingname = request.body.shippingname;
-    var shippingaddress = request.body.shippingaddress;
     var shippingstreet = request.body.shippingstreet;
     var shippinglandmark = request.body.shippinglandmark;
     var shippingcountry = request.body.shippingcountry;
     var shippingstate = request.body.shippingstate;
-    var shippingcity = request.body.shippingcity;
-    var shippingpincode =request.body.shippingpincode;
+    var shippingcity= request.body.shippingcity;
+    var shippingpincode = request.body.shippingpincode;
     var shippingmobile = request.body.shippingmobile;
 
     var billingname = request.body.billingname;
-    var billingaddress = request.body.billingaddress;
     var billingstreet = request.body.billingstreet;
     var billinglandmark = request.body.billinglandmark;
     var billingcountry = request.body.billingcountry;
     var billingstate = request.body.billingstate;
-    var billingcity = request.body.billingcity;
+    var billingcity= request.body.billingcity;
     var billingpincode = request.body.billingpincode;
     var billingmobile = request.body.billingmobile;
 
-    var total= request.body.total;
-
-    var orderDetail= request.body.orderDetail;
+    var orderdata = request.body.orderdata;
 
     // console.log(request.body)
 
 
     try{
      
-        var data = ''
-        for(var i = 0 ; i <orderDetail.length ; i++)
-    
-        {
-        data = data + 
-        ' <tr>'+
-        '<td colspan="3" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;">'+
-         orderDetail[i].name+'<br/>  Item Code : '+orderDetail[i].code+'   <br/> HSN Code : '+orderDetail[i].hsn+'  <br/> Brand: '+orderDetail[i].brand+'</td>'+
-       ' <td style="text-align:center">'+orderDetail[i].quantity+'</td>'+
-       ' <td style="text-align: right; padding-right: 1%;">'+orderDetail[i].price+'</td>'+
-        '<td style="text-align:center">'+orderDetail[i].tax+'</td>'+
-       ' <td style="text-align: right; padding-right: 1%;">'+orderDetail[i].price+'</td>'+
-   ' </tr>'
-        }
+
 
 
                     const mailOptions = {
                      
                         from: 'BeatMySugar - Simplifying Diabetes Management <wecare@beatmysugar.com>', // sender address
-                        to: 'tapan@globaltrendz.com', // list of receivers
+                        to: customeremail, // list of receivers
                         subject: 'Order Placed.', // Subject line
                         html:
 
@@ -100,7 +103,7 @@ router.post("/", function(request, response){
                             '<td style="background:#fff;padding:20px 20px 10px;border-top:1px solid #fef1f1" colspan="2">'+
                                ' <table style="font-size:14px">'+
                                     '<tr>'+
-                                        '<td style="padding-bottom: 15px;">Hi <b>Saravan,</b>'+
+                                        '<td style="padding-bottom: 15px;">Hi <b>'+customername+',</b>'+
                             '</td>'+
                                     '</tr>'+
                                     '<tr>'+
@@ -108,7 +111,7 @@ router.post("/", function(request, response){
                                         '</td>'+
                                     '</tr>'+
                                    ' <tr>'+
-                                        '<td style="padding-bottom: 15px;"> Your Order - <b>Order Number </b>has been successfully placed.</td>'+
+                                        '<td style="padding-bottom: 15px;"> Your Order - <b>'+ordernumber+'</b>has been successfully placed.</td>'+
                                    ' </tr>'+
 
                                     '<tr>'+
@@ -133,48 +136,48 @@ router.post("/", function(request, response){
                                         '<td colspan="3" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;text-align:center">'+
                                             '<span style="font-weight: bold; font-size: 14px">Order Date</span></td>'+
                                        ' <td colspan="2" style="text-align: left;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;text-align:center">'+
-                                            '{moment().format(ll)}</td>'+
+                                            orderdate+'</td>'+
                                         '<td colspan="3" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;text-align:center">'+
                                             '<span style="font-weight: bold;font-size: 14px">Purchase Order No.</span>'+
                                         '</td>'+
-                                        '<td colspan="2" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;text-align:center"> ordernumber+</td>'+
+                                        '<td colspan="2" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;text-align:center"> '+ordernumber+'</td>'+
 
                                    ' </tr>'+
 
 
                                     '<tr class="success">'+
                                         '<td colspan="5"'+
-                                            'style="padding-top: 1%; padding-bottom: 1%; font-weight: bold; font-size: 15px;text-align:center">'+
+                                            'style="padding-top: 1%; padding-bottom: 1%; font-weight: bold; font-size: 15px;padding-left : 1%;">'+
                                             'Billing'+
                                             'Address</td>'+
                                         '<td colspan="5"'+
-                                            'style="padding-top: 1%; padding-bottom: 1%; font-weight: bold; font-size: 15px;text-align:center">'+
+                                            'style="padding-top: 1%; padding-bottom: 1%; font-weight: bold; font-size: 15px;padding-left : 1%;">'+
                                            ' Shipping Address</td>'+
                                    ' </tr>'+
                                    ' <tr>'+
                                         '<td colspan="5" style="padding-top: 1%; padding-bottom: 1%; padding-left:1% ">'+
                                             '<span'+
-                                                'style="font-weight: bold; font-size: 15px">{this.state.BillingAddress.fld_name}</span>'+
-                                           ' <p>{this.state.BillingAddress.fld_address}'+
-                                                '<br />{this.state.BillingAddress.fld_street}<br />{this.state.BillingAddress.fld_city}'+
-                                               ' {this.state.BillingAddress.fld_pincode},'+
-                                               ' {this.state.BillingAddress.fld_state},'+
-                                               ' {this.state.BillingAddress.fld_country}.<br />Landmark:'+
-                                               ' {this.state.BillingAddress.fld_landmark}'+
-                                                '<br />Mobile Number: ( +91 {this.state.BillingAddress.fld_mobile})</p>'+
+                                                'style="font-weight: bold; font-size: 15px">'+billingname+'</span>'+
+                                           ' <p>'+billingaddress+
+                                                '<br />'+billingstreet+'<br />'+billingcity+
+                                               billingpincode+','+
+                                               billingstate+','+
+                                               billingcountry+'.<br />Landmark:'+
+                                               billinglandmark+''+
+                                                '<br />Mobile Number: ( +91 '+billingmobile+')</p>'+
                                        ' </td>'+
 
                                         '<td colspan="5"'+
                                            ' style="padding-top: 1%; padding-bottom: 1%; font-size: 15px;text-align:center">'+
                                             '<span'+
-                                                'style="font-weight: bold; font-size: 15px">{this.state.ShippingAddress.fld_name}</span>'+
-                                            '<p style="font-size:13px">{this.state.ShippingAddress.fld_address}'+
-                                                '<br />{this.state.ShippingAddress.fld_street}<br />{this.state.ShippingAddress.fld_city}'+
-                                                '{this.state.ShippingAddress.fld_pincode},'+
-                                                '{this.state.ShippingAddress.fld_state},'+
-                                                '{this.state.ShippingAddress.fld_country}.<br />Landmark:'+
-                                                '{this.state.ShippingAddress.fld_landmark}'+
-                                                '<br />Mobile Number: ( +91 {this.state.ShippingAddress.fld_mobile})</p>'+
+                                                'style="font-weight: bold; font-size: 15px">'+shippingname+'</span>'+
+                                            '<p style="font-size:13px">'+deliveryaddress+
+                                                '<br />'+shippingstreet+'<br />'+shippingcity+
+                                                shippingpincode+','+
+                                                shippingstate+','+
+                                                shippingcountry+'.<br />Landmark:'+
+                                                shippinglandmark+''+
+                                                '<br />Mobile Number: ( +91 '+shippingmobile+')</p>'+
                                         '</td>'+
                                     '</tr>'+
 
@@ -206,28 +209,29 @@ router.post("/", function(request, response){
                                     'style="font-weight: bold">Rate</span></td>'+
                             '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
                                     'style="font-weight: bold">GST %</span></td>'+
-                            '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
-                                    'style="font-weight: bold">GST Amount</span></td>'+
+                       
                             '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
                                     'style="font-weight: bold">Total (INR)</span></td>'+
 
                        ' </tr>'+
 
+                       
 
+
+                     orderdata.map((dt,index)=>(
                         '<tr>'+
-                            '<td>{index+1}.</td>'+
-                            '<td>{info.fld_hsncode}</td>'+
-                            '<td>{info.fld_name}<br />{info.fld_productweight+" "+info.fld_productunit}</td>'+
-                            '<td>{info.fld_brand}</td>'+
-                            '<td>{info.fld_quantity}</td>'+
-                            '<td>&#8377; {info.fld_discountprice}</td>'+
-                            '<td>{info.fld_gstpercent}%</td>'+
-                            '<td></td>'+
-                            '<td> &#8377; {parseFloat(info.fld_quantity*info.fld_discountprice).toFixed(2)}</td>'+
-
-                        '</tr>'+
-
-
+                        '<td>'+(index+1)+'.</td>'+
+                        '<td>'+dt.fld_hsncode+'</td>'+
+                        '<td>'+dt.fld_name+'</td>'+
+                        '<td>'+dt.fld_brand+'</td>'+
+                        '<td>'+dt.fld_quantity+'</td>'+
+                        '<td>₹ '+dt.fld_discountprice+'</td>'+
+                        '<td>'+dt.fld_gstpercent+'%</td>'+
+                        '<td> ₹ '+parseFloat(dt.fld_quantity*dt.fld_discountprice).toFixed(2)+'</td>'+
+                
+                    '</tr>'
+                     ))
+                     +
 
 
                     '</tbody>'+
@@ -256,37 +260,35 @@ router.post("/", function(request, response){
                                ' <table style="font-size: 13px;border-collapse: collapse;margin-bottom:0px;word-break: break-all" border="1" cellspacing="0" cellpadding="0">'+
                                     '<tr>'+
                                        ' <td style="text-align: right; padding: 1%"><span style="font-weight: bold"> Sub total</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:40%"> &#8377; {this.state.SummaryData.SubTotalAmt} </td>'+
+                                        '<td style="text-align: right; padding-right: 1%;width:40%"> ₹ '+ordervalue+' </td>'+
 
                                    ' </tr>'+
                                    ' <tr style="width:100%;">'+
                                         '<td style="text-align: right; padding: 1%"><span style="font-weight: bold">'+
                                                 'Offer Discount</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:40%"> &#8377;'+
-                                            '{this.state.SummaryData.OfferAmt}'+
-                                        '</td>'+
+                                        '<td style="text-align: right; padding-right: 1%;width:40%">  ₹ '+offeramount+'</td>'+
 
                                     '</tr>'+                                   
                                      '<tr style="width:100%;">'+
                                         '<td style="text-align: right; padding: 1%"><span style="font-weight: bold"> Shipping Charge</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:40%"> &#8377; {this.state.SummaryData.ShippngAmt}  </td>'+
+                                        '<td style="text-align: right; padding-right: 1%;width:40%"> ₹ '+shippingcharges+'  </td>'+
 
                                     '</tr>'+
 
                                     '<tr style="width:100%;">'+
                                         '<td style="text-align: right; padding: 1%"><span style="font-weight: bold"> COD Service Charge</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:40%"> &#8377; {this.state.SummaryData.CodAmt}  </td>'+
+                                        '<td style="text-align: right; padding-right: 1%;width:40%"> ₹ '+coddeliverycharges+' </td>'+
 
                                     '</tr>'+
 
                                     '<tr style="width:100%;">'+
                                         '<td style="text-align: right; padding: 1%"><span style="font-weight: bold"> Total (Inclusive of all Taxess)</span></td>'+
-                                       ' <td style="text-align: right; padding-right: 1%;width:40%"> &#8377;  {this.state.SummaryData.TotalAmt} </td>'+
+                                       ' <td style="text-align: right; padding-right: 1%;width:40%"> ₹ '+netcost+' </td>'+
 
                                     '</tr>'+
                                     '<tr style="width:100%;">'+
                                         '<td style="text-align: right; padding: 1%"><span style="font-weight: bold"> Payment Mode</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:20%"> {this.state.SummaryData.CodAmt == 0 ? Online : COD} </td>'+
+                                        '<td style="text-align: right; padding-right: 1%;width:20%"> '+paymentmode+' </td>'+
 
                                     '</tr>'+
                                     '<tr style="width:100%;">'+
@@ -350,134 +352,7 @@ router.post("/", function(request, response){
 
 '</html>'
                         
-                    //    ' <!doctype html/>'+
-        
-                    //    ' <html>'+
-                        
-                    //     ' <head>'+
-                    //        '<style>'+
-                    //   '  tr.success td {-webkit-print-color-adjust: exact;background-color: #f7f7f7 !important;}'+
-                    //     'tr.success th {-webkit-print-color-adjust:exact;background-color: #f7f7f7 !important;}'+
-                    //     'body{bacbackground-color: white!important;}'+
-                    //    ' @media only screen and (max-width: 1024px) and (min-width: 360px) {'+
-                           
-                    //        'body{overflow:scroll}}'+
-                        
-                    //   '  tr.danger td {background-color: #f7f7f7 !important;-webkit-print-color-adjust: exact;}'+
-                    //     '</style>'+
-                    //        '<title>BeatMySugar</title>'+
-                    //      '</head>'+
-                         
-                    // '     <body style="text-align: center;">'+
-                    //        '<table style="width:1000px; text-align: center; margin-left: auto; margin-right: auto; bottom: 0px; border-right-color:'+
-                    //            ' #000; border-collapse: collapse;" border="1" cellspacing="0" cellpadding="0">'+
-                    //          '<tbody>'+
-                    //                    '<tr>'+
-                    //                        '<td rowspan="2" style="width:20%"><img src=http://www.beatmysugar.com/assets/images/bms-logo.png style="width: 50%;"/> </td>'+
-                    //                        '<td colspan="8" style="width:80%"> <h2 style="text-align: center; font-size: 25px; font-weight: bold;">'+
-                    //                        ' BeatMySugar</h2><p style="text-align: center;">Rx Health Management India Pvt Ltd'+
-                        
-                    //     '12th Floor, Puri 81 Business Hub,'+
-                        
-                    //     '<br/>Sec-81, Faridabad,'+
-                        
-                    //     'Haryana - 121 001. INDIA.</p>'+
-                    //                               '<tr class="success">'+
-                    //                           ' <td colspan="8" style="text-align: right; padding-right: 1%; font-weight: bold; font-size: 20px; ">'+
-                    //                                'Order Form</td></tr></td>'+
-                    //                    '</tr>'+
-                        
-                                             
-                    //                    '<tr>'+
-                    //                      '<td colspan="1" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;">'+
-                    //                           ' <span style="font-weight: bold; font-size: 16px;">Order Date</span></td>'+
-                    //                      '<td colspan="3" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;">'+
-                    //                            orderdate+'</td>'+
-                    //                      '<td colspan="3" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;">'+
-                    //                            '<span style="font-weight: bold; font-size: 16px;">Purchase Order No.</span></td>'+
-                    //                      '<td colspan="4" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;">'+ordernumber+'</td>'+
-                        
-                    //                    '</tr>'         +            
-                        
-                        
-                    //                   ' <tr class="success">'+
-                    //                       ' <td colspan="4" style="padding-top: 1%; padding-bottom: 1%; font-weight: bold; font-size: 15px;text-align:center">Billing '+
-                    //                        'Address</td>'+
-                    //                      '<td colspan="4" style="padding-top: 1%; padding-bottom: 1%; font-weight: bold; font-size: 15px;text-align:center">Shipping Address</td>'+
-                    //                   '</tr>'+
-                    //                    '<tr>'+
-                    //                      '<td colspan="4" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;">'+
-                    //                            '<span style="font-weight: bold; font-size: 18px;">'+billingname+'</span><p>'+billingaddress+
-                    //                            '<br/>'+billingstreet+'<br/>'+billingcity+' '+billingpincode+', '+billingstate+', '+billingcountry+'.<br/>Landmark: '+billinglandmark+
-                    //                           '<br/>Mobile Number: ( +91 '+billingmobile+')</p></td>'+
-                        
-                    //                           '<td colspan="4" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;">'+
-                    //                           '<span style="font-weight: bold; font-size: 18px;">'+shippingname+'</span><p>'+shippingaddress+
-                    //                           '<br/>'+shippingstreet+'<br/>'+shippingcity+' '+shippingpincode+', '+shippingstate+', '+shippingcountry+'.<br/>Landmark: '+shippinglandmark+
-                    //                          '<br/>Mobile Number: ( +91 '+shippingmobile+')</p></td>'+
-                    //                   ' </tr>'+
-                        
-                    //                '</tbody>'+
-                    //            '</table>'+
-                    //              '  <table style="width:1000px; text-align: center; margin-left: auto; margin-right: auto; border-right-color:'+
-                    //                    ' #000; border-top: hidden;" border="1" cellspacing="0" cellpadding="0">'+
-                    //          '<tbody>'+
-                                       
-                                  
-                    //         ' <tr class="success">'+
-                    //          '<td colspan="3" style="padding-top: 1%; padding-bottom: 1%;text-align:center"><span style="font-weight: bold;"> '+
-                    //        '  Product</span></td>'+
-                    //          '<td style="padding-top: 1%; padding-bottom: 1%;text-align:center"><span style="font-weight: bold;">Quantity</span></td>'+
-                    //         ' <td style="padding-top: 1%; padding-bottom: 1%;text-align:center"><span style="font-weight: bold;">Rate</span></td>'+
-                    //         ' <td style="padding-top: 1%; padding-bottom: 1%;text-align:center"><span style="font-weight: bold;">GST %</span></td>'+
-                    //          '<td style="padding-top: 1%; padding-bottom: 1%;text-align:center"><span style="font-weight: bold;">Total (INR)</span></td>'+
-                        
-                    //         ' </tr>'+
-                       
-                    // data+
-                                
-                        
-                    //                '</tbody>'+
-                    //            '</table>'+
-                        
-                    //           ' <table style="width:1000px; text-align: center; margin-left: auto; margin-right: auto; border-right-color: #000; '+
-                    //            'border-top: hidden;" border="1" cellspacing="1" cellpadding="0">'+
-                    //          '<tbody>'+
-                        
-                    //                   ' <tr>'+
-                    //                      '<td rowspan="5" colspan="4" style="text-align: left; padding-left: 1%;"><span style="font-weight: bold;"> '+
-                    //                       ' Note:</span>'+
-                    //                        '<ul style="text-align: left;">'+
-                                             
-                                           
-                    //                          '<li>Delivery Date Will be given on Confirmation<br/>of Order</li>'+
-                    //                        '</ul>'+
-                                           
-                                         
-                    //                       ' <tr><td colspan="4" style="text-align: right; padding: 1%;"><span style="font-weight: bold;">'+
-                    //                           ' Total Amount (Inclusive of all Taxes)</span></td><td style="text-align: right; padding-right: 1%;">'+total+
-                    //                        '    </td></tr>   '                  +
-                    //                    '  </td>'+
-                        
-                    //                    '</tr>'+
-                        
-                        
-                                    
-                        
-                    //                    '<tr>'+
-                    //                      '<th colspan="10" style=" padding-top: 1%; padding-bottom: 1%; text-align: center;">Have a Question? Call us on '+
-                    //                     ' +91 90244 22444 or Email us at wecare@beatmysugar.com</th>'+
-                    //                    '</tr>'+
-                        
-                    //                   ' <tr class="success">'+
-                    //                   ' <th colspan="10" style="padding-top: 1%; padding-bottom: 1%; text-align: center; background: #f7f7f7;">Visit'+
-                    //                         'us at www.beatmysugar.com</th>'+
-                    //                    '</tr>'+
-                                       
-                    //               ' </tbody>'+
-                    //        '</table>'+
-                    //     ' </body>'+
-                    //     '</html>'
+                  
                         
                         
                     
@@ -492,9 +367,20 @@ router.post("/", function(request, response){
                           console.log(err)
                         }
                         else{
-                          response.status(200);
-                          console.log(info);
-                          response.send(info);
+
+                            request({
+                                url: 'https://www.instaalerts.zone/SendSMS/sendmsg.php?uname=globaltrendz&pass=abc321&send=BMSIND&dest='+mobile+'&msg=Hi '+name+',%0A %0AYour Order - '+ordernumber+' has been successfully placed. We'+"'"+'ll let you know once your order has been verified.%0A%0A Team BeatMySugar',
+                                method: 'POST',
+                            }, function(error, respon, body){
+                                if(error) {
+                                    console.log(error);
+                                } else {
+                                    response.status(200);
+                                    console.log(info);
+                                    response.send(info);
+                                }
+                            });
+                        
                         }
                          
                      });
