@@ -16,7 +16,10 @@ router.post("/", function(request, response){
     var updated_on = request.body.updated_on;
     var updated_by = request.body.updated_by;
     var status = request.body.status;
+    var orderdetailid = request.body.orderdetailid;
+    var orderid = request.body.orderid;
 
+    
     try{
         const req = new sql.Request(dbConnection);
     
@@ -30,8 +33,8 @@ router.post("/", function(request, response){
         req.input('updated_on',sql.NVarChar(200), updated_on);
         req.input('updated_by',sql.Int, updated_by);
         req.input('status',sql.NVarChar(100), status);
-      
-       
+        req.input('orderdetailid',sql.INT, orderdetailid);
+        req.input('orderid',sql.INT, orderid);
    
     
         req.execute("dbo.Add_VendorOrderDetail", function(err, data){
