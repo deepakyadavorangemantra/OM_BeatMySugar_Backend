@@ -16,6 +16,7 @@ router.post("/", function(request, response){
 
 
 
+    var ordernumber = request.body.ordernumber;
     var offerid = request.body.offerid;
     var orderid = request.body.orderid;
     var offeramount = request.body.offeramount;
@@ -58,7 +59,7 @@ router.post("/", function(request, response){
 
     var orderdata = request.body.orderdata;
 
-    // console.log(request.body)
+    console.log(request.body)
 
 
     try{
@@ -201,12 +202,12 @@ router.post("/", function(request, response){
                         '<tr>'+
                         '<td>'+(index+1)+'.</td>'+
                         '<td>'+dt.fld_hsncode+'</td>'+
-                        '<td>'+dt.fld_name+'</td>'+
+                        '<td>'+dt.fld_prodname+'</td>'+
                         '<td>'+dt.fld_brand+'</td>'+
                         '<td>'+dt.fld_quantity+'</td>'+
-                        '<td>₹ '+dt.fld_discountprice+'</td>'+
-                        '<td>'+dt.fld_gstpercent+'%</td>'+
-                        '<td> ₹ '+parseFloat(dt.fld_quantity*dt.fld_discountprice).toFixed(2)+'</td>'+
+                        '<td>₹ '+dt.fld_price+'</td>'+
+                        '<td>'+dt.fld_taxpercent+'%</td>'+
+                        '<td> ₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
                 
                     '</tr>'
                      ))
@@ -318,23 +319,18 @@ router.post("/", function(request, response){
                       transporter.use('compile', inlineBase64({cidPrefix: 'somePrefix_'}));
                       transporter.sendMail(mailOptions, function (err, info) {
                         if(err){
+                            console.log(err)
                           response.status(500);
-                          console.log(err)
+                        
                         }
                         else{
+                            console.log(info);
 
-                            request({
-                                url: 'https://www.instaalerts.zone/SendSMS/sendmsg.php?uname=globaltrendz&pass=abc321&send=BMSIND&dest='+mobile+'&msg=Hi '+name+',%0A %0AYour Order - '+ordernumber+' has been successfully placed. We'+"'"+'ll let you know once your order has been verified.%0A%0A Team BeatMySugar',
-                                method: 'POST',
-                            }, function(error, respon, body){
-                                if(error) {
-                                    console.log(error);
-                                } else {
+                        
                                     response.status(200);
-                                    console.log(info);
+                              
                                     response.send(info);
-                                }
-                            });
+                            
                         
                         }
                          
@@ -344,6 +340,7 @@ router.post("/", function(request, response){
               
 
     }catch (err){
+        console.log(err)
         response.status(500);
         response.send(err.message);
     }
