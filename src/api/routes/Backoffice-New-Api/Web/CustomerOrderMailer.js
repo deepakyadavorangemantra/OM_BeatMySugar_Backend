@@ -99,21 +99,20 @@ router.post("/", function(request, response){
                                                 '<tr>'+
                                                     '<td style="background:#fff;padding:20px 20px 10px;border-top:1px solid #fef1f1" colspan="2">'+
                                                        ' <table style="font-size:14px">'+
-                                                       ' <tbody>'+
                                                             '<tr>'+
-                                                                '<td style="padding-bottom: 15px;" colspan="2">Hi <b>Saravan,</b>'+
+                                                                '<td style="padding-bottom: 15px;">Hi <b>Saravan,</b>'+
                                                     '</td>'+
                                                             '</tr>'+
                                                             '<tr>'+
-                                                               ' <td colspan="2" style="padding-bottom: 5px;">We"re so glad you chose to shop with <b>BeatMySugar</b>.'+
+                                                               ' <td style="padding-bottom: 5px;">We"re so glad you chose to shop with <b>BeatMySugar</b>.'+
                                                                 '</td>'+
                                                             '</tr>'+
                                                            ' <tr>'+
-                                                                '<td colspan="2" style="padding-bottom: 15px;"> Your Order - <b>Order Number </b>has been successfully placed.</td>'+
+                                                                '<td style="padding-bottom: 15px;"> Your Order - <b>Order Number </b>has been successfully placed.</td>'+
                                                            ' </tr>'+
                         
                                                             '<tr>'+
-                                                                '<td colspan="2">'+
+                                                                '<td>'+
                                                                     '<table style="font-size:13px;width:100%; text-align: center; margin-left: auto; margin-right: auto; bottom: 0px; border-right-color: #000; border-collapse: collapse;margin-bottom:0px;font-size: 13px;"border="1" cellspacing="0" cellpadding="0">'+
                                                                         '<tbody>'+
                                                                             '<tr>'+
@@ -255,7 +254,6 @@ router.post("/", function(request, response){
                                                     '</td>'+
                                                     '<td>'+
                                                        ' <table style="font-size: 13px;border-collapse: collapse;margin-bottom:0px;word-break: break-all" border="1" cellspacing="0" cellpadding="0">'+
-                                                       '<tbody>'+
                                                             '<tr>'+
                                                                ' <td style="text-align: right; padding: 1%"><span style="font-weight: bold"> Sub total</span></td>'+
                                                                 '<td style="text-align: right; padding-right: 1%;width:40%"> &#8377; {this.state.SummaryData.SubTotalAmt} </td>'+
@@ -300,7 +298,6 @@ router.post("/", function(request, response){
                                                                         'style="font-weight:600">www.beatmysugar.com</a></td>'+
                                                             '</tr>'+
                                                     '</td>'+
-                                                    '</tbody>'+
                                         '</table>'+
                         
                                    ' </td>'+
@@ -309,7 +306,7 @@ router.post("/", function(request, response){
                         
                         
                         
-                                '</tbody>'+
+                        
                             '</table>'+
                             '<tr>'+
                                 '<td style="padding-bottom: 15px;padding-top:10px"> We"ll let you know once your order has been verified. </td>'+
@@ -352,7 +349,6 @@ router.post("/", function(request, response){
                         '</body>'+
                         
                         '</html>'
-                        
                         
                     //    ' <!doctype html/>'+
         
