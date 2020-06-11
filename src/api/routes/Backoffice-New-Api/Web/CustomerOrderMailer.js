@@ -103,7 +103,7 @@ router.post("/", function(request, response){
                                                             '<tbody>'+
                                                             '<tr>'+
                                                                 '<td style="padding-bottom: 15px;">'+
-                                                                   ' Hi <b>'+customermobile+',</b>'+
+                                                                   ' Hi <b>'+customername+',</b>'+
                                                                 '</td>'+
                                                            ' </tr>'+
                                                            ' <tr>'+
