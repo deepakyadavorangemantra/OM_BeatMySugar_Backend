@@ -589,8 +589,8 @@ const UpdateBookVariantApprovalStatus_NewBackoffice = require("./api/routes/Back
 const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksVariantApprovalStatus")
 const UpdateOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateOffer")
 const UpdateUserInfoBasic_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserInfoBasic")
-
-
+const UpdateUserInfoBasic_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserInfoBasic")
+const UpdateUserDiabeticProfile_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserDiabeticProfile")
 
 
 //-------------- DELETE ---------------
@@ -634,7 +634,7 @@ const DeleteQualificationMaster_NewBackoffice  = require("./api/routes/Backoffic
 const DeleteSpecializationMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteSpecialisationMaster")
 const DeleteVendorFacilityMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteVendorFacilityMaster")
 const DeleteUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteUserAddressMapping")
-
+const DeleteUserFamilyInfoMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/DeleteUserFamilyInfoMapping")
 
 
 
@@ -1416,7 +1416,9 @@ app.use("/BackofficeApi/GetInsurance",GetInsurance_NewBackoffice)
 
 app.use("/BackofficeApi/AddUserFamilyInfoMapping",AddUserFamilyInfoMapping_NewBackoffice)
 app.use("/BackofficeApi/UpdateUserInfoBasic",UpdateUserInfoBasic_NewBackoffice)
+app.use("/BackofficeApi/UpdateUserDiabeticProfile",UpdateUserDiabeticProfile_NewBackoffice)
 app.use("/BackofficeApi/GetUserInfoByID",GetUserInfoByID_NewBackoffice)
+app.use("/BackofficeApi/DeleteUserFamilyInfoMapping",DeleteUserFamilyInfoMapping_NewBackoffice)
 
 
 
