@@ -589,7 +589,10 @@ const UpdateBookVariantApprovalStatus_NewBackoffice = require("./api/routes/Back
 const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksVariantApprovalStatus")
 const UpdateOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateOffer")
 const UpdateUserInfoBasic_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserInfoBasic")
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4c48e6026000d9cd04a7c7cf7f44e89215e003be
 const UpdateUserDiabeticProfile_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserDiabeticProfile")
 
 
@@ -721,6 +724,9 @@ const GetOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/We
 const GetFoodOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodOrderDetail")
 const GetSocksOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksOrderDetail")
 const GetFootwearOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearOrderDetail")
+
+const CustomerOrderMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerOrderMailer")
+const VendorOrderMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/VendorOrderMailer")
 //-----------------------------------------New API -------------------------------------------------------------
 
 //---------------------------Vendor-------------------------
@@ -730,6 +736,19 @@ const AddVendorOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-
 const GetVendorById_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorById")
 
 
+const GetVendorOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorOrderDetail")
+const GetVendorFootwearOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorFootwearOrderDetail")
+const GetVendorFoodOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorFoodOrderDetail")
+const GetVendorSocksOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorSocksOrderDetail")
+
+const AddWishlist_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddWishlist")
+const DeleteItemWishlist_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/DeleteItemWishlist")
+
+const GetWishlistFoodVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetWishlistFoodVariant")
+const GetWishlistFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetWishlistFootwearVariant")
+const GetWishlistSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetWishlistSocksVariant")
+
+const UpdateCustomerPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateCustomerPhoto")
 
 const app = express();
 
@@ -1524,4 +1543,24 @@ app.use("/BackofficeApi/ChangeVendorPassword",ChangeVendorPassword_NewBackoffice
 app.use("/BackofficeApi/AddVendorOrder",AddVendorOrder_NewBackoffice);
 app.use("/BackofficeApi/AddVendorOrderDetail",AddVendorOrderDetail_NewBackoffice);
 app.use("/BackofficeApi/GetVendorById",GetVendorById_NewBackoffice);
+
+app.use("/BackofficeApi/CustomerOrderMailer",CustomerOrderMailer_NewBackoffice);
+app.use("/BackofficeApi/VendorOrderMailer",VendorOrderMailer_NewBackoffice);
+
+
+app.use("/BackofficeApi/GetVendorOrderDetail",GetVendorOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetVendorFoodOrderDetail",GetVendorFoodOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetVendorFootwearOrderDetail",GetVendorFootwearOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetVendorSocksOrderDetail",GetVendorSocksOrderDetail_NewBackoffice);
+
+app.use("/BackofficeApi/AddWishlist",AddWishlist_NewBackoffice);
+app.use("/BackofficeApi/DeleteItemWishlist",DeleteItemWishlist_NewBackoffice);
+
+app.use("/BackofficeApi/GetWishlistFoodVariant",GetWishlistFoodVariant_NewBackoffice);
+app.use("/BackofficeApi/GetWishlistFootwearVariant",GetWishlistFootwearVariant_NewBackoffice);
+app.use("/BackofficeApi/GetWishlistSocksVariant",GetWishlistSocksVariant_NewBackoffice);
+
+app.use("/BackofficeApi/UpdateCustomerPhoto",UpdateCustomerPhoto_NewBackoffice);
+
+
 module.exports = app;
