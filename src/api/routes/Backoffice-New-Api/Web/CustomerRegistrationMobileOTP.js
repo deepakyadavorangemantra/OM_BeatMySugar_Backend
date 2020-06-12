@@ -16,7 +16,7 @@ router.post("/", function(request, response){
         var request = require('request');
     try{
     request({
-        url: 'https://www.instaalerts.zone/SendSMS/sendmsg.php?uname=globaltrendz&pass=abc321&send=BMSIND&dest='+mobile+'&msg=Hi '+name+', Thanks for your registration at BeatMySugar.com',
+        url: 'https://www.instaalerts.zone/SendSMS/sendmsg.php?uname=globaltrendz&pass=abc321&send=RIGHTC&dest='+mobile+'&msg=Hi '+name+', Thanks for your registration at BeatMySugar.com',
         method: 'POST',
     }, function(error, response, body){
         if(error) {
