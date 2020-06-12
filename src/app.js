@@ -487,7 +487,7 @@ const GetOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOffer
 const GetHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDoctorMapping")
 const GetHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMapping")
 const IfEmailExistsSocial_NewBackoffice = require("./api/routes/Backoffice-New-Api/IfEmailExistsSocial")
-
+const GetCareerWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCareerWebsite")
 
 
 
@@ -589,10 +589,7 @@ const UpdateBookVariantApprovalStatus_NewBackoffice = require("./api/routes/Back
 const UpdateSocksVariantApprovalStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateSocksVariantApprovalStatus")
 const UpdateOffer_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateOffer")
 const UpdateUserInfoBasic_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserInfoBasic")
-<<<<<<< HEAD
 
-=======
->>>>>>> 4c48e6026000d9cd04a7c7cf7f44e89215e003be
 const UpdateUserDiabeticProfile_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserDiabeticProfile")
 
 
@@ -1272,6 +1269,8 @@ app.use("/BackofficeApi/UpdateHealthCenterServicesMaster",UpdateHealthCenterServ
 
 app.use("/BackofficeApi/GetCareerByID",GetCareerByID_NewBackoffice);
 app.use("/BackofficeApi/GetCareer",GetCareer_NewBackoffice);
+app.use("/BackofficeApi/GetCareerWebsite",GetCareerWebsite_NewBackoffice);
+
 app.use("/BackofficeApi/AddCareer",AddCareer_NewBackoffice);
 app.use("/BackofficeApi/UpdateCareer",UpdateCareer_NewBackoffice);
 
