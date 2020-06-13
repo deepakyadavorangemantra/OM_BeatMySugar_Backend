@@ -14,21 +14,21 @@ router.post("/", function(request, response){
     var otp = request.body.otp;
 
 
-        var request = require('request');
+        var requestm = require('request');
     try{
-    request({
+    requestm({
         url: 'https://www.instaalerts.zone/SendSMS/sendmsg.php?uname=globaltrendz&pass=abc321&send=RIGHTC&dest='+mobile+'&msg=Hi '+name+', OTP for your mobile number verification is :'+otp+'. DO NOT share this OTP with anyone. BeatMySugar.com',
         method: 'POST',
-    }, function(error, response, body){
+    }, function(error, responsem, body){
         if(error) {
             console.log(error);
             response.status(500);
-            response.send(response.statusCode)
+            response.send(responsem.statusCode)
         } else {
-            console.log(response.statusCode, body);
+            console.log(responsem.statusCode, body);
             response.status(200);
            
-            response.send(response.statusCode)
+            response.send(responsem.statusCode)
         }
 
     });
