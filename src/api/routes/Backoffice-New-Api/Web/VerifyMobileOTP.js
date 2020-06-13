@@ -22,12 +22,12 @@ router.post("/", function(request, response){
     }, function(error, response, body){
         if(error) {
             console.log(error);
-            // response.status(500);
-            // response.send(response.statusCode)
+            response.status(500);
+            response.send(response.statusCode)
         } else {
-            // response.status(200);
+            response.status(200);
             console.log(response.statusCode, body);
-            // response.send(response.statusCode)
+            response.send(response.statusCode)
         }
 
     });
