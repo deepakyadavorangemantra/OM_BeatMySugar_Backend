@@ -592,6 +592,8 @@ const UpdateUserInfoBasic_NewBackoffice = require("./api/routes/Backoffice-New-A
 
 const UpdateUserDiabeticProfile_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserDiabeticProfile")
 
+const Updateblogpublish_NewBackoffice = require("./api/routes/Backoffice-New-Api/Updateblogpublish")
+
 
 //-------------- DELETE ---------------
 
@@ -1422,7 +1424,7 @@ app.use("/BackofficeApi/UpdateUserDiabeticProfile",UpdateUserDiabeticProfile_New
 app.use("/BackofficeApi/GetUserInfoByID",GetUserInfoByID_NewBackoffice)
 app.use("/BackofficeApi/DeleteUserFamilyInfoMapping",DeleteUserFamilyInfoMapping_NewBackoffice)
 
-
+app.use("/BackofficeApi/Updateblogpublish",Updateblogpublish_NewBackoffice)
 
 //-------------------------Web----------------------------------------------
 
