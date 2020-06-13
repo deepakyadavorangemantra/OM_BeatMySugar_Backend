@@ -25,8 +25,9 @@ router.post("/", function(request, response){
             response.status(500);
             response.send(response.statusCode)
         } else {
-            response.status(200);
             console.log(response.statusCode, body);
+            response.status(200);
+           
             response.send(response.statusCode)
         }
 
@@ -35,6 +36,7 @@ router.post("/", function(request, response){
               
 
     }catch (err){
+        console.log(err)
         response.status(500);
         // response.send(err.message);
     }
