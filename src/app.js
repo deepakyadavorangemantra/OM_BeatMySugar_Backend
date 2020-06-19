@@ -697,6 +697,9 @@ const GetFilterFootwearListing_NewBackoffice = require("./api/routes/Backoffice-
 
 const GetFilterSocksListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFilterSocksListing")
 const GetFoodBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodBrandData")
+const GetFoodFlavourDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodFlavourDataFilter")
+const GetFoodFilterDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodFilterDataFilter")
+const GetFoodPriceDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodPriceDataFilter")
 
 const GetFoodMasterDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodMasterDetailsWebsite")
 const GetFoodCategoryListingWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodCategoryListingWebsite")
@@ -1503,6 +1506,9 @@ app.use("/BackofficeApi/GetSocksGenderListingWebsite",GetSocksGenderListingWebsi
 app.use("/BackofficeApi/GetFilterFootwearListing",GetFilterFootwearListing_NewBackoffice);
 app.use("/BackofficeApi/GetFilterSocksListing",GetFilterSocksListing_NewBackoffice);
 app.use("/BackofficeApi/GetFoodBrandData",GetFoodBrandData_NewBackoffice);
+app.use("/BackofficeApi/GetFoodFlavourDataFilter",GetFoodFlavourDataFilter_NewBackoffice);
+app.use("/BackofficeApi/GetFoodFilterDataFilter",GetFoodFilterDataFilter_NewBackoffice);
+app.use("/BackofficeApi/GetFoodPriceDataFilter",GetFoodPriceDataFilter_NewBackoffice);
 
 app.use("/BackofficeApi/GetFoodMasterDetailsWebsite",GetFoodMasterDetailsWebsite_NewBackoffice);
 app.use("/BackofficeApi/GetFoodCategoryListingWebsite",GetFoodCategoryListingWebsite_NewBackoffice);

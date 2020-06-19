@@ -32,7 +32,7 @@ router.post("/", function(request, response){
             }else{
          
                 var salt = data.recordset[0].fld_salt
-                // console.log(salt)
+                console.log(salt)
                 var hashPassword = sha512(salt+password);
 
 
