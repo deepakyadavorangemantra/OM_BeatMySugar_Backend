@@ -750,6 +750,18 @@ const GetWishlistFoodVariant_NewBackoffice = require("./api/routes/Backoffice-Ne
 const GetWishlistFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetWishlistFootwearVariant")
 const GetWishlistSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetWishlistSocksVariant")
 
+const GetFootwearSizeDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearSizeDataWebsite")
+const GetFootwearColorDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearColorDataWebsite")
+const GetFootwearTypeDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearTypeDataWebsite")
+const GetFootwearPriceDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearPriceDataFilter")
+
+
+
+const GetSocksSizeDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksSizeDataWebsite")
+const GetSocksColorDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksColorDataWebsite")
+const GetSocksTypeDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksTypeDataWebsite")
+const GetSocksPriceDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksPriceDataFilter")
+
 const UpdateCustomerPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateCustomerPhoto")
 
 const app = express();
@@ -1566,6 +1578,16 @@ app.use("/BackofficeApi/DeleteItemWishlist",DeleteItemWishlist_NewBackoffice);
 app.use("/BackofficeApi/GetWishlistFoodVariant",GetWishlistFoodVariant_NewBackoffice);
 app.use("/BackofficeApi/GetWishlistFootwearVariant",GetWishlistFootwearVariant_NewBackoffice);
 app.use("/BackofficeApi/GetWishlistSocksVariant",GetWishlistSocksVariant_NewBackoffice);
+
+app.use("/BackofficeApi/GetFootwearSizeDataWebsite",GetFootwearSizeDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearColorDataWebsite",GetFootwearColorDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearTypeDataWebsite",GetFootwearTypeDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearPriceDataFilter",GetFootwearPriceDataFilter_NewBackoffice);
+
+app.use("/BackofficeApi/GetSocksSizeDataWebsite",GetSocksSizeDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetSocksColorDataWebsite",GetSocksColorDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetSocksTypeDataWebsite",GetSocksTypeDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetSocksPriceDataFilter",GetSocksPriceDataFilter_NewBackoffice);
 
 app.use("/BackofficeApi/UpdateCustomerPhoto",UpdateCustomerPhoto_NewBackoffice);
 
