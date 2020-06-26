@@ -1516,7 +1516,7 @@ var transporter = nodemailer.createTransport({
   auth: {
 
          user: 'wecare@beatmysugar.com',
-         pass: 'jamrood1234!'
+         pass: 'health@2020'
         
      }
  });
