@@ -766,17 +766,23 @@ const GetFoodHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-Ne
 const GetFootwearHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearHomePageWebsite")
 const GetSocksHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksHomePageWebsite")
 
+const AddTransactionLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddTransactionLog")
+
 const UpdateCustomerPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateCustomerPhoto")
 
+
+
+
+
 const app = express();
-
-
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
 app.use(cors());
 app.use(multipart({
     maxFieldsSize: '50MB'
 }));
+
+
 
 app.use("/AddProductCategory", AddProductCategory);
 app.use("/AddDosageForm", AddDosageForm);
@@ -1596,6 +1602,8 @@ app.use("/BackofficeApi/GetSocksPriceDataFilter",GetSocksPriceDataFilter_NewBack
 app.use("/BackofficeApi/GetFoodHomePageWebsite",GetFoodHomePageWebsite_NewBackoffice);
 app.use("/BackofficeApi/GetFootwearHomePageWebsite",GetFootwearHomePageWebsite_NewBackoffice);
 app.use("/BackofficeApi/GetSocksHomePageWebsite",GetSocksHomePageWebsite_NewBackoffice);
+
+app.use("/BackofficeApi/AddTransactionLog",AddTransactionLog_NewBackoffice);
 
 app.use("/BackofficeApi/UpdateCustomerPhoto",UpdateCustomerPhoto_NewBackoffice);
 
