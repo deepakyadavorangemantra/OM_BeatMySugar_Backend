@@ -4,11 +4,16 @@ const sql = require("mssql");
 const dbConnection = require("../../../../utilities/db1");
 
 
-router.get("/", function(request, response){
+router.post("/", function(request, response){
    
+    var category = request.body.category;
+
 
     try{
         const req = new sql.Request(dbConnection);
+
+        req.input('category',sql.Int, category);
+        
         req.execute("dbo.Get_FilterFoodListing", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);

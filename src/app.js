@@ -697,6 +697,9 @@ const GetFilterFootwearListing_NewBackoffice = require("./api/routes/Backoffice-
 
 const GetFilterSocksListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFilterSocksListing")
 const GetFoodBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodBrandData")
+const GetFoodFlavourDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodFlavourDataFilter")
+const GetFoodFilterDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodFilterDataFilter")
+const GetFoodPriceDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodPriceDataFilter")
 
 const GetFoodMasterDetailsWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodMasterDetailsWebsite")
 const GetFoodCategoryListingWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodCategoryListingWebsite")
@@ -746,6 +749,22 @@ const DeleteItemWishlist_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const GetWishlistFoodVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetWishlistFoodVariant")
 const GetWishlistFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetWishlistFootwearVariant")
 const GetWishlistSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetWishlistSocksVariant")
+
+const GetFootwearSizeDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearSizeDataWebsite")
+const GetFootwearColorDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearColorDataWebsite")
+const GetFootwearTypeDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearTypeDataWebsite")
+const GetFootwearPriceDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearPriceDataFilter")
+
+
+
+const GetSocksSizeDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksSizeDataWebsite")
+const GetSocksColorDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksColorDataWebsite")
+const GetSocksTypeDataWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksTypeDataWebsite")
+const GetSocksPriceDataFilter_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksPriceDataFilter")
+
+const GetFoodHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodHomePageWebsite")
+const GetFootwearHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearHomePageWebsite")
+const GetSocksHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksHomePageWebsite")
 
 const UpdateCustomerPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateCustomerPhoto")
 
@@ -1503,6 +1522,9 @@ app.use("/BackofficeApi/GetSocksGenderListingWebsite",GetSocksGenderListingWebsi
 app.use("/BackofficeApi/GetFilterFootwearListing",GetFilterFootwearListing_NewBackoffice);
 app.use("/BackofficeApi/GetFilterSocksListing",GetFilterSocksListing_NewBackoffice);
 app.use("/BackofficeApi/GetFoodBrandData",GetFoodBrandData_NewBackoffice);
+app.use("/BackofficeApi/GetFoodFlavourDataFilter",GetFoodFlavourDataFilter_NewBackoffice);
+app.use("/BackofficeApi/GetFoodFilterDataFilter",GetFoodFilterDataFilter_NewBackoffice);
+app.use("/BackofficeApi/GetFoodPriceDataFilter",GetFoodPriceDataFilter_NewBackoffice);
 
 app.use("/BackofficeApi/GetFoodMasterDetailsWebsite",GetFoodMasterDetailsWebsite_NewBackoffice);
 app.use("/BackofficeApi/GetFoodCategoryListingWebsite",GetFoodCategoryListingWebsite_NewBackoffice);
@@ -1560,6 +1582,20 @@ app.use("/BackofficeApi/DeleteItemWishlist",DeleteItemWishlist_NewBackoffice);
 app.use("/BackofficeApi/GetWishlistFoodVariant",GetWishlistFoodVariant_NewBackoffice);
 app.use("/BackofficeApi/GetWishlistFootwearVariant",GetWishlistFootwearVariant_NewBackoffice);
 app.use("/BackofficeApi/GetWishlistSocksVariant",GetWishlistSocksVariant_NewBackoffice);
+
+app.use("/BackofficeApi/GetFootwearSizeDataWebsite",GetFootwearSizeDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearColorDataWebsite",GetFootwearColorDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearTypeDataWebsite",GetFootwearTypeDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearPriceDataFilter",GetFootwearPriceDataFilter_NewBackoffice);
+
+app.use("/BackofficeApi/GetSocksSizeDataWebsite",GetSocksSizeDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetSocksColorDataWebsite",GetSocksColorDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetSocksTypeDataWebsite",GetSocksTypeDataWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetSocksPriceDataFilter",GetSocksPriceDataFilter_NewBackoffice);
+
+app.use("/BackofficeApi/GetFoodHomePageWebsite",GetFoodHomePageWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearHomePageWebsite",GetFootwearHomePageWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetSocksHomePageWebsite",GetSocksHomePageWebsite_NewBackoffice);
 
 app.use("/BackofficeApi/UpdateCustomerPhoto",UpdateCustomerPhoto_NewBackoffice);
 
