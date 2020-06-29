@@ -69,6 +69,544 @@ router.post("/", function(request, response){
                         subject: 'Order Placed.', // Subject line
                         html:
 
+
+                        '<html>'+
+    '<head>'+
+
+    '</head>'+
+    '<body>'+
+   
+
+ '<table style="'+
+   'width: 1000px;'+
+   'text-align: center;'+
+  ' margin-left: auto;'+
+  ' margin-right: auto;'+
+   'bottom: 0px;'+
+   'border-right-color: #000;'+
+  ' border-collapse: collapse;'+
+   'font-family: Lato, sans-serif;"' +
+' border="1"'+
+ 'cellspacing="0"'+
+' cellpadding="0">'+
+
+ '<tbody>'+
+   '<tr>'+
+    ' <td rowspan="2" style="width: 20%;">'+
+       '<img'+
+         'src="http://bmsdemo.beatmysugar.com/assets/images/bms-logo.png"'+
+         'style="width: 50%;"/>'+
+     '</td>'+
+     '<td colspan="8" style="width: 80%;">'+
+       '<h2 style="'+
+           'text-align: center;'+
+           'font-size: 25px;'+
+           'font-weight: bold;'+
+           'margin-bottom:0px;">'+
+         'BeatMySugar'+
+       '</h2>'+
+       '<p style="text-align: center;margin-top:5px;margin-bottom: 5px;">'+
+         'Rx Health Management India Pvt Ltd<br> 12th Floor, Puri'+
+         '81 Business Hub,'+
+
+         '<br />Sec-81, Faridabad, Haryana - 121 001. INDIA.'+
+       '</p>'+
+       '<tr class="success"'+
+         'style="background-color: #f7f7f7 !important;" >'+
+         '<td colspan="8"'+
+           'style="text-align: right;'+
+             'padding-right: 1%;'+
+             'font-weight: bold;'+
+             'font-size: 20px;">'+
+           'Customer Order Form'+
+         '</td>'+
+       '</tr>'+
+     '</td>'+
+   '</tr>'+
+
+   '<tr>'+
+     '<td colspan="1"'+
+       'style="text-align: left;'+
+         'padding-left: 1%;'+
+         'padding-top: 1%;'+
+         'padding-bottom: 1%;">'+
+       '<span style="font-weight: bold; font-size: 16px;">Order Date</span>'+
+     '</td>'+
+    ' <td colspan="3"'+
+       'style=" text-align: left;'+
+         'padding-left: 1%;'+
+        ' padding-top: 1%;'+
+        ' padding-bottom: 1%;" >'+
+       'orderdate'+
+     '</td>'+
+//      <td
+//        colspan="3"
+//        style="
+//          text-align: left;
+//          padding-left: 1%;
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//        "
+//      >
+//        <span style="font-weight: bold; font-size: 16px;"
+//          >Customer PO No</span
+//        >
+//      </td>
+//      <td
+//        colspan="4"
+//        style="
+//          text-align: left;
+//          padding-left: 1%;
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//        "
+//      >
+//        ordernumber
+//      </td>
+//    </tr>
+
+//    <tr
+//      class="success"
+//      style="background-color: #f7f7f7 !important;"
+//    >
+//      <td
+//        colspan="4"
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          font-weight: bold;
+//          font-size: 15px;
+//          text-align: center;
+//        "
+//      >
+//        Billing Address
+//      </td>
+//      <td
+//        colspan="4"
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          font-weight: bold;
+//          font-size: 15px;
+//          text-align: center;
+//        "
+//      >
+//        Shipping Address
+//      </td>
+//    </tr>
+//    <tr>
+//      <td
+//        colspan="4"
+//        style="
+//          text-align: left;
+//          padding-left: 1%;
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//        "
+//      >
+//        <span style="font-weight: bold; font-size: 18px;">
+//          billingname
+//        </span>
+//        <p>
+//          billingaddress <br />
+//          billingstreet <br />
+//          billingcity billingpincode , billingstate ,
+//          billingcountry .<br />Landmark: billinglandmark
+//          <br />Mobile Number: ( 91 billingmobile )
+//        </p>
+//      </td>
+
+//      <td
+//        colspan="4"
+//        style="
+//          text-align: left;
+//          padding-left: 1%;
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//        "
+//      >
+//        <span style="font-weight: bold; font-size: 18px;">
+//          shippingname
+//        </span>
+//        <p>
+//          shippingaddress <br />
+//          shippingstreet <br />
+//          shippingcity shippingpincode , shippingstate ,
+//          shippingcountry .<br />Landmark: shippinglandmark
+//          <br />Mobile Number: ( 91 shippingmobile )
+//        </p>
+//      </td>
+//    </tr>
+//  </tbody>
+// </table>
+
+// <table
+//  style="
+//    width: 1000px;
+//    text-align: center;
+//    margin-left: auto;
+//    margin-right: auto;
+//    border-right-color: #000;
+//    border-top: hidden;
+//    font-family: 'Lato', sans-serif;
+//    border-collapse: collapse;
+//  "
+//  border="1"
+//  cellspacing="0"
+//  cellpadding="0"
+// >
+//  <tbody>
+//    <tr
+//      class="success"
+//      style="background-color: #f7f7f7 !important;"
+//    >
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >
+//        S.No
+//      </td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >
+//      <span style="font-weight: bold;"> HSN Code</span>
+//      </td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >
+//        <span style="font-weight: bold;"> Product</span>
+//      </td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >
+//      <span style="font-weight: bold;"> Brand</span>
+//      </td>
+    
+
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >
+//        <span style="font-weight: bold;">Quantity</span>
+//      </td>
+
+//      <td
+//      style="
+//        padding-top: 1%;
+//        padding-bottom: 1%;
+//        text-align: center;
+//      "
+//    >
+//      <span style="font-weight: bold;">Net Weight</span>
+//    </td>
+
+//      <td
+//      style="
+//        padding-top: 1%;
+//        padding-bottom: 1%;
+//        text-align: center;
+//      "
+//    >
+//      <span style="font-weight: bold;">Rate</span>
+//    </td>
+   
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >
+//        <span style="font-weight: bold;">GST %</span>
+//      </td>
+    
+
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >
+//        <span style="font-weight: bold;">Total (INR)</span>
+//      </td>
+
+ 
+//    </tr>
+
+//    <tr>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >1</td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >300049011</td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >Nutrioc Diabetic Juice 500ml</td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >Nutriog</td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >1</td>
+//      <td
+//      style="
+//        padding-top: 1%;
+//        padding-bottom: 1%;
+//        text-align: center;
+//      "
+//    >100g</td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >&#8377;299</td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >12%</td>
+//      <td
+//        style="
+//          padding-top: 1%;
+//          padding-bottom: 1%;
+//          text-align: center;
+//        "
+//      >&#8377;300.00</td>
+ 
+//    </tr>
+//  </tbody>
+// </table>
+
+// <table
+//  style="
+//    width: 1000px;
+//    text-align: center;
+//    margin-left: auto;
+//    margin-right: auto;
+//    border-right-color: #000;
+//    border-top: hidden;
+//    font-family: 'Lato', sans-serif;
+//    border-collapse: collapse;
+//  "
+//  border="1"
+//  cellspacing="1"
+//  cellpadding="0"
+// >
+//  <tbody>
+//    <tr>
+//      <td
+//        rowspan="7"
+//        colspan="4"
+//        style="text-align: left; padding-left: 1%;"
+//      >
+//        <span style="font-weight: bold;"> Disclaimer:</span>
+//        <ul style="text-align: left;line-height:30px">
+//          <li>
+//            BMS is only providing a platform between seller
+//            and you
+//          </li>
+//          <li>
+//            Warranties, If any, on Products are provided by
+//            seller
+//          </li>
+//          <li>
+//            Disputes are subjected to exclusive jurisdiction
+//            of the courts in Delhi only
+//          </li>
+//          <li>
+//            Please revisit
+//            <a href="https://beatmysugar.com/"
+//              >www.beatmysugar.com</a
+//            >
+//            for detailed terms and conditions
+//          </li>
+//        </ul>
+
+//        <tr>
+//          <td
+//            colspan="4"
+//            style="text-align: right; padding: 1%;"
+//          >
+//            <span style="font-weight: bold;"> Sub total</span>
+//          </td>
+//          <td style="text-align: right; padding-right: 1%;">
+//             &#8377;522.00
+//          </td>
+//        </tr>
+//        <tr>
+//          <td
+//            colspan="4"
+//            style="text-align: right; padding: 1%;"
+//          >
+//            <span style="font-weight: bold;">
+//              Offer Discount
+//            </span>
+//          </td>
+//          <td style="text-align: right; padding-right: 1%;">
+//             &#8377;522.00
+//          </td>
+//        </tr>
+
+//        <tr>
+//          <td
+//            colspan="4"
+//            style="text-align: right; padding: 1%;"
+//          >
+//            <span style="font-weight: bold;">
+//              Shipping Charge
+//            </span>
+//          </td>
+//          <td style="text-align: right; padding-right: 1%;">
+//             &#8377;522.00
+//          </td>
+//        </tr>
+//        <tr>
+//          <td
+//            colspan="4"
+//            style="text-align: right; padding: 1%;"
+//          >
+//            <span style="font-weight: bold;">
+//             COD Service Charge
+//            </span>
+//          </td>
+//          <td style="text-align: right; padding-right: 1%;">
+//             &#8377;522.00
+//          </td>
+//        </tr>
+
+//        <tr>
+//          <td
+//            colspan="4"
+//            style="text-align: right; padding: 1%;"
+//          >
+//            <span style="font-weight: bold;">
+//              Total (Inclusive of all Taxes)
+//            </span>
+//          </td>
+//          <td style="text-align: right; padding-right: 1%;">
+//             &#8377;522.00
+//          </td>
+//        </tr>
+
+//        <tr>
+//          <td
+//            colspan="4"
+//            style="text-align: right; padding: 1%;"
+//          >
+//            <span style="font-weight: bold;">
+//              Payment Mode
+//            </span>
+//          </td>
+//          <td style="text-align: right; padding-right: 1%;">
+//            COD
+//          </td>
+//        </tr>
+//      </td>
+//    </tr>
+
+  
+//  </tbody>
+// </table>
+// <table style="
+// width: 1000px;
+// text-align: center;
+// margin-left: auto;
+// margin-right: auto;
+// border-right-color: #000;
+// border-top: hidden;
+// font-family: 'Lato', sans-serif;
+// border-collapse: collapse;
+// "
+// border="1"
+// cellspacing="1"
+// cellpadding="0">
+//     <tbody>
+//         <tr>
+//             <td colspan="4"></td>
+//           <td colspan="6"
+           
+//             style="
+//               padding-top: 1%;
+//               padding-bottom: 1%;
+//               text-align: center;
+//             "
+//           >
+//             Have a Question?<br> Call us on 91 90244 22444 or Email us
+//             at wecare@beatmysugar.com
+//           </td>
+//         </tr>
+     
+//         <tr
+//           class="success"
+//           style="background-color: #f7f7f7 !important;"
+//         >
+//         <td  colspan="4"></td>
+//           <td colspan="6"
+           
+//             style="
+//               padding-top: 1%;
+//               padding-bottom: 1%;
+//               text-align: center;
+//               background: #f7f7f7;
+//             "
+//           >
+//             Visit us at
+//             <a href="https://beatmysugar.com/"
+//               >www.beatmysugar.com</a
+//             >
+//           </td>
+//         </tr>
+//     </tbody>
+// '</table>'
+
+// '</body>'
+// '</html> '
+ 
+
                         '<html>'+
                         '<head>'+
                     

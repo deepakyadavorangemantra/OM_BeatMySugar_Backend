@@ -35,7 +35,7 @@
     "qrcode": "^1.4.4",
     "qrcode-generator": "^1.4.3",
     "randomatic": "^3.1.1",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "rimraf": "^3.0.0",
     "textbelt": "0.0.4",
     "uuid": "^3.3.2"

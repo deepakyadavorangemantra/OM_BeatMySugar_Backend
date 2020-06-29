@@ -767,6 +767,8 @@ const GetFootwearHomePageWebsite_NewBackoffice = require("./api/routes/Backoffic
 const GetSocksHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksHomePageWebsite")
 
 const AddTransactionLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddTransactionLog")
+const Response_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/Response")
+// const Response_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/PaymentResponse.html")
 
 const UpdateCustomerPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateCustomerPhoto")
 
@@ -782,6 +784,7 @@ app.use(multipart({
     maxFieldsSize: '50MB'
 }));
 
+// app.use(express.static('./'))
 
 
 app.use("/AddProductCategory", AddProductCategory);
@@ -1604,6 +1607,8 @@ app.use("/BackofficeApi/GetFootwearHomePageWebsite",GetFootwearHomePageWebsite_N
 app.use("/BackofficeApi/GetSocksHomePageWebsite",GetSocksHomePageWebsite_NewBackoffice);
 
 app.use("/BackofficeApi/AddTransactionLog",AddTransactionLog_NewBackoffice);
+app.use("/BackofficeApi/Response",Response_NewBackoffice);
+// app.use("/BackofficeApi/PaymentResponse.html",Response_NewBackoffice);
 
 app.use("/BackofficeApi/UpdateCustomerPhoto",UpdateCustomerPhoto_NewBackoffice);
 
