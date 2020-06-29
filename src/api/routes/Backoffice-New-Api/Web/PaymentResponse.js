@@ -1,5 +1,1 @@
-<html>
-    <body>
-        Hiii
-    </body>
-</html>
+window.location.href = "http://www.w3schools.com";
