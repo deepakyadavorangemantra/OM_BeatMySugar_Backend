@@ -768,7 +768,7 @@ const GetSocksHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-N
 
 const AddTransactionLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddTransactionLog")
 const Response_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/Response")
-// const Response_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/PaymentResponse.html")
+const PaymentResponse_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/PaymentResponse")
 
 const UpdateCustomerPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateCustomerPhoto")
 
@@ -1608,7 +1608,7 @@ app.use("/BackofficeApi/GetSocksHomePageWebsite",GetSocksHomePageWebsite_NewBack
 
 app.use("/BackofficeApi/AddTransactionLog",AddTransactionLog_NewBackoffice);
 app.use("/BackofficeApi/Response",Response_NewBackoffice);
-// app.use("/BackofficeApi/PaymentResponse.html",Response_NewBackoffice);
+app.use("/BackofficeApi/PaymentResponse_NewBackoffice",PaymentResponse_NewBackoffice);
 
 app.use("/BackofficeApi/UpdateCustomerPhoto",UpdateCustomerPhoto_NewBackoffice);
 

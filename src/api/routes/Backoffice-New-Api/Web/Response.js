@@ -98,7 +98,7 @@ router.post("/", function(req, res){
 						verified ="Yes";
 					else
 						verified = "No";
-					res.render(__dirname + 'https://bmsdemo.beatmysugar.com', {txnid: txnid,amount: amount, productinfo: productinfo, 
+					res.render('https://bmsdemo.beatmysugar.com', {txnid: txnid,amount: amount, productinfo: productinfo, 
 	additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
 				}
 			});
