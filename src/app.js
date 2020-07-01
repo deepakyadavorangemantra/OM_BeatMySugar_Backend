@@ -1634,6 +1634,6 @@ app.use("/BackofficeApi/UpdateCustomerPhoto",UpdateCustomerPhoto_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterDoctorWeb",GetHealthCenterDoctorWeb_NewBackoffice);
 app.use("/BackofficeApi/GetDoctorHealthCenterWeb",GetDoctorHealthCenterWeb_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterNutritionistWeb",GetHealthCenterNutritionistWeb_NewBackoffice);
-app.use("/BackofficeApi/Get_UserFamilyInfoByIDWeb_NewBackoffice",Get_UserFamilyInfoByIDWeb_NewBackoffice);
+app.use("/BackofficeApi/Get_UserFamilyInfoByIDWeb",Get_UserFamilyInfoByIDWeb_NewBackoffice);
 
 module.exports = app;
