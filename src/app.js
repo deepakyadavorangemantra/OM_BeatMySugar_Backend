@@ -776,6 +776,15 @@ const GetHealthCenterDoctorWeb_NewBackoffice = require("./api/routes/Backoffice-
 const GetDoctorHealthCenterWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetDoctorHealthCenterWeb")
 const GetHealthCenterNutritionistWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetHealthCenterNutritionistWeb")
 
+const Get_UserFamilyInfoByIDWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/Get_UserFamilyInfoByID")
+
+
+
+
+
+
+
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1625,5 +1634,6 @@ app.use("/BackofficeApi/UpdateCustomerPhoto",UpdateCustomerPhoto_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterDoctorWeb",GetHealthCenterDoctorWeb_NewBackoffice);
 app.use("/BackofficeApi/GetDoctorHealthCenterWeb",GetDoctorHealthCenterWeb_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterNutritionistWeb",GetHealthCenterNutritionistWeb_NewBackoffice);
+app.use("/BackofficeApi/Get_UserFamilyInfoByIDWeb_NewBackoffice",Get_UserFamilyInfoByIDWeb_NewBackoffice);
 
 module.exports = app;
