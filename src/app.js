@@ -768,13 +768,13 @@ const GetSocksHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-N
 
 const AddTransactionLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddTransactionLog")
 const Response_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/Response")
-// const PaymentResponse_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/PaymentResponse")
+const PaymentResponse_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/PaymentResponse")
 
 const UpdateCustomerPhoto_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateCustomerPhoto")
 
-
-
-
+const GetHealthCenterDoctorWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetHealthCenterDoctorWeb")
+const GetDoctorHealthCenterWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetDoctorHealthCenterWeb")
+const GetHealthCenterNutritionistWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetHealthCenterNutritionistWeb")
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -784,7 +784,16 @@ app.use(multipart({
     maxFieldsSize: '50MB'
 }));
 
-// app.use(express.static('./'))
+var session = require('express-session');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({secret: 'mcg001k',saveUninitialized: true,resave: true}));
+app.use(express.static(__dirname + '/'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname);
+
+
 
 
 app.use("/AddProductCategory", AddProductCategory);
@@ -1608,9 +1617,13 @@ app.use("/BackofficeApi/GetSocksHomePageWebsite",GetSocksHomePageWebsite_NewBack
 
 app.use("/BackofficeApi/AddTransactionLog",AddTransactionLog_NewBackoffice);
 app.use("/BackofficeApi/Response",Response_NewBackoffice);
-// app.use("/BackofficeApi/PaymentResponse_NewBackoffice",PaymentResponse_NewBackoffice);
+app.use("/BackofficeApi/PaymentResponse",PaymentResponse_NewBackoffice);
 
 app.use("/BackofficeApi/UpdateCustomerPhoto",UpdateCustomerPhoto_NewBackoffice);
 
+
+app.use("/BackofficeApi/GetHealthCenterDoctorWeb",GetHealthCenterDoctorWeb_NewBackoffice);
+app.use("/BackofficeApi/GetDoctorHealthCenterWeb",GetDoctorHealthCenterWeb_NewBackoffice);
+app.use("/BackofficeApi/GetHealthCenterNutritionistWeb",GetHealthCenterNutritionistWeb_NewBackoffice);
 
 module.exports = app;

@@ -11,12 +11,12 @@ var crypto = require('crypto');
 var reqpost = require('request');
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({secret: 'mcg001k',saveUninitialized: true,resave: true}));
-app.use(express.static(__dirname + '/'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.set('views', __dirname);
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(session({secret: 'mcg001k',saveUninitialized: true,resave: true}));
+// app.use(express.static(__dirname + '/'));
+// app.engine('html', require('ejs').renderFile);
+// app.set('view engine', 'html');
+// app.set('views', __dirname);
 
 const dbConnection = require("../../../../utilities/db1");
 
@@ -25,6 +25,7 @@ var salt = "cri53U9i";
 
 router.post("/", function(req, res){
    
+	
 	var verified = 'No';
 	var txnid = req.body.txnid;
 	var amount = req.body.amount;
@@ -98,7 +99,8 @@ router.post("/", function(req, res){
 						verified ="Yes";
 					else
 						verified = "No";
-					res.render('https://bmsdemo.beatmysugar.com', {txnid: txnid,amount: amount, productinfo: productinfo, 
+						// res.sendFile(__dirname+"/Resp.html");
+					res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
 	additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
 				}
 			});
