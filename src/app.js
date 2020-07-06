@@ -267,6 +267,7 @@ const VerifyMobileOTP= require("./api/routes/Web/VerifyMobileOTP");
 const CustomerRegistraionMobileOTP= require("./api/routes/Web/CustomerRegistrationMobileOTP");
 
 
+
 // ---------------------------- Mailers ------------------------------
 
 
@@ -777,9 +778,9 @@ const GetDoctorHealthCenterWeb_NewBackoffice = require("./api/routes/Backoffice-
 const GetHealthCenterNutritionistWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetHealthCenterNutritionistWeb")
 
 const Get_UserFamilyInfoByIDWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/Get_UserFamilyInfoByID")
+const DeleteCustomerAddress_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/DeleteCustomerAddress")
 
-
-
+const UpdateUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserAddressMapping")
 
 
 
@@ -1635,5 +1636,8 @@ app.use("/BackofficeApi/GetHealthCenterDoctorWeb",GetHealthCenterDoctorWeb_NewBa
 app.use("/BackofficeApi/GetDoctorHealthCenterWeb",GetDoctorHealthCenterWeb_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterNutritionistWeb",GetHealthCenterNutritionistWeb_NewBackoffice);
 app.use("/BackofficeApi/Get_UserFamilyInfoByIDWeb",Get_UserFamilyInfoByIDWeb_NewBackoffice);
+app.use("/BackofficeApi/DeleteCustomerAddress",DeleteCustomerAddress_NewBackoffice);
+
+app.use("/BackofficeApi/UpdateUserAddressMapping",UpdateUserAddressMapping_NewBackoffice);
 
 module.exports = app;

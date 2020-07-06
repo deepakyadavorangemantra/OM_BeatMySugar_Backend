@@ -9,12 +9,13 @@ var smtpTransport = require("nodemailer-smtp-transport");
 
 var QRCode = require('qrcode')
 
-var data = ''
-var CheckVal = ''
-var ht = ''
+
 
 router.post("/", function(request, response){
 
+  var data = ''
+var CheckVal = ''
+var ht = ''
 
     var ordernumber = request.body.ordernumber;
     var offerid = request.body.offerid;
