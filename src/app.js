@@ -781,6 +781,7 @@ const Get_UserFamilyInfoByIDWeb_NewBackoffice = require("./api/routes/Backoffice
 const DeleteCustomerAddress_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/DeleteCustomerAddress")
 
 const UpdateUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserAddressMapping")
+const GetOrderHistoryWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetOrderHistoryWebsite")
 
 
 
@@ -1639,5 +1640,9 @@ app.use("/BackofficeApi/Get_UserFamilyInfoByIDWeb",Get_UserFamilyInfoByIDWeb_New
 app.use("/BackofficeApi/DeleteCustomerAddress",DeleteCustomerAddress_NewBackoffice);
 
 app.use("/BackofficeApi/UpdateUserAddressMapping",UpdateUserAddressMapping_NewBackoffice);
+app.use("/BackofficeApi/GetOrderHistoryWebsite",GetOrderHistoryWebsite_NewBackoffice);
 
 module.exports = app;
+
+
+
