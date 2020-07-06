@@ -783,7 +783,7 @@ const DeleteCustomerAddress_NewBackoffice = require("./api/routes/Backoffice-New
 const UpdateUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserAddressMapping")
 const GetOrderHistoryWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetOrderHistoryWebsite")
 
-
+const GetNutritionistHealthCenterWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetNutritionistHealthCenterWeb")
 
 
 
@@ -1642,6 +1642,8 @@ app.use("/BackofficeApi/DeleteCustomerAddress",DeleteCustomerAddress_NewBackoffi
 app.use("/BackofficeApi/UpdateUserAddressMapping",UpdateUserAddressMapping_NewBackoffice);
 app.use("/BackofficeApi/GetOrderHistoryWebsite",GetOrderHistoryWebsite_NewBackoffice);
 
+
+app.use("/BackofficeApi/GetNutritionistHealthCenterWeb",GetNutritionistHealthCenterWeb_NewBackoffice);
 module.exports = app;
 
 
