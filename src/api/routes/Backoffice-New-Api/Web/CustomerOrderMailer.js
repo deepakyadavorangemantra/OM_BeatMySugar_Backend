@@ -62,6 +62,8 @@ var ht = ''
     try{
   
       var cd =  orderdata.map((dt,index)=>(
+
+        dt.fld_productweight != undefined ?
         '<tr>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
@@ -69,10 +71,23 @@ var ht = ''
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
           ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_productweight+' '+dt.fld_productunit+'</td>'+
-          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+dt.fld_discountprice+'</td>'+
+          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_discountprice).toFixed(2)+'</td>'+
           ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_gstpercent+'% </td>'+
            '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_discountprice).toFixed(2)+'</td>'+
         '</tr>'
+        :
+        '<tr>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_name+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;"> - </td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_discountprice).toFixed(2)+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_gstpercent+'% </td>'+
+        '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_discountprice).toFixed(2)+'</td>'+
+     '</tr>'
+
         ))
 
 
@@ -331,7 +346,7 @@ var ht = ''
            '<span style="font-weight: bold;"> Sub total</span>'+
         ' </td>'+
          '<td style="text-align: right; padding-right: 1%;">'+
-         '&#8377; '+ordervalue+
+         '&#8377; '+parseFloat(ordervalue).toFixed(2)+
          '</td>'+
       ' </tr>'+
       ' <tr>'+
@@ -341,7 +356,7 @@ var ht = ''
           ' </span>'+
          '</td>'+
          '<td style="text-align: right; padding-right: 1%;">'+
-         '&#8377; '+offeramount+
+         '&#8377; '+parseFloat(offeramount).toFixed(2)+
          '</td>'+
        '</tr>'+
        '<tr>'+
@@ -351,7 +366,7 @@ var ht = ''
            '</span>'+
         ' </td>'+
          '<td style="text-align: right; padding-right: 1%;">'+
-            '&#8377; '+shippingcharges+
+            '&#8377; '+parseFloat(shippingcharges).toFixed(2)+
         ' </td>'+
       ' </tr>'+
       ' <tr>'+
@@ -361,7 +376,7 @@ var ht = ''
            '</span>'+
         ' </td>'+
         ' <td style="text-align: right; padding-right: 1%;">'+
-            '&#8377; '+coddeliverycharges+
+            '&#8377; '+parseFloat(coddeliverycharges).toFixed(2)+
          '</td>'+
        '</tr>'+
 
@@ -372,7 +387,7 @@ var ht = ''
           ' </span>'+
          '</td>'+
         ' <td style="text-align: right; padding-right: 1%;">'+
-            '&#8377; '+netcost+
+            '&#8377; '+parseFloat(netcost).toFixed(2)+
         ' </td>'+
        '</tr>'+
 
@@ -411,6 +426,7 @@ var ht = ''
            
             'style=" padding-top: 1%;'+
              ' padding-bottom: 1%;'+
+             'border-left: hidden'+
               'text-align: center;">'+
             'Have a Question?<br> Call us on 91 90244 22444 or Email us at wecare@beatmysugar.com'+
          ' </td>'+
@@ -422,6 +438,7 @@ var ht = ''
          ' <td colspan="6"'+
            ' style="padding-top: 1%;'+
              ' padding-bottom: 1%;'+
+             'border-left: hidden'+
               'text-align: center;'+
              ' background: #f7f7f7;">'+
            ' Visit us at <a href="https://beatmysugar.com/">www.beatmysugar.com</a>'+

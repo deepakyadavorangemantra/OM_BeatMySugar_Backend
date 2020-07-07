@@ -39,7 +39,7 @@ router.post("/", function(request, response){
                             '<title>BeatMySugar</title>'+
                         '</head>'+
                        ' <body>'+
-                           ' <table style="width:1000px;margin-left: auto; margin-right: auto;">'+
+                           ' <table style="width:1000px;margin-left: auto; margin-right: auto;padding :5%;border:1px solid #507dc0">'+
                             '<tbody>'+
                                     '<tr>'+
                                    ' <th colspan="3">'+
@@ -78,7 +78,7 @@ router.post("/", function(request, response){
                         '</tbody>'+
                            ' </table>'+
                         
-                           ' <table style="width:1000px;margin-left: auto; margin-right: auto; background: linear-gradient(45deg, #7ac2ea, #507dc0);">'+
+                           ' <table style="width:1000px;margin-left: auto; margin-right: auto; background: linear-gradient(45deg, #7ac2ea, #507dc0);padding :5%;border:1px solid #507dc0;">'+
                         
                                  '<tbody>'+
                                     ' <tr></tr>'+

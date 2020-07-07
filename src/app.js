@@ -786,6 +786,12 @@ const GetOrderHistoryWebsite_NewBackoffice = require("./api/routes/Backoffice-Ne
 const GetNutritionistHealthCenterWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetNutritionistHealthCenterWeb")
 
 
+const GetFoodVendorDataAssign_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodVendorDataAssign")
+const GetFootwearVendorDataAssign_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearVendorDataAssign")
+const GetSocksVendorDataAssign_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksVendorDataAssign")
+
+
+const GetBlogSearchWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBlogSearchWebsite")
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1644,6 +1650,13 @@ app.use("/BackofficeApi/GetOrderHistoryWebsite",GetOrderHistoryWebsite_NewBackof
 
 
 app.use("/BackofficeApi/GetNutritionistHealthCenterWeb",GetNutritionistHealthCenterWeb_NewBackoffice);
+
+app.use("/BackofficeApi/GetFoodVendorDataAssign",GetFoodVendorDataAssign_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearVendorDataAssign",GetFootwearVendorDataAssign_NewBackoffice);
+app.use("/BackofficeApi/GetSocksVendorDataAssign",GetSocksVendorDataAssign_NewBackoffice);
+
+app.use("/BackofficeApi/GetBlogSearchWebsite",GetBlogSearchWebsite_NewBackoffice);
+
 module.exports = app;
 
 

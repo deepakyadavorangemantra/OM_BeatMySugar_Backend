@@ -76,8 +76,11 @@ router.post("/", function(request, response){
      
 
         
-
+      var pw= ''
+      
       var cd =  orderdata.map((dt,index)=>(
+        dt.fld_productweight != undefined ?
+
         '<tr>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
@@ -85,10 +88,24 @@ router.post("/", function(request, response){
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
           ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_productweight+' '+dt.fld_productunit+'</td>'+
-          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+dt.fld_price+'</td>'+
+          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
           ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
            '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
         '</tr>'
+        :
+
+        '<tr>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;"> - </td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+        '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
+     '</tr>'
+
         ))
 
 
@@ -377,7 +394,7 @@ router.post("/", function(request, response){
                                '<span style="font-weight: bold;"> Sub total</span>'+
                             ' </td>'+
                              '<td style="text-align: right; padding-right: 1%;">'+
-                             '&#8377; '+ordervalue+
+                             '&#8377; '+parseFloat(ordervalue).toFixed(2)+
                              '</td>'+
                           ' </tr>'+
                           ' <tr>'+
@@ -387,7 +404,7 @@ router.post("/", function(request, response){
                               ' </span>'+
                              '</td>'+
                              '<td style="text-align: right; padding-right: 1%;">'+
-                             '&#8377; '+(offeramount == null ? 0 : offeramount)+
+                             '&#8377; '+parseFloat((offeramount == null ? 0 : offeramount)).toFixed(2)+
                              '</td>'+
                            '</tr>'+
                            '<tr>'+
@@ -397,7 +414,7 @@ router.post("/", function(request, response){
                                '</span>'+
                             ' </td>'+
                              '<td style="text-align: right; padding-right: 1%;">'+
-                                '&#8377; '+shippingcharges+
+                                '&#8377; '+parseFloat(shippingcharges).toFixed(2)+
                             ' </td>'+
                           ' </tr>'+
                           ' <tr>'+
@@ -407,7 +424,7 @@ router.post("/", function(request, response){
                                '</span>'+
                             ' </td>'+
                             ' <td style="text-align: right; padding-right: 1%;">'+
-                                '&#8377; '+coddeliverycharges+
+                                '&#8377; '+parseFloat(coddeliverycharges).toFixed(2)+
                              '</td>'+
                            '</tr>'+
                     
@@ -418,7 +435,7 @@ router.post("/", function(request, response){
                               ' </span>'+
                              '</td>'+
                             ' <td style="text-align: right; padding-right: 1%;">'+
-                                '&#8377; '+netcost+
+                                '&#8377; '+parseFloat(netcost).toFixed(2)+
                             ' </td>'+
                            '</tr>'+
                     
@@ -454,7 +471,7 @@ router.post("/", function(request, response){
                            ' <tr>'+
                                ' <td colspan="4"></td>'+
                               '<td colspan="6"'+
-                               
+                             'border-left: hidden'+
                                 'style=" padding-top: 1%;'+
                                  ' padding-bottom: 1%;'+
                                   'text-align: center;">'+
@@ -467,6 +484,7 @@ router.post("/", function(request, response){
                            ' <td  colspan="4"></td>'+
                              ' <td colspan="6"'+
                                ' style="padding-top: 1%;'+
+                                 'border-left: hidden'+
                                  ' padding-bottom: 1%;'+
                                   'text-align: center;'+
                                  ' background: #f7f7f7;">'+
