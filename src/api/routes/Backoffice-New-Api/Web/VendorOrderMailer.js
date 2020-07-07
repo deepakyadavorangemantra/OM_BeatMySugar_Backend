@@ -121,6 +121,7 @@ router.post("/", function(request, response){
                      
                         from: 'BeatMySugar - Simplifying Diabetes Management <wecare@beatmysugar.com>', // sender address
                         to: 'nidhi@globaltrendz.com', // list of receivers
+                        cc : 'arun@beatmysugar.com',
                         subject: 'Order Received.', // Subject line
                         html:
 
@@ -246,6 +247,7 @@ router.post("/", function(request, response){
                          '<td colspan="4" style="padding-top: 1%;'+
                              'padding-bottom: 1%;'+
                              'font-weight: bold;'+
+                             'width:50%;'+
                              'font-size: 15px;'+
                              'text-align: center;">'+
                            'Billing Address'+
@@ -253,6 +255,7 @@ router.post("/", function(request, response){
                          '<td colspan="4" style="padding-top: 1%;'+
                              'padding-bottom: 1%;'+
                              'font-weight: bold;'+
+                             'width:50%;'+
                              'font-size: 15px;'+
                             ' text-align: center;">'+
                            'Shipping Address'+
@@ -310,45 +313,49 @@ router.post("/", function(request, response){
                      '  <tr class="success"'+
                         ' style="background-color: #f7f7f7 !important;" >'+
                         ' <td style="padding-top: 1%;'+
-                            ' padding-bottom: 1%;'+
+                            'padding-bottom: 1%;'+
+                            'width:5%'+
                              'text-align: center;" >'+
                            'S.No'+
                          '</td>'+
                          '<td style=" padding-top: 1%;'+
                             ' padding-bottom: 1%;'+
+                            'width:10%'+
                             ' text-align: center;">'+
                          '<span style="font-weight: bold;"> HSN Code</span>'+
                          '</td>'+
                        '  <td style="padding-top: 1%;'+
                             ' padding-bottom: 1%;'+
+                            'width:30%'+
                              'text-align: center;">'+
                            '<span style="font-weight: bold;"> Product</span>'+
                          '</td>'+
                         ' <td style="padding-top: 1%;'+
                              'padding-bottom: 1%;'+
+                             'width:10%'+
                              'text-align: center; " >'+
                         ' <span style="font-weight: bold;"> Brand</span>'+
                         ' </td>'+
                         
                     
-                         '<td style=" padding-top: 1%; padding-bottom: 1%;text-align: center;">'+
+                         '<td style=" padding-top: 1%; padding-bottom: 1%;text-align: center;width:10%;">'+
                            '<span style="font-weight: bold;">Quantity</span>'+
                          '</td>'+
                     
-                         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+
+                         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:10%;">'+
                          '<span style="font-weight: bold;">Net Weight</span>'+
                       ' </td>'+
                     
-                         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+
+                         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:10%;">'+
                          '<span style="font-weight: bold;">Rate</span>'+
                        '</td>'+
                        
-                        ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+
+                        ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:5%;">'+
                           ' <span style="font-weight: bold;">GST %</span>'+
                          '</td>'+
                         
                     
-                         '<td style=" padding-top: 1%; padding-bottom: 1%; text-align: center;">'+
+                         '<td style=" padding-top: 1%; padding-bottom: 1%; text-align: center;width:10%;">'+
                           ' <span style="font-weight: bold;">Total (INR)</span>'+
                          '</td>'+
                     
@@ -373,7 +380,7 @@ router.post("/", function(request, response){
                     ' cellpadding="0">'+
                      '<tbody>'+
                        '<tr>'+
-                         '<td rowspan="7" colspan="4" style="text-align: left; padding-left: 1%;">'+
+                         '<td rowspan="7" colspan="4" style="text-align: left; padding-left: 1%;width:55%;">'+
                            '<span style="font-weight: bold;"> Disclaimer:</span>'+
                            '<ul style="text-align: left;line-height:30px">'+
                              '<li>'+
@@ -390,7 +397,7 @@ router.post("/", function(request, response){
                                'for detailed terms and conditions </li></ul>'+
                     
                            '<tr>'+
-                             '<td colspan="4"  style="text-align: right; padding: 1%;" >'+
+                             '<td colspan="4"  style="text-align: right; padding: 1%;width:35%;" >'+
                                '<span style="font-weight: bold;"> Sub total</span>'+
                             ' </td>'+
                              '<td style="text-align: right; padding-right: 1%;">'+
@@ -469,8 +476,8 @@ router.post("/", function(request, response){
                     'cellpadding="0">'+
                         '<tbody>'+
                            ' <tr>'+
-                               ' <td colspan="4"></td>'+
-                              '<td colspan="6"'+
+      
+                              '<td colspan="10"'+
                              'border-left: hidden'+
                                 'style=" padding-top: 1%;'+
                                  ' padding-bottom: 1%;'+
@@ -481,8 +488,7 @@ router.post("/", function(request, response){
                          
                            ' <tr class="success"'+
                             '  style="background-color: #f7f7f7 !important;" >'+
-                           ' <td  colspan="4"></td>'+
-                             ' <td colspan="6"'+
+                             ' <td colspan="10"'+
                                ' style="padding-top: 1%;'+
                                  'border-left: hidden'+
                                  ' padding-bottom: 1%;'+
