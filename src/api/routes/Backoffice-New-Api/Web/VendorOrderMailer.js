@@ -316,16 +316,16 @@ router.post("/", function(request, response){
                             'padding-bottom: 1%;'+
                             'width:5%'+
                              'text-align: center;" >'+
-                           'S.No'+
+                             '<span style="font-weight: bold;"> S.No</span>'+
                          '</td>'+
                          '<td style=" padding-top: 1%;'+
-                            ' padding-bottom: 1%;'+
+                            'padding-bottom: 1%;'+
                             'width:10%'+
-                            ' text-align: center;">'+
+                            'text-align: center;">'+
                          '<span style="font-weight: bold;"> HSN Code</span>'+
                          '</td>'+
                        '  <td style="padding-top: 1%;'+
-                            ' padding-bottom: 1%;'+
+                            'padding-bottom: 1%;'+
                             'width:30%'+
                              'text-align: center;">'+
                            '<span style="font-weight: bold;"> Product</span>'+
@@ -478,7 +478,6 @@ router.post("/", function(request, response){
                            ' <tr>'+
       
                               '<td colspan="10"'+
-                             'border-left: hidden'+
                                 'style=" padding-top: 1%;'+
                                  ' padding-bottom: 1%;'+
                                   'text-align: center;">'+
@@ -490,7 +489,6 @@ router.post("/", function(request, response){
                             '  style="background-color: #f7f7f7 !important;" >'+
                              ' <td colspan="10"'+
                                ' style="padding-top: 1%;'+
-                                 'border-left: hidden'+
                                  ' padding-bottom: 1%;'+
                                   'text-align: center;'+
                                  ' background: #f7f7f7;">'+

@@ -265,14 +265,14 @@ var ht = ''
     ' style="background-color: #f7f7f7 !important;" >'+
     ' <td style="padding-top: 1%;'+
           'width:5%'+
-        ' padding-bottom: 1%;'+
+        'padding-bottom: 1%;'+
          'text-align: center;" >'+
-       'S.No'+
+         '<span style="font-weight: bold;">S.No</span>'+
      '</td>'+
-     '<td style=" padding-top: 1%;'+
-        ' padding-bottom: 1%;'+
+     '<td style="padding-top: 1%;'+
+        'padding-bottom: 1%;'+
         'width:10%'+
-        ' text-align: center;">'+
+        'text-align: center;">'+
      '<span style="font-weight: bold;"> HSN Code</span>'+
      '</td>'+
    '  <td style="padding-top: 1%;'+
