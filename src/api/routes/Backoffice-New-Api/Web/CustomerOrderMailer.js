@@ -134,8 +134,7 @@ var ht = ''
    '<tr>'+
     ' <td rowspan="2" style="width: 20%;">'+
        '<img'+
-         'src="https://bmsdemo.beatmysugar.com/assets/images/bms-logo.png"'+
-         'style="width: 50%;"/>'+
+         'src="https://bmsdemo.beatmysugar.com/assets/images/bms-logo.png" style="width: 50%;"/>'+
      '</td>'+
      '<td colspan="8" style="width: 80%;">'+
        '<h2 style="'+
