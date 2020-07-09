@@ -130,6 +130,13 @@ router.post("/", function(request, response){
                                              
                                               '<a href="https://www.twitter.com/beatmysugar" target="_blank">'+
                                                   '<img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/twitter.png" style="width:6%"></a>'+
+
+                                                  '<a href="https://www.linkedin.com/company/beatmysugar/" target="_blank">'+
+                                                  '<img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/linkdin.png" style="width:6%"></a>'+
+
+                                                  '<a href="https://www.youtube.com/channel/UCvM_zxRafVoBumfBKud1swg" target="_blank">'+
+                                                  '<img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/youtube.png" style="width:6%"></a>'+
+                                             
                                              
                                     
                                 '</td>'+
