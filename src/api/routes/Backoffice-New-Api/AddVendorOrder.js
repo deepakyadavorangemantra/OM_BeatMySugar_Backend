@@ -49,6 +49,8 @@ router.post("/", function(request, response){
     var billingmobile = request.body.billingmobile;
 
 
+    var  shipvendorid = request.body.shipvendorid;
+
     try{
         const req = new sql.Request(dbConnection);
     
@@ -73,6 +75,7 @@ router.post("/", function(request, response){
 
         req.input('staffid',sql.Int, staffid);
         req.input('vendorid',sql.Int, vendorid);
+        req.input('shipvendorid',sql.Int, shipvendorid);
 
         req.input('shippingname',sql.NVarChar(100), shippingname);
         req.input('shippingstreet',sql.NVarChar(200), shippingstreet);

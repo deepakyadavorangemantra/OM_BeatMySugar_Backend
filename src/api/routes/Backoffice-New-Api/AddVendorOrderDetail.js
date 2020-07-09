@@ -20,7 +20,7 @@ router.post("/", function(request, response){
     var orderid = request.body.orderid;
     var vendorid = request.body.vendorid;
 
-
+    var  shipvendorid = request.body.shipvendorid;
     
     try{
         const req = new sql.Request(dbConnection);
@@ -38,6 +38,7 @@ router.post("/", function(request, response){
         req.input('orderdetailid',sql.INT, orderdetailid);
         req.input('orderid',sql.INT, orderid);
         req.input('vendorid',sql.INT, vendorid);
+        req.input('shipvendorid',sql.Int, shipvendorid);
    
     
         req.execute("dbo.Add_VendorOrderDetail", function(err, data){
