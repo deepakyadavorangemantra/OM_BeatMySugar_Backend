@@ -34,127 +34,114 @@ router.post("/", function(request, response){
                         subject: 'Verify Email Address.', // Subject line
                         html:
                         
-                       ' <!DOCTYPE html>'+
                         '<html>'+
                         '<head>'+
-                            '<title>BeatMySugar</title>'+
+                    
                         '</head>'+
-                       ' <body>'+
-                           ' <table style="width:1000px;margin-left: auto; margin-right: auto;padding :5%;border:1px solid #507dc0;">'+
-                            '<tbody>'+
-                                    '<tr>'+
-                                   ' <th colspan="3">'+
-                                        '<img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/logo.png" style="margin-top: 0px;width: 10%"/>'+
-                                    '</th>'+
-                                '</tr>'+
-                        
+                        '<body>'+
+                            '<table width="100%" style="font-family: Lato, sans-serif;" cellpadding="0" cellspacing="0" width="100%">'+
                                 '<tr>'+
-                                   ' <th><a href="http://www.beatmysugar.com" target="blank" style="float: right;text-decoration: none;color: #7ac2ea;">www.beatmysugar.com</a></th>'+
+                                    '<td>'+
+                                        '<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 650px;border:1px solid #e8e8e8">'+
+                                           ' <tbody>'+
+                                               ' <tr style="background:#fff;padding:10px;border-bottom:1px solid #000">'+
+                                                   ' <td style="padding:10px">'+
+                                                        '<img src="https://bmsdemo.beatmysugar.com/assets/images/bms-logo.png">'+
+                                                    '</td>'+
+                                                    '<td>'+
+                                                       '<table style="float:right;margin-right:10px">'+
+                                                        '<tr>'+
+                                                            '<td colspan="5" style="text-align:center;padding-bottom:5px">'+
+                                                        '<p style="font-size: 13px;">Connect with BeatMySugar</p>'+
+                    
+                                                            '</td>'+
+                                                        '</tr>'+
+                                                          ' <tr style="text-align: right;">'+
+                                                            
+                                                               '<td><a href="https://www.facebook.com/beatmysugarofficial/" target="_blank"><img src="https://backoffice.beatmysugar.com/Images/Mailer-Images/fb.png" style="width:30px"></a></td>'+
+                                                               '<td><a href="https://www.instagram.com/beatmysugarofficial/" target="_blank"><img src="https://backoffice.beatmysugar.com/Images/Mailer-Images/instagram.png" style="width:30px"></a></td>'+
+                                                               '<td><a href="https://twitter.com/BeatMySugar" target="_blank"><img src="https://backoffice.beatmysugar.com/Images/Mailer-Images/twit.png" style="width:30px"></a></td>'+
+                                                               '<td><a href="https://www.linkedin.com/company/beatmysugar/" target="_blank"><img src="https://backoffice.beatmysugar.com/Images/Mailer-Images/linkedin.png" style="width:30px"></a></td>'+
+                                                               '<td><a href="https://www.youtube.com/channel/UCvM_zxRafVoBumfBKud1swg" target="_blank"><img src="https://backoffice.beatmysugar.com/Images/Mailer-Images/yout.png" style="width:30px"></a></td>'+
+                                                           '</tr>'+
+                                                       '</table>'+
+                                                    '</td>'+
+                                                '</tr>'+
+                                              
+                                               ' <tr>'+
+                                                   ' <td style="background:#fff;padding:20px 20px 10px;border-top:1px solid #fef1f1" colspan="2">'+
+                                                        '<table style="font-size:14px" >'+
+                                                           ' <tr>'+
+                                                               ' <td style="padding-bottom: 15px;">'+
+                                                                    'Hi <b>'+name+',</b>'+
+                                                                '</td>'+
+                                                            '</tr>'+
+                                                            '<tr>'+
+                                                               ' <td style="padding-bottom: 15px;">'+
+                                                                    'Welcome to <b>BeatMySugar</b>, your very own world for Simplifying Diabetes Management.'+
+                                                                '</td>'+
+                                                            '</tr>'+
+                                                           
+                                                            '<tr>'+
+                                                               ' <td style="padding-bottom: 15px;">'+
+                                                                   'Your OTP for Email Verification is - <b>'+otp+'</b>'+
+                                                               ' </td>'+
+                                                           ' </tr>'+
+                    
+                                                            '<tr>'+
+                                                               ' <td style="padding-bottom: 15px;">'+
+                                                                   ' Should you have any issues, please don'+"'"+'t hesitate to contact BeatMySugar team on the number below.'+
+                                                                '</td>'+
+                                                            '</tr>'+
+                                                            '<tr>'+
+                                                                '<td style="padding-bottom: 5px;">'+
+                                                                    'Stay Healthy'+
+                                                                '</td>'+
+                                                            '</tr>'+
+                                                            '<tr>'+
+                                                                '<td style="padding-bottom: 15px;">'+
+                                                                    'Team <b>BeatMySugar</b>'+
+                                                               ' </td>'+
+                                                           ' </tr>'+
+                                                            
+                                                           
+                    
+                                                       ' </table>'+
+                                                       
+                                                      
+                                                        
+                                                   ' </td>'+
+                    
+                                               ' </tr>'+
+                                                '<tr>'+
+                                                   ' <td style="width:100%;background: #f6f6f6;padding: 5px 20px;" colspan="2">'+
+                                                        '<table style="font-size:13px;    font-size: 13px;text-align: center;" width="100%">'+
+                                                           
+                                                          '  <tr>'+
+                                                                '<td style="padding-bottom: 5px;">'+
+                                                                   ' <img src="https://bmsdemo.beatmysugar.com/assets/images/bms-logo.png" style="width:50px;">'+
+                                                               ' </td>'+
+                                                           ' </tr>'+
+                                                           ' <tr>'+
+                                                               ' <td style="padding-bottom: 5px;">'+
+                                                                    '<a href="tel:919024422444">+91-90244-22444</a> | <a href="mailto:wecare@beatmysugar.com">wecare@beatmysugar.com</a>'+
+                                                                '</td>'+
+                                                            '</tr>'+
+                                                            '<tr>'+
+                                                                '<td>'+
+                                                                   
+                                                                '</td>'+
+                                                            '</tr>'+
+                                                       ' </table>'+
+                                                    '</td>'+
+                                                '</tr>'+
+                                            '</tbody>'+
+                                       ' </table>'+
+                                    '</td>'+
                                 '</tr>'+
-                        
-                                '<tr>'+
-                                    '<td  style="border-bottom:1px solid #507dc0"></td>'+
-                             ' </tr>'+
-                        
-                             ' <tr>'+
-                                  '<td style="color: #7a7d82;">'+
-                                     ' <p style="font-size: 16px">Hi '+name+',</p>'+
-                                      '<p style="text-align: center;" ><b style="color: #7ac2ea;font-size: 25px">Welcome to BeatMySugar</b><br/>'+
-                                    '<span >Your very own world of Diabetes Management.</span>'+
-                                    '</p>'+
-                                    ' <p style="font-size: 16px">This message has been sent to you because you have entered your e-mail as with BeatMySugar. If it wasn'+"'"+'t you, please ignore this message.</p>'+
-                                     ' <p style="font-size: 16px">Your OTP for Email Verification.</p>'+
-
-                                     ' <p style="font-size: 20px;color:black;"><b>'+otp+'</b></p>'+
-                                  
-                                  '<p style="color:grey;font-size: 14px">Best Wishes,'+
-                                      '<br><b style="color: #7ac2ea;font-size: 14px">Team BeatMySugar</b></p> <p></p>'+
-                                 
-                                 ' </td>'+
-                              '</tr>'+
-                              '<tr>'+
-                                 
-                              '</tr>'+
-                                  '<tr>'+
-                                   ' <td  style="border-bottom:1px solid #507dc0"></td>'+
-                            '  </tr>'+
-                              
-                        '</tbody>'+
-                           ' </table>'+
-                        
-                           ' <table style="width:1000px;margin-left: auto; margin-right: auto; background: linear-gradient(45deg, #7ac2ea, #507dc0);padding :5%;border:1px solid #507dc0;">'+
-                        
-                                 '<tbody>'+
-                                    ' <tr></tr>'+
-                                     '<tr></tr>'+
-                                        '<tr></tr>'+
-                                        '<tr></tr>'+
-                                    '<tr>'+
-                                         '<th></th>'+
-                                         '<th></th>'+
-                                         '<th style="color: black; font-size: 19px;margin-top:4px">Contact us</th>'+
-                                        ' <th></th>'+
-                                         '<th></th>'+
-                                         '<th></th>'+
-                                         '<th  style="color: black;font-size: 19px"> Social Links</th>'+
-                                    ' </tr>'+
-                                     ' <tr>'+
-                        
-                             ' <td></td>'+
-                              '<td></td>'+
-                                    '<td style="width: 50%; text-align: justify;">'+
-                                
-                                    '<p style="margin-left: 26%">'+
-                                        '<img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/Mail-Icon-white.png" style="width:4.5%;">'+
-                                   ' <a href="mailto:wecare@beatmysugar.com" style="text-decoration: none;color:white;font-size: 20px"> wecare@beatmysugar.com</a>'+
-                                    '<br>'+
-                                   ' <br>'+
-                                   ' <img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/phone_dark.png" style="width:4.5%">'+
-                                   ' <a href="tel:+919024422444"style="text-decoration: none;color:white;font-size: 18px">‭ +91-902-442-2444</a>'+
-                        
-                                    '</p>'+
-                                    
-                                '</td>'+
-                                '<td></td>'+
-                                '<td style="width:1%"></td>'+
-                                
-                                 ' <td style="border-left:1px solid white;height: 60px"></td>'+
-                                
-                            
-                        
-                                '<td style="text-align: center; ">'+
-                                      '<a href="https://www.facebook.com/pg/beatmysugarofficial"target="_blank">'+
-                                         ' <img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/face.png" style="width:6%"></a>'+
-                                     '<a href="https://www.instagram.com/beatmysugarofficial/" target="_blank">'+
-                                        ' <img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/insta.png"style="width:6%"></a>'+
-                                             
-                                              '<a href="https://www.twitter.com/beatmysugar" target="_blank">'+
-                                                  '<img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/twitter.png" style="width:6%"></a>'+
-
-                                                  '<a href="https://www.linkedin.com/company/beatmysugar/" target="_blank">'+
-                                                  '<img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/linkdin.png" style="width:6%"></a>'+
-
-                                                  '<a href="https://www.youtube.com/channel/UCvM_zxRafVoBumfBKud1swg" target="_blank">'+
-                                                  '<img src="http://backoffice.beatmysugar.com/Images/Mailer-Images/youtube.png" style="width:6%"></a>'+
-                                             
-                                             
-                                    
-                                '</td>'+
-                            '</tr>'+
-                            '<tr>'+
-                                '<td></td>'+
-                            '</tr>'+
-                            '<tr>'+
-                                '<td></td>'+
-                            '</tr>'+
-                        
-                                
-                                 '</tbody>'+
                             '</table>'+
-                        
-                        
                         '</body>'+
-                        '</html>'
+                    '</html>'
                         
                     
                       };
