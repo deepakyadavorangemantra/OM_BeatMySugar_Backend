@@ -794,6 +794,8 @@ const GetSocksVendorDataAssign_NewBackoffice = require("./api/routes/Backoffice-
 const GetBlogSearchWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBlogSearchWebsite")
 const ContactUsMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/ContactUsMailer")
 
+const GetFoodListingSearchPageWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodListingSearchPageWeb")
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1658,6 +1660,8 @@ app.use("/BackofficeApi/GetSocksVendorDataAssign",GetSocksVendorDataAssign_NewBa
 
 app.use("/BackofficeApi/GetBlogSearchWebsite",GetBlogSearchWebsite_NewBackoffice);
 app.use("/BackofficeApi/ContactUsMailer",ContactUsMailer_NewBackoffice);
+
+app.use("/BackofficeApi/GetFoodListingSearchPageWeb",GetFoodListingSearchPageWeb_NewBackoffice);
 
 module.exports = app;
 
