@@ -57,7 +57,7 @@ router.post("/", function(request, response){
         req.input('orderdate',sql.NVarChar(200), orderdate);
         req.input('ordervalue',sql.Decimal(18,2), ordervalue);
         req.input('paymentmode',sql.NVarChar(100), paymentmode);
-        req.input('netcost',sql.Int, netcost);
+        req.input('netcost',sql.Decimal(18,2), netcost);
         req.input('numofitems',sql.Int, numofitems);
         req.input('customerid',sql.Int, customerid);
         req.input('billingaddress',sql.NVarChar(200), billingaddress);

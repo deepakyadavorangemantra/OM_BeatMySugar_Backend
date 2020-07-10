@@ -94,11 +94,11 @@ router.post("/", function(request, response){
                                                            '</td>'+
                                                        '</tr>'+
                     
-                                                            '<tr>'+
-                                                               ' <td style="padding-bottom: 15px;">'+
-                                                                   'If you did not request a password reset, or are having any trouble in logging, please let us know.'+
-                                                                '</td>'+
-                                                            '</tr>'+
+                                                            // '<tr>'+
+                                                            //    ' <td style="padding-bottom: 15px;">'+
+                                                            //        'If you did not request a password reset, or are having any trouble in logging, please let us know.'+
+                                                            //     '</td>'+
+                                                            // '</tr>'+
                                                             '<tr>'+
                                                                 '<td style="padding-bottom: 5px;">'+
                                                                     'Stay Healthy'+

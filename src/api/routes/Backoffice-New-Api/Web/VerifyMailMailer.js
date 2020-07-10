@@ -117,11 +117,11 @@ router.post("/", function(request, response){
                                                    ' <td style="width:100%;background: #f6f6f6;padding: 5px 20px;" colspan="2">'+
                                                         '<table style="font-size:13px;    font-size: 13px;text-align: center;" width="100%">'+
                                                            
-                                                          '  <tr>'+
-                                                                '<td style="padding-bottom: 5px;">'+
-                                                                   ' <img src="https://bmsdemo.beatmysugar.com/assets/images/bms-logo.png" style="width:50px;">'+
-                                                               ' </td>'+
-                                                           ' </tr>'+
+                                                        //   '  <tr>'+
+                                                        //         '<td style="padding-bottom: 5px;">'+
+                                                        //            ' <img src="https://bmsdemo.beatmysugar.com/assets/images/bms-logo.png" style="width:50px;">'+
+                                                        //        ' </td>'+
+                                                        //    ' </tr>'+
                                                            ' <tr>'+
                                                                ' <td style="padding-bottom: 5px;">'+
                                                                     '<a href="tel:919024422444">+91-90244-22444</a> | <a href="mailto:wecare@beatmysugar.com">wecare@beatmysugar.com</a>'+
