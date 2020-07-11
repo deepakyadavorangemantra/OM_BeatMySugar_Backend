@@ -123,7 +123,7 @@ router.post("/", function(request, response){
                                                         //        ' </td>'+
                                                         //    ' </tr>'+
                                                            ' <tr>'+
-                                                               ' <td style="padding-bottom: 5px;">'+
+                                                               ' <td style="padding-bottom: 5px;padding-top: 5px;">'+
                                                                     '<a href="tel:919024422444">+91-90244-22444</a> | <a href="mailto:wecare@beatmysugar.com">wecare@beatmysugar.com</a>'+
                                                                 '</td>'+
                                                             '</tr>'+

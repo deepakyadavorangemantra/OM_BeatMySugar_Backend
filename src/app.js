@@ -795,6 +795,7 @@ const GetBlogSearchWebsite_NewBackoffice = require("./api/routes/Backoffice-New-
 const ContactUsMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/ContactUsMailer")
 
 const GetFoodListingSearchPageWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodListingSearchPageWeb")
+const GetCustomerEmailDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCustomerEmailDetails")
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1662,6 +1663,7 @@ app.use("/BackofficeApi/GetBlogSearchWebsite",GetBlogSearchWebsite_NewBackoffice
 app.use("/BackofficeApi/ContactUsMailer",ContactUsMailer_NewBackoffice);
 
 app.use("/BackofficeApi/GetFoodListingSearchPageWeb",GetFoodListingSearchPageWeb_NewBackoffice);
+app.use("/BackofficeApi/GetCustomerEmailDetails",GetCustomerEmailDetails_NewBackoffice);
 
 module.exports = app;
 
