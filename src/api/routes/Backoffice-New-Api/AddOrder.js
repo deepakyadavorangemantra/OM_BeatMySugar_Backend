@@ -45,6 +45,8 @@ router.post("/", function(request, response){
     var billingpincode = request.body.billingpincode;
     var billingmobile = request.body.billingmobile;
 
+    var txnid = request.body.txnid;
+
     try{
         const req = new sql.Request(dbConnection);
     
@@ -86,6 +88,7 @@ router.post("/", function(request, response){
         req.input('billingpincode',sql.NVarChar(10), billingpincode);
         req.input('billingmobile',sql.NVarChar(15), billingmobile);
        
+        req.input('txnid',sql.NVarChar(100), txnid);
    
     
         req.execute("dbo.Add_Order", function(err, data){
