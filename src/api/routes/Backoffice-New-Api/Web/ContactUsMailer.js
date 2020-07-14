@@ -31,8 +31,8 @@ router.post("/", function(request, response){
 
                     const mailOptions = {
                      
-                        from: 'BeatMySugar - Simplifying Diabetes Management <wecare@beatmysugar.com>', // sender address
-                        to: 'arun@beatmysugar.com', // list of receivers
+                        from: name+' <wecare@beatmysugar.com>', // sender address
+                        to: 'wecare@beatmysugar.com', // list of receivers
                         subject: 'You received a Message.', // Subject line
                         html:
                         

@@ -100,8 +100,9 @@ var ht = ''
 
                     const mailOptions = {
                      
-                        from: 'BeatMySugar - Simplifying Diabetes Management <wecare@beatmysugar.com>', // sender address
+                        from: 'BeatMySugar - Simplifying Diabetes Management <orders@beatmysugar.com>', // sender address
                         to: customeremail, // list of receivers
+                        bcc: 'orders@beatmysugar.com',
                         subject: 'Order Placed.', // Subject line
                         html:
 
@@ -494,8 +495,8 @@ var transporter = nodemailer.createTransport({
   secure: false, // use SSL,
   auth: {
 
-         user: 'wecare@beatmysugar.com',
-         pass: 'health@2020'
+         user: 'orders@beatmysugar.com',
+         pass: 'health@2020!!'
         
      }
  });

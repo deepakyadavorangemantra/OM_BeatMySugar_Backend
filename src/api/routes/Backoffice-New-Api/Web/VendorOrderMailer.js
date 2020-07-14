@@ -119,9 +119,9 @@ router.post("/", function(request, response){
 
                     const mailOptions = {
                      
-                        from: 'BeatMySugar - Simplifying Diabetes Management <wecare@beatmysugar.com>', // sender address
-                        to: 'nidhi@globaltrendz.com', // list of receivers
-                        cc : 'arun@beatmysugar.com',
+                        from: 'BeatMySugar - Simplifying Diabetes Management <orders@beatmysugar.com>', // sender address
+                        to: vendoremail, // list of receivers
+                        bcc : 'orders@beatmysugar.com',
                         subject: 'Order Received.', // Subject line
                         html:
 
@@ -546,8 +546,8 @@ var transporter = nodemailer.createTransport({
   secure: false, // use SSL,
   auth: {
 
-         user: 'wecare@beatmysugar.com',
-         pass: 'health@2020'
+    user: 'orders@beatmysugar.com',
+    pass: 'health@2020!!'
         
      }
  });

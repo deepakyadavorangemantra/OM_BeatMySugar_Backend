@@ -20,8 +20,8 @@ var reqpost = require('request');
 
 const dbConnection = require("../../../../utilities/db1");
 
-var key = "a6JOJL";
-var salt = "cri53U9i";
+var key = "4dl2G3";
+var salt = "Y8YsVhof";
 
 router.post("/", function(req, res){
    
@@ -73,7 +73,7 @@ router.post("/", function(req, res){
 	
 	var options = {
 		method: 'POST',
-		uri: 'https://test.payu.in/merchant/postservice.php?form=2',
+		uri: 'https://info.payu.in/merchant/postservice.php?form=2',
 		form: {
 			key: key,
 			hash: vhash,
