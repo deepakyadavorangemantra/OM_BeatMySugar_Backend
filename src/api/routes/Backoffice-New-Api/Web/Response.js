@@ -18,6 +18,8 @@ var reqpost = require('request');
 // app.set('view engine', 'html');
 // app.set('views', __dirname);
 
+var request = require('request');
+
 const dbConnection = require("../../../../utilities/db1");
 
 var key = "4dl2G3";
@@ -81,18 +83,14 @@ router.post("/", function(req, res){
 			command: command
 		},
 		headers: {
-			/* 'content-type': 'application/x-www-form-urlencoded' */ // Is set automatically
+			//  'content-type': 'application/x-www-form-urlencoded' 
 		}
 	};
 	
-	reqpost(options)
-		.on('response', function (resp) {
-			console.log('STATUS:'+resp.statusCode);
-			resp.setEncoding('utf8');
-			resp.on('data', function (chunk) {
-				// console.log(chunk)
-				vdata = JSON.parse(chunk);
-				// console.log(vdata)	
+
+	function callback(error, response, body) {
+		if (!error && response.statusCode == 200) {
+				vdata = JSON.parse(body);	
 				if(vdata.status == '1')
 				{
 					details = vdata.transaction_details[txnid];
@@ -105,11 +103,38 @@ router.post("/", function(req, res){
 					res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
 	additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
 				}
-			});
-		})
-		.on('error', function (err) {
-			console.log(err);
-		});
+		
+		}
+	}
+	
+	request(options, callback);
+
+	// reqpost(options)
+	// 	.on('response', function (resp) {
+	// 		console.log('STATUS:'+resp.statusCode);
+	// 		// console.log(resp)
+	// 		resp.setEncoding('utf8');
+	// 		resp.on('data', function (chunk) {
+	// 			console.log(chunk)
+	// 			vdata = JSON.parse(chunk);
+	// 			// console.log(vdata)	
+	// 			if(vdata.status == '1')
+	// 			{
+	// 				details = vdata.transaction_details[txnid];
+	// 				console.log(details['status'] + '   ' + details['mihpayid']);
+	// 				if(details['status'] == 'success' && details['mihpayid'] == mihpayid)
+	// 					verified ="Yes";
+	// 				else
+	// 					verified = "No";
+	// 					// res.sendFile(__dirname+"/Resp.html");
+	// 				res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
+	// additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
+	// 			}
+	// 		});
+	// 	})
+	// 	.on('error', function (err) {
+	// 		console.log(err);
+	// 	});
 
     try{
        
