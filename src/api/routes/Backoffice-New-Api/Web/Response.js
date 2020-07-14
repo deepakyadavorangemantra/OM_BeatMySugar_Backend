@@ -58,7 +58,7 @@ router.post("/", function(req, res){
 	if(calchash == resphash)
 		msg = 'Transaction Successful and Hash Verified...<br />Check Console Log for full response...';
 	
-	console.log(req.body);
+	// console.log(req.body);
 	
 	//Verify Payment routine to double check payment
 	var command = "verify_payment";
@@ -90,7 +90,9 @@ router.post("/", function(req, res){
 			console.log('STATUS:'+resp.statusCode);
 			resp.setEncoding('utf8');
 			resp.on('data', function (chunk) {
-				vdata = JSON.parse(chunk);	
+				console.log(chunk)
+				vdata = JSON.parse(chunk);
+				console.log(vdata)	
 				if(vdata.status == '1')
 				{
 					details = vdata.transaction_details[txnid];
