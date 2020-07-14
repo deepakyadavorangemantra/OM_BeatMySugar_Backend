@@ -91,11 +91,11 @@ router.post("/", function(req, res){
 			resp.setEncoding('utf8');
 			resp.on('data', function (chunk) {
 				// console.log(chunk)
-				// vdata = JSON.parse(chunk);
+				vdata = JSON.parse(chunk);
 				// console.log(vdata)	
-				if(chunk.status == '1')
+				if(vdata.status == '1')
 				{
-					details = chunk.transaction_details[txnid];
+					details = vdata.transaction_details[txnid];
 					console.log(details['status'] + '   ' + details['mihpayid']);
 					if(details['status'] == 'success' && details['mihpayid'] == mihpayid)
 						verified ="Yes";
