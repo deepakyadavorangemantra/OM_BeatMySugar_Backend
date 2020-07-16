@@ -8,15 +8,16 @@ const dbConnection = require("../../../../utilities/db1");
 router.post("/", function(request, response){
    
     var txnid = request.body.txnid;
-
-
+    var paystatus = request.body.paystatus;
+    var orderstatus = request.body.orderstatus;
 
 
     try{
         const req = new sql.Request(dbConnection);
     
         req.input('txnid',sql.NVarChar(200), txnid);
-    
+        req.input('paystatus',sql.NVarChar(100), paystatus);
+        req.input('orderstatus',sql.NVarChar(100), orderstatus);
        
     
         req.execute("dbo.Update_OrderConfirmationStatus", function(err, data){
