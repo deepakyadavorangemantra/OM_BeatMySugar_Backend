@@ -15,7 +15,7 @@ router.post("/", function(request, response){
     try{
         const req = new sql.Request(dbConnection);
     
-        req.input('txnid',sql.Int, txnid);
+        req.input('txnid',sql.NVarChar(200), txnid);
     
        
     
