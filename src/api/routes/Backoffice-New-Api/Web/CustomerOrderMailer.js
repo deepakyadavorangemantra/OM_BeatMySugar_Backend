@@ -343,7 +343,7 @@ var ht = ''
            'Disputes are subjected to exclusive jurisdiction of the courts in Delhi only'+
          '</li>'+
          '<li>'+
-           'Please revisit <a href="https://beatmysugar.com/">www.beatmysugar.com</a>'+
+           'Please revisit <a href="https://beatmysugar.com/"> www.beatmysugar.com</a>'+
            'for detailed terms and conditions </li></ul>'+
 
        '<tr>'+
