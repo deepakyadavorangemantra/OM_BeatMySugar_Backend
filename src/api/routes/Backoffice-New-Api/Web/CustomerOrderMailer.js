@@ -67,25 +67,25 @@ var ht = ''
         '<tr>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
-           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_name+'</td>'+
+           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
           ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_productweight+' '+dt.fld_productunit+'</td>'+
-          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_discountprice).toFixed(2)+'</td>'+
-          ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_gstpercent+'% </td>'+
-           '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_discountprice).toFixed(2)+'</td>'+
+          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
+          ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+           '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
         '</tr>'
         :
         '<tr>'+
         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
-        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_name+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
        ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;"> - </td>'+
-       ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_discountprice).toFixed(2)+'</td>'+
-       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_gstpercent+'% </td>'+
-        '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_discountprice).toFixed(2)+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+        '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
      '</tr>'
 
         ))
