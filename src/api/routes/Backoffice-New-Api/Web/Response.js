@@ -53,11 +53,13 @@ router.post("/", function(req, res){
 	if(calchash == resphash)
 	{
 		msg = 'Transaction Successful and Hash Verified...<br />Check Console Log for full response...';
+		console.log('success')
 		res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
 			additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: 'success',resphash: resphash,msg:msg,verified:'Yes'});
 			
 	}else
 	{
+		console.log('failed')
 		res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
 			additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: 'fail',resphash: resphash,msg:msg,verified:'No'});
 			
