@@ -122,7 +122,7 @@ router.post("/", function(request, response){
                         from: 'BeatMySugar - Simplifying Diabetes Management <orders@beatmysugar.com>', // sender address
                         to: vendoremail, // list of receivers
                         bcc : 'orders@beatmysugar.com',
-                        subject: 'Order Received.', // Subject line
+                        subject: 'New Order Received - '+ordernumber+'.', // Subject line
                         html:
 
                         '<html>'+
