@@ -29,6 +29,7 @@ router.post("/", function(request, response){
     var approved = request.body.approved;
     var updatedon = request.body.updatedon;
     var updatedby = request.body.updatedby;
+    var merchantid = request.body.merchantid; 
 
 
     try{
@@ -55,6 +56,7 @@ router.post("/", function(request, response){
         req.input('approved',sql.NVarChar(10), approved);
         req.input('updatedon',sql.NVarChar(100), updatedon);
         req.input('updatedby',sql.Int, updatedby);
+        req.input('merchantid',sql.NVarChar(100), merchantid);
     
         req.execute("dbo.Add_Vendor", function(err, data){
             if(err){
