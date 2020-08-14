@@ -45,6 +45,8 @@ router.post("/", function(request, response){
     var billingpincode = request.body.billingpincode;
     var billingmobile = request.body.billingmobile;
 
+    var txnid = request.body.txnid;
+
     try{
         const req = new sql.Request(dbConnection);
     
@@ -57,7 +59,7 @@ router.post("/", function(request, response){
         req.input('orderdate',sql.NVarChar(200), orderdate);
         req.input('ordervalue',sql.Decimal(18,2), ordervalue);
         req.input('paymentmode',sql.NVarChar(100), paymentmode);
-        req.input('netcost',sql.Int, netcost);
+        req.input('netcost',sql.Decimal(18,2), netcost);
         req.input('numofitems',sql.Int, numofitems);
         req.input('customerid',sql.Int, customerid);
         req.input('billingaddress',sql.NVarChar(200), billingaddress);
@@ -86,6 +88,7 @@ router.post("/", function(request, response){
         req.input('billingpincode',sql.NVarChar(10), billingpincode);
         req.input('billingmobile',sql.NVarChar(15), billingmobile);
        
+        req.input('txnid',sql.NVarChar(100), txnid);
    
     
         req.execute("dbo.Add_Order", function(err, data){

@@ -9,14 +9,16 @@ var smtpTransport = require("nodemailer-smtp-transport");
 
 var QRCode = require('qrcode')
 
-var data = ''
-var CheckVal = ''
+
 
 router.post("/", function(request, response){
 
-
+  var data = ''
+  var CheckVal = ''
+  var ht = ''
 
     var ordernumber = request.body.ordernumber;
+    var cusordernumber = request.body.cusordernumber;
     var offerid = request.body.offerid;
     var orderid = request.body.orderid;
     var offeramount = request.body.offeramount;
@@ -38,6 +40,14 @@ router.post("/", function(request, response){
 
     var staffid = request.body.staffid;    
     var vendoremail = request.body.vendoremail;
+
+    var vendorname = request.body.vendorname;
+    var vendoraddress = request.body.vendoraddress;
+    var vendorlandmark = request.body.vendorlandmark;
+    var vendorcountry = request.body.vendorcountry;
+    var vendorstate = request.body.vendorstate;
+    var vendorcity= request.body.vendorcity;
+    var vendorpincode = request.body.vendorpincode;
 
     var shippingname = request.body.shippingname;
     var shippingstreet = request.body.shippingstreet;
@@ -66,251 +76,430 @@ router.post("/", function(request, response){
      
 
         
+      var pw= ''
+      
+      var cd =  orderdata.map((dt,index)=>(
+        dt.fld_productweight != undefined ?
+
+        '<tr>'+
+           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
+           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
+           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
+           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
+           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
+          ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_productweight+' '+dt.fld_productunit+'</td>'+
+          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
+          ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+           '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
+        '</tr>'
+        :
+
+        '<tr>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;"> - </td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+        '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
+     '</tr>'
+
+        ))
+
+
+ cd.map((dt,index)=>(
+
+  ht = ht + dt
+))
+
 
 
 
                     const mailOptions = {
                      
-                        from: 'BeatMySugar - Simplifying Diabetes Management <wecare@beatmysugar.com>', // sender address
-                        to: 'nidhi@globaltrendz.com', // list of receivers
-                        subject: 'Order Placed.', // Subject line
+                        from: 'BeatMySugar - Simplifying Diabetes Management <orders@beatmysugar.com>', // sender address
+                        to: vendoremail, // list of receivers
+                        bcc : 'orders@beatmysugar.com',
+                        subject: 'New Order Received - '+ordernumber+'.', // Subject line
                         html:
 
                         '<html>'+
-'<head>'+
-
-    '</head>'+
-'<body>'+
-    '<table width="100%" style="font-family: Lato, sans-serif;" cellpadding="0" cellspacing="0" width="100%">'+
-        '<tr>'+
-            '<td>'+
-               ' <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"style="max-width: 650px;border:1px solid #e8e8e8">'+
-                    '<tbody>'+
-                        
-
-                        '<tr>'+
-  
-                                  
-                                        '<td style="padding-bottom: 15px;"> Your Order - <b>'+ordernumber+'</b>has been successfully placed.</td>'+
-                                   ' </tr>'+
-
-                                    '<tr>'+
-                                        '<td>'+
-                                            '<table style="font-size:13px;width:100%; text-align: center; margin-left: auto; margin-right: auto; bottom: 0px; border-right-color: #000; border-collapse: collapse;margin-bottom:0px;font-size: 13px;"border="1" cellspacing="0" cellpadding="0">'+
-                                                '<tbody>'+
-                                                    '<tr>'+
-                                                        '<td colspan="2" style="width:20%;vertical-align:middle"><img src="http://www.beatmysugar.com/assets/images/bms-logo.png" style="width: 50%;margin-right:auto;margin-left:auto; vertical-align: middle" />'+
-                                                        '</td>'+
-                                                        '<td colspan="8" style="width:80%">'+
-                                                           ' <h2 style="text-align: center; font-size: 20px; font-weight: bold">BeatMySugar</h2>'+
-                                                            '<p style="text-align: center" }}>Rx Health Management India Pvt Ltd 12th Floor, Puri 81 Business Hub,<br />Sec-81, Faridabad, Haryana - 121 001. INDIA.</p>'+
-                                                    '<tr rowspan="8" class="success" style="width:100%">'+
-                                                        '<td colspan="2" style="border-top:none"></td>'+
-                                                        '<td colspan="8" style="text-align: right; padding-right: 1%;font-weight: bold;font-size: 16px;width:100%">Order Form</td>'+
-                                                    '</tr>'+
-                                        '</td>'+
-                                    '</tr>'+
-
-
-                                    '<tr style="text-align:center" }}>'+
-                                        '<td colspan="3" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;text-align:center">'+
-                                            '<span style="font-weight: bold; font-size: 14px">Order Date</span></td>'+
-                                       ' <td colspan="2" style="text-align: left;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;text-align:center">'+
-                                            orderdate+'</td>'+
-                                        '<td colspan="3" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;text-align:center">'+
-                                            '<span style="font-weight: bold;font-size: 14px">Purchase Order No.</span>'+
-                                        '</td>'+
-                                        '<td colspan="2" style="text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%;text-align:center"> '+ordernumber+'</td>'+
-
-                                   ' </tr>'+
-
-
-                                    '<tr class="success">'+
-                                        '<td colspan="5"'+
-                                            'style="padding-top: 1%; padding-bottom: 1%; font-weight: bold; font-size: 15px;padding-left : 1%;">'+
-                                            'Billing'+
-                                            'Address</td>'+
-                                        '<td colspan="5"'+
-                                            'style="padding-top: 1%; padding-bottom: 1%; font-weight: bold; font-size: 15px;padding-left : 1%;">'+
-                                           ' Shipping Address</td>'+
-                                   ' </tr>'+
-                                   ' <tr>'+
-                                        '<td colspan="5" style="padding-top: 1%; padding-bottom: 1%; padding-left:1% ">'+
-                                            '<span'+
-                                                'style="font-weight: bold; font-size: 15px">'+billingname+'</span>'+
-                                           ' <p>'+billingaddress+
-                                                '<br />'+billingstreet+'<br />'+billingcity+
-                                               billingpincode+','+
-                                               billingstate+','+
-                                               billingcountry+'.<br />Landmark:'+
-                                               billinglandmark+''+
-                                                '<br />Mobile Number: ( +91 '+billingmobile+')</p>'+
-                                       ' </td>'+
-
-                                        '<td colspan="5"'+
-                                           ' style="padding-top: 1%; padding-bottom: 1%; font-size: 15px;text-align:center">'+
-                                            '<span'+
-                                                'style="font-weight: bold; font-size: 15px">'+shippingname+'</span>'+
-                                            '<p style="font-size:13px">'+deliveryaddress+
-                                                '<br />'+shippingstreet+'<br />'+shippingcity+
-                                                shippingpincode+','+
-                                                shippingstate+','+
-                                                shippingcountry+'.<br />Landmark:'+
-                                                shippinglandmark+''+
-                                                '<br />Mobile Number: ( +91 '+shippingmobile+')</p>'+
-                                        '</td>'+
-                                    '</tr>'+
-
-                    '</tbody>'+
-                '</table>'+
-                '<table'+
-                    'style="font-size: 13px;width:100%; text-align: center; margin-left: auto; margin-right: auto; bottom: 0px; border-right-color:'+
-                                                   '#000; border-collapse: collapse;margin-bottom:0px;word-break: break-all"'+
-                    'border="1" cellspacing="0" cellpadding="0">'+
-                    '<tbody>'+
-
-
-                        '<tr class="success">'+
-                            '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
-                                   ' style="font-weight: bold">'+
-                                    'S.No</span></td>'+
-                            '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
-                                    'style="font-weight: bold">HSN Code</span></td>'+
-
-                            '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
-                                    'style="font-weight: bold;" }}>'+
-                                   ' Product</span></td>'+
-                            '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
-                                   ' style="font-weight: bold">'+
-                                   ' Brand</span></td>'+
-                            '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
-                                   ' style="font-weight: bold">Quantity</span></td>'+
-                            '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
-                                    'style="font-weight: bold">Rate</span></td>'+
-                            '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
-                                    'style="font-weight: bold">GST %</span></td>'+
+                        '<head>'+
+                    
+                        '<body>'+
                        
-                            '<td style="padding-top: 1%; padding-bottom: 1;text-align:center"><span'+
-                                    'style="font-weight: bold">Total (INR)</span></td>'+
+                    
+                     '<table style="'+
+                       'width: 1000px;'+
+                       'text-align: center;'+
+                      ' margin-left: auto;'+
+                      ' margin-right: auto;'+
+                       'bottom: 0px;'+
+                       'border-right-color: #000;'+
+                      ' border-collapse: collapse;'+
+                       'font-family: Lato, sans-serif;"' +
+                    ' border="1"'+
+                     'cellspacing="0"'+
+                    ' cellpadding="0">'+
+                    
+                     '<tbody>'+
+                    
+                    
+                    
+                    
+                       '<tr>'+
+                        ' <td rowspan="2" style="width: 20%;">'+
+                           '<img src="https://bmsdemo.beatmysugar.com/assets/images/bms-logo.png" style="width: 50%;"/>'+
+                         '</td>'+
+                         '<td colspan="8" style="width: 80%;">'+
+                           '<h2 style="'+
+                               'text-align: center;'+
+                               'font-size: 25px;'+
+                               'font-weight: bold;'+
+                               'margin-bottom:0px;">'+
+                             'BeatMySugar'+
+                           '</h2>'+
+                           '<p style="text-align: center;margin-top:5px;margin-bottom: 5px;">'+
+                             'Rx Health Management India Pvt Ltd<br> 12th Floor, Puri'+
+                             '81 Business Hub,'+
+                    
+                             '<br />Sec-81, Faridabad, Haryana - 121 001. INDIA.'+
+                           '</p>'+
+                           '<tr class="success"'+
+                             'style="background-color: #f7f7f7 !important;" >'+
+                             '<td colspan="8"'+
+                               'style="text-align: right;'+
+                                 'padding-right: 1%;'+
+                                 'font-weight: bold;'+
+                                 'font-size: 20px;">'+
+                               'Vendor Order Form'+
+                             '</td>'+
+                           '</tr>'+
+                         '</td>'+
+                       '</tr>'+
+                    
+                       '<tr>'+
+                         '<td colspan="1"'+
+                           'style="text-align: left;'+
+                             'padding-left: 1%;'+
+                             'padding-top: 1%;'+
+                             'padding-bottom: 1%;">'+
+                           '<span style="font-weight: bold; font-size: 16px;">Order Date</span>'+
+                         '</td>'+
+                        ' <td colspan="1"'+
+                           'style=" text-align: left;'+
+                             'padding-left: 1%;'+
+                            ' padding-top: 1%;'+
+                            ' padding-bottom: 1%;" >'+
+                            orderdate+
+                         '</td>'+
+                         '<td colspan="1"'+
+                         'style="text-align: left;'+
+                           'padding-left: 1%;'+
+                           'padding-top: 1%;'+
+                           'padding-bottom: 1%;">'+
+                         '<span style="font-weight: bold; font-size: 16px;">Customer PO No.</span>'+
+                       '</td>'+
+                      ' <td colspan="1"'+
+                         'style=" text-align: left;'+
+                           'padding-left: 1%;'+
+                          ' padding-top: 1%;'+
+                          ' padding-bottom: 1%;" >'+
+                          cusordernumber+
+                       '</td>'+
+                         '<td colspan="1"'+
+                           'style="text-align: left;'+
+                             'padding-left: 1%;'+
+                             'padding-top: 1%;'+
+                             'padding-bottom: 1%;">'+
+                          ' <span style="font-weight: bold; font-size: 16px;">Vendor PO No.</span>'+
+                         '</td>'+
+                        ' <td colspan="1"'+
+                         'style="text-align: left;'+
+                            ' padding-left: 1%;'+
+                             'padding-top: 1%;'+
+                            ' padding-bottom: 1%;">'+
+                         ordernumber+
+                         '</td>'+
+                       '</tr>'+
 
-                       ' </tr>'+
-
+                       '<tr class="success" style="background-color: #f7f7f7 !important;">'+
+     '<td colspan="8" style=" padding-top: 1%; padding-bottom: 1%; font-weight: bold; font-size: 15px; text-align: center; " >'+
+      'Vendor Address'+
+     '</td>'+
+  ' </tr>'+
+  ' <tr>'+
+   ' <td colspan="8" style=" text-align: left; padding-left: 1%; padding-top: 1%; padding-bottom: 1%; " >'+
+     ' <span style="font-weight: bold; font-size: 18px;">'+
+        vendorname+
+      '</span>'+
+      '<p style="margin-top:5px">'+
+        vendoraddress+','+'<br/>' +vendorcity+','+vendorpincode+',<br/>'+vendorstate+','+vendorcountry+'.<br>'+
+        'Landmark:'+vendorlandmark+'<br/>'+
+      'Email: ('+vendoremail+')'+
+    '  </p>'+
+    '</td>'+
+  ' </tr>'+
+                    
+                       '<tr class="success" style="background-color: #f7f7f7 !important;">'+
+                         '<td colspan="4" style="padding-top: 1%;'+
+                             'padding-bottom: 1%;'+
+                             'font-weight: bold;'+
+                             'width:50%;'+
+                             'font-size: 15px;'+
+                             'text-align: center;">'+
+                           'Billing Address'+
+                         '</td>'+
+                         '<td colspan="4" style="padding-top: 1%;'+
+                             'padding-bottom: 1%;'+
+                             'font-weight: bold;'+
+                             'width:50%;'+
+                             'font-size: 15px;'+
+                            ' text-align: center;">'+
+                           'Shipping Address'+
+                         '</td>'+
+                       '</tr>'+
+                       '<tr>'+
+                         '<td colspan="4" style="text-align: left;'+
+                             'padding-left: 1%;'+
+                            ' padding-top: 1%;'+
+                             'padding-bottom: 1%;" >'+
+                         '  <span style="font-weight: bold; font-size: 18px;">'+
+                             billingname+
+                           '</span>'+
+                           '<p>'+
+                             billingaddress + '<br />'+
+                             billingstreet  +'<br />'+
+                             billingcity +' '+ billingpincode +','+ billingstate +','+
+                             billingcountry +'.<br />Landmark:'+ billinglandmark+
+                            ' <br />Mobile Number: ( 91 '+billingmobile+' )'+
+                           '</p>'+
+                         '</td>'+
+                    
+                        ' <td  colspan="4"  style=" text-align: left;'+
+                             'padding-left: 1%;'+
+                            ' padding-top: 1%;'+
+                             'padding-bottom: 1%;" >'+
+                           '<span style="font-weight: bold; font-size: 18px;">'+
+                             shippingname+
+                           '</span>'+
+                           '<p>'+
+                             deliveryaddress +'<br />'+
+                             shippingstreet +'<br />'+
+                             shippingcity +' '+ shippingpincode +','+ shippingstate +','+
+                             shippingcountry +'.<br />Landmark:'+ shippinglandmark+
+                             '<br />Mobile Number: ( 91 '+shippingmobile+' )'+
+                           '</p>'+
+                         '</td>'+
+                       '</tr>'+
+                     '</tbody>'+
+                    '</table>'+
+                    
+                    '<table style="'+
+                       'width: 1000px;'+
+                       'text-align: center;'+
+                       'margin-left: auto;'+
+                      ' margin-right: auto;'+
+                      ' border-right-color: #000;'+
+                      ' border-top: hidden;'+
+                       'font-family: Lato, sans-serif;'+
+                      ' border-collapse: collapse;"'+
+                    ' border="1"'+
+                    ' cellspacing="0"'+
+                    ' cellpadding="0">'+
+                     '<tbody>'+
+                     '  <tr class="success"'+
+                        ' style="background-color: #f7f7f7 !important;" >'+
+                        ' <td style="padding-top: 1%;'+
+                            'padding-bottom: 1%;'+
+                            'width:5%'+
+                             'text-align: center;" >'+
+                             '<span style="font-weight: bold;"> S.No</span>'+
+                         '</td>'+
+                         '<td style=" padding-top: 1%;'+
+                            'padding-bottom: 1%;'+
+                            'width:10%'+
+                            'text-align: center;">'+
+                         '<span style="font-weight: bold;"> HSN Code</span>'+
+                         '</td>'+
+                       '  <td style="padding-top: 1%;'+
+                            'padding-bottom: 1%;'+
+                            'width:30%'+
+                             'text-align: center;">'+
+                           '<span style="font-weight: bold;"> Product</span>'+
+                         '</td>'+
+                        ' <td style="padding-top: 1%;'+
+                             'padding-bottom: 1%;'+
+                             'width:10%'+
+                             'text-align: center; " >'+
+                        ' <span style="font-weight: bold;"> Brand</span>'+
+                        ' </td>'+
+                        
+                    
+                         '<td style=" padding-top: 1%; padding-bottom: 1%;text-align: center;width:10%;">'+
+                           '<span style="font-weight: bold;">Quantity</span>'+
+                         '</td>'+
+                    
+                         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:10%;">'+
+                         '<span style="font-weight: bold;">Net Weight</span>'+
+                      ' </td>'+
+                    
+                         '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:10%;">'+
+                         '<span style="font-weight: bold;">Rate</span>'+
+                       '</td>'+
                        
-
-
-                     orderdata.map((dt,index)=>(
-                        '<tr>'+
-                        '<td>'+(index+1)+'.</td>'+
-                        '<td>'+dt.fld_hsncode+'</td>'+
-                        '<td>'+dt.fld_prodname+'</td>'+
-                        '<td>'+dt.fld_brand+'</td>'+
-                        '<td>'+dt.fld_quantity+'</td>'+
-                        '<td>₹ '+dt.fld_price+'</td>'+
-                        '<td>'+dt.fld_taxpercent+'%</td>'+
-                        '<td> ₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
-                
-                    '</tr>'
-                     ))
-                     +
-
-
-                    '</tbody>'+
-                '</table>'+
-                '<table style="font-size: 13px;width:100%; text-align: center; margin-left: auto; margin-right: auto; bottom: 0px; border-right-color:'+
-                                               '#000; border-collapse: collapse;margin-bottom:0px;word-break: break-all"'+
-                   ' border="1" cellspacing="0" cellpadding="0">'+
-                    '<tbody>'+
-
-                        '<tr>'+
-                            '<td style="text-align: left; padding-left: 1%;padding-top:1%;padding-right:1%;vertical-align: top;">'+
-                                '<span style="font-weight: bold"> Disclaimer:</span>'+
-                                '<ul style="text-align: left;margin-left:5px;padding-left:10px">'+
-
-
-                                    '<li>BMS is only providing a platform between seller and you</li>'+
-                                    '<li>Warranties, If any, on Products are provided by seller</li>'+
-                                    '<li>Disputes are subjected to exclusive jurisdiction of the courts in Delhi only  </li>'+
-                                    '<li>Please revisit <a href="https://www.beatmysugar.com/" style={{fontWeight:600}}>www.beatmysugar.com</a> for detailed terms and conditions</li>'+
-                                '</ul>'+
-
-
-
-                            '</td>'+
-                            '<td>'+
-                               ' <table style="font-size: 13px;border-collapse: collapse;margin-bottom:0px;word-break: break-all" border="1" cellspacing="0" cellpadding="0">'+
-                                    '<tr>'+
-                                       ' <td style="text-align: right; padding: 1%"><span style="font-weight: bold"> Sub total</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:40%"> ₹ '+ordervalue+' </td>'+
-
-                                   ' </tr>'+
-                                   ' <tr style="width:100%;">'+
-                                        '<td style="text-align: right; padding: 1%"><span style="font-weight: bold">'+
-                                                'Offer Discount</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:40%">  ₹ '+offeramount+'</td>'+
-
-                                    '</tr>'+                                   
-                                     '<tr style="width:100%;">'+
-                                        '<td style="text-align: right; padding: 1%"><span style="font-weight: bold"> Shipping Charge</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:40%"> ₹ '+shippingcharges+'  </td>'+
-
-                                    '</tr>'+
-
-                                    '<tr style="width:100%;">'+
-                                        '<td style="text-align: right; padding: 1%"><span style="font-weight: bold"> COD Service Charge</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:40%"> ₹ '+coddeliverycharges+' </td>'+
-
-                                    '</tr>'+
-
-                                    '<tr style="width:100%;">'+
-                                        '<td style="text-align: right; padding: 1%"><span style="font-weight: bold"> Total (Inclusive of all Taxess)</span></td>'+
-                                       ' <td style="text-align: right; padding-right: 1%;width:40%"> ₹ '+netcost+' </td>'+
-
-                                    '</tr>'+
-                                    '<tr style="width:100%;">'+
-                                        '<td style="text-align: right; padding: 1%"><span style="font-weight: bold"> Payment Mode</span></td>'+
-                                        '<td style="text-align: right; padding-right: 1%;width:20%"> '+paymentmode+' </td>'+
-
-                                    '</tr>'+
-                                    '<tr style="width:100%;">'+
-                                        '<td colspan="2" style="padding-top: 1%; padding-bottom: 1%; text-align: center"> Have a Question? Call us on  +91 90244 22444 or Email us at wecare@beatmysugar.com</td>'+
-                                    '</tr>'+
-                                    '<tr class="success" style="width:100%;">'+
-                                        '<td colspan="2"'+
-                                            'style="padding-top: 1%; padding-bottom: 1%; text-align: center;background:#f7f7f7"> Visit us at <a href="https://www.beatmysugar.com/"'+
-                                                'style="font-weight:600">www.beatmysugar.com</a></td>'+
-                                    '</tr>'+
-                            '</td>'+
-                '</table>'+
-
-           ' </td>'+
-        '</tr>'+
-
-
-
-
-
-    '</table>'+
-  
-
-    '</td>'+
-
-    '</tr>'+
-   
-            '</table>'+
-        '</td>'+
-    '</tr>'+
-   ' </tbody>'+
-   ' </table>'+
-    '</td>'+
-   ' </tr>'+
-    '</table>'+
-'</body>'+
-
-'</html>'
+                        ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:5%;">'+
+                          ' <span style="font-weight: bold;">GST %</span>'+
+                         '</td>'+
                         
-                  
-                        
-                        
+                    
+                         '<td style=" padding-top: 1%; padding-bottom: 1%; text-align: center;width:10%;">'+
+                          ' <span style="font-weight: bold;">Total (INR)</span>'+
+                         '</td>'+
+                    
+                     
+                       '</tr>'+
+                     
+                       ht+
+                    
+                     '</tbody>'+
+                    '</table>'+
+                    '<table style="'+
+                    'width: 1000px;'+
+                    'text-align: center;'+
+                    'margin-left: auto;'+
+                    ' margin-right: auto;'+
+                    ' border-right-color: #000;'+
+                    ' border-top: hidden;'+
+                    'font-family: Lato, sans-serif;'+
+                    ' border-collapse: collapse;"'+
+                    ' border="1"'+
+                    ' cellspacing="0"'+
+                    ' cellpadding="0">'+
+                     '<tbody>'+
+                       '<tr>'+
+                         '<td rowspan="7" colspan="4" style="text-align: left; padding-left: 1%;width:55%;">'+
+                           '<span style="font-weight: bold;"> Disclaimer:</span>'+
+                           '<ul style="text-align: left;line-height:30px">'+
+                             '<li>'+
+                               'BMS is only providing a platform between seller and you'+
+                             '</li>'+
+                            ' <li>'+
+                               'Warranties, If any, on Products are provided by seller'+
+                             '</li>'+
+                             '<li>'+
+                               'Disputes are subjected to exclusive jurisdiction of the courts in Delhi only'+
+                             '</li>'+
+                             '<li>'+
+                               'Please revisit <a href="https://beatmysugar.com/"> www.beatmysugar.com</a>'+
+                               'for detailed terms and conditions </li></ul>'+
+                    
+                           '<tr>'+
+                             '<td colspan="4"  style="text-align: right; padding: 1%;width:35%;" >'+
+                               '<span style="font-weight: bold;"> Sub total</span>'+
+                            ' </td>'+
+                             '<td style="text-align: right; padding-right: 1%;">'+
+                             '&#8377; '+parseFloat(ordervalue).toFixed(2)+
+                             '</td>'+
+                          ' </tr>'+
+                          ' <tr>'+
+                             '<td colspan="4" style="text-align: right; padding: 1%;" >'+
+                               '<span style="font-weight: bold;">'+
+                                 'Offer Discount'+
+                              ' </span>'+
+                             '</td>'+
+                             '<td style="text-align: right; padding-right: 1%;">'+
+                             '&#8377; '+parseFloat((offeramount == null ? 0 : offeramount)).toFixed(2)+
+                             '</td>'+
+                           '</tr>'+
+                           '<tr>'+
+                             '<td colspan="4" style="text-align: right; padding: 1%;" >'+
+                               '<span style="font-weight: bold;">'+
+                                 'Shipping Charge'+
+                               '</span>'+
+                            ' </td>'+
+                             '<td style="text-align: right; padding-right: 1%;">'+
+                                '&#8377; '+parseFloat(shippingcharges).toFixed(2)+
+                            ' </td>'+
+                          ' </tr>'+
+                          ' <tr>'+
+                            ' <td colspan="4" style="text-align: right; padding: 1%;" >'+
+                               '<span style="font-weight: bold;">'+
+                                'COD Service Charge'+
+                               '</span>'+
+                            ' </td>'+
+                            ' <td style="text-align: right; padding-right: 1%;">'+
+                                '&#8377; '+parseFloat(coddeliverycharges).toFixed(2)+
+                             '</td>'+
+                           '</tr>'+
+                    
+                          ' <tr>'+
+                             '<td colspan="4"  style="text-align: right; padding: 1%;" >'+
+                              ' <span style="font-weight: bold;">'+
+                                ' Total (Inclusive of all Taxes)'+
+                              ' </span>'+
+                             '</td>'+
+                            ' <td style="text-align: right; padding-right: 1%;">'+
+                                '&#8377; '+parseFloat(netcost).toFixed(2)+
+                            ' </td>'+
+                           '</tr>'+
+                    
+                           '<tr>'+
+                            ' <td  colspan="4" style="text-align: right; padding: 1%;" >'+
+                               '<span style="font-weight: bold;">'+
+                                 'Payment Mode'+
+                              ' </span>'+
+                            ' </td>'+
+                            ' <td style="text-align: right; padding-right: 1%;">'+
+                                 paymentmode+
+                             '</td>'+
+                          ' </tr>'+
+                        ' </td>'+
+                      ' </tr>'+
+                    
+                      
+                    ' </tbody>'+
+                    '</table>'+
+                    '<table style="'+
+                    'width: 1000px;'+
+                    'text-align: center;'+
+                    'margin-left: auto;'+
+                    'margin-right: auto;'+
+                    'border-right-color: #000;'+
+                    'border-top: hidden;'+
+                    'font-family: Lato, sans-serif;'+
+                    'border-collapse: collapse;"'+
+                    'border="1"'+
+                    'cellspacing="1"'+
+                    'cellpadding="0">'+
+                        '<tbody>'+
+                           ' <tr>'+
+      
+                              '<td colspan="10"'+
+                                'style=" padding-top: 1%;'+
+                                 ' padding-bottom: 1%;'+
+                                  'text-align: center;">'+
+                                'Have a Question?<br> Call us on 91 90244 22444 or Email us at wecare@beatmysugar.com'+
+                             ' </td>'+
+                           ' </tr>'+
+                         
+                           ' <tr class="success"'+
+                            '  style="background-color: #f7f7f7 !important;" >'+
+                             ' <td colspan="10"'+
+                               ' style="padding-top: 1%;'+
+                                 ' padding-bottom: 1%;'+
+                                  'text-align: center;'+
+                                 ' background: #f7f7f7;">'+
+                               ' Visit us at <a href="https://beatmysugar.com/">www.beatmysugar.com</a>'+
+                              '</td>'+
+                           ' </tr>'+
+                       ' </tbody>'+
+                    '</table>'+
+                    
+                    '</body>'+
+                    '</html> '       
                     
                     }
     
@@ -357,8 +546,8 @@ var transporter = nodemailer.createTransport({
   secure: false, // use SSL,
   auth: {
 
-         user: 'wecare@beatmysugar.com',
-         pass: 'health@2020'
+    user: 'orders@beatmysugar.com',
+    pass: 'health@2020!!'
         
      }
  });

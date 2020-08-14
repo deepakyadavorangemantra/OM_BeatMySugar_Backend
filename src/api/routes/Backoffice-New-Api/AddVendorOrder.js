@@ -49,6 +49,8 @@ router.post("/", function(request, response){
     var billingmobile = request.body.billingmobile;
 
 
+    var  shipvendorid = request.body.shipvendorid;
+
     try{
         const req = new sql.Request(dbConnection);
     
@@ -61,7 +63,7 @@ router.post("/", function(request, response){
         req.input('orderdate',sql.NVarChar(200), orderdate);
         req.input('ordervalue',sql.Decimal(18,2), ordervalue);
         req.input('paymentmode',sql.NVarChar(100), paymentmode);
-        req.input('netcost',sql.Int, netcost);
+        req.input('netcost',sql.Decimal(18,2), netcost);
         req.input('numofitems',sql.Int, numofitems);
         req.input('customerid',sql.Int, customerid);
         req.input('billingaddress',sql.NVarChar(200), billingaddress);
@@ -73,6 +75,7 @@ router.post("/", function(request, response){
 
         req.input('staffid',sql.Int, staffid);
         req.input('vendorid',sql.Int, vendorid);
+        req.input('shipvendorid',sql.Int, shipvendorid);
 
         req.input('shippingname',sql.NVarChar(100), shippingname);
         req.input('shippingstreet',sql.NVarChar(200), shippingstreet);

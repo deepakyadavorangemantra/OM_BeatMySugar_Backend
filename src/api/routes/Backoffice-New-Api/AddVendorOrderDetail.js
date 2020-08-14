@@ -18,7 +18,11 @@ router.post("/", function(request, response){
     var status = request.body.status;
     var orderdetailid = request.body.orderdetailid;
     var orderid = request.body.orderid;
+    var vendorid = request.body.vendorid;
 
+    var  shipvendorid = request.body.shipvendorid;
+    var mrp = request.body.mrp;
+    var vendorsellingprice = request.body.vendorsellingprice;
     
     try{
         const req = new sql.Request(dbConnection);
@@ -35,7 +39,10 @@ router.post("/", function(request, response){
         req.input('status',sql.NVarChar(100), status);
         req.input('orderdetailid',sql.INT, orderdetailid);
         req.input('orderid',sql.INT, orderid);
-   
+        req.input('vendorid',sql.INT, vendorid);
+        req.input('shipvendorid',sql.Int, shipvendorid);
+        req.input('mrp',sql.Decimal(18,2), mrp);
+        req.input('vendorsellingprice',sql.Decimal(18,2), vendorsellingprice);
     
         req.execute("dbo.Add_VendorOrderDetail", function(err, data){
             if(err){

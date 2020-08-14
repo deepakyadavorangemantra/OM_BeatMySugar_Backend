@@ -11,7 +11,12 @@ var crypto = require('crypto');
 var reqpost = require('request');
 
 
-var request = require('request');
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(session({secret: 'mcg001k',saveUninitialized: true,resave: true}));
+// app.use(express.static(__dirname + '/'));
+// app.engine('html', require('ejs').renderFile);
+// app.set('view engine', 'html');
+// app.set('views', __dirname);
 
 const dbConnection = require("../../../../utilities/db1");
 
@@ -50,25 +55,8 @@ router.post("/", function(req, res){
 	
 	var msg = 'Payment failed for Hash not verified...<br />Check Console Log for full response...';
 	//Comapre status and hash. Hash verification is mandatory.
-	// if(calchash == resphash)
-	// {
-	// 	msg = 'Transaction Successful and Hash Verified...<br />Check Console Log for full response...';
-	// 	console.log('success')
-	// 	res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
-	// 		additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: 'success',resphash: resphash,msg:msg,verified:'Yes'});
-			
-	// }else
-	// {
-	// 	console.log('failed')
-	// 	res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
-	// 		additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: 'fail',resphash: resphash,msg:msg,verified:'No'});
-			
-	// }
-
-
 	if(calchash == resphash)
-	msg = 'Transaction Successful and Hash Verified...<br />Check Console Log for full response...';
-		
+		msg = 'Transaction Successful and Hash Verified...<br />Check Console Log for full response...';
 	
 	// console.log(req.body);
 	
@@ -93,14 +81,18 @@ router.post("/", function(req, res){
 			command: command
 		},
 		headers: {
-			//  'content-type': 'application/x-www-form-urlencoded' 
+			/* 'content-type': 'application/x-www-form-urlencoded' */ // Is set automatically
 		}
 	};
 	
-
-	function callback(error, response, body) {
-		if (!error && response.statusCode == 200) {
-				vdata = JSON.parse(body);	
+	reqpost(options)
+		.on('response', function (resp) {
+			console.log('STATUS:'+resp.statusCode);
+			resp.setEncoding('utf8');
+			resp.on('data', function (chunk) {
+				// console.log(chunk)
+				vdata = JSON.parse(chunk);
+				// console.log(vdata)	
 				if(vdata.status == '1')
 				{
 					details = vdata.transaction_details[txnid];
@@ -113,13 +105,11 @@ router.post("/", function(req, res){
 					res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
 	additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
 				}
-		
-		}
-	}
-	
-	request(options, callback);
-
-	
+			});
+		})
+		.on('error', function (err) {
+			console.log(err);
+		});
 
     try{
        

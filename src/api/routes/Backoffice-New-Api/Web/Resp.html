@@ -19,26 +19,26 @@
 <html>  
   
 <head>  
-    <title>HTML Redirect</title> 
+    <!-- <title>HTML Redirect</title>  -->
     <%if (status  == 'success') { %>
         <meta http-equiv="refresh"
-        content="0; url = http://localhost:3000/paymentsuccess/<%= txnid %>" />  
+        content="0; url = https://beatmysugar.com/paymentprocess/<%= txnid %>" />  
         <% } else{ %>  
             <meta http-equiv="refresh"
-            content="0; url = http://localhost:3000/paymentfail" />  
+            content="0; url = https://beatmysugar.com/paymentfail/<%= txnid %>" />  
         <% } %>
 
 </head>  
   
 <body>  
     <h1 style="text-align:center;color:green;">  
-        BMS
+        <!-- BMS -->
     </h1>  
       
     <p style="text-align:center;">  
-        If your browser supports Refresh,  
+        <!-- If your browser supports Refresh,  
         you'll be redirected to BMS
-        Homepage, in 5 seconds.  
+        Homepage, in 5 seconds.   -->
     </p>  
 </body>  
   

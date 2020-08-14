@@ -9,12 +9,13 @@ var smtpTransport = require("nodemailer-smtp-transport");
 
 var QRCode = require('qrcode')
 
-var data = ''
-var CheckVal = ''
-var ht = ''
+
 
 router.post("/", function(request, response){
 
+  var data = ''
+var CheckVal = ''
+var ht = ''
 
     var ordernumber = request.body.ordernumber;
     var offerid = request.body.offerid;
@@ -61,17 +62,32 @@ router.post("/", function(request, response){
     try{
   
       var cd =  orderdata.map((dt,index)=>(
+
+        dt.fld_productweight != undefined ?
         '<tr>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
-           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_name+'</td>'+
+           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
            '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
           ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_productweight+' '+dt.fld_productunit+'</td>'+
-          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+dt.fld_discountprice+'</td>'+
-          ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_gstpercent+'% </td>'+
-           '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_discountprice).toFixed(2)+'</td>'+
+          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
+          ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+           '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
         '</tr>'
+        :
+        '<tr>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
+        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;"> - </td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
+       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+        '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
+     '</tr>'
+
         ))
 
 
@@ -84,8 +100,9 @@ router.post("/", function(request, response){
 
                     const mailOptions = {
                      
-                        from: 'BeatMySugar - Simplifying Diabetes Management <wecare@beatmysugar.com>', // sender address
+                        from: 'BeatMySugar - Simplifying Diabetes Management <orders@beatmysugar.com>', // sender address
                         to: customeremail, // list of receivers
+                        bcc: 'orders@beatmysugar.com',
                         subject: 'Order Placed.', // Subject line
                         html:
 
@@ -117,9 +134,7 @@ router.post("/", function(request, response){
 
    '<tr>'+
     ' <td rowspan="2" style="width: 20%;">'+
-       '<img'+
-         'src="https://bmsdemo.beatmysugar.com/assets/images/bms-logo.png"'+
-         'style="width: 50%;"/>'+
+       '<img src="https://bmsdemo.beatmysugar.com/assets/images/bms-logo.png" style="width: 50%;"/>'+
      '</td>'+
      '<td colspan="8" style="width: 80%;">'+
        '<h2 style="'+
@@ -183,12 +198,14 @@ router.post("/", function(request, response){
          'padding-bottom: 1%;'+
          'font-weight: bold;'+
          'font-size: 15px;'+
+         'width:50%;'+
          'text-align: center;">'+
        'Billing Address'+
      '</td>'+
      '<td colspan="4" style="padding-top: 1%;'+
          'padding-bottom: 1%;'+
          'font-weight: bold;'+
+         'width:50%;'+
          'font-size: 15px;'+
         ' text-align: center;">'+
        'Shipping Address'+
@@ -246,45 +263,49 @@ router.post("/", function(request, response){
  '  <tr class="success"'+
     ' style="background-color: #f7f7f7 !important;" >'+
     ' <td style="padding-top: 1%;'+
-        ' padding-bottom: 1%;'+
+          'width:5%'+
+        'padding-bottom: 1%;'+
          'text-align: center;" >'+
-       'S.No'+
+         '<span style="font-weight: bold;">S.No</span>'+
      '</td>'+
-     '<td style=" padding-top: 1%;'+
-        ' padding-bottom: 1%;'+
-        ' text-align: center;">'+
+     '<td style="padding-top: 1%;'+
+        'padding-bottom: 1%;'+
+        'width:10%'+
+        'text-align: center;">'+
      '<span style="font-weight: bold;"> HSN Code</span>'+
      '</td>'+
    '  <td style="padding-top: 1%;'+
         ' padding-bottom: 1%;'+
+        'width:30%'+
          'text-align: center;">'+
        '<span style="font-weight: bold;"> Product</span>'+
      '</td>'+
     ' <td style="padding-top: 1%;'+
          'padding-bottom: 1%;'+
+         'width:10%'+
          'text-align: center; " >'+
     ' <span style="font-weight: bold;"> Brand</span>'+
     ' </td>'+
     
 
-     '<td style=" padding-top: 1%; padding-bottom: 1%;text-align: center;">'+
+     '<td style=" padding-top: 1%; padding-bottom: 1%;text-align: center;width:10%;">'+
        '<span style="font-weight: bold;">Quantity</span>'+
      '</td>'+
 
-     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+
+     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:10%;">'+
      '<span style="font-weight: bold;">Net Weight</span>'+
   ' </td>'+
 
-     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+
+     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:10%;">'+
      '<span style="font-weight: bold;">Rate</span>'+
    '</td>'+
    
-    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+
+    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:5%;">'+
       ' <span style="font-weight: bold;">GST %</span>'+
      '</td>'+
     
 
-     '<td style=" padding-top: 1%; padding-bottom: 1%; text-align: center;">'+
+     '<td style=" padding-top: 1%; padding-bottom: 1%; text-align: center;width:10%;">'+
       ' <span style="font-weight: bold;">Total (INR)</span>'+
      '</td>'+
 
@@ -309,7 +330,7 @@ router.post("/", function(request, response){
 ' cellpadding="0">'+
  '<tbody>'+
    '<tr>'+
-     '<td rowspan="7" colspan="4" style="text-align: left; padding-left: 1%;">'+
+     '<td rowspan="7" colspan="4" style="text-align: left; padding-left: 1%;width:55%;">'+
        '<span style="font-weight: bold;"> Disclaimer:</span>'+
        '<ul style="text-align: left;line-height:30px">'+
          '<li>'+
@@ -322,15 +343,15 @@ router.post("/", function(request, response){
            'Disputes are subjected to exclusive jurisdiction of the courts in Delhi only'+
          '</li>'+
          '<li>'+
-           'Please revisit <a href="https://beatmysugar.com/">www.beatmysugar.com</a>'+
+           'Please revisit <a href="https://beatmysugar.com/"> www.beatmysugar.com</a>'+
            'for detailed terms and conditions </li></ul>'+
 
        '<tr>'+
-         '<td colspan="4"  style="text-align: right; padding: 1%;" >'+
+         '<td colspan="4"  style="text-align: right; padding: 1%;width:35%;" >'+
            '<span style="font-weight: bold;"> Sub total</span>'+
         ' </td>'+
          '<td style="text-align: right; padding-right: 1%;">'+
-         '&#8377; '+ordervalue+
+         '&#8377; '+parseFloat(ordervalue).toFixed(2)+
          '</td>'+
       ' </tr>'+
       ' <tr>'+
@@ -340,7 +361,7 @@ router.post("/", function(request, response){
           ' </span>'+
          '</td>'+
          '<td style="text-align: right; padding-right: 1%;">'+
-         '&#8377; '+offeramount+
+         '&#8377; '+parseFloat(offeramount).toFixed(2)+
          '</td>'+
        '</tr>'+
        '<tr>'+
@@ -350,7 +371,7 @@ router.post("/", function(request, response){
            '</span>'+
         ' </td>'+
          '<td style="text-align: right; padding-right: 1%;">'+
-            '&#8377; '+shippingcharges+
+            '&#8377; '+parseFloat(shippingcharges).toFixed(2)+
         ' </td>'+
       ' </tr>'+
       ' <tr>'+
@@ -360,7 +381,7 @@ router.post("/", function(request, response){
            '</span>'+
         ' </td>'+
         ' <td style="text-align: right; padding-right: 1%;">'+
-            '&#8377; '+coddeliverycharges+
+            '&#8377; '+parseFloat(coddeliverycharges).toFixed(2)+
          '</td>'+
        '</tr>'+
 
@@ -371,7 +392,7 @@ router.post("/", function(request, response){
           ' </span>'+
          '</td>'+
         ' <td style="text-align: right; padding-right: 1%;">'+
-            '&#8377; '+netcost+
+            '&#8377; '+parseFloat(netcost).toFixed(2)+
         ' </td>'+
        '</tr>'+
 
@@ -405,11 +426,12 @@ router.post("/", function(request, response){
 'cellpadding="0">'+
     '<tbody>'+
        ' <tr>'+
-           ' <td colspan="4"></td>'+
-          '<td colspan="6"'+
+
+          '<td colspan="10"'+
            
             'style=" padding-top: 1%;'+
              ' padding-bottom: 1%;'+
+             'border-left: hidden'+
               'text-align: center;">'+
             'Have a Question?<br> Call us on 91 90244 22444 or Email us at wecare@beatmysugar.com'+
          ' </td>'+
@@ -417,10 +439,10 @@ router.post("/", function(request, response){
      
        ' <tr class="success"'+
         '  style="background-color: #f7f7f7 !important;" >'+
-       ' <td  colspan="4"></td>'+
-         ' <td colspan="6"'+
+         ' <td colspan="10"'+
            ' style="padding-top: 1%;'+
              ' padding-bottom: 1%;'+
+             'border-left: hidden'+
               'text-align: center;'+
              ' background: #f7f7f7;">'+
            ' Visit us at <a href="https://beatmysugar.com/">www.beatmysugar.com</a>'+
@@ -473,8 +495,8 @@ var transporter = nodemailer.createTransport({
   secure: false, // use SSL,
   auth: {
 
-         user: 'wecare@beatmysugar.com',
-         pass: 'health@2020'
+         user: 'orders@beatmysugar.com',
+         pass: 'health@2020!!'
         
      }
  });

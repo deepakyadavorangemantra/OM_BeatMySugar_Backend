@@ -267,6 +267,7 @@ const VerifyMobileOTP= require("./api/routes/Web/VerifyMobileOTP");
 const CustomerRegistraionMobileOTP= require("./api/routes/Web/CustomerRegistrationMobileOTP");
 
 
+
 // ---------------------------- Mailers ------------------------------
 
 
@@ -777,13 +778,26 @@ const GetDoctorHealthCenterWeb_NewBackoffice = require("./api/routes/Backoffice-
 const GetHealthCenterNutritionistWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetHealthCenterNutritionistWeb")
 
 const Get_UserFamilyInfoByIDWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/Get_UserFamilyInfoByID")
+const DeleteCustomerAddress_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/DeleteCustomerAddress")
+
+const UpdateUserAddressMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateUserAddressMapping")
+const GetOrderHistoryWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetOrderHistoryWebsite")
+
+const GetNutritionistHealthCenterWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetNutritionistHealthCenterWeb")
 
 
+const GetFoodVendorDataAssign_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodVendorDataAssign")
+const GetFootwearVendorDataAssign_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearVendorDataAssign")
+const GetSocksVendorDataAssign_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksVendorDataAssign")
 
 
+const GetBlogSearchWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetBlogSearchWebsite")
+const ContactUsMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/ContactUsMailer")
 
+const GetFoodListingSearchPageWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodListingSearchPageWeb")
+const GetCustomerEmailDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCustomerEmailDetails")
 
-
+const UpdateOrderConfirmationStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateOrderConfirmationStatus")
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1635,5 +1649,27 @@ app.use("/BackofficeApi/GetHealthCenterDoctorWeb",GetHealthCenterDoctorWeb_NewBa
 app.use("/BackofficeApi/GetDoctorHealthCenterWeb",GetDoctorHealthCenterWeb_NewBackoffice);
 app.use("/BackofficeApi/GetHealthCenterNutritionistWeb",GetHealthCenterNutritionistWeb_NewBackoffice);
 app.use("/BackofficeApi/Get_UserFamilyInfoByIDWeb",Get_UserFamilyInfoByIDWeb_NewBackoffice);
+app.use("/BackofficeApi/DeleteCustomerAddress",DeleteCustomerAddress_NewBackoffice);
+
+app.use("/BackofficeApi/UpdateUserAddressMapping",UpdateUserAddressMapping_NewBackoffice);
+app.use("/BackofficeApi/GetOrderHistoryWebsite",GetOrderHistoryWebsite_NewBackoffice);
+
+
+app.use("/BackofficeApi/GetNutritionistHealthCenterWeb",GetNutritionistHealthCenterWeb_NewBackoffice);
+
+app.use("/BackofficeApi/GetFoodVendorDataAssign",GetFoodVendorDataAssign_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearVendorDataAssign",GetFootwearVendorDataAssign_NewBackoffice);
+app.use("/BackofficeApi/GetSocksVendorDataAssign",GetSocksVendorDataAssign_NewBackoffice);
+
+app.use("/BackofficeApi/GetBlogSearchWebsite",GetBlogSearchWebsite_NewBackoffice);
+app.use("/BackofficeApi/ContactUsMailer",ContactUsMailer_NewBackoffice);
+
+app.use("/BackofficeApi/GetFoodListingSearchPageWeb",GetFoodListingSearchPageWeb_NewBackoffice);
+app.use("/BackofficeApi/GetCustomerEmailDetails",GetCustomerEmailDetails_NewBackoffice);
+app.use("/BackofficeApi/UpdateOrderConfirmationStatus",UpdateOrderConfirmationStatus_NewBackoffice);
+
 
 module.exports = app;
+
+
+
