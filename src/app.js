@@ -799,6 +799,15 @@ const GetCustomerEmailDetails_NewBackoffice = require("./api/routes/Backoffice-N
 
 const UpdateOrderConfirmationStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateOrderConfirmationStatus")
 
+
+
+const Get_TcsMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_TcsMaster")
+const Get_TdsMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_TdsMaster")
+const Update_TdsMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Update_TdsMaster")
+const Update_TcsMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Update_TcsMaster")
+
+
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1667,6 +1676,14 @@ app.use("/BackofficeApi/ContactUsMailer",ContactUsMailer_NewBackoffice);
 app.use("/BackofficeApi/GetFoodListingSearchPageWeb",GetFoodListingSearchPageWeb_NewBackoffice);
 app.use("/BackofficeApi/GetCustomerEmailDetails",GetCustomerEmailDetails_NewBackoffice);
 app.use("/BackofficeApi/UpdateOrderConfirmationStatus",UpdateOrderConfirmationStatus_NewBackoffice);
+
+
+
+
+app.use("/BackofficeApi/Get_TcsMaster_NewBackoffice",Get_TcsMaster_NewBackoffice);
+app.use("/BackofficeApi/Get_TdsMaster_NewBackoffice",Get_TdsMaster_NewBackoffice);
+app.use("/BackofficeApi/Update_TcsMaster_NewBackoffice",Update_TcsMaster_NewBackoffice);
+app.use("/BackofficeApi/Update_TdsMaster_NewBackoffice",Update_TdsMaster_NewBackoffice);
 
 
 module.exports = app;
