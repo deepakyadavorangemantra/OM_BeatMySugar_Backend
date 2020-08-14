@@ -17,7 +17,7 @@ router.post("/", function(request, response){
     var marginpercent = request.body.marginpercent;
     var updatedon = request.body.updatedon;
     var updatedby = request.body.updatedby;
-
+    var costprice = request.body.costprice;
 
 
 
@@ -33,7 +33,7 @@ router.post("/", function(request, response){
         req.input('marginpercent',sql.Decimal(18,2), marginpercent);
         req.input('updatedon',sql.NVarChar(200), updatedon);
         req.input('updatedby',sql.Int, updatedby);
-       
+        req.input('costprice',sql.Decimal(18,2),costprice);
     
         req.execute("dbo.Add_FootwearVariantVendorPricing", function(err, data){
             if(err){
