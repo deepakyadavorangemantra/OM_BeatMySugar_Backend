@@ -16,7 +16,8 @@ router.post("/", function(request, response){
     var updated_on = request.body.updated_on;
     var updated_by = request.body.updated_by;
     var status = request.body.status;
-
+    var mrp = request.body.mrp;
+    var vendorsellingprice = request.body.vendorsellingprice;
 
     try{
         const req = new sql.Request(dbConnection);
@@ -31,7 +32,8 @@ router.post("/", function(request, response){
         req.input('updated_on',sql.NVarChar(200), updated_on);
         req.input('updated_by',sql.Int, updated_by);
         req.input('status',sql.NVarChar(50), status);
-
+        req.input('mrp',sql.Decimal(18,2), mrp);
+        req.input('vendorsellingprice',sql.Decimal(18,2), vendorsellingprice);
       
        
    
