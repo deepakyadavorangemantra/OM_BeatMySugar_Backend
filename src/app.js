@@ -805,6 +805,14 @@ const GetSettleOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/G
 const GetSplitOrderDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSplitOrderDetails")
 const AddPaymentRelease_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddPaymentRelease")
 
+const Get_OrderVendorByOrderID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_OrderVendorByOrderID")
+const Get_OrderVendorDetailByOrderVendorID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_OrderVendorDetailByOrderVendorID")
+const Get_FoodProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_FoodProductByOrderVendorDetailID")
+const Get_FootWearProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_FootWearProductByOrderVendorDetailID")
+const Get_SocksProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_SocksProductByOrderVendorDetailID")
+
+
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1604,6 +1612,16 @@ app.use("/BackofficeApi/GetOrderDetail",GetOrderDetail_NewBackoffice);
 app.use("/BackofficeApi/GetFoodOrderDetail",GetFoodOrderDetail_NewBackoffice);
 app.use("/BackofficeApi/GetSocksOrderDetail",GetSocksOrderDetail_NewBackoffice);
 app.use("/BackofficeApi/GetFootwearOrderDetail",GetFootwearOrderDetail_NewBackoffice);
+
+
+app.use("/BackofficeApi/Get_OrderVendorByOrderID",Get_OrderVendorByOrderID_NewBackoffice);
+app.use("/BackofficeApi/Get_OrderVendorDetailByOrderVendorID_NewBackoffice",Get_OrderVendorDetailByOrderVendorID_NewBackoffice);
+
+
+app.use("/BackofficeApi/Get_FoodProductByOrderVendorDetailID_NewBackoffice",Get_FoodProductByOrderVendorDetailID_NewBackoffice);
+app.use("/BackofficeApi/Get_FootWearProductByOrderVendorDetailID_NewBackoffice",Get_FootWearProductByOrderVendorDetailID_NewBackoffice);
+app.use("/BackofficeApi/Get_SocksProductByOrderVendorDetailID_NewBackoffice",Get_SocksProductByOrderVendorDetailID_NewBackoffice);
+
 //-----------------------------------------New API -------------------------------------------------------------
 
 app.use("/BackofficeApi/GetHealthCenterDoctorMapping",GetHealthCenterDoctorMapping_NewBackoffice);
