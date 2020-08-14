@@ -48,7 +48,7 @@ router.post("/", function(request, response){
     var billingpincode = request.body.billingpincode;
     var billingmobile = request.body.billingmobile;
 
-
+    var offercode = request.body.offercode;
     var  shipvendorid = request.body.shipvendorid;
 
     try{
@@ -95,6 +95,8 @@ router.post("/", function(request, response){
         req.input('billingcountry',sql.NVarChar(100), billingcountry);
         req.input('billingpincode',sql.NVarChar(10), billingpincode);
         req.input('billingmobile',sql.NVarChar(15), billingmobile);
+
+        req.input('offercode',sql.NVarChar(100), offercode);
        
    
     

@@ -109,9 +109,69 @@ router.post("/", function(req, res){
 						verified ="Yes";
 					else
 						verified = "No";
+
+						try{
+
+							const req = new sql.Request(dbConnection);
+				
+							req.input('txnid',sql.NVarChar(200), details['txnid']);
+							req.input('txnstatus',sql.NVarChar(50), vdata.status);
+							req.input('msg',sql.NVarChar(200), vdata.msg);
+							req.input('mihpayid',sql.NVarChar(200), details['mihpayid']);
+							req.input('requestid',sql.NVarChar(100), details['request_id']);
+							req.input('bankrefnum',sql.NVarChar(100), details['bank_ref_num']);
+							req.input('amount',sql.Decimal(18,2), details['amt']);
+							req.input('txnamount',sql.Decimal(18,2), details['transaction_amount']);
+							req.input('additionalcharges',sql.Decimal(18,2), details['additional_charges']);
+							req.input('productinfo',sql.NVarChar(200), details['productinfo']);
+							req.input('firstname',sql.NVarChar(200), details['firstname']);
+							req.input('bankcode',sql.NVarChar(50), details['bankcode']);
+							req.input('udf1',sql.NVarChar(100), details['udf1']);
+							req.input('udf3',sql.NVarChar(100), details['udf3']);
+							req.input('udf4',sql.NVarChar(100), details['udf4']);
+							req.input('udf5',sql.NVarChar(100), details['udf5']);
+							req.input('field2',sql.NVarChar(100), details['field2']);
+							req.input('field9',sql.NVarChar(100), details['field9']);
+							req.input('errorcode',sql.NVarChar(100), details['error_code']);
+							req.input('addedon',sql.NVarChar(200), details['addedon']);
+							req.input('paymentsource',sql.NVarChar(100), details['payment_source']);
+							req.input('cardtype',sql.NVarChar(100), details['card_type']);
+							req.input('errormsg',sql.NVarChar(100), details['error_Message']);
+							req.input('netamountdebit',sql.Decimal(18,2), details['net_amount_debit']);
+							req.input('disc',sql.Decimal(18,2), details['disc']);
+							req.input('mode',sql.NVarChar(100), details['mode']);
+							req.input('pgtype',sql.NVarChar(100), details['PG_TYPE']);
+							req.input('cardnumber',sql.NVarChar(100), details['card_no']);
+							req.input('nameoncard',sql.NVarChar(100), details['name_on_card']);
+							req.input('adf2',sql.NVarChar(100), details['udf2']);
+							req.input('paystatus',sql.NVarChar(100), details['status']);
+							req.input('unmappedstatus',sql.NVarChar(100), details['unmappedstatus']);
+							req.input('merchanturl',sql.NVarChar(100), details['Merchant_UTR']);
+							req.input('settledat',sql.NVarChar(200), details['Settled_At']);
+							
+							req.execute("dbo.Add_PaymentTransaction", function(err, data){
+								if(err){
+			
+									res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
+										additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
+							
+									}else{
+			
+			
+										res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
+										additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
+								}
+							})
+						}catch (err){
+							// response.status(500);
+							// response.send(err.message);
+									res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
+				additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
+							}
+							
 						// res.sendFile(__dirname+"/Resp.html");
-					res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
-	additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
+	// 				res.render(__dirname+"/Resp.html", {txnid: txnid,amount: amount, productinfo: productinfo, 
+	// additionalcharges:additionalcharges,firstname: firstname, email: email, mihpayid : mihpayid, status: status,resphash: resphash,msg:msg,verified:verified});
 				}
 		
 		}

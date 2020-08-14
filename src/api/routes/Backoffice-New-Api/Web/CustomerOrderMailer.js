@@ -56,47 +56,92 @@ var ht = ''
     var billingcity= request.body.billingcity;
     var billingpincode = request.body.billingpincode;
     var billingmobile = request.body.billingmobile;
+    var offercode = request.body.offercode;
 
     var orderdata = request.body.orderdata;
 
     try{
+
+      var base = 0
+      var offr = 0
+      var net = 0
+      var tx = 0
+      var ttl = 0
+      // var cd =  orderdata.map((dt,index)=>(
+        var cd = '' ;
+        var dt ;
+
+for(var i=0 ; i<orderdata.length;i++){
+
+dt = orderdata[i]
+
+console.log(dt)
+
+  base = parseFloat((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100))).toFixed(2)
+
+  offr = offerpercent == '' || offerpercent == null ? 0 : parseFloat(((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100).toFixed(2)
+
+  net = parseFloat((((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100))-(offerpercent == '' || offerpercent == null ? 0 : ((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100)))).toFixed(2)
+
+  tx = parseFloat((((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100))-(offerpercent == '' || offerpercent == null ? 0 : ((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100)))*(dt.fld_taxpercent/100)).toFixed(2)
   
-      var cd =  orderdata.map((dt,index)=>(
+  ttl = parseFloat((((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100))-(offerpercent == '' || offerpercent == null ? 0 : ((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100)))+((((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100))-(offerpercent == '' || offerpercent == null ? 0 : ((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100)))*(dt.fld_taxpercent/100))).toFixed(2)
+  // dt.fld_productweight != undefined ?
+  if(cd == ''){
 
-        dt.fld_productweight != undefined ?
-        '<tr>'+
-           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
-           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
-           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
-           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
-           '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
-          ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_productweight+' '+dt.fld_productunit+'</td>'+
-          ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
-          ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
-           '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
-        '</tr>'
-        :
-        '<tr>'+
-        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
-        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
-        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
-        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
-        '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
-       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;"> - </td>'+
-       ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
-       ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
-        '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
-     '</tr>'
+    cd = '<tr>'+
+    '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(i+1)+'.</td>'+
+    '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
+    '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'<br/><b>'+dt.fld_brand+'</b></td>'+
+    '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
+    '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+base+'</td>'+
+   ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+offr+'</td>'+
+   ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+net+'</td>'+
+   ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+   ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+tx+' </td>'+
+    '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+ttl+'</td>'+
+ '</tr>'
+  }else{
+    cd = cd  +'<tr>'+
+     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(i+1)+'.</td>'+
+     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
+     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'<br/><b>'+dt.fld_brand+'</b></td>'+
+     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
+     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+base+'</td>'+
+    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+offr+'</td>'+
+    ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+net+'</td>'+
+    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+tx+' </td>'+
+     '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+ttl+'</td>'+
+  '</tr>'
+  }
+  
 
-        ))
+}
+
+// console.log(cd)
+    //     :
+    //     '<tr>'+
+    //     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+(index+1)+'.</td>'+
+    //     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_hsncode+'</td>'+
+    //     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'</td>'+
+    //     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_brand+'</td>'+
+    //     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
+    //    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;"> - </td>'+
+    //    ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+parseFloat(dt.fld_price).toFixed(2)+'</td>'+
+    //    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
+    //     '<td style=" padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+parseFloat(dt.fld_quantity*dt.fld_price).toFixed(2)+'</td>'+
+    //  '</tr>'
+
+        // ))
+        // console.log(cd)
+
+//  cd.map((dt,index)=>(
+
+//   ht = ht + dt
+// ))
 
 
- cd.map((dt,index)=>(
-
-  ht = ht + dt
-))
-
-// console.log(ht)
 
                     const mailOptions = {
                      
@@ -263,14 +308,14 @@ var ht = ''
  '  <tr class="success"'+
     ' style="background-color: #f7f7f7 !important;" >'+
     ' <td style="padding-top: 1%;'+
-          'width:5%'+
+          'width:6%'+
         'padding-bottom: 1%;'+
          'text-align: center;" >'+
          '<span style="font-weight: bold;">S.No</span>'+
      '</td>'+
      '<td style="padding-top: 1%;'+
         'padding-bottom: 1%;'+
-        'width:10%'+
+        'width:7%'+
         'text-align: center;">'+
      '<span style="font-weight: bold;"> HSN Code</span>'+
      '</td>'+
@@ -280,39 +325,53 @@ var ht = ''
          'text-align: center;">'+
        '<span style="font-weight: bold;"> Product</span>'+
      '</td>'+
-    ' <td style="padding-top: 1%;'+
-         'padding-bottom: 1%;'+
-         'width:10%'+
-         'text-align: center; " >'+
-    ' <span style="font-weight: bold;"> Brand</span>'+
-    ' </td>'+
+  
     
 
-     '<td style=" padding-top: 1%; padding-bottom: 1%;text-align: center;width:10%;">'+
+     '<td style=" padding-top: 1%; padding-bottom: 1%;text-align: center;width:6%;">'+
        '<span style="font-weight: bold;">Quantity</span>'+
      '</td>'+
 
-     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:10%;">'+
-     '<span style="font-weight: bold;">Net Weight</span>'+
+
+     ' <td style="padding-top: 1%;'+
+     'padding-bottom: 1%;'+
+     'width:8%'+
+     'text-align: center; " >'+
+' <span style="font-weight: bold;"> Base Value</span>'+
+' </td>'+
+
+' <td style="padding-top: 1%;'+
+'padding-bottom: 1%;'+
+'width:10%'+
+'text-align: center; " >'+
+' <span style="font-weight: bold;"> Offer Discount</span>'+
+' </td>'+
+
+' <td style="padding-top: 1%;'+
+'padding-bottom: 1%;'+
+'width:10%'+
+'text-align: center; " >'+
+' <span style="font-weight: bold;"> Net Value</span>'+
+' </td>'+
+
+     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:5%;">'+
+     '<span style="font-weight: bold;">GST Rate</span>'+
   ' </td>'+
 
-     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:10%;">'+
-     '<span style="font-weight: bold;">Rate</span>'+
+     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:8%;">'+
+     '<span style="font-weight: bold;">GST Amount</span>'+
    '</td>'+
    
-    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;width:5%;">'+
-      ' <span style="font-weight: bold;">GST %</span>'+
-     '</td>'+
-    
+
 
      '<td style=" padding-top: 1%; padding-bottom: 1%; text-align: center;width:10%;">'+
-      ' <span style="font-weight: bold;">Total (INR)</span>'+
+      ' <span style="font-weight: bold;">Total Amount(INR)</span>'+
      '</td>'+
 
  
    '</tr>'+
  
-   ht+
+   cd+
 
  '</tbody>'+
 '</table>'+
@@ -351,19 +410,10 @@ var ht = ''
            '<span style="font-weight: bold;"> Sub total</span>'+
         ' </td>'+
          '<td style="text-align: right; padding-right: 1%;">'+
-         '&#8377; '+parseFloat(ordervalue).toFixed(2)+
+         '&#8377; '+(parseFloat(orderdata.map(info => ((((info.fld_price*info.fld_quantity)/(1+(info.fld_taxpercent/100))-(offerpercent == '' || offerpercent == null ? 0 : ((info.fld_price*info.fld_quantity)/(1+(info.fld_taxpercent/100)))*offerpercent/100)))+((((info.fld_price*info.fld_quantity)/(1+(info.fld_taxpercent/100))-(offerpercent == '' || offerpercent == null ? 0 : ((info.fld_price*info.fld_quantity)/(1+(info.fld_taxpercent/100)))*offerpercent/100)))*(info.fld_taxpercent/100)))).reduce((prev, next) => parseFloat(prev) + parseFloat(next))).toFixed(2))+
          '</td>'+
       ' </tr>'+
-      ' <tr>'+
-         '<td colspan="4" style="text-align: right; padding: 1%;" >'+
-           '<span style="font-weight: bold;">'+
-             'Offer Discount'+
-          ' </span>'+
-         '</td>'+
-         '<td style="text-align: right; padding-right: 1%;">'+
-         '&#8377; '+parseFloat(offeramount).toFixed(2)+
-         '</td>'+
-       '</tr>'+
+     
        '<tr>'+
          '<td colspan="4" style="text-align: right; padding: 1%;" >'+
            '<span style="font-weight: bold;">'+
@@ -406,6 +456,16 @@ var ht = ''
              paymentmode+
          '</td>'+
       ' </tr>'+
+
+      ' <tr>'+
+      '<td colspan="5" style="text-align: right; padding: 1%;" >'+
+        '<span style="font-weight: bold;">'+
+          'Total Discount on Order ('+offercode+') <br/>'+
+          (parseFloat(orderdata.map(info => (offerpercent == '' || offerpercent == null ? ' &#8377; '+0 : ' &#8377; '+parseFloat(((info.fld_price*info.fld_quantity)/(1+(info.fld_taxpercent/100)))*offerpercent/100).toFixed(2))).reduce((prev, next) => parseFloat(prev) + parseFloat(next))).toFixed(2))+
+       ' </span>'+
+      '</td>'+
+     
+    '</tr>'+
     ' </td>'+
   ' </tr>'+
 
