@@ -799,6 +799,12 @@ const GetCustomerEmailDetails_NewBackoffice = require("./api/routes/Backoffice-N
 
 const UpdateOrderConfirmationStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateOrderConfirmationStatus")
 
+
+const GetSplitOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSplitOrders")
+const GetSettleOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSettleOrders")
+const GetSplitOrderDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSplitOrderDetails")
+const AddPaymentRelease_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddPaymentRelease")
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1510,6 +1516,11 @@ app.use("/BackofficeApi/AddBookVariantVendorPricing",AddBookVariantVendorPricing
 app.use("/BackofficeApi/GetBookVariantList",GetBookVariantList_NewBackoffice);
 app.use("/BackofficeApi/AddOrder",AddOrder_NewBackoffice);
 app.use("/BackofficeApi/AddOrderDetail",AddOrderDetail_NewBackoffice);
+
+app.use("/BackofficeApi/GetSplitOrders",GetSplitOrders_NewBackoffice);
+app.use("/BackofficeApi/GetSettleOrders",GetSettleOrders_NewBackoffice);
+app.use("/BackofficeApi/GetSplitOrderDetails",GetSplitOrderDetails_NewBackoffice);
+app.use("/BackofficeApi/AddPaymentRelease",AddPaymentRelease_NewBackoffice);
 
 //-------------------------Web----------------------------------------------
 app.use("/BackofficeApi/GetBlogNine",GetBlogNine_NewBackoffice);
