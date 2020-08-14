@@ -11,7 +11,7 @@ router.post("/", function(request, response){
     var orderid = request.body.orderid;
     var settleon = request.body.settleon;
 
-    console.log(request.body)
+    // console.log(request.body)
 
 // console.log('https://test.payumoney.com/payment/payment/addPaymentSplit?merchantKey=tXjTgO&merchantTransactionId='+merchantTransactionId+'&totalAmount='+totalAmount+'&totalDiscount='+totalDiscount+'&jsonSplits='+JSON.stringify(jsonSplits))
 

@@ -48,6 +48,7 @@ router.post("/", function(request, response){
               // console.log((JSON.stringify(spId[i]).split(':')[1]).split('}')[0])
 
               req.input('orderid',sql.Int, orderid);
+              req.input('merchantid',sql.NVarChar(100), jsonSplits[i].merchantId);
               req.input('txnid',sql.NVarChar(100), merchantTransactionId);
               req.input('message',sql.NVarChar(100), data.message);
               req.input('paymentid',sql.NVarChar(100), data.result.paymentId);
