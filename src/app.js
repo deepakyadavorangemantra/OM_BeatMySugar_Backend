@@ -806,7 +806,13 @@ const Get_TdsMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get
 const Update_TdsMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Update_TdsMaster")
 const Update_TcsMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Update_TcsMaster")
 
+const GetSplitOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSplitOrders")
+const GetSettleOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSettleOrders")
 
+const AddSplitOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSplitOrders")
+
+const GetSplitOrderDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSplitOrderDetails")
+const AddPaymentRelease_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddPaymentRelease")
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1520,6 +1526,11 @@ app.use("/BackofficeApi/GetBookVariantList",GetBookVariantList_NewBackoffice);
 app.use("/BackofficeApi/AddOrder",AddOrder_NewBackoffice);
 app.use("/BackofficeApi/AddOrderDetail",AddOrderDetail_NewBackoffice);
 
+app.use("/BackofficeApi/GetSplitOrders",GetSplitOrders_NewBackoffice);
+app.use("/BackofficeApi/GetSettleOrders",GetSettleOrders_NewBackoffice);
+app.use("/BackofficeApi/GetSplitOrderDetails",GetSplitOrderDetails_NewBackoffice);
+app.use("/BackofficeApi/AddPaymentRelease",AddPaymentRelease_NewBackoffice);
+
 //-------------------------Web----------------------------------------------
 app.use("/BackofficeApi/GetBlogNine",GetBlogNine_NewBackoffice);
 app.use("/BackofficeApi/GetDoctorWebSix",GetDoctorWebSix_NewBackoffice);
@@ -1685,6 +1696,12 @@ app.use("/BackofficeApi/Get_TdsMaster_NewBackoffice",Get_TdsMaster_NewBackoffice
 app.use("/BackofficeApi/Update_TcsMaster_NewBackoffice",Update_TcsMaster_NewBackoffice);
 app.use("/BackofficeApi/Update_TdsMaster_NewBackoffice",Update_TdsMaster_NewBackoffice);
 
+app.use("/BackofficeApi/GetSplitOrders",GetSplitOrders_NewBackoffice);
+app.use("/BackofficeApi/GetSettleOrders",GetSettleOrders_NewBackoffice);
+
+app.use("/BackofficeApi/AddSplitOrders",AddSplitOrders_NewBackoffice);
+app.use("/BackofficeApi/GetSplitOrderDetails",GetSplitOrderDetails_NewBackoffice);
+app.use("/BackofficeApi/AddPaymentRelease",AddPaymentRelease_NewBackoffice);
 
 module.exports = app;
 
