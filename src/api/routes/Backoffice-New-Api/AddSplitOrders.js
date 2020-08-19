@@ -23,7 +23,7 @@ router.post("/", function(request, response){
           'method': 'POST',
           'url': 'https://www.payumoney.com/payment/payment/addPaymentSplit?merchantKey=4dl2G3&merchantTransactionId='+merchantTransactionId+'&totalAmount='+totalAmount+'&totalDiscount='+totalDiscount+'&jsonSplits='+JSON.stringify(jsonSplits),
           'headers': {
-            'Authorization': 'JTHhWfk5nZQ4uo+eG2Ppf3cuPelsdFe/+q9kByzmfhY='
+            'Authorization': 'hvPywSWTyJA3kw3kJcHlTETNpHZJpkz8DC73BSGsUc8='
           },
           formData: {
         
@@ -31,7 +31,7 @@ router.post("/", function(request, response){
         };
         request(options, function (error, response1) {
           // if (error) throw new Error(error);
-          // console.log(response.body);
+          console.log(response.body);
           if(error){
             response.status(404);
             response.send(error);
@@ -43,6 +43,8 @@ router.post("/", function(request, response){
             const req = new sql.Request(dbConnection);
 
             for(var i = 0 ;i<jsonSplits.length;i++){
+
+              
 
               // console.log((JSON.stringify(spId[i]).split(':')[0]).replace(/"/g,'').replace(/{/,''))
               // console.log((JSON.stringify(spId[i]).split(':')[1]).split('}')[0])

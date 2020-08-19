@@ -22,7 +22,7 @@ router.post("/", function(request, response){
           'url': 'https://www.payumoney.com/payment/merchant/releasePayment?paymentId='+paymentid+'&merchantId='+merchantid
           ,
           'headers': {
-            'Authorization': 'JTHhWfk5nZQ4uo+eG2Ppf3cuPelsdFe/+q9kByzmfhY='
+            'Authorization': 'hvPywSWTyJA3kw3kJcHlTETNpHZJpkz8DC73BSGsUc8='
           },
           formData: {
         
