@@ -31,31 +31,47 @@ router.post("/", function(request, response){
         };
         request(options, function (error, response1) {
           // if (error) throw new Error(error);
-          console.log(response.body);
+          console.log(response1.body);
           if(error){
             response.status(404);
             response.send(error);
           }else
           {
             var data = JSON.parse(response1.body)
-            var spId = [data.result.splitIdMap]
+            var spId2 = data.result.splitIdMap
             var cn = 0
-            const req = new sql.Request(dbConnection);
+         
+           
+
+            // console.log(spId)
+
+            var arr = [];
+              Object.keys(spId2).forEach((key) => {
+                  arr.push({[key]: spId2[key]});
+              });
+
+              var spId = arr
+         
 
             for(var i = 0 ;i<jsonSplits.length;i++){
 
               
+              // console.log(Object.keys(spId[i])[0])
+              // console.log(Object.values(spId[i])[0])
+              // console.log(spId[i])
 
               // console.log((JSON.stringify(spId[i]).split(':')[0]).replace(/"/g,'').replace(/{/,''))
               // console.log((JSON.stringify(spId[i]).split(':')[1]).split('}')[0])
+
+              const req = new sql.Request(dbConnection);
 
               req.input('orderid',sql.Int, orderid);
               req.input('merchantid',sql.NVarChar(100), jsonSplits[i].merchantId);
               req.input('txnid',sql.NVarChar(100), merchantTransactionId);
               req.input('message',sql.NVarChar(100), data.message);
               req.input('paymentid',sql.NVarChar(100), data.result.paymentId);
-              req.input('vendorordernum',sql.NVarChar(100), (JSON.stringify(spId[i]).split(':')[0]).replace(/"/g,'').replace(/{/,''));
-              req.input('vendorpaymentid',sql.NVarChar(100), (JSON.stringify(spId[i]).split(':')[1]).split('}')[0]);
+              req.input('vendorordernum',sql.NVarChar(100), Object.keys(spId[i])[0]);
+              req.input('vendorpaymentid',sql.NVarChar(100), Object.values(spId[i])[0]);
               req.input('errorcode',sql.NVarChar(100), data.errorCode);
               req.input('responsecode',sql.NVarChar(100), data.responseCode);
   
