@@ -12,7 +12,7 @@ router.post("/", function(request, response){
     try{
         const req = new sql.Request(dbConnection);
 
-        req.input('todayDate',sql.Int, todayDate);
+        req.input('todayDate',sql.NVarChar(200), todayDate);
 
 
         req.execute("dbo.Get_BackOfficeDashboardCount_ByDate", function(err, data){
