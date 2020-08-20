@@ -819,6 +819,7 @@ const Get_OrderVendorDetailByOrderVendorID_NewBackoffice = require("./api/routes
 const Get_FoodProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_FoodProductByOrderVendorDetailID")
 const Get_FootWearProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_FootWearProductByOrderVendorDetailID")
 const Get_SocksProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_SocksProductByOrderVendorDetailID")
+const Get_BackOfficeDashboardCount_ByDate_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_SocksProductByOrderVendorDetailID")
 
 
 
@@ -1630,6 +1631,9 @@ app.use("/BackofficeApi/Get_OrderVendorDetailByOrderVendorID_NewBackoffice",Get_
 app.use("/BackofficeApi/Get_FoodProductByOrderVendorDetailID_NewBackoffice",Get_FoodProductByOrderVendorDetailID_NewBackoffice);
 app.use("/BackofficeApi/Get_FootWearProductByOrderVendorDetailID_NewBackoffice",Get_FootWearProductByOrderVendorDetailID_NewBackoffice);
 app.use("/BackofficeApi/Get_SocksProductByOrderVendorDetailID_NewBackoffice",Get_SocksProductByOrderVendorDetailID_NewBackoffice);
+
+app.use("/BackofficeApi/Get_BackOfficeDashboardCount_ByDate_NewBackoffice",Get_BackOfficeDashboardCount_ByDate_NewBackoffice);
+
 
 //-----------------------------------------New API -------------------------------------------------------------
 
