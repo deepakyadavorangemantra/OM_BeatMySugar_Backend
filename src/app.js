@@ -376,6 +376,7 @@ const AddOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/Ad
 const AddSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSellWithUs")
 const AddInsurance_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddInsurance")
 const AddUserFamilyInfoMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserFamilyInfoMapping")
+const Add_ReturnMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Add_ReturnMaster")
 
 
 
@@ -1115,7 +1116,7 @@ app.use("/CustomerRegistraionMobileOTP",CustomerRegistraionMobileOTP);
 
 
 
-
+app.use("/BackofficeApi/Add_ReturnMaster",Add_ReturnMaster_NewBackoffice);
 
 app.use("/BackofficeApi/AuthenticateStaff",AuthenticateStaff_NewBackoffice);
 app.use("/BackofficeApi/AddStaffLoginSession",AddStaffLoginSession_NewBackoffice);
