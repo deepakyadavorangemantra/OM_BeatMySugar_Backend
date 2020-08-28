@@ -376,6 +376,7 @@ const AddOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/Ad
 const AddSellWithUs_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSellWithUs")
 const AddInsurance_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddInsurance")
 const AddUserFamilyInfoMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddUserFamilyInfoMapping")
+const Add_ReturnMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Add_ReturnMaster")
 
 
 
@@ -819,6 +820,9 @@ const Get_OrderVendorDetailByOrderVendorID_NewBackoffice = require("./api/routes
 const Get_FoodProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_FoodProductByOrderVendorDetailID")
 const Get_FootWearProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_FootWearProductByOrderVendorDetailID")
 const Get_SocksProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_SocksProductByOrderVendorDetailID")
+const Get_BackOfficeDashboardCount_ByDate_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_BackOfficeDashboardCount_ByDate")
+const Get_BackOfficeDashboardTop5Customer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_BackOfficeDashboardTop5Customer")
+const Get_BackOfficeDashboardTop5Order_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_BackOfficeDashboardTop5Order")
 
 
 const GetSocksMetaData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksMetaData")
@@ -1116,7 +1120,7 @@ app.use("/CustomerRegistraionMobileOTP",CustomerRegistraionMobileOTP);
 
 
 
-
+app.use("/BackofficeApi/Add_ReturnMaster",Add_ReturnMaster_NewBackoffice);
 
 app.use("/BackofficeApi/AuthenticateStaff",AuthenticateStaff_NewBackoffice);
 app.use("/BackofficeApi/AddStaffLoginSession",AddStaffLoginSession_NewBackoffice);
@@ -1634,6 +1638,11 @@ app.use("/BackofficeApi/Get_OrderVendorDetailByOrderVendorID_NewBackoffice",Get_
 app.use("/BackofficeApi/Get_FoodProductByOrderVendorDetailID_NewBackoffice",Get_FoodProductByOrderVendorDetailID_NewBackoffice);
 app.use("/BackofficeApi/Get_FootWearProductByOrderVendorDetailID_NewBackoffice",Get_FootWearProductByOrderVendorDetailID_NewBackoffice);
 app.use("/BackofficeApi/Get_SocksProductByOrderVendorDetailID_NewBackoffice",Get_SocksProductByOrderVendorDetailID_NewBackoffice);
+
+app.use("/BackofficeApi/Get_BackOfficeDashboardCount_ByDate_NewBackoffice",Get_BackOfficeDashboardCount_ByDate_NewBackoffice);
+app.use("/BackofficeApi/Get_BackOfficeDashboardTop5Customer_NewBackoffice",Get_BackOfficeDashboardTop5Customer_NewBackoffice);
+app.use("/BackofficeApi/Get_BackOfficeDashboardTop5Order_NewBackoffice",Get_BackOfficeDashboardTop5Order_NewBackoffice);
+
 
 //-----------------------------------------New API -------------------------------------------------------------
 
