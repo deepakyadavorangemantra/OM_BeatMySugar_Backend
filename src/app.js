@@ -799,7 +799,7 @@ const ContactUsMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/W
 
 const GetFoodListingSearchPageWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodListingSearchPageWeb")
 const GetCustomerEmailDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCustomerEmailDetails")
-
+const VerifyEmail_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/VerifyEmail")
 const UpdateOrderConfirmationStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateOrderConfirmationStatus")
 
 
@@ -1121,7 +1121,7 @@ app.use("/CustomerRegistraionMobileOTP",CustomerRegistraionMobileOTP);
 
 app.use("/BackofficeApi/IfMobileExists",IfMobileExists_NewBackoffice);
 app.use("/BackofficeApi/CustomerAuthMobile",CustomerAuthMobile_NewBackoffice);
-
+app.use("/BackofficeApi/VerifyEmail",VerifyEmail_NewBackoffice);
 
 
 
