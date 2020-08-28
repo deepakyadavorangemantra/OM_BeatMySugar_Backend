@@ -821,6 +821,10 @@ const Get_FootWearProductByOrderVendorDetailID_NewBackoffice = require("./api/ro
 const Get_SocksProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_SocksProductByOrderVendorDetailID")
 
 
+const GetSocksMetaData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetSocksMetaData")
+const GetFoodMetaData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFoodMetaData")
+const GetFootwearMetaData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearMetaData")
+
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1720,6 +1724,12 @@ app.use("/BackofficeApi/GetSettleOrders",GetSettleOrders_NewBackoffice);
 app.use("/BackofficeApi/AddSplitOrders",AddSplitOrders_NewBackoffice);
 app.use("/BackofficeApi/GetSplitOrderDetails",GetSplitOrderDetails_NewBackoffice);
 app.use("/BackofficeApi/AddPaymentRelease",AddPaymentRelease_NewBackoffice);
+
+
+
+app.use("/BackofficeApi/GetSocksMetaData",GetSocksMetaData_NewBackoffice);
+app.use("/BackofficeApi/GetFoodMetaData",GetFoodMetaData_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearMetaData",GetFootwearMetaData_NewBackoffice);
 
 module.exports = app;
 

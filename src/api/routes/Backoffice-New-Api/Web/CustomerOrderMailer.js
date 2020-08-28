@@ -59,6 +59,7 @@ var ht = ''
     var offercode = request.body.offercode;
 
     var orderdata = request.body.orderdata;
+    var yousave = request.body.yousave;
 
     try{
 
@@ -344,7 +345,7 @@ console.log(dt)
 'padding-bottom: 1%;'+
 'width:10%'+
 'text-align: center; " >'+
-' <span style="font-weight: bold;"> Offer Discount</span>'+
+' <span style="font-weight: bold;"> Offer Discount *</span>'+
 ' </td>'+
 
 ' <td style="padding-top: 1%;'+
@@ -403,7 +404,9 @@ console.log(dt)
          '</li>'+
          '<li>'+
            'Please revisit <a href="https://beatmysugar.com/"> www.beatmysugar.com</a>'+
-           'for detailed terms and conditions </li></ul>'+
+           'for detailed terms and conditions </li> <li>'+
+           '*Promo Code Based Discount'+
+         '</li></ul>'+
 
        '<tr>'+
          '<td colspan="4"  style="text-align: right; padding: 1%;width:35%;" >'+
@@ -460,8 +463,8 @@ console.log(dt)
       ' <tr>'+
       '<td colspan="5" style="text-align: right; padding: 1%;" >'+
         '<span style="font-weight: bold;">'+
-          'Total Discount on Order ('+offercode+') <br/>'+
-          (parseFloat(orderdata.map(info => (offerpercent == '' || offerpercent == null ? ' &#8377; '+0 : ' &#8377; '+parseFloat(((info.fld_price*info.fld_quantity)/(1+(info.fld_taxpercent/100)))*offerpercent/100).toFixed(2))).reduce((prev, next) => parseFloat(prev) + parseFloat(next))).toFixed(2))+
+          'Total Discount on Order <br/>'+
+          (parseFloat(yousave).toFixed(2))+
        ' </span>'+
       '</td>'+
      

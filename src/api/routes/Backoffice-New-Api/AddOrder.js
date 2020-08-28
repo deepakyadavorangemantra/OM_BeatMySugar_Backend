@@ -47,6 +47,7 @@ router.post("/", function(request, response){
 
     var txnid = request.body.txnid;
     var offercode = request.body.offercode;
+    var yousave = request.body.yousave;
 
     try{
         const req = new sql.Request(dbConnection);
@@ -91,6 +92,7 @@ router.post("/", function(request, response){
        
         req.input('txnid',sql.NVarChar(100), txnid);
         req.input('offercode',sql.NVarChar(100), offercode);
+        req.input('yousave',sql.Decimal(18,2), yousave);
    
     
         req.execute("dbo.Add_Order", function(err, data){
