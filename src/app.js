@@ -265,9 +265,9 @@ const ContactUsMailer= require("./api/routes/Web/ContactUsMailer");
 
 const VerifyMobileOTP= require("./api/routes/Web/VerifyMobileOTP");
 const CustomerRegistraionMobileOTP= require("./api/routes/Web/CustomerRegistrationMobileOTP");
-
-
-
+const CustomerAuthMobile_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerAuthMobile")
+const CustomerLoginAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerLoginAuth")
+const GetUserInfoEmail_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetUserInfoEmail")
 // ---------------------------- Mailers ------------------------------
 
 
@@ -294,6 +294,8 @@ const TestDeleteImage = require("./api/routes/TestDeleteImage");
 
 const AuthenticateStaff_NewBackoffice = require("./api/routes/Backoffice-New-Api/AuthenticateStaff")
 const VendorAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/VendorAuth")
+const IfMobileExists_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/IfMobileExists")
+
 //----------- ADD ------------------
 
 const AddStaffLoginSession_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddStaffLoginSession")
@@ -668,7 +670,7 @@ const CustomerRegistrationMobileOTP_NewBackoffice = require("./api/routes/Backof
 const AddUserLoginSession_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddUserLoginSession")
 const ForgotPasswordMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/ForgotPasswordMailer")
 const UpdateCustomerPassword_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateCustomerPassword")
-const CustomerLoginAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerLoginAuth")
+
 
 const AddCustomerBlogLikeStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/AddCustomerBlogLikeStatus")
 const UpdateLikeCount_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/UpdateLikeCount")
@@ -1114,6 +1116,14 @@ app.use("/CustomerRegistraionMobileOTP",CustomerRegistraionMobileOTP);
 
 
 //-----------------------------------------New API -------------------------------------------------------------
+
+
+
+app.use("/BackofficeApi/IfMobileExists",IfMobileExists_NewBackoffice);
+app.use("/BackofficeApi/CustomerAuthMobile",CustomerAuthMobile_NewBackoffice);
+
+
+
 
 
 
@@ -1718,7 +1728,7 @@ app.use("/BackofficeApi/ContactUsMailer",ContactUsMailer_NewBackoffice);
 app.use("/BackofficeApi/GetFoodListingSearchPageWeb",GetFoodListingSearchPageWeb_NewBackoffice);
 app.use("/BackofficeApi/GetCustomerEmailDetails",GetCustomerEmailDetails_NewBackoffice);
 app.use("/BackofficeApi/UpdateOrderConfirmationStatus",UpdateOrderConfirmationStatus_NewBackoffice);
-
+app.use("/BackofficeApi/GetUserInfoEmail",GetUserInfoEmail_NewBackoffice);
 
 
 
