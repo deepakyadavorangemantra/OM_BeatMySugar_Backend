@@ -81,6 +81,11 @@ router.post("/", function(request, response){
                                                                 '</td>'+
                                                             '</tr>'+
                                                            
+                                                            '<tr>'+
+                                                            ' <td style="padding-bottom: 15px;">'+
+                                                                 '<a href="https://beatmysugar.com/verifyemail/'+email+'">Click Here To Verify Your Email Address.</a>'+
+                                                             '</td>'+
+                                                         '</tr>'+
                                                           
                                                             '<tr>'+
                                                                 '<td style="padding-bottom: 5px;">'+

@@ -83,10 +83,10 @@ router.post("/", function(request, response){
                                                             '</tr>'+
                                                            
                                                             '<tr>'+
-                                                               ' <td style="padding-bottom: 15px;">'+
-                                                                   'Your OTP for Email Verification is - <b>'+otp+'</b>'+
-                                                               ' </td>'+
-                                                           ' </tr>'+
+                                                            ' <td style="padding-bottom: 15px;">'+
+                                                                 '<a href="https://beatmysugar.com/verifyemail/'+email+'">Click Here To Verify Your Email Address.</a>'+
+                                                             '</td>'+
+                                                         '</tr>'+
                     
                                                             '<tr>'+
                                                                ' <td style="padding-bottom: 15px;">'+
