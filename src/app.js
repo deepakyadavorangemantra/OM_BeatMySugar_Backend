@@ -832,6 +832,14 @@ const GetFoodMetaData_NewBackoffice = require("./api/routes/Backoffice-New-Api/W
 const GetFootwearMetaData_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetFootwearMetaData")
 
 
+const Get_ReturnMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_ReturnMaster")
+const GetRefundOrdersForRelease_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetRefundOrdersForRelease")
+const UpdateReturnStatus_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateReturnStatus")
+const GetPaymentSplitFromOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetPaymentSplitFromOrder")
+const AddPaymentRefund_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddPaymentRefund")
+
+
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1749,6 +1757,13 @@ app.use("/BackofficeApi/AddPaymentRelease",AddPaymentRelease_NewBackoffice);
 app.use("/BackofficeApi/GetSocksMetaData",GetSocksMetaData_NewBackoffice);
 app.use("/BackofficeApi/GetFoodMetaData",GetFoodMetaData_NewBackoffice);
 app.use("/BackofficeApi/GetFootwearMetaData",GetFootwearMetaData_NewBackoffice);
+
+
+app.use("/BackofficeApi/Get_ReturnMaster_NewBackoffice",Get_ReturnMaster_NewBackoffice);
+app.use("/BackofficeApi/GetRefundOrdersForRelease",GetRefundOrdersForRelease_NewBackoffice);
+app.use("/BackofficeApi/UpdateReturnStatus",UpdateReturnStatus_NewBackoffice);
+app.use("/BackofficeApi/GetPaymentSplitFromOrder",GetPaymentSplitFromOrder_NewBackoffice);
+app.use("/BackofficeApi/AddPaymentRefund",AddPaymentRefund_NewBackoffice);
 
 module.exports = app;
 
