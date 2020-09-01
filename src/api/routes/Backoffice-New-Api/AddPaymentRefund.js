@@ -14,7 +14,7 @@ router.post("/", function(request, response){
     var merchantAmount = request.body.merchantAmount;
     var aggregatorAmount = request.body.aggregatorAmount;
 
-    console.log(request.body)
+    // console.log(request.body)
 
 // console.log('https://test.payumoney.com/payment/payment/addPaymentSplit?merchantKey=tXjTgO&merchantTransactionId='+merchantTransactionId+'&totalAmount='+totalAmount+'&totalDiscount='+totalDiscount+'&jsonSplits='+JSON.stringify(jsonSplits))
 
@@ -23,10 +23,10 @@ router.post("/", function(request, response){
         var request = require('request');
         var options = {
           'method': 'POST',
-          'url': 'https://test.payumoney.com/payment/refund/refundPayment?paymentId='+paymentid+'&refundAmount='+refundAmount+'&refundType='+refundType+'&merchantId='+merchantId+'&merchantAmount='+merchantAmount+'&aggregatorAmount='+aggregatorAmount
+          'url': 'https://www.payumoney.com/payment/refund/refundPayment?paymentId='+paymentid+'&refundAmount='+refundAmount+'&refundType='+refundType+'&merchantId='+merchantId+'&merchantAmount='+merchantAmount+'&aggregatorAmount='+aggregatorAmount
           ,
           'headers': {
-            'Authorization': 'QmetgiU8HibANxwgv/8GwF02GElmNG5gRoRM/sVAyWI='
+            'Authorization': 'hvPywSWTyJA3kw3kJcHlTETNpHZJpkz8DC73BSGsUc8='
           },
           formData: {
         
