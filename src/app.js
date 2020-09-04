@@ -838,7 +838,8 @@ const UpdateReturnStatus_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const GetPaymentSplitFromOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetPaymentSplitFromOrder")
 const AddPaymentRefund_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddPaymentRefund")
 
-
+const GetNewOrderForVerify_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetNewOrderForVerify")
+const VerifyOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/VerifyOrders")
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1764,6 +1765,9 @@ app.use("/BackofficeApi/GetRefundOrdersForRelease",GetRefundOrdersForRelease_New
 app.use("/BackofficeApi/UpdateReturnStatus",UpdateReturnStatus_NewBackoffice);
 app.use("/BackofficeApi/GetPaymentSplitFromOrder",GetPaymentSplitFromOrder_NewBackoffice);
 app.use("/BackofficeApi/AddPaymentRefund",AddPaymentRefund_NewBackoffice);
+
+app.use("/BackofficeApi/GetNewOrderForVerify",GetNewOrderForVerify_NewBackoffice);
+app.use("/BackofficeApi/VerifyOrders",VerifyOrders_NewBackoffice);
 
 module.exports = app;
 
