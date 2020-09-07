@@ -841,6 +841,8 @@ const AddPaymentRefund_NewBackoffice = require("./api/routes/Backoffice-New-Api/
 const GetNewOrderForVerify_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetNewOrderForVerify")
 const VerifyOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/VerifyOrders")
 
+const GetDashboarshMonthWiseOrdersSales_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetDashboarshMonthWiseOrdersSales")
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1768,6 +1770,8 @@ app.use("/BackofficeApi/AddPaymentRefund",AddPaymentRefund_NewBackoffice);
 
 app.use("/BackofficeApi/GetNewOrderForVerify",GetNewOrderForVerify_NewBackoffice);
 app.use("/BackofficeApi/VerifyOrders",VerifyOrders_NewBackoffice);
+
+app.use("/BackofficeApi/GetDashboarshMonthWiseOrdersSales",GetDashboarshMonthWiseOrdersSales_NewBackoffice);
 
 module.exports = app;
 
