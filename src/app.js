@@ -715,6 +715,9 @@ const AddShoppingCart_NewBackoffice = require("./api/routes/Backoffice-New-Api/W
 const GetCartFoodVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartFoodVariant")
 const GetCartSocksVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartSocksVariant")
 const GetCartFootwearVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartFootwearVariant")
+const GetCartFoodVariantCookie_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartFoodVariantCookie")
+const GetCartSocksVariantCookie_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartSocksVariantCookie")
+const GetCartFootwearVariantCookie_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartFootwearVariantCookie")
 
 const DeductShoppingCart_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/DeductShoppingCart")
 const DeleteItemShoppingCart_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/DeleteItemShoppingCart")
@@ -1635,6 +1638,9 @@ app.use("/BackofficeApi/AddShoppingCart",AddShoppingCart_NewBackoffice);
 app.use("/BackofficeApi/GetCartFoodVariant",GetCartFoodVariant_NewBackoffice);
 app.use("/BackofficeApi/GetCartFootwearVariant",GetCartFootwearVariant_NewBackoffice);
 app.use("/BackofficeApi/GetCartSocksVariant",GetCartSocksVariant_NewBackoffice);
+app.use("/BackofficeApi/GetCartFoodVariantCookie",GetCartFoodVariantCookie_NewBackoffice);
+app.use("/BackofficeApi/GetCartFootwearVariantCookie",GetCartFootwearVariantCookie_NewBackoffice);
+app.use("/BackofficeApi/GetCartSocksVariantCookie",GetCartSocksVariantCookie_NewBackoffice);
 
 app.use("/BackofficeApi/DeductShoppingCart",DeductShoppingCart_NewBackoffice);
 app.use("/BackofficeApi/DeleteItemShoppingCart",DeleteItemShoppingCart_NewBackoffice);
