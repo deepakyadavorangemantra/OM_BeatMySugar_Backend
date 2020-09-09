@@ -847,6 +847,7 @@ const VerifyOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/Veri
 const GetDashboarshMonthWiseOrdersSales_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetDashboarshMonthWiseOrdersSales")
 const GetBlogAll_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetBlogAll")
 
+const GetCancelOrders_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCancelOrders")
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1782,6 +1783,8 @@ app.use("/BackofficeApi/VerifyOrders",VerifyOrders_NewBackoffice);
 app.use("/BackofficeApi/GetDashboarshMonthWiseOrdersSales",GetDashboarshMonthWiseOrdersSales_NewBackoffice);
 
 app.use("/BackofficeApi/GetBlogAll",GetBlogAll_NewBackoffice);
+
+app.use("/BackofficeApi/GetCancelOrders",GetCancelOrders_NewBackoffice);
 
 module.exports = app;
 
