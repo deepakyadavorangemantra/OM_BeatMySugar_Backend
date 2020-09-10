@@ -14,7 +14,7 @@ router.post("/", function(request, response){
     var merchantAmount = request.body.merchantAmount;
     var aggregatorAmount = request.body.aggregatorAmount;
 
-    // console.log(request.body)
+    console.log(request.body)
 
 // console.log('https://test.payumoney.com/payment/payment/addPaymentSplit?merchantKey=tXjTgO&merchantTransactionId='+merchantTransactionId+'&totalAmount='+totalAmount+'&totalDiscount='+totalDiscount+'&jsonSplits='+JSON.stringify(jsonSplits))
 
@@ -43,8 +43,9 @@ router.post("/", function(request, response){
             var data = JSON.parse(response1.body)
             if(data.status == -1)
             {
-              response.status(404);
-              response.send(error);
+              response.status(400).json({
+                data: 'Error'
+            });
 
             }else{
               response.status(200).json({
