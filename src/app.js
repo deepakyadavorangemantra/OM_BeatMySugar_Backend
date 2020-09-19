@@ -854,6 +854,7 @@ const UpdateCODServiceMaster_NewBackoffice = require("./api/routes/Backoffice-Ne
 const GetCodMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCodMaster")
 
 const GetOrderDataReports_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOrderDataReports")
+const GetCustomerDataReports_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCustomerDataReports")
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1796,6 +1797,7 @@ app.use("/BackofficeApi/UpdateCODServiceMaster",UpdateCODServiceMaster_NewBackof
 app.use("/BackofficeApi/GetCodMaster",GetCodMaster_NewBackoffice);
 
 app.use("/BackofficeApi/GetOrderDataReports",GetOrderDataReports_NewBackoffice);
+app.use("/BackofficeApi/GetCustomerDataReports",GetCustomerDataReports_NewBackoffice);
 
 module.exports = app;
 
