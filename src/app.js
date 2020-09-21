@@ -860,6 +860,9 @@ const GetFoodProductDataReports_NewBackoffice = require("./api/routes/Backoffice
 const GetFootwearProductDataReports_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearProductDataReports")
 const GetSocksProductDataReports_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksProductDataReports")
 
+const GetVendorDataReports_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorDataReports")
+
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1806,6 +1809,8 @@ app.use("/BackofficeApi/GetCustomerDataReports",GetCustomerDataReports_NewBackof
 app.use("/BackofficeApi/GetFoodProductDataReports",GetFoodProductDataReports_NewBackoffice);
 app.use("/BackofficeApi/GetFootwearProductDataReports",GetFootwearProductDataReports_NewBackoffice);
 app.use("/BackofficeApi/GetSocksProductDataReports",GetSocksProductDataReports_NewBackoffice);
+
+app.use("/BackofficeApi/GetVendorDataReports",GetVendorDataReports_NewBackoffice);
 
 module.exports = app;
 
