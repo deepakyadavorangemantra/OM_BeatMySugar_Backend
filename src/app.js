@@ -861,6 +861,7 @@ const GetFootwearProductDataReports_NewBackoffice = require("./api/routes/Backof
 const GetSocksProductDataReports_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksProductDataReports")
 
 const GetVendorDataReports_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorDataReports")
+const GetOrderDetailDataReport_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOrderDetailDataReport")
 
 
 const app = express();
@@ -1811,6 +1812,8 @@ app.use("/BackofficeApi/GetFootwearProductDataReports",GetFootwearProductDataRep
 app.use("/BackofficeApi/GetSocksProductDataReports",GetSocksProductDataReports_NewBackoffice);
 
 app.use("/BackofficeApi/GetVendorDataReports",GetVendorDataReports_NewBackoffice);
+
+app.use("/BackofficeApi/GetOrderDetailDataReport",GetOrderDetailDataReport_NewBackoffice);
 
 module.exports = app;
 
