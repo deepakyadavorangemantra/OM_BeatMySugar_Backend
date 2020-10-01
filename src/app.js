@@ -864,6 +864,9 @@ const GetVendorDataReports_NewBackoffice = require("./api/routes/Backoffice-New-
 const GetOrderDetailDataReport_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetOrderDetailDataReport")
 
 
+const ForgotPasswordStaff_NewBackoffice = require("./api/routes/Backoffice-New-Api/ForgotPasswordStaff")
+
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1814,6 +1817,8 @@ app.use("/BackofficeApi/GetSocksProductDataReports",GetSocksProductDataReports_N
 app.use("/BackofficeApi/GetVendorDataReports",GetVendorDataReports_NewBackoffice);
 
 app.use("/BackofficeApi/GetOrderDetailDataReport",GetOrderDetailDataReport_NewBackoffice);
+
+app.use("/BackofficeApi/ForgotPasswordStaff",ForgotPasswordStaff_NewBackoffice);
 
 module.exports = app;
 
