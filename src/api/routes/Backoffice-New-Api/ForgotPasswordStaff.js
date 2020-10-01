@@ -3,6 +3,10 @@ const router = express.Router();
 const sql = require("mssql");
 const sha512 = require("js-sha512");
 
+var nodemailer = require('nodemailer');
+var inlineBase64 = require('nodemailer-plugin-inline-base64');
+var smtpTransport = require("nodemailer-smtp-transport");
+
 const dbConnection = require("../../../utilities/db1");
 
 
