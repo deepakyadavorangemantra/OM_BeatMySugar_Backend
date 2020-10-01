@@ -27,9 +27,9 @@ router.post("/", function(request, response){
     var email = request.body.email;
     var updatedon = request.body.updatedon;
     var updatedby = request.body.updatedby;
-
     var password = makeid(6);
 
+    console.log(password)
     // var hashPassword = sha512(salt+password);
 
     try{
@@ -54,8 +54,8 @@ router.post("/", function(request, response){
         req1.input('updatedon',sql.NVarChar(100), updatedon);
         req1.input('updatedby',sql.Int, updatedby);
     
-        req.execute("dbo.ChangeStaffPassword", function(err2, data2){
-            if(err22){
+        req1.execute("dbo.ChangeStaffPassword", function(err2, data2){
+            if(err2){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
                     data:err2.message
