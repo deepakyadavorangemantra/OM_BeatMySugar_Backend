@@ -865,6 +865,7 @@ const GetOrderDetailDataReport_NewBackoffice = require("./api/routes/Backoffice-
 
 
 const ForgotPasswordStaff_NewBackoffice = require("./api/routes/Backoffice-New-Api/ForgotPasswordStaff")
+const ChangePasswordByAdmin_NewBackoffice = require("./api/routes/Backoffice-New-Api/ChangePasswordByAdmin")
 
 
 const app = express();
@@ -1819,6 +1820,7 @@ app.use("/BackofficeApi/GetVendorDataReports",GetVendorDataReports_NewBackoffice
 app.use("/BackofficeApi/GetOrderDetailDataReport",GetOrderDetailDataReport_NewBackoffice);
 
 app.use("/BackofficeApi/ForgotPasswordStaff",ForgotPasswordStaff_NewBackoffice);
+app.use("/BackofficeApi/ChangePasswordByAdmin",ChangePasswordByAdmin_NewBackoffice);
 
 module.exports = app;
 

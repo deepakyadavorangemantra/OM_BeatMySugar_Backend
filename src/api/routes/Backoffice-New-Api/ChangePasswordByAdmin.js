@@ -9,17 +9,6 @@ var smtpTransport = require("nodemailer-smtp-transport");
 
 const dbConnection = require("../../../utilities/db1");
 
-
-function makeid(length) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-       result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
- }
-
 router.post("/", function(request, response){
 
     
@@ -27,10 +16,8 @@ router.post("/", function(request, response){
     var email = request.body.email;
     var updatedon = request.body.updatedon;
     var updatedby = request.body.updatedby;
-    var password = makeid(6);
+    var password = request.body.password;
 
-    console.log(password)
-    // var hashPassword = sha512(salt+password);
 
     try{
         const req = new sql.Request(dbConnection);
