@@ -870,6 +870,33 @@ const ChangePasswordByAdmin_NewBackoffice = require("./api/routes/Backoffice-New
 const GetSettlementReportOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSettlementReportOrderDetail")
 
 
+
+const GetFestiveOfferHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveOfferHomePageWebsite")
+const GetFestiveOfferListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveOfferListing")
+
+
+const GetFestiveFoodVariantDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveFoodVariantDetails")
+const GetFestiveFootwearVariantDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveFootwearVariantDetails")
+const GetFestiveSocksVariantDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveSocksVariantDetails")
+
+
+const GetAllFoodBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAllFoodBrandData")
+const GetAllFootwearBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAllFootwearBrandData")
+const GetAllSocksBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAllSocksBrandData")
+
+
+const AddFestiveOfferMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFestiveOfferMaster")
+const AddFestiveOfferProductMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFestiveOfferProductMapping")
+const GetFestiveOfferMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveOfferMaster")
+const UpdateFestiveOfferMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFestiveOfferMaster")
+
+const GetFestiveOfferProductMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveOfferProductMapping")
+
+const GetFoodItemData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodItemData")
+const GetFootwearItemData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearItemData")
+const GetSocksItemData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksItemData")
+
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1826,6 +1853,28 @@ app.use("/BackofficeApi/ChangePasswordByAdmin",ChangePasswordByAdmin_NewBackoffi
 
 app.use("/BackofficeApi/GetSettlementReportOrderDetail",GetSettlementReportOrderDetail_NewBackoffice);
 
+
+app.use("/BackofficeApi/GetFestiveOfferHomePageWebsite",GetFestiveOfferHomePageWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFestiveOfferListing",GetFestiveOfferListing_NewBackoffice);
+
+app.use("/BackofficeApi/GetFestiveFoodVariantDetails",GetFestiveFoodVariantDetails_NewBackoffice);
+app.use("/BackofficeApi/GetFestiveFootwearVariantDetails",GetFestiveFootwearVariantDetails_NewBackoffice);
+app.use("/BackofficeApi/GetFestiveSocksVariantDetails",GetFestiveSocksVariantDetails_NewBackoffice);
+
+app.use("/BackofficeApi/GetAllFoodBrandData",GetAllFoodBrandData_NewBackoffice);
+app.use("/BackofficeApi/GetAllFootwearBrandData",GetAllFootwearBrandData_NewBackoffice);
+app.use("/BackofficeApi/GetAllSocksBrandData",GetAllSocksBrandData_NewBackoffice);
+
+app.use("/BackofficeApi/AddFestiveOfferMaster",AddFestiveOfferMaster_NewBackoffice);
+app.use("/BackofficeApi/AddFestiveOfferProductMapping",AddFestiveOfferProductMapping_NewBackoffice);
+app.use("/BackofficeApi/GetFestiveOfferMaster",GetFestiveOfferMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateFestiveOfferMaster",UpdateFestiveOfferMaster_NewBackoffice);
+
+app.use("/BackofficeApi/GetFestiveOfferProductMapping",GetFestiveOfferProductMapping_NewBackoffice);
+
+app.use("/BackofficeApi/GetFoodItemData",GetFoodItemData_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearItemData",GetFootwearItemData_NewBackoffice);
+app.use("/BackofficeApi/GetSocksItemData",GetSocksItemData_NewBackoffice);
 
 
 module.exports = app;
