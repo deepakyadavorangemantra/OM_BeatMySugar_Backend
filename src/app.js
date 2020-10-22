@@ -896,6 +896,9 @@ const GetFoodItemData_NewBackoffice = require("./api/routes/Backoffice-New-Api/G
 const GetFootwearItemData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearItemData")
 const GetSocksItemData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksItemData")
 
+const AddSmsLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSmsLog")
+const GetSmsLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSmsLog")
+
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1875,6 +1878,9 @@ app.use("/BackofficeApi/GetFestiveOfferProductMapping",GetFestiveOfferProductMap
 app.use("/BackofficeApi/GetFoodItemData",GetFoodItemData_NewBackoffice);
 app.use("/BackofficeApi/GetFootwearItemData",GetFootwearItemData_NewBackoffice);
 app.use("/BackofficeApi/GetSocksItemData",GetSocksItemData_NewBackoffice);
+
+app.use("/BackofficeApi/AddSmsLog",AddSmsLog_NewBackoffice);
+app.use("/BackofficeApi/GetSmsLog",GetSmsLog_NewBackoffice);
 
 
 module.exports = app;
