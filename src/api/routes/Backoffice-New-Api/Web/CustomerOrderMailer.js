@@ -80,7 +80,7 @@ console.log(dt)
 
   base = parseFloat((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100))).toFixed(2)
 
-  offr = offerpercent == '' || offerpercent == null ? '-' : parseFloat(((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100).toFixed(2)
+  offr = offerpercent == '' || offerpercent == null ? '-' : '₹ '+parseFloat(((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100).toFixed(2)
 
   net = parseFloat((((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100))-(offerpercent == '' || offerpercent == null ? 0 : ((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100)))).toFixed(2)
 
@@ -96,7 +96,7 @@ console.log(dt)
     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_prodname+'<br/><b>'+dt.fld_brand+'</b></td>'+
     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_quantity+'</td>'+
     '<td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+base+'</td>'+
-   ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+offr+'</td>'+
+   ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;"> '+offr+'</td>'+
    ' <td style="padding-top: 1%;padding-bottom: 1%; text-align: center;">₹ '+net+'</td>'+
    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">'+dt.fld_taxpercent+'% </td>'+
    ' <td style="padding-top: 1%;padding-bottom: 1%;text-align: center;">₹ '+tx+' </td>'+
