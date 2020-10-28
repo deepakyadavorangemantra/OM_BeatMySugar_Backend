@@ -80,7 +80,7 @@ console.log(dt)
 
   base = parseFloat((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100))).toFixed(2)
 
-  offr = offerpercent == '' || offerpercent == null ? 0 : parseFloat(((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100).toFixed(2)
+  offr = offerpercent == '' || offerpercent == null ? '-' : parseFloat(((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100).toFixed(2)
 
   net = parseFloat((((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100))-(offerpercent == '' || offerpercent == null ? 0 : ((dt.fld_price*dt.fld_quantity)/(1+(dt.fld_taxpercent/100)))*offerpercent/100)))).toFixed(2)
 
