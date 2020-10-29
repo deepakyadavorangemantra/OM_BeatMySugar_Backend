@@ -1,8 +1,8 @@
 {
-    "server" : "192.227.85.199",
-    "user" : "bmsprod",
-    "password" : "tjNb#915",
-    "database" : "bmsprod",
+    "server" : "xxxxx",
+    "user" : "xxxx",
+    "password" : "xxxx",
+    "database" : "xxx",
     "port" : 1433,
     "options" : {
         "encrypt" : false
