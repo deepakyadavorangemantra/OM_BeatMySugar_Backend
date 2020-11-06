@@ -20,7 +20,7 @@ router.post("/", function(request, response){
 
     try{
         const req = new sql.Request(dbConnection);
- 
+         
         req.input('topicid',sql.Int, topicid);
         req.input('title',sql.NVarChar(200), title);
         req.input('content',sql.NVarChar(200), content);

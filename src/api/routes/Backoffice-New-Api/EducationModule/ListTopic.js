@@ -7,10 +7,14 @@ const dbConnection = require("../../../../utilities/db1");
 
 router.get("/", function(request, response){
    
+    var chapterid = request.query.chapterid;
 
+    console.log(request.query.chapterid);
 
     try{
         const req = new sql.Request(dbConnection);
+        
+        req.input('chapterid',sql.Int, chapterid);
 
         req.execute("dbo.Get_TopicMaster", function(err, data){
             if(err){

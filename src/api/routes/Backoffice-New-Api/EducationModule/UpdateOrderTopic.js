@@ -7,7 +7,7 @@ const dbConnection = require("../../../../utilities/db1");
 
 router.post("/", function(request, response){
    
-    var chapterid = request.body.chapterid;
+    
     var title = request.body.orderdetailid;
     var content = request.body.content;
     var orderno = request.body.orderno;
@@ -16,23 +16,15 @@ router.post("/", function(request, response){
     var createdat = request.body.createdat;
     var updatedat = request.body.updatedat;
     var status = request.body.status;
-    
+    var topicid = request.body.topicid;
 
     try{
         const req = new sql.Request(dbConnection);
-
-           
-        req.input('chapterid',sql.Int, chapterid);
-        req.input('title',sql.NVarChar(200), title);
-        req.input('content',sql.NVarChar(200), content);
+         
+        req.input('topicid',sql.Int, topicid);
         req.input('orderno',sql.Int, orderno);
-        req.input('type',sql.NVarChar, type);
-        req.input('img_url',sql.NVarChar, img_url);
-        req.input('createdat',sql.NVarChar(100), createdat);
-        req.input('updatedat',sql.Int, updatedat);
-        req.input('status',sql.Int, status);
 
-        req.execute("dbo.Add_Topic", function(err, data){
+        req.execute("dbo.Update_Order_TopicMaster", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
