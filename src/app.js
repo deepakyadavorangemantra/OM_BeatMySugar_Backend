@@ -7,6 +7,7 @@ var multipart = require('connect-multiparty');
 const CustomerAuthMobile_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerAuthMobile")
 const CustomerLoginAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerLoginAuth")
 const GetUserInfoEmail_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetUserInfoEmail")
+
 // ---------------------------- Mailers ------------------------------
 
 
@@ -601,6 +602,10 @@ const ListTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/Educati
 const DeleteTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteTopic");
 const UpdateTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateTopic");
 
+const AddChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddChapterMaster")
+const UpdateChapterMasterBgImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterMasterBgImage")
+const DeleteChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteChapterMaster")
+const UpdateChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterMaster")
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1296,10 +1301,19 @@ app.use("/BackofficeApi/ChangePasswordByAdmin",ChangePasswordByAdmin_NewBackoffi
 //----------------------------- Education Module -------------------------------------//
     
 app.use("/BackofficeApi/GetChapterMasterList", GetChapterMasterList_NewBackoffice);
+app.use("/BackofficeApi/AddChapterMaster",AddChapterMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateChapterMasterBgImage",UpdateChapterMasterBgImage_NewBackoffice);
+app.use("/BackofficeApi/DeleteChapterMaster",DeleteChapterMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateChapterMaster",UpdateChapterMaster_NewBackoffice);
+
+
 app.use("/BackofficeApi/AddTopic", AddTopic_NewBackoffice);
 app.use("/BackofficeApi/ListTopic", ListTopic_NewBackoffice);
 app.use("/BackofficeApi/UpdateTopic", UpdateTopic_NewBackoffice);
 app.use("/BackofficeApi/DeleteTopic", DeleteTopic_NewBackoffice);
+
+
+
 
 module.exports = app;
 
