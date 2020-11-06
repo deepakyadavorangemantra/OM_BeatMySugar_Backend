@@ -1,6 +1,0 @@
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
-.history/src/api/routes/Backoffice-New-Api/EducationModule/AddChapterMaster_20201105160758.js
