@@ -596,6 +596,11 @@ const ChangePasswordByAdmin_NewBackoffice = require("./api/routes/Backoffice-New
 
 const GetChapterMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetChapterMasterList")
 
+const AddTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddTopic");
+const ListTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListTopic");
+const DeleteTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteTopic");
+const UpdateTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateTopic");
+
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1290,7 +1295,12 @@ app.use("/BackofficeApi/ChangePasswordByAdmin",ChangePasswordByAdmin_NewBackoffi
 
 //----------------------------- Education Module -------------------------------------//
     
-    app.use("/BackofficeApi/GetChapterMasterList", GetChapterMasterList_NewBackoffice);
+app.use("/BackofficeApi/GetChapterMasterList", GetChapterMasterList_NewBackoffice);
+app.use("/BackofficeApi/AddTopic", AddTopic_NewBackoffice);
+app.use("/BackofficeApi/ListTopic", ListTopic_NewBackoffice);
+app.use("/BackofficeApi/UpdateTopic", UpdateTopic_NewBackoffice);
+app.use("/BackofficeApi/DeleteTopic", DeleteTopic_NewBackoffice);
+
 module.exports = app;
 
 
