@@ -618,6 +618,11 @@ const ListOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/Educat
 const DeleteOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteOption");
 const UpdateOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateOption");
 
+const AddCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCongratulation");
+const ListCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCongratulation");
+const DeleteCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteCongratulation");
+const UpdateCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCongratulation");
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1333,6 +1338,11 @@ app.use("/BackofficeApi/AddOption", AddOption_NewBackoffice);
 app.use("/BackofficeApi/ListOption", ListOption_NewBackoffice);
 app.use("/BackofficeApi/UpdateOption", UpdateOption_NewBackoffice);
 app.use("/BackofficeApi/DeleteOption", DeleteOption_NewBackoffice);
+
+app.use("/BackofficeApi/AddCongratulation", AddCongratulation_NewBackoffice);
+app.use("/BackofficeApi/ListCongratulation", ListCongratulation_NewBackoffice);
+app.use("/BackofficeApi/UpdateCongratulation", UpdateCongratulation_NewBackoffice);
+app.use("/BackofficeApi/DeleteCongratulation", DeleteCongratulation_NewBackoffice);
 
 
 module.exports = app;
