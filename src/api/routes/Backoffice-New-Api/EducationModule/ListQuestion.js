@@ -16,7 +16,7 @@ router.get("/", function(request, response){
          
         req.input('chapterid',sql.Int, chapterid);
 
-        req.execute("dbo.Get_TopicMaster", function(err, data){
+        req.execute("dbo.Get_QuestionMaster", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

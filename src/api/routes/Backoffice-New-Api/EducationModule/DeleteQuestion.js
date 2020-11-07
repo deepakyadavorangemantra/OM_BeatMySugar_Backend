@@ -5,17 +5,17 @@ const dbConnection = require("../../../../utilities/db1");
 
 
 
-router.post("/", function(request, response){
+router.get("/", function(request, response){
    
  
-    var topicid = request.body.topicid;
+    var questionid = request.query.questionid;
 
     try{
         const req = new sql.Request(dbConnection);
  
-        req.input('topicid',sql.Int, topicid);
+        req.input('questionid',sql.Int, questionid);
 
-        req.execute("dbo.Delete_TopicMaster", function(err, data){
+        req.execute("dbo.Delete_QuestionMaster", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

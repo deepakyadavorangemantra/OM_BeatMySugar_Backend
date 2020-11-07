@@ -611,7 +611,7 @@ const AddQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/Educa
 const ListQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestion");
 const DeleteQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteQuestion");
 const UpdateQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestion");
-const UpdateQuestionAnswer_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestionAnswer");
+// const UpdateQuestionAnswer_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestionAnswer");
 
 const AddOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddOption");
 const ListOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListOption");
@@ -1326,7 +1326,7 @@ app.use("/BackofficeApi/DeleteTopic", DeleteTopic_NewBackoffice);
 app.use("/BackofficeApi/AddQuestion", AddQuestion_NewBackoffice);
 app.use("/BackofficeApi/ListQuestion", ListQuestion_NewBackoffice);
 app.use("/BackofficeApi/UpdateQuestion", UpdateQuestion_NewBackoffice);
-app.use("/BackofficeApi/UpdateQuestionAnswer", UpdateQuestionAnswer_NewBackoffice);
+// app.use("/BackofficeApi/UpdateQuestionAnswer", UpdateQuestionAnswer_NewBackoffice);
 app.use("/BackofficeApi/DeleteQuestion", DeleteQuestion_NewBackoffice);
 
 app.use("/BackofficeApi/AddOption", AddOption_NewBackoffice);
