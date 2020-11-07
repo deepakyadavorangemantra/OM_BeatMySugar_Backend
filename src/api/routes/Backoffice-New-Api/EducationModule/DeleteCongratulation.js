@@ -5,9 +5,9 @@ const dbConnection = require("../../../../utilities/db1");
 
 
 
-router.post("/", function(request, response){
+router.get("/", function(request, response){
    
-    var congratulationid = request.body.congratulationid;
+    var congratulationid = request.query.congratulationid;
 
 
     try{
