@@ -607,6 +607,24 @@ const UpdateChapterMasterBgImage_NewBackoffice = require("./api/routes/Backoffic
 const DeleteChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteChapterMaster")
 const UpdateChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterMaster")
 
+const AddQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddQuestion");
+const ListQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestion");
+const ListQuestionById_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestionById");
+const ListQuestionAll_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestionAll");
+const DeleteQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteQuestion");
+const UpdateQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestion");
+// const UpdateQuestionAnswer_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestionAnswer");
+
+const AddOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddOption");
+const ListOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListOption");
+const DeleteOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteOption");
+const UpdateOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateOption");
+
+const AddCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCongratulation");
+const ListCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCongratulation");
+const DeleteCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteCongratulation");
+const UpdateCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCongratulation");
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1312,7 +1330,23 @@ app.use("/BackofficeApi/ListTopic", ListTopic_NewBackoffice);
 app.use("/BackofficeApi/UpdateTopic", UpdateTopic_NewBackoffice);
 app.use("/BackofficeApi/DeleteTopic", DeleteTopic_NewBackoffice);
 
+app.use("/BackofficeApi/AddQuestion", AddQuestion_NewBackoffice);
+app.use("/BackofficeApi/ListQuestion", ListQuestion_NewBackoffice);
+app.use("/BackofficeApi/ListQuestionById", ListQuestionById_NewBackoffice);
+app.use("/BackofficeApi/ListQuestionAll", ListQuestionAll_NewBackoffice);
+app.use("/BackofficeApi/UpdateQuestion", UpdateQuestion_NewBackoffice);
+// app.use("/BackofficeApi/UpdateQuestionAnswer", UpdateQuestionAnswer_NewBackoffice);
+app.use("/BackofficeApi/DeleteQuestion", DeleteQuestion_NewBackoffice);
 
+app.use("/BackofficeApi/AddOption", AddOption_NewBackoffice);
+app.use("/BackofficeApi/ListOption", ListOption_NewBackoffice);
+app.use("/BackofficeApi/UpdateOption", UpdateOption_NewBackoffice);
+app.use("/BackofficeApi/DeleteOption", DeleteOption_NewBackoffice);
+
+app.use("/BackofficeApi/AddCongratulation", AddCongratulation_NewBackoffice);
+app.use("/BackofficeApi/ListCongratulation", ListCongratulation_NewBackoffice);
+app.use("/BackofficeApi/UpdateCongratulation", UpdateCongratulation_NewBackoffice);
+app.use("/BackofficeApi/DeleteCongratulation", DeleteCongratulation_NewBackoffice);
 
 
 module.exports = app;

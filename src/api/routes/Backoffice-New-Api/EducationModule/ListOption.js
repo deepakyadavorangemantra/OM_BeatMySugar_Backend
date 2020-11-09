@@ -7,18 +7,23 @@ const dbConnection = require("../../../../utilities/db1");
 
 router.get("/", function(request, response){
    
+    var questionid = request.query.questionid;
+
     try{
         const req = new sql.Request(dbConnection);
-        req.execute("dbo.Get_ChapterMasterList", function(err, data){
+         
+        req.input('questionid',sql.Int, questionid);
+
+        req.execute("dbo.Get_QuestionOptionMaster", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
-                    response.status(404).json({
+                response.status(404).json({
                     data:err.message
-                    });
+                });
             }else{
                 response.status(200).json({
-                        data: data.recordset
-                    });
+                    data: data.recordset
+                });
             }
         });
 
