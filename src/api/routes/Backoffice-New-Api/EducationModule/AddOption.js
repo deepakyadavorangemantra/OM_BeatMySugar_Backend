@@ -11,6 +11,7 @@ router.post("/", function(request, response){
 
     var questionid = request.body.questionid;
     var optiontext = request.body.optiontext;
+    var iscorrect = request.body.iscorrect;
     var orderno = request.body.orderno;
     var createdon = request.body.createdon;
     var updatedon = request.body.updatedon;
@@ -23,6 +24,7 @@ router.post("/", function(request, response){
            
         req.input('questionid',sql.Int, questionid);
         req.input('optiontext',sql.NVarChar(200), optiontext);
+        req.input('iscorrect',sql.NVarChar(200), iscorrect);
         req.input('orderno',sql.Int, orderno);
         req.input('createdon',sql.NVarChar(100), createdon);
         req.input('updatedon',sql.NVarChar(100), updatedon);
