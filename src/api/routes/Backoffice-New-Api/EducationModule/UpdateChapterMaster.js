@@ -35,8 +35,21 @@ router.post("/", function(request, response){
                     data:err.message
                 });
             }else{
-                response.status(200).json({
-                    data: data.recordset
+                const req = new sql.Request(dbConnection);
+         
+                req.input('chapterid',sql.Int, id);
+
+                req.execute("dbo.Get_ChapterByID", function(err, data1){
+                    if(err){
+                        console.log("Error while executing the SP - [error] " + err);
+                        response.status(404).json({
+                            data:err.message
+                        });
+                    }else{
+                        response.status(200).json({
+                            data: data1.recordset
+                        });
+                    }
                 });
             }
         });

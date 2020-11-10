@@ -8,8 +8,6 @@ const dbConnection = require("../../../../utilities/db1");
 router.post("/", function(request, response){
 
     var questionid = request.body.questionid;
-    var chapterid = request.body.chapterid;
-    var topicid = request.body.topicid;
     var questiontext = request.body.questiontext;
     var answertext = request.body.answertext;
     var orderno = request.body.orderno;
@@ -22,8 +20,6 @@ router.post("/", function(request, response){
         const req = new sql.Request(dbConnection);
 
         req.input('questionid',sql.Int, questionid);         
-        req.input('chapterid',sql.Int, chapterid);
-        req.input('topicid',sql.NVarChar(200), topicid);
         req.input('questiontext',sql.Text, questiontext);
         req.input('answertext',sql.Text, answertext);
         req.input('orderno',sql.Int, orderno);

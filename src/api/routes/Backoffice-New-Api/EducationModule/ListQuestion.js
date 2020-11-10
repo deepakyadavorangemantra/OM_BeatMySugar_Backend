@@ -9,8 +9,6 @@ router.get("/", function(request, response){
    
     var chapterid = request.query.chapterid;
 
-    console.log(request.query.chapterid);
-
     try{
         const req = new sql.Request(dbConnection);
          
