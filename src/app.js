@@ -2,15 +2,283 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 var multipart = require('connect-multiparty');
-console.log('here');
 
-const CustomerAuthMobile_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerAuthMobile")
-const CustomerLoginAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerLoginAuth")
-const GetUserInfoEmail_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetUserInfoEmail")
+const AddProductCategory = require("./api/routes/AddProductCategory");
+const AddDosageForm = require("./api/routes/AddDosageForm");
+const AddPackagingSize = require("./api/routes/AddPackagingSize");
+const AddPackagingType = require("./api/routes/AddPackagingType");
+const UpdateProductCategory = require("./api/routes/UpdateProductCategory");
+const UpdateDosageForm = require("./api/routes/UpdateDosageForm");
+const UpdatePackagingSize = require("./api/routes/UpdatePackagingSize");
+const UpdatePackagingType = require("./api/routes/UpdatePackagingType");
+const UsernameAuth = require("./api/routes/UsernameAuth");
+const AddStaff = require("./api/routes/AddStaff");
+const UpdateStaff = require("./api/routes/UpdateStaff");
+const GetStaff = require("./api/routes/GetStaff");
+const GetCountry = require("./api/routes/GetCountry");
+const GetState = require("./api/routes/GetState");
+const GetCity = require("./api/routes/GetCity");
+const GetProductCategory = require("./api/routes/GetProductCategory");
+const GetDosageForm = require("./api/routes/GetDosageForm");
+const GetPackagingSize = require("./api/routes/GetPackagingSize");
+const GetPackagingType = require("./api/routes/GetPackagingType");
+const UpdatePasswordDetails = require("./api/routes/UpdatePasswordDetails");
+const DeleteProductCategory = require("./api/routes/DeleteProductCategory");
+const DeleteDosageForm = require("./api/routes/DeleteDosageForm");
+const DeletePackagingSize = require("./api/routes/DeletePackagingSize");
+const DeletePackagingType = require("./api/routes/DeletePackagingType");
+const AddFaq = require("./api/routes/AddFaq");
+const GetFaq = require("./api/routes/GetFaq");
+const DeleteFaq = require("./api/routes/DeleteFaq");
+const UpdateFaq = require("./api/routes/UpdateFaq");
+const AddPharmaCompany = require("./api/routes/AddPharmaCompany");
+const GetBrand = require("./api/routes/GetBrand");
+const AddBrand = require("./api/routes/AddBrand");
+const UpdateBrand = require("./api/routes/UpdateBrand");
+const GetPharmaCompany = require("./api/routes/GetPharmaCompany");
+const UpdatePharmaCompany = require("./api/routes/UpdatePharmaCompany");
+const AddLoginSession = require("./api/routes/AddLoginSession");
+const AddLoginDetails = require("./api/routes/AddLoginDetails");
+const AddDoctorQualification = require("./api/routes/AddDoctorQualification");
+const AddNutritionist = require("./api/routes/AddNutritionist");
+const AddNutritionistQualification = require("./api/routes/AddNutritionistQualification")
+const AddYogaTrainer = require("./api/routes/AddYogaTrainer");
+const AddYogaTrainerQualification = require("./api/routes/AddYogaTrainerQualification");
+const AddHealthCareCenter = require("./api/routes/AddHealthCareCenter");
+const AddDiagnosticCenter = require("./api/routes/AddDiagnosticCenter");
+const AddDoctor = require("./api/routes/AddDoctor");
+const GetDoctor = require("./api/routes/GetDoctor");
+const GetNutritionist = require("./api/routes/GetNutritionist");
+const GetYogaTrainer = require("./api/routes/GetYogaTrainer");
+const GetHealthCenter = require("./api/routes/GetHealthCenter");
+const GetDiagnosticCenter = require("./api/routes/GetDiagnosticCenter");
+const GetDoctorQualification = require("./api/routes/GetDoctorQualification");
+const UpdateDoctor = require("./api/routes/UpdateDoctor");
+const GetNutritionistQualification = require("./api/routes/GetNutritionistQualification");
+const UpdateNutritionist = require("./api/routes/UpdateNutritionist");
+const GetYogaQualification = require("./api/routes/GetYogaQualification");
+const UpdateYogaTrainer = require("./api/routes/UpdateYogaTrainer");
+const UpdateHealthCenter = require("./api/routes/UpdateHealthCenter");
+const UpdateDiagnosticCenter = require("./api/routes/UpdateDiagnosticCenter");
+const GetDiagnosticCenterBranch = require("./api/routes/GetDiagnosticCenterBranch");
+const AddDiagnosticCenterBranch = require("./api/routes/AddDiagnosticCenterBranch");
+const UpdateDiagnosticCenterBranch = require("./api/routes/UpdateDiagnosticCenterBranch");
+const GetBlogCategory = require("./api/routes/GetBlogCategory");
+const GetBlogSubCategory = require("./api/routes/GetBlogSubCategory");
+const AddBlog = require("./api/routes/AddBlog");
+const GetBlog = require("./api/routes/GetBlog");
+const UpdateBlog = require("./api/routes/UpdateBlog");
+const DeleteBlog = require("./api/routes/DeleteBlog");
+const RegisterCustomer = require("./api/routes/RegisterCustomer");
+const AddUserLoginSession = require("./api/routes/AddUserLoginSession");
+const CustomerLoginAuth = require("./api/routes/CustomerLoginAuth");
+const AddBlogComments= require("./api/routes/AddBlogComments");
+const GetBlogComments= require("./api/routes/GetBlogComments");
+const GetBlogCommentsToApprove= require("./api/routes/GetBlogCommentsToApprove");
+const ApproveBlogComment= require("./api/routes/ApproveBlogComment");
+const DeleteBlogComment= require("./api/routes/DeleteBlogComment");
+const GetRegisteredCustomer= require("./api/routes/GetRegisteredCustomer");
+const AddCustomerBlogLikeStatus= require("./api/routes/AddCustomerBlogLikeStatus");
+const UpdateLikeCount= require("./api/routes/UpdateLikeCount");
+const GetBlogCustomerLikedStatus= require("./api/routes/GetBlogCustomerLikedStatus");
+const GetMarketer= require("./api/routes/GetMarketer");
+
+const AddDevice= require("./api/routes/AddDevice");
+const GetDevice= require("./api/routes/GetDevice");
+const UpdateDevice= require("./api/routes/UpdateDevice");
+const AddDeviceImageMapping= require("./api/routes/AddDeviceImageMapping");
+const GetDeviceImage= require("./api/routes/GetDeviceImage");
+const AddDeviceVendorMapping= require("./api/routes/AddDeviceVendorMapping");
+const GetDeviceVendorMapping= require("./api/routes/GetDeviceVendorMapping");
+
+const AddBook= require("./api/routes/AddBook");
+const GetBooks= require("./api/routes/GetBooks");
+const UpdateBook= require("./api/routes/UpdateBook");
+const AddBookImageMapping= require("./api/routes/AddBookImageMapping");
+const GetBookImage= require("./api/routes/GetBookImage");
+const AddBookVendorMapping= require("./api/routes/AddBookVendorMapping");
+const GetBookVendorMapping= require("./api/routes/GetBookVendorMapping");
+
+const AddAllopathyMedicine= require("./api/routes/AddAllopathyMedicine");
+const GetAllopathyMedicine= require("./api/routes/GetAllopathyMedicine");
+const AddAllopathyImageMapping= require("./api/routes/AddAllopathyImageMapping");
+const UpdateAllopathicMedicine= require("./api/routes/UpdateAllopathicMedicine");
+const GetMedicineAllopathyImage= require("./api/routes/GetMedicineAllopathyImage");
+
+const AddAllopathyVendorMapping= require("./api/routes/AddAllopathyVendorMapping");
+const GetAllopathyVendorMapping= require("./api/routes/GetAllopathyVendorMapping");
+
+const AddAyurvedicMedicine= require("./api/routes/AddAyurvedicMedicine");
+const GetAyurvedicMedicine= require("./api/routes/GetAyurvedicMedicine");
+const AddAyurvedicImageMapping= require("./api/routes/AddAyurvedicImageMapping");
+const GetMedicineAyuvedicMapping= require("./api/routes/GetMedicineAyuvedicMapping");
+const UpdateAyurvedicMedicine= require("./api/routes/UpdateAyurvedicMedicine");
+const GetMedicineAyuvedicImage= require("./api/routes/GetMedicineAyuvedicImage");
+
+const AddAyurvedicVendorMapping= require("./api/routes/AddAyurvedicVendorMapping");
+const GetAyurvedicVendorMapping= require("./api/routes/GetAyurvedicVendorMapping");
+
+const AddFootCare= require("./api/routes/AddFootCare");
+const GetFootCare= require("./api/routes/GetFootCare");
+const AddFootCareImageMapping= require("./api/routes/AddFootCareImageMapping");
+const AddFootCareSizeMapping= require("./api/routes/AddFootCareSizeMapping");
+const GetFootCareImage= require("./api/routes/GetFootCareImage");
+const UpdateFootCare= require("./api/routes/UpdateFootCare");
+const GetFootCareSizeMapping= require("./api/routes/GetFootCareSizeMapping");
+const AddFootcareVendorMapping= require("./api/routes/AddFootcareVendorMapping");
+const GetFootcareVendorMapping= require("./api/routes/GetFootcareVendorMapping");
+
+
+const AddVendor= require("./api/routes/AddVendor");
+const AddVendorContactPerson= require("./api/routes/AddVendorContactPerson");
+const GetVendor= require("./api/routes/GetVendor");
+const UpdateVendor= require("./api/routes/UpdateVendor");
+const GetVendorContactPerson= require("./api/routes/GetVendorContactPerson");
+const UpdateVendorContactPerson= require("./api/routes/UpdateVendorContactPerson");
+
+
+const AddOffer= require("./api/routes/AddOffer");
+const UpdateOffer= require("./api/routes/UpdateOffer");
+const GetOffer= require("./api/routes/GetOffer");
+
+const AddDiagnosticTest= require("./api/routes/AddDiagnosticTest");
+const UpdateDiagnosticTest= require("./api/routes/UpdateDiagnosticTest");
+const GetDiagnosticTest= require("./api/routes/GetDiagnosticTest");
+const AddDiagnosticTestFaqMapping= require("./api/routes/AddDiagnosticTestFaqMapping");
+const GetDaignosticTestFaqMapping= require("./api/routes/GetDaignosticTestFaqMapping");
+
+
+const GetHealthCenterDoctoMapping= require("./api/routes/GetHealthCenterDoctoMapping");
+const AddHealthCenterDoctorMapping= require("./api/routes/AddHealthCenterDoctorMapping");
+const UpdateHealthCenterDoctorMapping= require("./api/routes/UpdateHealthCenterDoctorMapping");
+
+
+const GetHealthCenterNutritionistMapping= require("./api/routes/GetHealthCenterNutritionistMapping");
+const AddHealthCenterNutritionistMapping= require("./api/routes/AddHealthCenterNutritionistMapping");
+const UpdateHealthCenterNutritionistMapping= require("./api/routes/UpdateHealthCenterNutritionistMapping");
+
+const AddFood= require("./api/routes/AddFood");
+const AddFoodImageMapping= require("./api/routes/AddFoodImageMapping");
+const GetFood= require("./api/routes/GetFood");
+const GetFoodImage= require("./api/routes/GetFoodImage");
+const UpdateFood= require("./api/routes/UpdateFood");
+const AddFoodVendorMapping= require("./api/routes/AddFoodVendorMapping");
+const GetFoodVendorMapping= require("./api/routes/GetFoodVendorMapping");
+
+
+const GetBlogBackend= require("./api/routes/GetBlogBackend");
+
+
+
+const AddSaltMaster= require("./api/routes/AddSaltMaster");
+const UpdateSaltMaster= require("./api/routes/UpdateSaltMaster");
+const GetSaltMaster= require("./api/routes/GetSaltMaster");
+const DeleteSaltMaster= require("./api/routes/DeleteSaltMaster");
+const AddContributor= require("./api/routes/AddContributor");
+const UpdateContributor= require("./api/routes/UpdateContributor");
+const GetContributor= require("./api/routes/GetContributor");
+const GetHealthCenterContactPerson= require("./api/routes/GetHealthCenterContactPerson");
+const AddHealthCenterContactPerson= require("./api/routes/AddHealthCenterContactPerson");
+const UpdateHealthCenterContactPerson= require("./api/routes/UpdateHealthCenterContactPerson");
+const AddOrder= require("./api/routes/AddOrder");
+const AddOrderDetail= require("./api/routes/AddOrderDetail");
+const GetNewOrders= require("./api/routes/GetNewOrders");
+const GetOrderDetailData= require("./api/routes/GetOrderDetailData");
+const AddOrderVendor= require("./api/routes/AddOrderVendor");
+const GetVendorOrder= require("./api/routes/GetVendorOrder");
+const UpdateShoppingCart= require("./api/routes/UpdateShoppingCart");
+const DeleteShoppingCart= require("./api/routes/DeleteShoppingCart");
+const DeleteShoppingCartItem= require("./api/routes/DeleteShoppingCartItem");
+const AddWishlist= require("./api/routes/Web/AddWishlist");
+const GetWishlistData= require("./api/routes/Web/GetWishlistData");
+const DeleteWishlist= require("./api/routes/DeleteWishlist");
+const DeleteWishlistItem= require("./api/routes/DeleteWishlistItem");
+const UpdateWishlist= require("./api/routes/UpdateWishlist");
+const CustomerOrderMailer= require("./api/routes/CustomerOrderMailer");
+
+
+// ---------------------------- Web Api ------------------------------
+
+const GetDoctorWeb= require("./api/routes/Web/GetDoctorWeb");
+const GetBooksWeb= require("./api/routes/Web/GetBooksWeb");
+const GetFootCareWeb= require("./api/routes/Web/GetFootCareWeb");
+const GetDevicesWeb= require("./api/routes/Web/GetDevicesWeb");
+const GetAllopathicMedicineWeb= require("./api/routes/Web/GetAllopathicMedicineWeb");
+const GetAyurvedicMedicineWeb= require("./api/routes/Web/GetAyurvedicMedicineWeb");
+const GetNutritionistWeb= require("./api/routes/Web/GetNutritionistWeb");
+const GetBlogDetails= require("./api/routes/Web/GetBlogDetails");
+const GetDoctorDetailsWeb= require("./api/routes/Web/GetDoctorDetailsWeb");
+const GetDoctorHealthCenterWeb= require("./api/routes/Web/GetDoctorHealthCenterWeb");
+const GetLabWeb= require("./api/routes/Web/GetLabWeb");
+const GetLabDetailsWeb= require("./api/routes/Web/GetLabDetailsWeb");
+const GetLabBranchesWeb= require("./api/routes/Web/GetLabBranchesWeb");
+
+const GetNutritionistDetailsWeb= require("./api/routes/Web/GetNutritionistDetailsWeb");
+const GetNutritionistHealthCenterWeb= require("./api/routes/Web/GetNutritionistHealthCenterWeb");
+const GetBookDetailsWebsite= require("./api/routes/Web/GetBookDetailsWebsite");
+const GetFootDetailsWebsite= require("./api/routes/Web/GetFootDetailsWebsite");
+const GetShoppingCartData= require("./api/routes/Web/GetShoppingCartData");
+const GetDeviceDetailsWebsite= require("./api/routes/Web/GetDeviceDetailsWebsite");
+const GetAllopathyDetailsWebsite= require("./api/routes/Web/GetAllopathyDetailsWebsite");
+const GetAyuvedicDetailsWebsite= require("./api/routes/Web/GetAyuvedicDetailsWebsite");
+const GetFoodDetailsWebsite= require("./api/routes/Web/GetFoodDetailsWebsite");
+const GetFoodWeb= require("./api/routes/Web/GetFoodWeb");
+const GetHealthCenterDoctorWeb= require("./api/routes/Web/GetHealthCenterDoctorWeb");
+const GetHealthCenterNutritionistWeb= require("./api/routes/Web/GetHealthCenterNutritionistWeb");
+
+
+
+const AddShoppingCart= require("./api/routes/Web/AddShoppingCart");
+const AddShippingAddressCustomer= require("./api/routes/Web/AddShippingAddressCustomer");
+const GetShippingAddressCustomer= require("./api/routes/Web/GetShippingAddressCustomer");
+const AddCustomerPrescription= require("./api/routes/Web/AddCustomerPrescription");
+
+
+const GetBlogNine= require("./api/routes/Web/GetBlogNine");
+const GetDoctorWebSix= require("./api/routes/Web/GetDoctorWebSix");
+const GetNutritionistWebSix= require("./api/routes/Web/GetNutritionistWebSix");
+const GetBlogCategoryWebsite= require("./api/routes/Web/GetBlogCategoryWebsite");
+const GetBlogWithCategoryWebsite= require("./api/routes/Web/GetBlogWithCategoryWebsite");
+const GetEmailExistsCustomer= require("./api/routes/Web/GetEmailExistsCustomer");
+const GetSocialPosts= require("./api/routes/Web/GetSocialPosts");
+const GetDevicesWebNine= require("./api/routes/Web/GetDevicesWebNine");
+const GetBooksWebNine= require("./api/routes/Web/GetBooksWebNine");
+const GetFootCareWebNine= require("./api/routes/Web/GetFootCareWebNine");
+
+
+// ---------------------------- Web Api ------------------------------
+
+
 
 // ---------------------------- Mailers ------------------------------
 
+const CustomerRegistraionMailer= require("./api/routes/Web/CustomerRegistraionMailer");
+const VerifyMailMailer= require("./api/routes/Web/VerifyMailMailer");
+const IfEmailExists= require("./api/routes/Web/IfEmailExists");
+const ForgotPasswordMailer= require("./api/routes/Web/ForgotPasswordMailer");
+const UpdateCustomerPassword= require("./api/routes/Web/UpdateCustomerPassword");
+const GetBlogTags= require("./api/routes/Web/GetBlogTags");
+const ContactUsMailer= require("./api/routes/Web/ContactUsMailer");
 
+
+// ---------------------------- Mobile Auth -------------------------
+
+const VerifyMobileOTP= require("./api/routes/Web/VerifyMobileOTP");
+const CustomerRegistraionMobileOTP= require("./api/routes/Web/CustomerRegistrationMobileOTP");
+const CustomerAuthMobile_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerAuthMobile")
+const CustomerLoginAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerLoginAuth")
+const GetUserInfoEmail_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetUserInfoEmail")
+// ---------------------------- Mailers ------------------------------
+
+
+
+
+const AddImage = require("./api/routes/AddImage");
+const AddPdf = require("./api/routes/AddPdf");
+
+const UrlToBase64 = require("./api/routes/UrlToBase64");
+
+const TestDeleteImage = require("./api/routes/TestDeleteImage");
 
 
 
@@ -33,7 +301,7 @@ const IfMobileExists_NewBackoffice = require("./api/routes/Backoffice-New-Api/We
 const AddStaffLoginSession_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddStaffLoginSession")
 const AddStaff_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddStaff")
 
-const AddCompanyMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetChapterMasterList")
+const AddCompanyMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddCompanyMaster")
 const AddBrandMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddBrandMaster")
 const AddFoodCategoryMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFoodCategoryMaster")
 const AddFoodFilterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFoodFilterMaster")
@@ -224,6 +492,12 @@ const GetHealthCenterDoctorMapping_NewBackoffice = require("./api/routes/Backoff
 const GetHealthCenterDietitianMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetHealthCenterDietitianMapping")
 const IfEmailExistsSocial_NewBackoffice = require("./api/routes/Backoffice-New-Api/IfEmailExistsSocial")
 const GetCareerWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCareerWebsite")
+
+
+
+
+
+
 
 const GetUserMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserMenu")
 const GetUserSubMenu_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetUserSubMenu")
@@ -593,6 +867,39 @@ const GetOrderDetailDataReport_NewBackoffice = require("./api/routes/Backoffice-
 const ForgotPasswordStaff_NewBackoffice = require("./api/routes/Backoffice-New-Api/ForgotPasswordStaff")
 const ChangePasswordByAdmin_NewBackoffice = require("./api/routes/Backoffice-New-Api/ChangePasswordByAdmin")
 
+const GetSettlementReportOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSettlementReportOrderDetail")
+
+
+
+const GetFestiveOfferHomePageWebsite_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveOfferHomePageWebsite")
+const GetFestiveOfferListing_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveOfferListing")
+
+
+const GetFestiveFoodVariantDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveFoodVariantDetails")
+const GetFestiveFootwearVariantDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveFootwearVariantDetails")
+const GetFestiveSocksVariantDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveSocksVariantDetails")
+
+
+const GetAllFoodBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAllFoodBrandData")
+const GetAllFootwearBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAllFootwearBrandData")
+const GetAllSocksBrandData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAllSocksBrandData")
+
+
+const AddFestiveOfferMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFestiveOfferMaster")
+const AddFestiveOfferProductMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddFestiveOfferProductMapping")
+const GetFestiveOfferMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveOfferMaster")
+const UpdateFestiveOfferMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateFestiveOfferMaster")
+
+const GetFestiveOfferProductMapping_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFestiveOfferProductMapping")
+
+const GetFoodItemData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFoodItemData")
+const GetFootwearItemData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetFootwearItemData")
+const GetSocksItemData_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSocksItemData")
+
+const AddSmsLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSmsLog")
+const GetSmsLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSmsLog")
+
+
 //------------------------------------- Education Module -------------------------------------//
 
 const GetChapterMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetChapterMasterList")
@@ -627,6 +934,7 @@ const ListCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const DeleteCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteCongratulation");
 const UpdateCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCongratulation");
 
+
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -634,6 +942,7 @@ app.use(cors());
 app.use(multipart({
     maxFieldsSize: '50MB'
 }));
+
 var session = require('express-session');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -643,7 +952,270 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set('views', __dirname);
 
-console.log('adter');
+
+
+
+app.use("/AddProductCategory", AddProductCategory);
+app.use("/AddDosageForm", AddDosageForm);
+app.use("/AddPackagingSize", AddPackagingSize);
+app.use("/AddPackagingType", AddPackagingType);
+app.use("/UpdateProductCategory", UpdateProductCategory);
+app.use("/UpdateDosageForm", UpdateDosageForm);
+app.use("/UpdatePackagingSize", UpdatePackagingSize);
+app.use("/UpdatePackagingType", UpdatePackagingType);
+app.use("/UsernameAuth", UsernameAuth);
+app.use("/AddStaff", AddStaff);
+app.use("/UpdateStaff", UpdateStaff);
+app.use("/GetStaff", GetStaff);
+app.use("/GetCountry", GetCountry);
+app.use("/GetState", GetState);
+app.use("/GetCity", GetCity);
+app.use("/GetProductCategory", GetProductCategory);
+app.use("/GetDosageForm", GetDosageForm);
+app.use("/GetPackagingSize", GetPackagingSize);
+app.use("/GetPackagingType", GetPackagingType);
+app.use("/UpdatePasswordDetails", UpdatePasswordDetails);
+app.use("/DeleteProductCategory", DeleteProductCategory);
+app.use("/DeleteDosageForm", DeleteDosageForm);
+app.use("/DeletePackagingSize", DeletePackagingSize);
+app.use("/DeletePackagingType", DeletePackagingType);
+app.use("/AddFaq", AddFaq);
+app.use("/GetFaq", GetFaq);AddPharmaCompany
+app.use("/DeleteFaq", DeleteFaq);
+app.use("/UpdateFaq", UpdateFaq);
+app.use("/AddPharmaCompany", AddPharmaCompany);
+app.use("/GetBrand", GetBrand);
+app.use("/AddBrand", AddBrand);
+app.use("/UpdateBrand", UpdateBrand);
+app.use("/GetPharmaCompany", GetPharmaCompany);
+app.use("/UpdatePharmaCompany", UpdatePharmaCompany);
+app.use("/AddLoginSession", AddLoginSession);
+app.use("/AddLoginDetails", AddLoginDetails);
+app.use("/AddDoctorQualification", AddDoctorQualification);
+app.use("/AddNutritionist", AddNutritionist);
+app.use("/AddNutritionistQualification", AddNutritionistQualification);
+app.use("/AddYogaTrainer", AddYogaTrainer);
+app.use("/AddYogaTrainerQualification", AddYogaTrainerQualification);
+app.use("/AddHealthCareCenter", AddHealthCareCenter);
+app.use("/AddDiagnosticCenter", AddDiagnosticCenter);
+app.use("/AddDoctor", AddDoctor);
+app.use("/GetDoctor", GetDoctor);
+app.use("/GetNutritionist", GetNutritionist);
+app.use("/GetYogaTrainer", GetYogaTrainer);
+app.use("/GetHealthCenter", GetHealthCenter);
+app.use("/GetDiagnosticCenter", GetDiagnosticCenter);
+app.use("/GetDoctorQualification", GetDoctorQualification);
+app.use("/UpdateDoctor", UpdateDoctor);
+app.use("/GetNutritionistQualification", GetNutritionistQualification);
+app.use("/UpdateNutritionist", UpdateNutritionist);
+app.use("/GetYogaQualification", GetYogaQualification);
+app.use("/UpdateYogaTrainer", UpdateYogaTrainer);
+app.use("/UpdateHealthCenter", UpdateHealthCenter);
+app.use("/UpdateDiagnosticCenter", UpdateDiagnosticCenter);
+app.use("/GetDiagnosticCenterBranch", GetDiagnosticCenterBranch);
+app.use("/AddDiagnosticCenterBranch",AddDiagnosticCenterBranch);
+app.use("/UpdateDiagnosticCenterBranch",UpdateDiagnosticCenterBranch);
+app.use("/GetBlogCategory",GetBlogCategory);
+app.use("/GetBlogSubCategory",GetBlogSubCategory);
+app.use("/AddBlog",AddBlog);
+app.use("/GetBlog",GetBlog);
+app.use("/UpdateBlog",UpdateBlog);
+app.use("/DeleteBlog",DeleteBlog);
+app.use("/RegisterCustomer",RegisterCustomer);
+app.use("/AddUserLoginSession",AddUserLoginSession);
+app.use("/CustomerLoginAuth",CustomerLoginAuth);
+app.use("/AddBlogComments",AddBlogComments);
+app.use("/GetBlogComments",GetBlogComments);
+app.use("/GetBlogCommentsToApprove",GetBlogCommentsToApprove);
+app.use("/ApproveBlogComment",ApproveBlogComment);
+app.use("/DeleteBlogComment",DeleteBlogComment);
+app.use("/GetRegisteredCustomer",GetRegisteredCustomer);
+app.use("/AddCustomerBlogLikeStatus",AddCustomerBlogLikeStatus);
+app.use("/UpdateLikeCount",UpdateLikeCount);
+app.use("/GetBlogCustomerLikedStatus",GetBlogCustomerLikedStatus);
+app.use("/GetMarketer",GetMarketer);
+app.use("/GetHealthCenterNutritionistMapping",GetHealthCenterNutritionistMapping);
+app.use("/AddHealthCenterNutritionistMapping",AddHealthCenterNutritionistMapping);
+app.use("/UpdateHealthCenterNutritionistMapping",UpdateHealthCenterNutritionistMapping);
+
+app.use("/AddDevice",AddDevice);
+app.use("/GetDevice",GetDevice);
+app.use("/UpdateDevice",UpdateDevice);
+app.use("/AddDeviceImageMapping",AddDeviceImageMapping);
+app.use("/GetDeviceImage",GetDeviceImage);
+app.use("/AddDeviceVendorMapping",AddDeviceVendorMapping);
+app.use("/GetDeviceVendorMapping",GetDeviceVendorMapping);
+
+app.use("/AddBook",AddBook);
+app.use("/GetBooks",GetBooks);
+app.use("/UpdateBook",UpdateBook);
+app.use("/AddBookImageMapping",AddBookImageMapping);
+app.use("/GetBookImage",GetBookImage);
+app.use("/AddBookVendorMapping",AddBookVendorMapping);
+app.use("/GetBookVendorMapping",GetBookVendorMapping);
+
+app.use("/AddAllopathyMedicine",AddAllopathyMedicine);
+app.use("/GetAllopathyMedicine",GetAllopathyMedicine);
+app.use("/AddAllopathyImageMapping",AddAllopathyImageMapping);
+app.use("/UpdateAllopathicMedicine",UpdateAllopathicMedicine);
+app.use("/GetMedicineAllopathyImage",GetMedicineAllopathyImage);
+app.use("/AddAllopathyVendorMapping",AddAllopathyVendorMapping);
+app.use("/GetAllopathyVendorMapping",GetAllopathyVendorMapping);
+
+app.use("/AddAyurvedicMedicine",AddAyurvedicMedicine);
+app.use("/GetAyurvedicMedicine",GetAyurvedicMedicine);
+app.use("/AddAyurvedicImageMapping",AddAyurvedicImageMapping);
+app.use("/GetMedicineAyuvedicImage",GetMedicineAyuvedicMapping);
+app.use("/UpdateAyurvedicMedicine",UpdateAyurvedicMedicine);
+app.use("/GetMedicineAyuvedicImage",GetMedicineAyuvedicImage);
+app.use("/AddAyurvedicVendorMapping",AddAyurvedicVendorMapping);
+app.use("/GetAyurvedicVendorMapping",GetAyurvedicVendorMapping);
+
+app.use("/AddFootCare",AddFootCare);
+app.use("/GetFootCare",GetFootCare);
+app.use("/AddFootCareImageMapping",AddFootCareImageMapping);
+app.use("/AddFootCareSizeMapping",AddFootCareSizeMapping);
+app.use("/GetFootCareImage",GetFootCareImage);
+app.use("/UpdateFootCare",UpdateFootCare);
+app.use("/GetFootCareSizeMapping",GetFootCareSizeMapping);
+app.use("/AddFootcareVendorMapping",AddFootcareVendorMapping);
+app.use("/GetFootcareVendorMapping",GetFootcareVendorMapping);
+
+app.use("/AddVendor",AddVendor);
+app.use("/AddVendorContactPerson",AddVendorContactPerson);
+app.use("/GetVendor",GetVendor);
+app.use("/UpdateVendor",UpdateVendor);
+app.use("/GetVendorContactPerson",GetVendorContactPerson);
+app.use("/UpdateVendorContactPerson",UpdateVendorContactPerson);
+
+app.use("/AddOffer",AddOffer);
+app.use("/UpdateOffer",UpdateOffer);
+app.use("/GetOffer",GetOffer);
+
+app.use("/AddDiagnosticTest",AddDiagnosticTest);
+app.use("/UpdateDiagnosticTest",UpdateDiagnosticTest);
+app.use("/GetDiagnosticTest",GetDiagnosticTest);
+app.use("/AddDiagnosticTestFaqMapping",AddDiagnosticTestFaqMapping);
+app.use("/GetDaignosticTestFaqMapping",GetDaignosticTestFaqMapping);
+
+app.use("/GetHealthCenterDoctoMapping",GetHealthCenterDoctoMapping);
+app.use("/AddHealthCenterDoctorMapping",AddHealthCenterDoctorMapping);
+app.use("/UpdateHealthCenterDoctorMapping",UpdateHealthCenterDoctorMapping);
+
+app.use("/AddFood",AddFood);
+app.use("/AddFoodImageMapping",AddFoodImageMapping);
+app.use("/GetFood",GetFood);
+app.use("/GetFoodImage",GetFoodImage);
+app.use("/UpdateFood",UpdateFood);
+app.use("/AddFoodVendorMapping",AddFoodVendorMapping);
+app.use("/GetFoodVendorMapping",GetFoodVendorMapping);
+
+app.use("/GetBlogBackend",GetBlogBackend);
+
+app.use("/AddImage", AddImage);
+app.use("/AddPdf", AddPdf);
+
+app.use("/UrlToBase64", UrlToBase64);
+
+
+app.use("/AddSaltMaster",AddSaltMaster);
+app.use("/GetSaltMaster",GetSaltMaster);
+app.use("/UpdateSaltMaster",UpdateSaltMaster);
+app.use("/DeleteSaltMaster",DeleteSaltMaster);
+app.use("/AddContributor",AddContributor);
+app.use("/UpdateContributor",UpdateContributor);
+app.use("/GetContributor",GetContributor);
+app.use("/GetHealthCenterContactPerson",GetHealthCenterContactPerson);
+app.use("/AddHealthCenterContactPerson",AddHealthCenterContactPerson);
+app.use("/UpdateHealthCenterContactPerson",UpdateHealthCenterContactPerson);
+app.use("/AddOrder",AddOrder);
+app.use("/AddOrderDetail",AddOrderDetail);
+app.use("/GetNewOrders",GetNewOrders);
+app.use("/GetOrderDetailData",GetOrderDetailData);
+app.use("/AddOrderVendor",AddOrderVendor);
+app.use("/GetVendorOrder",GetVendorOrder);
+app.use("/UpdateShoppingCart",UpdateShoppingCart);
+app.use("/DeleteShoppingCart",DeleteShoppingCart);
+app.use("/DeleteShoppingCartItem",DeleteShoppingCartItem);
+app.use("/AddWishlist",AddWishlist);
+app.use("/GetWishlistData",GetWishlistData);
+app.use("/DeleteWishlist",DeleteWishlist);
+app.use("/DeleteWishlistItem",DeleteWishlistItem);
+app.use("/UpdateWishlist",UpdateWishlist);
+app.use("/CustomerOrderMailer",CustomerOrderMailer);
+
+
+// ---------------------Web-----------------------
+
+app.use("/GetDoctorWeb", GetDoctorWeb);
+app.use("/GetBooksWeb", GetBooksWeb);
+app.use("/GetFootCareWeb", GetFootCareWeb);
+app.use("/GetDevicesWeb", GetDevicesWeb);
+app.use("/GetAllopathicMedicineWeb", GetAllopathicMedicineWeb);
+app.use("/GetAyurvedicMedicineWeb", GetAyurvedicMedicineWeb);
+app.use("/GetNutritionistWeb", GetNutritionistWeb);
+app.use("/GetBlogDetails", GetBlogDetails);
+app.use("/GetDoctorDetailsWeb", GetDoctorDetailsWeb);
+app.use("/GetDoctorHealthCenterWeb", GetDoctorHealthCenterWeb);
+app.use("/GetLabWeb", GetLabWeb);
+
+app.use("/GetNutritionistDetailsWeb", GetNutritionistDetailsWeb);
+app.use("/GetNutritionistHealthCenterWeb", GetNutritionistHealthCenterWeb);
+app.use("/GetLabDetailsWeb", GetLabDetailsWeb);
+app.use("/GetLabBranchesWeb", GetLabBranchesWeb);
+app.use("/GetBookDetailsWebsite", GetBookDetailsWebsite);
+app.use("/GetFootDetailsWebsite", GetFootDetailsWebsite);
+app.use("/GetShoppingCartData", GetShoppingCartData);
+app.use("/GetDeviceDetailsWebsite", GetDeviceDetailsWebsite);
+app.use("/GetAllopathyDetailsWebsite", GetAllopathyDetailsWebsite);
+app.use("/GetAyuvedicDetailsWebsite", GetAyuvedicDetailsWebsite);
+app.use("/GetFoodDetailsWebsite", GetFoodDetailsWebsite);
+app.use("/GetFoodWeb", GetFoodWeb)
+app.use("/GetHealthCenterDoctorWeb", GetHealthCenterDoctorWeb);
+app.use("/GetHealthCenterNutritionistWeb", GetHealthCenterNutritionistWeb);
+
+
+app.use("/AddShoppingCart", AddShoppingCart);
+app.use("/AddShippingAddressCustomer", AddShippingAddressCustomer);
+app.use("/GetShippingAddressCustomer", GetShippingAddressCustomer);
+app.use("/AddCustomerPrescription", AddCustomerPrescription);
+
+
+app.use("/GetBlogNine", GetBlogNine);
+app.use("/GetNutritionistWebSix", GetNutritionistWebSix);
+app.use("/GetDoctorWebSix", GetDoctorWebSix);
+app.use("/GetBlogCategoryWebsite", GetBlogCategoryWebsite);
+app.use("/GetBlogWithCategoryWebsite", GetBlogWithCategoryWebsite);
+app.use("/GetEmailExistsCustomer", GetEmailExistsCustomer);
+app.use("/GetSocialPosts", GetSocialPosts);
+
+app.use("/GetDevicesWebNine", GetDevicesWebNine);
+app.use("/GetFootCareWebNine", GetFootCareWebNine);
+app.use("/GetBooksWebNine", GetBooksWebNine);
+
+//-----------------------Web--------------
+
+
+
+//-----------------------Mailers--------------
+app.use("/CustomerRegistraionMailer", CustomerRegistraionMailer);
+app.use("/VerifyMailMailer", VerifyMailMailer);
+app.use("/IfEmailExists", IfEmailExists);
+app.use("/ForgotPasswordMailer", ForgotPasswordMailer);
+app.use("/UpdateCustomerPassword", UpdateCustomerPassword);
+app.use("/GetBlogTags", GetBlogTags);
+app.use("/ContactUsMailer",ContactUsMailer);
+
+//-----------------------Mailers--------------
+
+app.use("/TestDeleteImage",TestDeleteImage);
+app.use("/VerifyMobileOTP",VerifyMobileOTP);
+app.use("/CustomerRegistraionMobileOTP",CustomerRegistraionMobileOTP);
+
+
+
+
+
 
 
 //-----------------------------------------New API -------------------------------------------------------------
@@ -1317,6 +1889,33 @@ app.use("/BackofficeApi/GetOrderDetailDataReport",GetOrderDetailDataReport_NewBa
 app.use("/BackofficeApi/ForgotPasswordStaff",ForgotPasswordStaff_NewBackoffice);
 app.use("/BackofficeApi/ChangePasswordByAdmin",ChangePasswordByAdmin_NewBackoffice);
 
+app.use("/BackofficeApi/GetSettlementReportOrderDetail",GetSettlementReportOrderDetail_NewBackoffice);
+
+
+app.use("/BackofficeApi/GetFestiveOfferHomePageWebsite",GetFestiveOfferHomePageWebsite_NewBackoffice);
+app.use("/BackofficeApi/GetFestiveOfferListing",GetFestiveOfferListing_NewBackoffice);
+
+app.use("/BackofficeApi/GetFestiveFoodVariantDetails",GetFestiveFoodVariantDetails_NewBackoffice);
+app.use("/BackofficeApi/GetFestiveFootwearVariantDetails",GetFestiveFootwearVariantDetails_NewBackoffice);
+app.use("/BackofficeApi/GetFestiveSocksVariantDetails",GetFestiveSocksVariantDetails_NewBackoffice);
+
+app.use("/BackofficeApi/GetAllFoodBrandData",GetAllFoodBrandData_NewBackoffice);
+app.use("/BackofficeApi/GetAllFootwearBrandData",GetAllFootwearBrandData_NewBackoffice);
+app.use("/BackofficeApi/GetAllSocksBrandData",GetAllSocksBrandData_NewBackoffice);
+
+app.use("/BackofficeApi/AddFestiveOfferMaster",AddFestiveOfferMaster_NewBackoffice);
+app.use("/BackofficeApi/AddFestiveOfferProductMapping",AddFestiveOfferProductMapping_NewBackoffice);
+app.use("/BackofficeApi/GetFestiveOfferMaster",GetFestiveOfferMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateFestiveOfferMaster",UpdateFestiveOfferMaster_NewBackoffice);
+
+app.use("/BackofficeApi/GetFestiveOfferProductMapping",GetFestiveOfferProductMapping_NewBackoffice);
+
+app.use("/BackofficeApi/GetFoodItemData",GetFoodItemData_NewBackoffice);
+app.use("/BackofficeApi/GetFootwearItemData",GetFootwearItemData_NewBackoffice);
+app.use("/BackofficeApi/GetSocksItemData",GetSocksItemData_NewBackoffice);
+
+app.use("/BackofficeApi/AddSmsLog",AddSmsLog_NewBackoffice);
+app.use("/BackofficeApi/GetSmsLog",GetSmsLog_NewBackoffice);
 
 //----------------------------- Education Module -------------------------------------//
     
@@ -1351,8 +1950,6 @@ app.use("/BackofficeApi/AddCongratulation", AddCongratulation_NewBackoffice);
 app.use("/BackofficeApi/ListCongratulation", ListCongratulation_NewBackoffice);
 app.use("/BackofficeApi/UpdateCongratulation", UpdateCongratulation_NewBackoffice);
 app.use("/BackofficeApi/DeleteCongratulation", DeleteCongratulation_NewBackoffice);
-console.log('adsdfdsfdter');
-
 
 module.exports = app;
 
