@@ -26,19 +26,17 @@ router.post("/", function(request, response){
         req.input('createdon',sql.NVarChar(100), createdon);
         req.input('status',sql.Int, status);
 
-        req.execute("dbo.Add_QuestionMaster", function(err, data){
-            if(err){
+        req.execute("dbo.Add_QuestionMaster").then((data)=>{
+            response.status(200).json({
+                data: data.recordset
+            });
+            }).catch((err)=>{
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
                     data:err.message
-                });
-            }else{
-                response.status(200).json({
-                    data: data.recordset
-                });
-            }
+            });
         });
-
+           
     }catch (err){
         response.status(500);
         response.send(err.message);

@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 var multipart = require('connect-multiparty');
-
+console.log('here');
 
 const CustomerAuthMobile_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerAuthMobile")
 const CustomerLoginAuth_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/CustomerLoginAuth")
@@ -608,6 +608,8 @@ const DeleteChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-A
 const UpdateChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterMaster")
 
 const AddQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddQuestion");
+const AddQuestionWithOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddQuestionWithOption");
+const UpdateQuestionWithOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestionWithOption");
 const ListQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestion");
 const ListQuestionById_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestionById");
 const ListQuestionAll_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestionAll");
@@ -641,7 +643,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set('views', __dirname);
 
-
+console.log('adter');
 
 
 //-----------------------------------------New API -------------------------------------------------------------
@@ -1331,6 +1333,8 @@ app.use("/BackofficeApi/UpdateTopic", UpdateTopic_NewBackoffice);
 app.use("/BackofficeApi/DeleteTopic", DeleteTopic_NewBackoffice);
 
 app.use("/BackofficeApi/AddQuestion", AddQuestion_NewBackoffice);
+app.use("/BackofficeApi/AddQuestionWithOption", AddQuestionWithOption_NewBackoffice);
+app.use("/BackofficeApi/UpdateQuestionWithOption", UpdateQuestionWithOption_NewBackoffice);
 app.use("/BackofficeApi/ListQuestion", ListQuestion_NewBackoffice);
 app.use("/BackofficeApi/ListQuestionById", ListQuestionById_NewBackoffice);
 app.use("/BackofficeApi/ListQuestionAll", ListQuestionAll_NewBackoffice);
@@ -1347,6 +1351,7 @@ app.use("/BackofficeApi/AddCongratulation", AddCongratulation_NewBackoffice);
 app.use("/BackofficeApi/ListCongratulation", ListCongratulation_NewBackoffice);
 app.use("/BackofficeApi/UpdateCongratulation", UpdateCongratulation_NewBackoffice);
 app.use("/BackofficeApi/DeleteCongratulation", DeleteCongratulation_NewBackoffice);
+console.log('adsdfdsfdter');
 
 
 module.exports = app;
