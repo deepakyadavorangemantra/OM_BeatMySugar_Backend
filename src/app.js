@@ -608,6 +608,7 @@ const DeleteChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-A
 const UpdateChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterMaster")
 
 const AddQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddQuestion");
+const AddQuestionWithOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddQuestion");
 const ListQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestion");
 const ListQuestionById_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestionById");
 const ListQuestionAll_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestionAll");
@@ -1331,6 +1332,7 @@ app.use("/BackofficeApi/UpdateTopic", UpdateTopic_NewBackoffice);
 app.use("/BackofficeApi/DeleteTopic", DeleteTopic_NewBackoffice);
 
 app.use("/BackofficeApi/AddQuestion", AddQuestion_NewBackoffice);
+app.use("/BackofficeApi/ AddQuestionWithOption", AddQuestionWithOption_NewBackoffice);
 app.use("/BackofficeApi/ListQuestion", ListQuestion_NewBackoffice);
 app.use("/BackofficeApi/ListQuestionById", ListQuestionById_NewBackoffice);
 app.use("/BackofficeApi/ListQuestionAll", ListQuestionAll_NewBackoffice);

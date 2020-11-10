@@ -16,29 +16,32 @@ router.post("/", function(request, response){
     var updatedon = request.body.updatedon;
     var status = request.body.status;
     
+    var result;
 
     try{
         const req = new sql.Request(dbConnection);
-
            
-        req.input('chapterid',sql.Int, chapterid);
-        req.input('questiontext',sql.Text, questiontext);
-        req.input('answertext',sql.Text, answertext);
-        req.input('orderno',sql.Int, orderno);
-        req.input('createdon',sql.NVarChar(100), createdon);
-        req.input('status',sql.Int, status);
+        req.input('chapterid',sql.Int, req.body.question.chapterid);
+        req.input('questiontext',sql.Text, req.body.question.questiontext);
+        req.input('answertext',sql.Text, req.body.question.answertext);
+        req.input('orderno',sql.Int, req.body.question.orderno);
+        req.input('createdon',sql.NVarChar(100), req.body.question.createdon);
+        req.input('status',sql.Int, req.body.question.status);
 
-        req.execute("dbo.Add_QuestionMaster").then((data)=>{
-            response.status(200).json({
-                data: data.recordset
-            });
+        req.execute("dbo.Add_QuestionMaster").then(function(data){
+                    response.status(200).json({
+                        data: data.recordset
+                    })
             }).catch((err)=>{
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
                     data:err.message
-            });
-        });
-           
+                });
+            })
+
+            
+    
+
     }catch (err){
         response.status(500);
         response.send(err.message);
