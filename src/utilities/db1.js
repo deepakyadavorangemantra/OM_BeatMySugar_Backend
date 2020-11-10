@@ -10,9 +10,9 @@ var connectToDB = function(){
 
         db.connect(function(err){
             if(err){
-                console.log("connection error !!");
+                console.warn("connection error !!");
             }else{
-                console.log("connected successfully");
+                console.warn("connected successfully");
             }
         });
     }

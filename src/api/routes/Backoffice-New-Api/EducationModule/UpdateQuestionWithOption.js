@@ -31,6 +31,7 @@ router.post("/", function(request, response){
     try{
         const req = new sql.Request(dbConnection);
            
+        req.input('questionid',sql.Int, request.body.question.questionid);
         req.input('chapterid',sql.Int, request.body.question.chapterid);
         req.input('questiontext',sql.Text, request.body.question.questiontext);
         req.input('answertext',sql.Text, request.body.question.answertext);
@@ -39,14 +40,14 @@ router.post("/", function(request, response){
         req.input('status',sql.Int, request.body.question.status);
 
         promises.push(
-            req.execute("dbo.Add_QuestionMaster").then(function(data){
+            req.execute("dbo.Update_QuestionMaster").then(function(data){
                     // response.status(200).json({
                     //     data: data.recordset
                     // })
                    
                     const req2 = new sql.Request(dbConnection)
                     request.body.options.forEach(option => {
-   
+                        req2.input('optionid',sql.Int, option.optionid);
                         req2.input('questionid',sql.Int, option.questionid);
                         req2.input('optiontext',sql.NVarChar(200), option.optiontext);
                         req2.input('iscorrect',sql.NVarChar(200), option.iscorrect);
@@ -56,7 +57,7 @@ router.post("/", function(request, response){
                         req2.input('status',sql.Int, option.status);
         
                         promises.push(
-                                req2.execute("dbo.Add_QuestionOptionMaster").then(function(data){
+                                req2.execute("dbo.Update_QuestionOptionMaster").then(function(data){
                                     // response.status(200).json({
                                     //     data: data.recordset
                                     // })
