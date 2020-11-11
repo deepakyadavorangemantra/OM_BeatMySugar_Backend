@@ -36,7 +36,7 @@ router.post("/", function(request, response){
         req.input('questiontext',sql.Text, request.body.question.questiontext);
         req.input('answertext',sql.Text, request.body.question.answertext);
         req.input('orderno',sql.Int, request.body.question.orderno);
-        req.input('createdon',sql.NVarChar(100), request.body.question.createdon);
+        req.input('updatedon',sql.NVarChar(100), request.body.question.updatedon);
         req.input('status',sql.Int, request.body.question.status);
 
  
@@ -46,19 +46,21 @@ router.post("/", function(request, response){
                     // })
                     console.log(questionData);
                    
-                    const req2 = new sql.Request(dbConnection)
-                    request.body.options.forEach(option => {
-                        req2.input('optionid',sql.Int, option.optionid);
-                        req2.input('questionid',sql.Int, request.body.question.questionid);
-                        req2.input('optiontext',sql.NVarChar(200), option.optiontext);
-                        req2.input('iscorrect',sql.NVarChar(200), option.iscorrect);
-                        req2.input('orderno',sql.Int, option.orderno);
-                        req2.input('createdon',sql.NVarChar(100), option.createdon);
-                        req2.input('updatedon',sql.NVarChar(100), option.updatedon);
-                        req2.input('status',sql.Int, option.status);
+                    var req_obj ={};
+                    request.body.options.forEach((option,index) => {
+                        
+                        req_obj[index] = new sql.Request(dbConnection)
+
+                        req_obj[index].input('optionid',sql.Int, option.optionid);
+                        req_obj[index].input('questionid',sql.Int, request.body.question.questionid);
+                        req_obj[index].input('optiontext',sql.NVarChar(200), option.optiontext);
+                        req_obj[index].input('iscorrect',sql.NVarChar(200), option.iscorrect);
+                        req_obj[index].input('orderno',sql.Int, option.orderno);
+                        req_obj[index].input('updatedon',sql.NVarChar(100), option.updatedon);
+                        req_obj[index].input('status',sql.Int, option.status);
         
                         promises.push(
-                                req2.execute("dbo.Update_QuestionOptionMaster").then(function(optionData){
+                                req_obj[index].execute("dbo.Update_QuestionOptionMaster").then(function(optionData){
                                     // response.status(200).json({
                                     //     data: data.recordset
                                     // })
