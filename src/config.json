@@ -1,11 +1,13 @@
 {
-    "server" : "xxxxx",
-    "user" : "xxxx",
-    "password" : "xxxx",
-    "database" : "xxx",
-    "port" : 1433,
+    "server" : "13.126.17.107",
+    "user" : "SA",
+    "password" : "orange@123",
+    "server_old" : "65.0.161.134",
+    "user_old" : "sa",
+    "password_old" : "vU3B5w53&Z",
+    "database" : "bmsdev2",
+    "port" : "1433",
     "options" : {
         "encrypt" : false
     }
 }
-
