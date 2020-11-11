@@ -47,13 +47,13 @@ router.post("/", function(request, response){
                         
                         req_obj[index] = new sql.Request(dbConnection)
 
-                        req_obj[index].input('optionid',sql.Int, option.optionid);
+                        req_obj[index].input('optionid',sql.Int, option.fld_id);
                         req_obj[index].input('questionid',sql.Int, request.body.question.questionid);
-                        req_obj[index].input('optiontext',sql.NVarChar(200), option.optiontext);
+                        req_obj[index].input('optiontext',sql.NVarChar(200), option.fld_optiontext);
                         req_obj[index].input('iscorrect',sql.TinyInt(200), option.fld_iscorrect === true ? 1 : 0);
-                        req_obj[index].input('orderno',sql.Int, option.orderno);
-                        req_obj[index].input('updatedon',sql.NVarChar(100), option.updatedon);
-                        req_obj[index].input('status',sql.Int, option.status);
+                        req_obj[index].input('orderno',sql.Int, option.fld_orderno);
+                        req_obj[index].input('updatedon',sql.NVarChar(100), option.fld_updatedon);
+                        req_obj[index].input('status',sql.Int, option.fld_status);
         
                         promises.push(
                                 req_obj[index].execute("dbo.Update_QuestionOptionMaster").then(function(optionData){
