@@ -26,7 +26,7 @@ router.post("/", function(request, response){
     var status = request.body.status;
     
     var result;
-    var promises = [];
+    promises = [];
 
     try{
         const req = new sql.Request(dbConnection);
@@ -38,16 +38,16 @@ router.post("/", function(request, response){
         req.input('createdon',sql.NVarChar(100), request.body.question.createdon);
         req.input('status',sql.Int, request.body.question.status);
 
-        promises.push(
-            req.execute("dbo.Add_QuestionMaster").then(function(data){
+  
+            req.execute("dbo.Add_QuestionMaster").then(function(questionData){
                     // response.status(200).json({
                     //     data: data.recordset
                     // })
-                   
+                   console.log(questionData.recordset);
                     const req2 = new sql.Request(dbConnection)
                     request.body.options.forEach(option => {
-   
-                        req2.input('questionid',sql.Int, option.questionid);
+
+                        req2.input('questionid',sql.Int, questionData.recordset[0].fld_id);
                         req2.input('optiontext',sql.NVarChar(200), option.optiontext);
                         req2.input('iscorrect',sql.NVarChar(200), option.iscorrect);
                         req2.input('orderno',sql.Int, option.orderno);
@@ -56,11 +56,11 @@ router.post("/", function(request, response){
                         req2.input('status',sql.Int, option.status);
         
                         promises.push(
-                                req2.execute("dbo.Add_QuestionOptionMaster").then(function(data){
+                                req2.execute("dbo.Add_QuestionOptionMaster").then(function(optionData){
                                     // response.status(200).json({
                                     //     data: data.recordset
                                     // })
-                                    return data;
+                                    return optionData.recordset[0];
                                 }).catch((err)=>{
                                     console.log("Error while executing the SP - [error] " + err);
                                     response.status(404).json({
@@ -71,7 +71,18 @@ router.post("/", function(request, response){
                     
                     });
 
-                    return data;
+                    Promise.all(promises)
+                    .then((result) => {
+                          var resp = {};
+                          
+                          resp['question'] = questionData.recordset[0];
+                          resp['options'] = result;
+                          response.status(200).json({
+                                            data:resp
+                                        })
+                    })
+                .catch(error => console.log(`Error in promises ${error}`))
+                return;
 
             }).catch((err)=>{
                 console.log("Error while executing the SP - [error] " + err);
@@ -79,20 +90,13 @@ router.post("/", function(request, response){
                     data:err.message
                 });
             })
-        );
+        
 
       
-    console.log(promises);
+    
     
 
-    Promise.all(promises)
-        .then((result) => {
-            console.log(result);
-              response.status(200).json({
-                                data:result
-                            })
-        })
-    .catch(error => console.log(`Error in promises ${error}`))
+ 
 
     }catch (err){
         response.status(500);
@@ -101,5 +105,5 @@ router.post("/", function(request, response){
 
 
 });
-console.log('here');
+ 
 module.exports = router;
