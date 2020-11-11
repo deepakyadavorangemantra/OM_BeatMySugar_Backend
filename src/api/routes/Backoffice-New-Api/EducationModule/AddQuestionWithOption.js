@@ -41,19 +41,20 @@ router.post("/", function(request, response){
                     // response.status(200).json({
                     //     data: data.recordset
                     // })
-                    const req2 = new sql.Request(dbConnection)
-                    request.body.options.forEach(option => {
-
-                        req2.input('questionid',sql.Int, questionData.recordset[0].fld_id);
-                        req2.input('optiontext',sql.NVarChar(200), option.fld_optiontext);
-                        req2.input('iscorrect',sql.TinyInt, option.fld_iscorrect === true ? 1 : 0);
-                        req2.input('orderno',sql.Int, option.orderno);
-                        req2.input('createdon',sql.NVarChar(100), option.createdon);
-                        req2.input('updatedon',sql.NVarChar(100), option.updatedon);
-                        req2.input('status',sql.Int, option.status);
+                   console.log(questionData.recordset);
+                    var req_obj ={};
+                    request.body.options.forEach((option,index) => {
+                        req_obj[index] = new sql.Request(dbConnection)
+                        req_obj[index].input('questionid',sql.Int, questionData.recordset[0].fld_id);
+                        req_obj[index].input('optiontext',sql.NVarChar(200), option.optiontext);
+                        req_obj[index].input('iscorrect',sql.TinyInt, option.fld_iscorrect === true ? 1 : 0);
+                        req_obj[index].input('orderno',sql.Int, option.orderno);
+                        req_obj[index].input('createdon',sql.NVarChar(100), option.createdon);
+                        req_obj[index].input('updatedon',sql.NVarChar(100), option.updatedon);
+                        req_obj[index].input('status',sql.Int, option.status);
         
                         promises.push(
-                                req2.execute("dbo.Add_QuestionOptionMaster").then(function(optionData){
+                            req_obj[index].execute("dbo.Add_QuestionOptionMaster").then(function(optionData){
                                     // response.status(200).json({
                                     //     data: data.recordset
                                     // })
