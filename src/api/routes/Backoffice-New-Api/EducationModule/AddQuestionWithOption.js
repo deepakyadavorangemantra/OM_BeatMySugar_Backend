@@ -50,7 +50,7 @@ router.post("/", function(request, response){
 console.log(option);
                         req_obj[index].input('questionid',sql.Int, questionData.recordset[0].fld_id);
                         req_obj[index].input('optiontext',sql.NVarChar(200), option.optiontext);
-                        req_obj[index].input('iscorrect',sql.NVarChar(200), option.iscorrect);
+                        req_obj[index].input('iscorrect',sql.Int, option.iscorrect);
                         req_obj[index].input('orderno',sql.Int, option.orderno);
                         req_obj[index].input('createdon',sql.NVarChar(100), option.createdon);
                         req_obj[index].input('updatedon',sql.NVarChar(100), option.updatedon);
