@@ -5,10 +5,10 @@ const dbConnection = require("../../../../utilities/db1");
 
 
 
-router.get("/", function(request, response){
+router.post("/", function(request, response){
    
  
-    var questionid = request.query.questionid;
+    var questionid = request.body.questionid;
 
     try{
         const req = new sql.Request(dbConnection);

@@ -24,7 +24,7 @@ router.post("/", function(request, response){
            
         req.input('questionid',sql.Int, questionid);
         req.input('optiontext',sql.NVarChar(200), optiontext);
-        req.input('iscorrect',sql.NVarChar(200), iscorrect);
+        req.input('iscorrect',sql.TinyInt(200), iscorrect === true ? 1 : 0);
         req.input('orderno',sql.Int, orderno);
         req.input('createdon',sql.NVarChar(100), createdon);
         req.input('updatedon',sql.NVarChar(100), updatedon);

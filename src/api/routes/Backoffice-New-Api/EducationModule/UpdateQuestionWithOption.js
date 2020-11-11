@@ -41,27 +41,20 @@ router.post("/", function(request, response){
 
  
             req.execute("dbo.Update_QuestionMaster").then(function(questionData){
-                    // response.status(200).json({
-                    //     data: data.recordset
-                    // })
-                    console.log(questionData);
                    
                     const req2 = new sql.Request(dbConnection)
                     request.body.options.forEach(option => {
-                        req2.input('optionid',sql.Int, option.optionid);
+                        req2.input('optionid',sql.Int, option.fld_id);
                         req2.input('questionid',sql.Int, request.body.question.questionid);
-                        req2.input('optiontext',sql.NVarChar(200), option.optiontext);
-                        req2.input('iscorrect',sql.NVarChar(200), option.iscorrect);
-                        req2.input('orderno',sql.Int, option.orderno);
-                        req2.input('createdon',sql.NVarChar(100), option.createdon);
-                        req2.input('updatedon',sql.NVarChar(100), option.updatedon);
-                        req2.input('status',sql.Int, option.status);
+                        req2.input('optiontext',sql.NVarChar(200), option.fld_optiontext);
+                        req2.input('iscorrect',sql.TinyInt(200), option.fld_iscorrect === true ? 1 : 0);
+                        req2.input('orderno',sql.Int, option.fld_orderno);
+                        req2.input('createdon',sql.NVarChar(100), option.fld_createdon);
+                        req2.input('updatedon',sql.NVarChar(100), option.fld_updatedon);
+                        req2.input('status',sql.Int, option.fld_status);
         
                         promises.push(
                                 req2.execute("dbo.Update_QuestionOptionMaster").then(function(optionData){
-                                    // response.status(200).json({
-                                    //     data: data.recordset
-                                    // })
                                     return optionData.recordset[0];
                                 }).catch((err)=>{
                                     console.log("Error while executing the SP - [error] " + err);

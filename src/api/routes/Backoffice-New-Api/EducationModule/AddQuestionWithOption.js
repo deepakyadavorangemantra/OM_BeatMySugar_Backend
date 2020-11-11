@@ -37,19 +37,16 @@ router.post("/", function(request, response){
         req.input('orderno',sql.Int, request.body.question.orderno);
         req.input('createdon',sql.NVarChar(100), request.body.question.createdon);
         req.input('status',sql.Int, request.body.question.status);
-
-  
             req.execute("dbo.Add_QuestionMaster").then(function(questionData){
                     // response.status(200).json({
                     //     data: data.recordset
                     // })
-                   console.log(questionData.recordset);
                     const req2 = new sql.Request(dbConnection)
                     request.body.options.forEach(option => {
 
                         req2.input('questionid',sql.Int, questionData.recordset[0].fld_id);
-                        req2.input('optiontext',sql.NVarChar(200), option.optiontext);
-                        req2.input('iscorrect',sql.NVarChar(200), option.iscorrect);
+                        req2.input('optiontext',sql.NVarChar(200), option.fld_optiontext);
+                        req2.input('iscorrect',sql.TinyInt, option.fld_iscorrect === true ? 1 : 0);
                         req2.input('orderno',sql.Int, option.orderno);
                         req2.input('createdon',sql.NVarChar(100), option.createdon);
                         req2.input('updatedon',sql.NVarChar(100), option.updatedon);

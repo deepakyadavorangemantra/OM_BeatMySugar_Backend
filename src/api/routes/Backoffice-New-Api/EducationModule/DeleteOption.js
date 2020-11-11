@@ -5,10 +5,10 @@ const dbConnection = require("../../../../utilities/db1");
 
 
 
-router.get("/", function(request, response){
+router.post("/", function(request, response){
    
  
-    var optionid = request.query.optionid;
+    var optionid = request.body.optionid;
 
     try{
         const req = new sql.Request(dbConnection);
