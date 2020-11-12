@@ -46,7 +46,7 @@ router.post("/", function(request, response){
                     request.body.options.forEach((option,index) => {
                         req_obj[index] = new sql.Request(dbConnection)
                         req_obj[index].input('questionid',sql.Int, questionData.recordset[0].fld_id);
-                        req_obj[index].input('optiontext',sql.NVarChar(200), option.optiontext);
+                        req_obj[index].input('optiontext',sql.NVarChar(200), option.fld_optiontext);
                         req_obj[index].input('iscorrect',sql.TinyInt, option.fld_iscorrect === true ? 1 : 0);
                         req_obj[index].input('orderno',sql.Int, option.orderno);
                         req_obj[index].input('createdon',sql.NVarChar(100), option.createdon);
