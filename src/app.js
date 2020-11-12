@@ -933,11 +933,16 @@ const AddCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api
 const ListCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCongratulation");
 const DeleteCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteCongratulation");
 const UpdateCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCongratulation");
-
+/*customer education feedback*/
 const AddCustomerEducationFeedback_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCustomerEducationFeedback");
 const ListCustomerEducationFeedbackById_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCustomerEducationFeedbackById");
 const ListCustomerEducationFeedbackAll_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCustomerEducationFeedbackAll");
 const UpdateCustomerEducationFeedback_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCustomerEducationFeedback");
+
+/*customer education gift delivery*/
+const AddCustomersGiftDelivery_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCustomersGiftDelivery");
+const ListCustomersGiftDelivery_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCustomersGiftDelivery");
+const UpdateCustomersGiftDelivery_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCustomersGiftDelivery");
 
 
 const app = express();
@@ -1955,6 +1960,10 @@ app.use("/BackofficeApi/AddCustomerEducationFeedback", AddCustomerEducationFeedb
 app.use("/BackofficeApi/ListCustomerEducationFeedbackById", ListCustomerEducationFeedbackById_NewBackoffice);
 app.use("/BackofficeApi/ListCustomerEducationFeedbackAll", ListCustomerEducationFeedbackAll_NewBackoffice);
 app.use("/BackofficeApi/UpdateCustomerEducationFeedback", UpdateCustomerEducationFeedback_NewBackoffice);
+
+app.use("/BackofficeApi/AddCustomersGiftDelivery", AddCustomersGiftDelivery_NewBackoffice);
+app.use("/BackofficeApi/ListCustomersGiftDelivery", ListCustomersGiftDelivery_NewBackoffice);
+app.use("/BackofficeApi/UpdateCustomersGiftDelivery", UpdateCustomersGiftDelivery_NewBackoffice);
 
 
 module.exports = app;

@@ -7,27 +7,34 @@ const dbConnection = require("../../../../utilities/db1");
 
 router.post("/", function(request, response){
    
-    var feedbackid = request.body.feedbackid;
+    var id = request.body.id;
     var customerid = request.body.customerid;
-    var adminid = request.body.adminid;
-    var feedbacktext = request.body.feedbacktext;
-
+    var currentchapter = request.body.currentchapter;
+    var currenttopic = request.body.currenttopic;
+    var iscompleted = request.body.iscompleted;
+    var alertmailsent = request.body.alertmailsent;
+    var giftdeliverystatus = request.body.giftdeliverystatus;
     var updatedon = request.body.updatedon;
     var status = request.body.status;
+ 
+
     
 
     try{
         const req = new sql.Request(dbConnection);
 
            
-        req.input('feedbackid',sql.Int, feedbackid);
+        req.input('id',sql.Int, id);
         req.input('customerid',sql.Int, customerid);
-        req.input('adminid',sql.Int, adminid);
-        req.input('feedbacktext',sql.Text, feedbacktext);
+        req.input('currentchapter',sql.Int, currentchapter);
+        req.input('currenttopic',sql.Int, currenttopic);
+        req.input('iscompleted',sql.Int, iscompleted);
+        req.input('alertmailsent',sql.Int, alertmailsent);
+        req.input('giftdeliverystatus',sql.TinyInt, giftdeliverystatus);
         req.input('updatedon',sql.NVarChar(100), updatedon);
-        req.input('status',sql.TinyInt, status);
+        req.input('status',sql.Int, status);
 
-        req.execute("dbo.Update_CustomerEducationFeedback").then((data)=>{
+        req.execute("dbo.Update_CustomerEducation").then((data)=>{
             response.status(200).json({
                 data: data.recordset
             });
