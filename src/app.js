@@ -944,6 +944,10 @@ const AddCustomersGiftDelivery_NewBackoffice = require("./api/routes/Backoffice-
 const ListCustomersGiftDelivery_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCustomersGiftDelivery");
 const UpdateCustomersGiftDelivery_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCustomersGiftDelivery");
 
+/*customer education alert notification*/
+const AddCustomerEducationNotification_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCustomerEducationNotification");
+const UpdateCustomerEducationNotification_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCustomerEducationNotification");
+
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1964,6 +1968,9 @@ app.use("/BackofficeApi/UpdateCustomerEducationFeedback", UpdateCustomerEducatio
 app.use("/BackofficeApi/AddCustomersGiftDelivery", AddCustomersGiftDelivery_NewBackoffice);
 app.use("/BackofficeApi/ListCustomersGiftDelivery", ListCustomersGiftDelivery_NewBackoffice);
 app.use("/BackofficeApi/UpdateCustomersGiftDelivery", UpdateCustomersGiftDelivery_NewBackoffice);
+
+app.use("/BackofficeApi/AddCustomerEducationNotification", AddCustomerEducationNotification_NewBackoffice);
+app.use("/BackofficeApi/UpdateCustomerEducationNotification", UpdateCustomerEducationNotification_NewBackoffice);
 
 
 module.exports = app;
