@@ -938,6 +938,7 @@ const AddCustomerEducationFeedback_NewBackoffice = require("./api/routes/Backoff
 const ListCustomerEducationFeedbackById_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCustomerEducationFeedbackById");
 const ListCustomerEducationFeedbackAll_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCustomerEducationFeedbackAll");
 const UpdateCustomerEducationFeedback_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCustomerEducationFeedback");
+const DeleteCustomerEducationFeedbackById_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteCustomerEducationFeedbackById");
 
 /*customer education gift delivery*/
 const AddCustomersGiftDelivery_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCustomersGiftDelivery");
@@ -1964,6 +1965,8 @@ app.use("/BackofficeApi/AddCustomerEducationFeedback", AddCustomerEducationFeedb
 app.use("/BackofficeApi/ListCustomerEducationFeedbackById", ListCustomerEducationFeedbackById_NewBackoffice);
 app.use("/BackofficeApi/ListCustomerEducationFeedbackAll", ListCustomerEducationFeedbackAll_NewBackoffice);
 app.use("/BackofficeApi/UpdateCustomerEducationFeedback", UpdateCustomerEducationFeedback_NewBackoffice);
+app.use("/BackofficeApi/DeleteCustomerEducationFeedbackById", DeleteCustomerEducationFeedbackById_NewBackoffice);
+
 
 app.use("/BackofficeApi/AddCustomersGiftDelivery", AddCustomersGiftDelivery_NewBackoffice);
 app.use("/BackofficeApi/ListCustomersGiftDelivery", ListCustomersGiftDelivery_NewBackoffice);
@@ -1972,6 +1975,10 @@ app.use("/BackofficeApi/UpdateCustomersGiftDelivery", UpdateCustomersGiftDeliver
 app.use("/BackofficeApi/AddCustomerEducationNotification", AddCustomerEducationNotification_NewBackoffice);
 app.use("/BackofficeApi/UpdateCustomerEducationNotification", UpdateCustomerEducationNotification_NewBackoffice);
 
+app.use("/BackofficeApi/AddCongratulation", AddCongratulation_NewBackoffice);
+app.use("/BackofficeApi/ListCongratulation", ListCongratulation_NewBackoffice);
+app.use("/BackofficeApi/UpdateCongratulation", UpdateCongratulation_NewBackoffice);
+app.use("/BackofficeApi/DeleteCongratulation", DeleteCongratulation_NewBackoffice);
 
 module.exports = app;
 
