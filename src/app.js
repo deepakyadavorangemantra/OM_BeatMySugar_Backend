@@ -1975,6 +1975,7 @@ app.use("/BackofficeApi/UpdateCustomersGiftDelivery", UpdateCustomersGiftDeliver
 app.use("/BackofficeApi/AddCustomerEducationNotification", AddCustomerEducationNotification_NewBackoffice);
 app.use("/BackofficeApi/ListCustomerEducationNotification", ListCustomerEducationNotification_NewBackoffice);
 app.use("/BackofficeApi/UpdateCustomerEducationNotification", UpdateCustomerEducationNotification_NewBackoffice);
+app.use("/BackofficeApi/ListCustomerEducationNotification", ListCustomerEducationNotification_NewBackoffice);
 
 app.use("/BackofficeApi/AddCongratulation", AddCongratulation_NewBackoffice);
 app.use("/BackofficeApi/ListCongratulation", ListCongratulation_NewBackoffice);
