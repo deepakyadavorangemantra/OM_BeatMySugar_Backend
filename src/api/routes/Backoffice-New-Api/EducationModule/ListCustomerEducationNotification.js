@@ -5,17 +5,15 @@ const dbConnection = require("../../../../utilities/db1");
 
 
 
-router.post("/", function(request, response){
+router.get("/", function(request, response){
    
-    var feedbackid = request.body.feedbackid;
 
     try{
         const req = new sql.Request(dbConnection);
+         
+        
 
-        req.input('feedbackid',sql.Int, feedbackid);
-
-
-        req.execute("dbo.Delete_CustomerEducationFeedbackById", function(err, data){
+        req.execute("dbo.Get_CustomerEducationNotification", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
