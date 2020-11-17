@@ -13,6 +13,7 @@ router.post("/", function(request, response){
     var currenttopic = request.body.currenttopic;
     var iscompleted = request.body.iscompleted;
     var alertmailsent = request.body.alertmailsent;
+    var giftdeliverytext = request.body.giftdeliverytext;
     var giftdeliverystatus = request.body.giftdeliverystatus;
     var updatedon = request.body.updatedon;
     var status = request.body.status;
@@ -30,6 +31,7 @@ router.post("/", function(request, response){
         req.input('currenttopic',sql.Int, currenttopic);
         req.input('iscompleted',sql.Int, iscompleted);
         req.input('alertmailsent',sql.Int, alertmailsent);
+        req.input('giftdeliverytext',sql.NVarChar(200), giftdeliverytext);
         req.input('giftdeliverystatus',sql.TinyInt, giftdeliverystatus);
         req.input('updatedon',sql.NVarChar(100), updatedon);
         req.input('status',sql.Int, status);
