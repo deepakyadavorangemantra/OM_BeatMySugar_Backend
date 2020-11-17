@@ -913,6 +913,7 @@ const AddChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/
 const UpdateChapterMasterBgImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterMasterBgImage")
 const DeleteChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteChapterMaster")
 const UpdateChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterMaster")
+const UpdateChapterOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterOrder")
 
 const AddQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddQuestion");
 const AddQuestionWithOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddQuestionWithOption");
@@ -1940,6 +1941,7 @@ app.use("/BackofficeApi/AddChapterMaster",AddChapterMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateChapterMasterBgImage",UpdateChapterMasterBgImage_NewBackoffice);
 app.use("/BackofficeApi/DeleteChapterMaster",DeleteChapterMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateChapterMaster",UpdateChapterMaster_NewBackoffice);
+app.use("/BackofficeApi/UpdateChapterOrder",UpdateChapterOrder_NewBackoffice);
 
 
 app.use("/BackofficeApi/AddTopic", AddTopic_NewBackoffice);
