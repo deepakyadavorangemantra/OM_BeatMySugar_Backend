@@ -924,12 +924,14 @@ const ListQuestionById_NewBackoffice = require("./api/routes/Backoffice-New-Api/
 const ListQuestionAll_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListQuestionAll");
 const DeleteQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteQuestion");
 const UpdateQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestion");
+const UpdateQuestionOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestionOrder");
 // const UpdateQuestionAnswer_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestionAnswer");
 
 const AddOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddOption");
 const ListOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListOption");
 const DeleteOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteOption");
 const UpdateOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateOption");
+const UpdateOptionOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateOptionOrder");
 
 const AddCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCongratulation");
 const ListCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCongratulation");
@@ -1958,12 +1960,14 @@ app.use("/BackofficeApi/ListQuestion", ListQuestion_NewBackoffice);
 app.use("/BackofficeApi/ListQuestionById", ListQuestionById_NewBackoffice);
 app.use("/BackofficeApi/ListQuestionAll", ListQuestionAll_NewBackoffice);
 app.use("/BackofficeApi/UpdateQuestion", UpdateQuestion_NewBackoffice);
+app.use("/BackofficeApi/UpdateQuestionOrder", UpdateQuestionOrder_NewBackoffice);
 // app.use("/BackofficeApi/UpdateQuestionAnswer", UpdateQuestionAnswer_NewBackoffice);
 app.use("/BackofficeApi/DeleteQuestion", DeleteQuestion_NewBackoffice);
 
 app.use("/BackofficeApi/AddOption", AddOption_NewBackoffice);
 app.use("/BackofficeApi/ListOption", ListOption_NewBackoffice);
 app.use("/BackofficeApi/UpdateOption", UpdateOption_NewBackoffice);
+app.use("/BackofficeApi/UpdateOptionOrder", UpdateOptionOrder_NewBackoffice);
 app.use("/BackofficeApi/DeleteOption", DeleteOption_NewBackoffice);
 
 app.use("/BackofficeApi/AddCustomerEducationFeedback", AddCustomerEducationFeedback_NewBackoffice);
