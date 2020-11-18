@@ -956,7 +956,6 @@ const ListCustomerEducationNotification_NewBackoffice = require("./api/routes/Ba
 
 /*Education Dashboard*/
 const EducationDashboard_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/EducationDashboardData");
-const ListCustomerEducationNotification_NewBackoffice =  require("./api/routes/Backoffice-New-Api/EducationModule/ListCustomerEducationNotification");
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
