@@ -900,7 +900,6 @@ const AddSmsLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/AddSmsL
 const GetSmsLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSmsLog")
 
 
-<<<<<<< HEAD
 //------------------------------------- Education Module -------------------------------------//
 
 const GetChapterMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetChapterMasterList")
@@ -958,8 +957,6 @@ const ListCustomerEducationNotification_NewBackoffice = require("./api/routes/Ba
 /*Education Dashboard*/
 const EducationDashboard_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/EducationDashboardData");
 
-=======
->>>>>>> master
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50MB', extended: true }));
@@ -1942,7 +1939,6 @@ app.use("/BackofficeApi/GetSocksItemData",GetSocksItemData_NewBackoffice);
 app.use("/BackofficeApi/AddSmsLog",AddSmsLog_NewBackoffice);
 app.use("/BackofficeApi/GetSmsLog",GetSmsLog_NewBackoffice);
 
-<<<<<<< HEAD
 //----------------------------- Education Module -------------------------------------//
     
 app.use("/BackofficeApi/GetChapterMasterList", GetChapterMasterList_NewBackoffice);
@@ -1998,8 +1994,6 @@ app.use("/BackofficeApi/UpdateCongratulation", UpdateCongratulation_NewBackoffic
 app.use("/BackofficeApi/DeleteCongratulation", DeleteCongratulation_NewBackoffice);
 
 app.use("/BackofficeApi/EducationDashboard", EducationDashboard_NewBackoffice);
-=======
->>>>>>> master
 
 module.exports = app;
 

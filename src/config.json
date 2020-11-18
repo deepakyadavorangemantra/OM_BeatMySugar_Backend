@@ -1,11 +1,14 @@
 {
-    "server" : "13.126.17.107",
-    "user" : "SA",
-    "password" : "orange@123",
+    "server":"65.0.161.134",
+    "user" : "sa",
+    "password":"vU3B5w53&Z",
+    "server_old2" : "13.126.17.107",
+    "user_old2" : "SA",
+    "password_old2" : "orange@123",
     "server_old" : "65.0.161.134",
     "user_old" : "sa",
     "password_old" : "vU3B5w53&Z",
-    "database" : "bmsdev2",
+    "database" : "bmsdev1",
     "port" : "1433",
     "options" : {
         "encrypt" : false
