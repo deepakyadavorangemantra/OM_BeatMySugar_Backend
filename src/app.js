@@ -904,7 +904,7 @@ const GetSmsLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSmsL
 
 const GetChapterMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetChapterMasterList")
 
-const AddTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddTopic");
+const AddTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddTopicWithContent");
 const ListTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListTopic");
 const DeleteTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteTopic");
 const UpdateTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateTopic");
