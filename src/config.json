@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "server" : "13.126.17.107",
     "user" : "SA",
     "password" : "orange@123",
@@ -11,3 +12,15 @@
         "encrypt" : false
     }
 }
+=======
+    "server" : "xx xxx",
+    "user" : "xxxx",
+    "password" : "xxxx",
+    "database" : "xxx",
+    "port" : 1433,
+    "options" : {
+        "encrypt" : false
+    }
+}
+
+>>>>>>> master

@@ -1,9 +1,16 @@
 
 # Elastic Beanstalk Files
+<<<<<<< HEAD
 node_modules/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 node_modules
+=======
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+>>>>>>> master
 .history
 
