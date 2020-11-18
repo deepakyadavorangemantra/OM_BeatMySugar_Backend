@@ -21,10 +21,10 @@ router.get("/", function(request, response){
                 response.status(200).json({
                     'customer':{
                         'active':"20",
-                        'point-2':"30"
+                        'point':"30"
                     },
                     'customer_completed_test':"20",
-                    'customer_list':data.recordset,
+                    'chapter_list':data.recordset,
                     'gift_hamper':{
                         'pending':7,
                         'delivered':10
