@@ -11,7 +11,7 @@ router.get("/", function(request, response){
     try{
         const req = new sql.Request(dbConnection);
 
-        req.execute("dbo.Get_CustomerEducationAll", function(err, data){
+        req.execute("dbo.Get_CustomerEducationDashboardAll", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
@@ -24,7 +24,20 @@ router.get("/", function(request, response){
                         'point':"30"
                     },
                     'customer_completed_test':"20",
-                    'chapter_list':data.recordset,
+                    'chapter_list':[
+                        {
+                        'chapter_name':'chapter 1',
+                        'customer_count':'13'
+                        },
+                        {
+                        'chapter_name':'chapter 2',
+                        'customer_count':'32'
+                        },
+                        {
+                        'chapter_name':'chapter 3',
+                        'customer_count':'31'
+                        }
+                    ],
                     'gift_hamper':{
                         'pending':7,
                         'delivered':10
