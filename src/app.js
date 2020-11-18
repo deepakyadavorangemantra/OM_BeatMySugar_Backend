@@ -954,6 +954,9 @@ const AddCustomerEducationNotification_NewBackoffice = require("./api/routes/Bac
 const UpdateCustomerEducationNotification_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCustomerEducationNotification");
 const ListCustomerEducationNotification_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCustomerEducationNotification");
 
+/*Education Dashboard*/
+const EducationDashboard_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/EducationDashboardData");
+
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -1989,6 +1992,8 @@ app.use("/BackofficeApi/AddCongratulation", AddCongratulation_NewBackoffice);
 app.use("/BackofficeApi/ListCongratulation", ListCongratulation_NewBackoffice);
 app.use("/BackofficeApi/UpdateCongratulation", UpdateCongratulation_NewBackoffice);
 app.use("/BackofficeApi/DeleteCongratulation", DeleteCongratulation_NewBackoffice);
+
+app.use("/BackofficeApi/EducationDashboard", EducationDashboard_NewBackoffice);
 
 module.exports = app;
 
