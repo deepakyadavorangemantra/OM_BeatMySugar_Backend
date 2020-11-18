@@ -5,7 +5,7 @@
     "server_old" : "65.0.161.134",
     "user_old" : "sa",
     "password_old" : "vU3B5w53&Z",
-    "database" : "bmsdev2",
+    "database" : "bmsdev1",
     "port" : "1433",
     "options" : {
         "encrypt" : false
