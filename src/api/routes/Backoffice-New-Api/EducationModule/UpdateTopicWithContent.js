@@ -47,34 +47,41 @@ router.post("/", function(request, response){
             //     });
             // }
 
-            console.log(topicData.recordset);
+            // console.log(topicData.recordset);
                     var req_obj ={};
                     request.body.contents.forEach((content,index) => {
+                        console.log(topicData.recordset[0]);
                         req_obj[index] = new sql.Request(dbConnection)
-                        req_obj[index].input('topicid',sql.Int, topicData.recordset[0].fld_id);
-                        req_obj[index].input('contenttext',sql.NVarChar(200), content.fld_content);
+
+                        req_obj[index].input('topicid',sql.Int, topicid);
+                        req_obj[index].input('content',sql.NVarChar(200), content.fld_content);
                         req_obj[index].input('orderno',sql.Int, content.fld_orderno);
-                        
                         req_obj[index].input('status',sql.Int, content.status);
-        
-                        if( content.fld_id && content.fld_id != '' ){
-                            req_obj[index].input('updatedon',sql.NVarChar(100), content.updatedon);
-                            req_obj[index].input('contentid',sql.Int, topicData.recordset[0].fld_id);
-                            promises.push(
-                                req_obj[index].execute("dbo.Update_TopicContentMaster").then(function(contentData){
-                                        // response.status(200).json({
-                                        //     data: data.recordset
-                                        // })
-                                        return contentData.recordset[0];
-                                    }).catch((err)=>{
-                                        console.log("Error while executing the SP - [error] " + err);
-                                        response.status(404).json({
-                                            data:err.message
-                                        });
-                                })
-                            );
+                        
+                        if(typeof content.fld_id!='undefined')
+                        {
+                            if( content.fld_id && content.fld_id != '' ){
+                            
+                                req_obj[index].input('updatedon',sql.NVarChar(100), content.updatedon);
+                                req_obj[index].input('contentid',sql.Int, content.fld_id);
+
+                                promises.push(
+                                    req_obj[index].execute("dbo.Update_TopicContentMaster").then(function(contentData){
+                                            // response.status(200).json({
+                                            //     data: data.recordset
+                                            // })
+                                            return contentData.recordset[0];
+                                        }).catch((err)=>{
+                                            console.log("Error while executing the SP - [error] " + err);
+                                            response.status(404).json({
+                                                data:err.message
+                                            });
+                                    })
+                                );
+                            }
                         }
                         else{
+
                             promises.push(
                                 req_obj[index].execute("dbo.Add_TopicContentMaster").then(function(contentData){
                                         // response.status(200).json({
