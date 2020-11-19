@@ -50,8 +50,8 @@ router.post("/", function(request, response){
                     request.body.contents.forEach((content,index) => {
                         req_obj[index] = new sql.Request(dbConnection)
                         req_obj[index].input('topicid',sql.Int, topicData.recordset[0].fld_id);
-                        req_obj[index].input('contenttext',sql.NVarChar(200), content.content);
-                        req_obj[index].input('orderno',sql.Int, content.orderno);
+                        req_obj[index].input('contenttext',sql.NVarChar(200), content.fld_content);
+                        req_obj[index].input('orderno',sql.Int, content.fld_orderno);
                         req_obj[index].input('status',sql.Int, content.status);
         
                         promises.push(
