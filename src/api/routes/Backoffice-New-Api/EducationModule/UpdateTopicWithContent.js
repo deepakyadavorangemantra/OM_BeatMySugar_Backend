@@ -13,9 +13,10 @@ router.post("/", function(request, response){
     var orderno = request.body.orderno;
     var img_url = request.body.img_url;
     var type = request.body.type;
-    var createdon = request.body.createdon;
-    var createdby = request.body.createdby;
+    var updatedon = request.body.updatedon;
+    var updatedby = request.body.updatedby;
     var status = request.body.status;
+    var topicid = request.body.topicid;
     var result;
     promises = [];
 
@@ -30,10 +31,11 @@ router.post("/", function(request, response){
         req.input('type',sql.NVarChar(100), type);
         req.input('img_url',sql.NVarChar, img_url);
         req.input('updatedon',sql.NVarChar(100), updatedon);
+        req.input('updatedby',sql.NVarChar(100), updatedby);
         req.input('status',sql.NVarChar(10), status);
 
 
-        req.execute("dbo.Update_Topic").then(function(topicData){
+        req.execute("dbo.Update_TopicMaster").then(function(topicData){
             // if(err){
             //     console.log("Error while executing the SP - [error] " + err);
             //     response.status(404).json({
@@ -50,12 +52,14 @@ router.post("/", function(request, response){
                     request.body.contents.forEach((content,index) => {
                         req_obj[index] = new sql.Request(dbConnection)
                         req_obj[index].input('topicid',sql.Int, topicData.recordset[0].fld_id);
-                        req_obj[index].input('contenttext',sql.NVarChar(200), content.content);
-                        req_obj[index].input('orderno',sql.Int, content.orderno);
-                        req_obj[index].input('updatedon',sql.NVarChar(100), content.updatedon);
+                        req_obj[index].input('contenttext',sql.NVarChar(200), content.fld_content);
+                        req_obj[index].input('orderno',sql.Int, content.fld_orderno);
+                        
                         req_obj[index].input('status',sql.Int, content.status);
         
-                        if(content.contentid){
+                        if( content.fld_id && content.fld_id != '' ){
+                            req_obj[index].input('updatedon',sql.NVarChar(100), content.updatedon);
+                            req_obj[index].input('contentid',sql.Int, topicData.recordset[0].fld_id);
                             promises.push(
                                 req_obj[index].execute("dbo.Update_TopicContentMaster").then(function(contentData){
                                         // response.status(200).json({
@@ -84,7 +88,6 @@ router.post("/", function(request, response){
                                         });
                                 })
                             );
-    
                         }
                     
                     });

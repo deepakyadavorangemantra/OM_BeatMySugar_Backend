@@ -907,7 +907,7 @@ const GetChapterMasterList_NewBackoffice = require("./api/routes/Backoffice-New-
 const AddTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddTopicWithContent");
 const ListTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListTopic");
 const DeleteTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteTopic");
-const UpdateTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateTopic");
+const UpdateTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateTopicWithContent");
 const UpdateTopicOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateTopicOrder");
 const DeleteTopicContent_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteTopicContent");
 
