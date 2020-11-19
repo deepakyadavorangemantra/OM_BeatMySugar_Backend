@@ -33,7 +33,7 @@ router.post("/", function(request, response){
         req.input('createdon',sql.NVarChar(100), createdon);
         req.input('status',sql.NVarChar(100), status);
 
-        req.execute("dbo.Add_Topic", function(err, topicData){
+        req.execute("dbo.Add_Topic").then(function(topicData){
             // if(err){
             //     console.log("Error while executing the SP - [error] " + err);
             //     response.status(404).json({
@@ -50,10 +50,8 @@ router.post("/", function(request, response){
                     request.body.contents.forEach((content,index) => {
                         req_obj[index] = new sql.Request(dbConnection)
                         req_obj[index].input('topicid',sql.Int, topicData.recordset[0].fld_id);
-                        req_obj[index].input('contenttext',sql.NVarChar(200), content.fld_contenttext);
-                        req_obj[index].input('orderno',sql.Int, content.fld_orderno);
-                        req_obj[index].input('createdon',sql.NVarChar(100), content.createdon);
-                        req_obj[index].input('updatedon',sql.NVarChar(100), content.updatedon);
+                        req_obj[index].input('contenttext',sql.NVarChar(200), content.content);
+                        req_obj[index].input('orderno',sql.Int, content.orderno);
                         req_obj[index].input('status',sql.Int, content.status);
         
                         promises.push(
@@ -76,7 +74,7 @@ router.post("/", function(request, response){
                     .then((result) => {
                         var resp = {};
                         
-                        resp['question'] = questionData.recordset[0];
+                        resp['question'] = topicData.recordset[0];
                         resp['contents'] = result;
                         response.status(200).json({ data:resp })
                     })
