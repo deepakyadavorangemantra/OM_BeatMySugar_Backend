@@ -902,21 +902,24 @@ const GetSmsLog_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetSmsL
 
 //------------------------------------- Education Module -------------------------------------//
 
-const GetChapterMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetChapterMasterList")
 
+/* customer education Topics */
 const AddTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddTopicWithContent");
 const ListTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListTopic");
 const DeleteTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteTopic");
 const UpdateTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateTopicWithContent");
 const UpdateTopicOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateTopicOrder");
 const DeleteTopicContent_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteTopicContent");
-
+/*customer education Chapters */
+const GetChapterMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetChapterMasterList")
 const AddChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddChapterMaster")
 const UpdateChapterMasterBgImage_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterMasterBgImage")
 const DeleteChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteChapterMaster")
 const UpdateChapterMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterMaster")
 const UpdateChapterOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateChapterOrder")
 
+const GetChapterMasterListData_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetChapterMasterListData_NewBackoffice")
+/*customer education Questons and option */
 const AddQuestion_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddQuestion");
 const AddQuestionWithOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddQuestionWithOption");
 const UpdateQuestionWithOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateQuestionWithOption");
@@ -933,7 +936,7 @@ const ListOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/Educat
 const DeleteOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteOption");
 const UpdateOption_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateOption");
 const UpdateOptionOrder_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateOptionOrder");
-
+/* customer education Congratulation */
 const AddCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCongratulation");
 const ListCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/ListCongratulation");
 const DeleteCongratulation_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/DeleteCongratulation");
@@ -1941,7 +1944,7 @@ app.use("/BackofficeApi/AddSmsLog",AddSmsLog_NewBackoffice);
 app.use("/BackofficeApi/GetSmsLog",GetSmsLog_NewBackoffice);
 
 //----------------------------- Education Module -------------------------------------//
-    
+        //-------------------- Education Chapter -------------//
 app.use("/BackofficeApi/GetChapterMasterList", GetChapterMasterList_NewBackoffice);
 app.use("/BackofficeApi/AddChapterMaster",AddChapterMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateChapterMasterBgImage",UpdateChapterMasterBgImage_NewBackoffice);
@@ -1949,14 +1952,16 @@ app.use("/BackofficeApi/DeleteChapterMaster",DeleteChapterMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateChapterMaster",UpdateChapterMaster_NewBackoffice);
 app.use("/BackofficeApi/UpdateChapterOrder",UpdateChapterOrder_NewBackoffice);
 
+app.use("/BackofficeApi/GetChaperListData", GetChapterMasterListData_NewBackoffice);
 
+        //-------------------- Education Topic -------------//
 app.use("/BackofficeApi/AddTopic", AddTopic_NewBackoffice);
 app.use("/BackofficeApi/ListTopic", ListTopic_NewBackoffice);
 app.use("/BackofficeApi/UpdateTopic", UpdateTopic_NewBackoffice);
 app.use("/BackofficeApi/UpdateTopicOrder", UpdateTopicOrder_NewBackoffice);
 app.use("/BackofficeApi/DeleteTopic", DeleteTopic_NewBackoffice);
 app.use("/BackofficeApi/DeleteTopicContent", DeleteTopicContent_NewBackoffice);
-
+        //-------------------- Education Question and options -------------//
 app.use("/BackofficeApi/AddQuestion", AddQuestion_NewBackoffice);
 app.use("/BackofficeApi/AddQuestionWithOption", AddQuestionWithOption_NewBackoffice);
 app.use("/BackofficeApi/UpdateQuestionWithOption", UpdateQuestionWithOption_NewBackoffice);
@@ -1974,21 +1979,24 @@ app.use("/BackofficeApi/UpdateOption", UpdateOption_NewBackoffice);
 app.use("/BackofficeApi/UpdateOptionOrder", UpdateOptionOrder_NewBackoffice);
 app.use("/BackofficeApi/DeleteOption", DeleteOption_NewBackoffice);
 
+        //-------------------- Education Feedback -------------//
 app.use("/BackofficeApi/AddCustomerEducationFeedback", AddCustomerEducationFeedback_NewBackoffice);
 app.use("/BackofficeApi/ListCustomerEducationFeedbackById", ListCustomerEducationFeedbackById_NewBackoffice);
 app.use("/BackofficeApi/ListCustomerEducationFeedbackAll", ListCustomerEducationFeedbackAll_NewBackoffice);
 app.use("/BackofficeApi/UpdateCustomerEducationFeedback", UpdateCustomerEducationFeedback_NewBackoffice);
 app.use("/BackofficeApi/DeleteCustomerEducationFeedbackById", DeleteCustomerEducationFeedbackById_NewBackoffice);
 
-
+        //-------------------- Education GiftDelivery -------------//
 app.use("/BackofficeApi/AddCustomersGiftDelivery", AddCustomersGiftDelivery_NewBackoffice);
 app.use("/BackofficeApi/ListCustomersGiftDelivery", ListCustomersGiftDelivery_NewBackoffice);
 app.use("/BackofficeApi/UpdateCustomersGiftDelivery", UpdateCustomersGiftDelivery_NewBackoffice);
 
+        //-------------------- Education Notification -------------//
 app.use("/BackofficeApi/AddCustomerEducationNotification", AddCustomerEducationNotification_NewBackoffice);
 app.use("/BackofficeApi/ListCustomerEducationNotification", ListCustomerEducationNotification_NewBackoffice);
 app.use("/BackofficeApi/UpdateCustomerEducationNotification", UpdateCustomerEducationNotification_NewBackoffice);
-
+        
+        //-------------------- Education Congratulation -------------//
 app.use("/BackofficeApi/AddCongratulation", AddCongratulation_NewBackoffice);
 app.use("/BackofficeApi/ListCongratulation", ListCongratulation_NewBackoffice);
 app.use("/BackofficeApi/UpdateCongratulation", UpdateCongratulation_NewBackoffice);
