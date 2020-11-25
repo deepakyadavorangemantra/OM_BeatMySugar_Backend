@@ -23,22 +23,46 @@ router.get("/", function(request, response){
             ChapterList = data.recordset;
                 console.log(ChapterList);
                 const req2 = new sql.Request(dbConnection)
-                req2.execute("dbo.Get_TopicMasterAll").then((data)=>{
-                    TopicList = data.recordset;
-                    var result =  ChapterList.map((chapter)=>{
-                        
-                        var topics = TopicList.filter((opt)=>{
-                            if(opt.fld_chapterid == chapter.fld_chapterid){
-                                return opt;
-                            }
-                        });    
-                        chapter['topics'] = topics;
-                        return chapter;
-                    });
+                req2.execute("dbo.Get_TopicMasterAll").then((dataTopic)=>{
+                    TopicList = dataTopic.recordset;
 
-                    response.status(200).json({
-                        data: result
-                    });
+                    const req3 = new sql.Request(dbConnection)
+                    req3.execute("dbo.Get_TopicContentMasterAll").then((dataContent)=>{
+                        ContentList = dataContent.recordset;
+                        var TopicListNew =  TopicList.map((content)=>{
+                            
+                            var contents = ContentList.filter((opt)=>{
+                                if(opt.fld_topicid == content.fld_id){
+                                    return opt;
+                                }
+                            });    
+                            content['contents'] = contents;
+                            return content;
+                        });
+
+                        var result =  ChapterList.map((chapter)=>{
+                        
+                            var topics = TopicListNew.filter((opt)=>{
+                                if(opt.fld_chapterid == chapter.fld_chapterid){
+                                    return opt;
+                                }
+                            });    
+                            chapter['topics'] = topics;
+                            return chapter;
+                        });
+
+                        response.status(200).json({
+                            data: result
+                        });
+
+                    }) 
+
+
+                    
+
+                    // response.status(200).json({
+                    //     data: result
+                    // });
                 })
         }).catch((err)=>{
             console.log("Error while executing the SP - [error] " + err);
