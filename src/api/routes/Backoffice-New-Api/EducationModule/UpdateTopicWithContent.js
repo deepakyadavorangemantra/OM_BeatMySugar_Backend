@@ -54,7 +54,7 @@ router.post("/", function(request, response){
                         req_obj[index] = new sql.Request(dbConnection)
 
                         req_obj[index].input('topicid',sql.Int, topicid);
-                        req_obj[index].input('content',sql.NVarChar(200), content.fld_content);
+                        req_obj[index].input('content',sql.NVarChar, content.fld_content);
                         req_obj[index].input('orderno',sql.Int, content.fld_orderno);
                         req_obj[index].input('status',sql.Int, content.status);
                         
