@@ -993,6 +993,9 @@ const GetCovidColorData_NewBackoffice = require("./api/routes/Backoffice-New-Api
 const GetCovidColorList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCovidColorList")
 const GetCovidCategoryMasterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCovidCategoryMasterList")
 const GetCovidFilterList_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCovidFilterList")
+const GetCartCovidVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartCovidVariant")
+const GetCartCovidVariantCookie_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartCovidVariantCookie")
+const GetCovidListingSearchPageWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCovidListingSearchPageWeb")
 
 
 const UpdateCovidItemMaster_NewBackoffice = require("./api/routes/Backoffice-New-Api/UpdateCovidItemMaster")
@@ -1020,6 +1023,11 @@ const GetAccessoriesVariantDetailsWebsite_NewBackoffice = require("./api/routes/
 
 
 const InsuranceMailer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/InsuranceMailer")
+
+const GetCartAccessoriesVariant_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartAccessoriesVariant")
+const GetCartAccessoriesVariantCookie_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartAccessoriesVariantCookie")
+const GetAccessoriesListingSearchPageWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetAccessoriesListingSearchPageWeb")
+
 
 
 const app = express();
@@ -2110,6 +2118,10 @@ app.use("/BackofficeApi/DeleteCovidCategoryMaster",DeleteCovidCategoryMaster_New
 app.use("/BackofficeApi/UpdateCovidItemMasterApprovalStatus",UpdateCovidItemMasterApprovalStatus_NewBackoffice);
 app.use("/BackofficeApi/UpdateCovidVariantApprovalStatus",UpdateCovidVariantApprovalStatus_NewBackoffice);
 
+app.use("/BackofficeApi/GetCartCovidVariantCookie",GetCartCovidVariantCookie_NewBackoffice);
+app.use("/BackofficeApi/GetCartCovidVariant",GetCartCovidVariant_NewBackoffice);
+app.use("/BackofficeApi/GetCovidListingSearchPageWeb",GetCovidListingSearchPageWeb_NewBackoffice);
+
 
 app.use("/BackofficeApi/GetAccessoriesCategoryWebsiteData",GetAccessoriesCategoryWebsiteData_NewBackoffice);
 app.use("/BackofficeApi/GetAccessoriesHomePageWebsite",GetAccessoriesHomePageWebsite_NewBackoffice);
@@ -2124,6 +2136,11 @@ app.use("/BackofficeApi/GetAccessoriesGenderListingWebsite",GetAccessoriesGender
 app.use("/BackofficeApi/GetAccessoriesVariantDetailsWebsite",GetAccessoriesVariantDetailsWebsite_NewBackoffice);
 
 app.use("/BackofficeApi/InsuranceMailer",InsuranceMailer_NewBackoffice);
+app.use("/BackofficeApi/GetCartAccessoriesVariant",GetCartAccessoriesVariant_NewBackoffice);
+
+app.use("/BackofficeApi/GetCartAccessoriesVariantCookie",GetCartAccessoriesVariantCookie_NewBackoffice);
+
+app.use("/BackofficeApi/GetAccessoriesListingSearchPageWeb",GetAccessoriesListingSearchPageWeb_NewBackoffice);
 
 module.exports = app;
 

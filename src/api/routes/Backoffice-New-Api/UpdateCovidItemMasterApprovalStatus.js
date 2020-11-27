@@ -20,7 +20,7 @@ router.post("/", function(request, response){
         req.input('updatedon',sql.NVarChar(100), updatedon);
         req.input('updatedby',sql.Int, updatedby);
  
-        req.execute("dbo.Update_FoodItemMasterApprovalStatus", function(err, data){
+        req.execute("dbo.Update_CovidItemMasterApprovalStatus", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

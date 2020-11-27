@@ -14,8 +14,8 @@ router.post("/", function(request, response){
 
         req.input('category',sql.Int, category);
 
-        
-        req.execute("dbo.Get_ AccessoriesBrandData", function(err, data){
+
+        req.execute("dbo.Get_AccessoriesListingSearchPageWeb", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

@@ -6,16 +6,20 @@ const dbConnection = require("../../../../utilities/db1");
 
 router.post("/", function(request, response){
    
-    var category = request.body.category;
+
+    var product_category = request.body.product_category;
+    var customer_id = request.body.customer_id;
 
 
     try{
         const req = new sql.Request(dbConnection);
 
-        req.input('category',sql.Int, category);
 
-        
-        req.execute("dbo.Get_ AccessoriesBrandData", function(err, data){
+        req.input('product_category',sql.NVarChar(200), product_category);
+        req.input('customer_id',sql.Int, customer_id);
+
+
+        req.execute("dbo.Get_CartAccessoriesVariant", function(err, data){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({

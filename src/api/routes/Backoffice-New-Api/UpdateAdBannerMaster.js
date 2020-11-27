@@ -15,7 +15,7 @@ router.post("/", function(request, response){
     var showonwebsite = request.body.showonwebsite;
     var updatedby = request.body.updatedby;
     var updatedon = request.body.updatedon;
-
+    var order = request.body.order;
 
     try{
         const req = new sql.Request(dbConnection);
@@ -27,6 +27,7 @@ router.post("/", function(request, response){
         req.input('showonwebsite',sql.NVarChar(10), showonwebsite);
         req.input('updatedon',sql.NVarChar(100), updatedon);
         req.input('updatedby',sql.Int, updatedby);
+        req.input('order',sql.Int, order);
 
         req.execute("dbo.Update_AdBannerMaster", function(err, data){
             if(err){
