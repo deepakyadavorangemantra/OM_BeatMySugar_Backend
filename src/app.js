@@ -1028,6 +1028,8 @@ const GetCartAccessoriesVariant_NewBackoffice = require("./api/routes/Backoffice
 const GetCartAccessoriesVariantCookie_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetCartAccessoriesVariantCookie")
 const GetAccessoriesListingSearchPageWeb_NewBackoffice = require("./api/routes/Backoffice-New-Api/Web/GetAccessoriesListingSearchPageWeb")
 
+const GetCovidOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCovidOrderDetail")
+const GetAccessoriesOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAccessoriesOrderDetail")
 
 
 const app = express();
@@ -2141,6 +2143,11 @@ app.use("/BackofficeApi/GetCartAccessoriesVariant",GetCartAccessoriesVariant_New
 app.use("/BackofficeApi/GetCartAccessoriesVariantCookie",GetCartAccessoriesVariantCookie_NewBackoffice);
 
 app.use("/BackofficeApi/GetAccessoriesListingSearchPageWeb",GetAccessoriesListingSearchPageWeb_NewBackoffice);
+
+
+app.use("/BackofficeApi/GetAccessoriesOrderDetail",GetAccessoriesOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetCovidOrderDetail",GetCovidOrderDetail_NewBackoffice);
+
 
 module.exports = app;
 
