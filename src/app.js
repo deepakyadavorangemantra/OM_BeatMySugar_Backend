@@ -825,6 +825,10 @@ const Get_OrderVendorDetailByOrderVendorID_NewBackoffice = require("./api/routes
 const Get_FoodProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_FoodProductByOrderVendorDetailID")
 const Get_FootWearProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_FootWearProductByOrderVendorDetailID")
 const Get_SocksProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_SocksProductByOrderVendorDetailID")
+const Get_CovidProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_CovidProductByOrderVendorDetailID")
+const Get_AccessoriesProductByOrderVendorDetailID_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_AccessoriesProductByOrderVendorDetailID")
+
+
 const Get_BackOfficeDashboardCount_ByDate_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_BackOfficeDashboardCount_ByDate")
 const Get_BackOfficeDashboardTop5Customer_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_BackOfficeDashboardTop5Customer")
 const Get_BackOfficeDashboardTop5Order_NewBackoffice = require("./api/routes/Backoffice-New-Api/Get_BackOfficeDashboardTop5Order")
@@ -1030,6 +1034,11 @@ const GetAccessoriesListingSearchPageWeb_NewBackoffice = require("./api/routes/B
 
 const GetCovidOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCovidOrderDetail")
 const GetAccessoriesOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAccessoriesOrderDetail")
+
+const GetAccessoriesVendorDataAssign_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetAccessoriesVendorDataAssign")
+const GetCovidVendorDataAssign_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetCovidVendorDataAssign")
+const GetVendorCovidOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorCovidOrderDetail")
+const GetVendorAccessoriesOrderDetail_NewBackoffice = require("./api/routes/Backoffice-New-Api/GetVendorAccessoriesOrderDetail")
 
 
 const app = express();
@@ -1851,6 +1860,8 @@ app.use("/BackofficeApi/Get_OrderVendorDetailByOrderVendorID_NewBackoffice",Get_
 app.use("/BackofficeApi/Get_FoodProductByOrderVendorDetailID_NewBackoffice",Get_FoodProductByOrderVendorDetailID_NewBackoffice);
 app.use("/BackofficeApi/Get_FootWearProductByOrderVendorDetailID_NewBackoffice",Get_FootWearProductByOrderVendorDetailID_NewBackoffice);
 app.use("/BackofficeApi/Get_SocksProductByOrderVendorDetailID_NewBackoffice",Get_SocksProductByOrderVendorDetailID_NewBackoffice);
+app.use("/BackofficeApi/Get_CovidProductByOrderVendorDetailID_NewBackoffice",Get_CovidProductByOrderVendorDetailID_NewBackoffice);
+app.use("/BackofficeApi/Get_AccessoriesProductByOrderVendorDetailID_NewBackoffice",Get_AccessoriesProductByOrderVendorDetailID_NewBackoffice);
 
 app.use("/BackofficeApi/Get_BackOfficeDashboardCount_ByDate_NewBackoffice",Get_BackOfficeDashboardCount_ByDate_NewBackoffice);
 app.use("/BackofficeApi/Get_BackOfficeDashboardTop5Customer_NewBackoffice",Get_BackOfficeDashboardTop5Customer_NewBackoffice);
@@ -2147,6 +2158,12 @@ app.use("/BackofficeApi/GetAccessoriesListingSearchPageWeb",GetAccessoriesListin
 
 app.use("/BackofficeApi/GetAccessoriesOrderDetail",GetAccessoriesOrderDetail_NewBackoffice);
 app.use("/BackofficeApi/GetCovidOrderDetail",GetCovidOrderDetail_NewBackoffice);
+
+app.use("/BackofficeApi/GetAccessoriesVendorDataAssign",GetAccessoriesVendorDataAssign_NewBackoffice);
+app.use("/BackofficeApi/GetCovidVendorDataAssign",GetCovidVendorDataAssign_NewBackoffice);
+
+app.use("/BackofficeApi/GetVendorCovidOrderDetail",GetVendorCovidOrderDetail_NewBackoffice);
+app.use("/BackofficeApi/GetVendorAccessoriesOrderDetail",GetVendorAccessoriesOrderDetail_NewBackoffice);
 
 
 module.exports = app;
