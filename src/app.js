@@ -963,6 +963,8 @@ const EducationDashboard_NewBackoffice = require("./api/routes/Backoffice-New-Ap
 const AddCustomerUnlockTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCustomerUnlockTopic");
 const GetCustomerEducationDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetCustomerEducationDetails");
 
+/*Education Test*/
+const AddEducationTest_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCustomerTest");
 
 const app = express();
 app.use(bodyParser.json({limit: '50MB', extended: true}));
@@ -2009,6 +2011,9 @@ app.use("/BackofficeApi/DeleteCongratulation", DeleteCongratulation_NewBackoffic
 app.use("/BackofficeApi/EducationDashboard", EducationDashboard_NewBackoffice);
 app.use("/BackofficeApi/AddCustomerUnlockTopic", AddCustomerUnlockTopic_NewBackoffice);
 app.use("/BackofficeApi/ListCustomerEducationDetails", GetCustomerEducationDetails_NewBackoffice);
+
+        //-------------------- Education Customer Education Test -------------//
+app.use("/BackofficeApi/AddCustomerEducationTest", AddEducationTest_NewBackoffice);
 
 module.exports = app;
 
