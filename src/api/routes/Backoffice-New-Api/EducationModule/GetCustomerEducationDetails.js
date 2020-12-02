@@ -4,8 +4,8 @@ const sql = require("mssql");
 const dbConnection = require("../../../../utilities/db1");
 
 
-router.post("/", function(request, response){
-    var customerid = request.body.customerid;
+router.get("/", function(request, response){
+    var customerid = request.params.customerid;
     try{
         const req = new sql.Request(dbConnection);
             
