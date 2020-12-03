@@ -10,6 +10,7 @@ router.post("/", function(request, response){
     var customerid = request.body.customerid;
     var adminid = request.body.adminid;
     var feedbacktext = request.body.feedbacktext;
+    var rating = request.body.rating;
 
     var createdon = request.body.createdon;
     var status = request.body.status;
@@ -22,6 +23,7 @@ router.post("/", function(request, response){
         req.input('customerid',sql.Int, customerid);
         req.input('adminid',sql.Int, adminid);
         req.input('feedbacktext',sql.Text, feedbacktext);
+        req.input('rating',sql.Int, rating);
         req.input('createdon',sql.NVarChar(100), createdon);
         req.input('status',sql.TinyInt, status);
 
