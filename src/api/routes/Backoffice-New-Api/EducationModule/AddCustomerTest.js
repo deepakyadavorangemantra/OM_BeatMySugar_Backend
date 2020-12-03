@@ -43,12 +43,28 @@ router.post("/", function(request, response){
         Promise.all(promises)
         .then((result) => {
               var resp = {};
-              
-            //   resp['question'] = questionData.recordset;
-            //   resp['options'] = result;
-              response.status(200).json({
-                                data:result
-                            })
+            /*Add Chapter Unlock Mapping*/
+            const req_chapter = new sql.Request(dbConnection);
+
+            req_chapter.input('customerid',sql.NVarChar(200), customerid);
+            req_chapter.input('chapterid',sql.INT, chapterid);
+            req_chapter.input('isunlocked',sql.TinyInt, 1);
+            req_chapter.input('createdon',sql.NVarChar(100), createdon);
+            req_chapter.input('status',sql.TinyInt, 1);
+
+            req_chapter.execute("dbo.Add_CustomerEducationChapterMapping", function(err, data){
+                if(err){
+                    console.log("Error while executing the SP - [error] " + err);
+                    response.status(404).json({
+                        data:err.message
+                    });
+                }else{
+                    response.status(200).json({
+                        data:result
+                    })
+                }
+            });
+
         });
            
     }catch (err){
