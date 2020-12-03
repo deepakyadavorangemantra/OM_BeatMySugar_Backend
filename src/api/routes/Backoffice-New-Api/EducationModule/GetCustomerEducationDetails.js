@@ -9,7 +9,9 @@ router.get("/", function(request, response){
     try{
         const req = new sql.Request(dbConnection);
             
-            req.execute("dbo.Get_ChapterMasterList").then(function(chapterData){
+            req.input('customerid',sql.Int, customerid);
+            
+            req.execute("dbo.Get_CustomerChapterMapping").then(function(chapterData){
                    
                 const req2 = new sql.Request(dbConnection)
 
