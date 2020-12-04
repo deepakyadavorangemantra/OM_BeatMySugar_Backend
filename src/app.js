@@ -962,11 +962,13 @@ const ListCustomerEducationNotification_NewBackoffice = require("./api/routes/Ba
 const EducationDashboard_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/EducationDashboardData");
 const AddCustomerUnlockTopic_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCustomerUnlockTopic");
 const GetCustomerEducationDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetCustomerEducationDetails");
+const GetCustomerEducationDetailsAll_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/GetCustomerEducationDetailsAll");
 
 /*Education Test*/
 const AddEducationTest_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCustomerTest");
 // const UpdateCustomerEducationTime_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/AddCustomerTest");
 const UpdateCustomerEducationTime_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCustomerTestTime");
+const UpdateCustomerEducationDetails_NewBackoffice = require("./api/routes/Backoffice-New-Api/EducationModule/UpdateCustomerEducationDetails");
 
 
 const app = express();
@@ -2014,10 +2016,12 @@ app.use("/BackofficeApi/DeleteCongratulation", DeleteCongratulation_NewBackoffic
 app.use("/BackofficeApi/EducationDashboard", EducationDashboard_NewBackoffice);
 app.use("/BackofficeApi/AddCustomerUnlockTopic", AddCustomerUnlockTopic_NewBackoffice);
 app.use("/BackofficeApi/ListCustomerEducationDetails", GetCustomerEducationDetails_NewBackoffice);
+app.use("/BackofficeApi/ListCustomerEducationDetailsAll", GetCustomerEducationDetailsAll_NewBackoffice);
 
         //-------------------- Education Customer Education Test -------------//
 app.use("/BackofficeApi/AddCustomerEducationTest", AddEducationTest_NewBackoffice);
 app.use("/BackofficeApi/UpdateCustomerEducationTime", UpdateCustomerEducationTime_NewBackoffice);
+app.use("/BackofficeApi/UpdateCustomerEducationDetails", UpdateCustomerEducationDetails_NewBackoffice);
 
 
 module.exports = app;

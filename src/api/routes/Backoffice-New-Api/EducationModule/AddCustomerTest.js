@@ -55,9 +55,9 @@ router.post("/", function(request, response){
             req_chapter.execute("dbo.Add_CustomerEducationChapterMapping", function(err, data){
                 if(err){
                     console.log("Error while executing the SP - [error] " + err);
-                    response.status(404).json({
-                        data:err.message
-                    });
+                    // response.status(404).json({
+                    //     data:err.message
+                    // });
                 }else{
                     response.status(200).json({
                         data:result

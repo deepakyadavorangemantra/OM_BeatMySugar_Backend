@@ -6,21 +6,26 @@ const dbConnection = require("../../../../utilities/db1");
 
 
 router.post("/", function(request, response){
-    
-    
-    var timespent = request.body.timespent;
+   
+    var feedbackid = request.body.feedbackid;
     var customerid = request.body.customerid;
-    var current_chapter = request.body.current_chapter;
-    var current_topic = request.body.current_topic;
+    var adminid = request.body.adminid;
+    var feedbacktext = request.body.feedbacktext;
+
+    var updatedon = request.body.updatedon;
+    var status = request.body.status;
     
 
     try{
         const req = new sql.Request(dbConnection);
 
+           
+        req.input('feedbackid',sql.Int, feedbackid);
         req.input('customerid',sql.Int, customerid);
-        req.input('timespent',sql.VarChar, (timespent) ? timespent: "");
-        req.input('current_chapter',sql.VarChar, (current_chapter) ? current_chapter: "");
-        req.input('current_topic',sql.VarChar, (current_topic) ? current_topic: "");
+        req.input('adminid',sql.Int, adminid);
+        req.input('feedbacktext',sql.Text, feedbacktext);
+        req.input('updatedon',sql.NVarChar(100), updatedon);
+        req.input('status',sql.TinyInt, status);
 
         req.execute("dbo.Update_CustomerEducationDetails").then((data)=>{
             response.status(200).json({
