@@ -18,7 +18,7 @@ router.post("/", function(request, response){
     try{
         const req = new sql.Request(dbConnection);
 
-        req.input('customerid',sql.NVarChar(200), customerid);
+        req.input('customerid',sql.Int, customerid);
         req.input('topicid',sql.INT, topicid);
         req.input('isunlocked',sql.TinyInt, isunlocked);
         req.input('createdon',sql.NVarChar(100), createdon);
@@ -31,6 +31,18 @@ router.post("/", function(request, response){
                     data:err.message
                 });
             }else{
+                const req2 = new sql.Request(dbConnection);
+
+                req2.input('customerid',sql.Int, customerid);
+                req2.input('current_topic',sql.VarChar, topicid);
+                req2.input('current_chapter',sql.VarChar, "");
+                req2.input('timespent',sql.VarChar, "");
+
+                //Update Current Topic
+                req2.execute("dbo.Update_CustomerEducationDetails").then((educationData)=>{
+                    console.log(educationData.recordset);
+                });
+
                 response.status(200).json({
                     data: data.recordset
                 });
