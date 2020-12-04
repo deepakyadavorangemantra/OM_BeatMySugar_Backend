@@ -1989,6 +1989,9 @@ app.use("/BackofficeApi/UpdateOption", UpdateOption_NewBackoffice);
 app.use("/BackofficeApi/UpdateOptionOrder", UpdateOptionOrder_NewBackoffice);
 app.use("/BackofficeApi/DeleteOption", DeleteOption_NewBackoffice);
 
+//-------------------- Education Data -------------//
+app.use("/BackofficeApi/AddCustomersEducation", AddCustomersGiftDelivery_NewBackoffice);
+
         //-------------------- Education Feedback -------------//
 app.use("/BackofficeApi/AddCustomerEducationFeedback", AddCustomerEducationFeedback_NewBackoffice);
 app.use("/BackofficeApi/ListCustomerEducationFeedbackById", ListCustomerEducationFeedbackById_NewBackoffice);
