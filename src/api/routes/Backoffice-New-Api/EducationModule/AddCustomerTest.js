@@ -7,19 +7,19 @@ const dbConnection = require("../../../../utilities/db1");
 
 router.post("/", function(request, response){
    
-    var customerid = request.body.user_id;
-    var chapterid = request.body.chapterid;
-    var questionid = request.body.questionid;
-    var optionid = request.body.optionid;
-    var createdon = request.body.createdon;
-    var status = request.body.status;
+    var customerid = request.body.data.user_id;
+    var chapterid = request.body.data.chapterid;
+    var questionid = request.body.data.questionid;
+    var optionid = request.body.data.optionid;
+    var createdon = request.body.data.createdon;
+    var status = request.body.data.status;
     var promises = [];
 
     try{
 
         var req_obj ={};
 
-        request.body.questions.forEach((question,index) => {
+        request.body.data.questions.forEach((question,index) => {
             
             req_obj[index] = new sql.Request(dbConnection)
 
@@ -34,9 +34,10 @@ router.post("/", function(request, response){
                     return data.recordset;          
                 }).catch((err)=>{
                     console.log("Error while executing the SP - [error] " + err);
-                    response.status(404).json({
-                        data:err.message
-                });
+                //     response.status(404).json({
+                //         data:err.message
+                return err
+                // });
             }));
         });
 

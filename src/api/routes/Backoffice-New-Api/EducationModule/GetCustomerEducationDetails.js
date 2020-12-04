@@ -4,8 +4,8 @@ const sql = require("mssql");
 const dbConnection = require("../../../../utilities/db1");
 
 
-router.get("/", function(request, response){
-    var customerid = request.params.customerid;
+router.post("/", function(request, response){
+    var customerid = request.body.customerid;
     try{
         const req = new sql.Request(dbConnection);
             
@@ -18,7 +18,7 @@ router.get("/", function(request, response){
                 req2.input('customerid',sql.Int, customerid);
                 
                     req2.execute("dbo.Get_CustomerEducationDetails").then(function(topicData){
-                        console.log(chapterData.recordset);    
+                        console.log(chapterData.recordset); 
                         console.log(topicData.recordset);
                         TopicList = topicData.recordset;
 
