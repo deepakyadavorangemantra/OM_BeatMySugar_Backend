@@ -23,7 +23,8 @@ router.get("/", function(request, response){
                 });
             }else{
                 response.status(200).json({
-                    data: data.recordset
+                    data: data.recordset,
+                    is_feedback: data.recordset.length > 0 ? true : false,
                 });
             }
         });
