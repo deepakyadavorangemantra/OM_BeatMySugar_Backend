@@ -7,13 +7,12 @@ const dbConnection = require("../../../../utilities/db1");
 
 router.post("/", function(request, response){
    
-    var customerid = request.body.customerid;
-    var adminid = request.body.adminid;
-    var feedbacktext = request.body.feedbacktext;
-    var rating = request.body.rating;
-
-    var createdon = request.body.createdon;
-    var status = request.body.status;
+    var customerid = request.body.data.customerid;
+    var adminid = request.body.data.adminid;
+    var feedbacktext = request.body.data.feedbacktext;
+    var rating = request.body.data.rating;
+    var createdon = request.body.data.createdon;
+    var status = request.body.data.status;
     
 
     try{
@@ -29,7 +28,7 @@ router.post("/", function(request, response){
 
         req.execute("dbo.Add_CustomerEducationFeedback").then((data)=>{
             response.status(200).json({
-                data: data.recordset
+                
             });
             }).catch((err)=>{
                 console.log("Error while executing the SP - [error] " + err);
