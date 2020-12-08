@@ -10,6 +10,7 @@ router.post("/", function(request, response){
 
     var customerid = request.body.customerid;
     var topicid = request.body.topicid;
+    var chapterid = request.body.chapterid;
     var isunlocked = request.body.isunlocked;
     var createdon = request.body.createdon;
     var status = request.body.status;
@@ -35,7 +36,7 @@ router.post("/", function(request, response){
 
                 req2.input('customerid',sql.Int, customerid);
                 req2.input('current_topic',sql.VarChar, topicid);
-                req2.input('current_chapter',sql.VarChar, "");
+                req2.input('current_chapter',sql.VarChar, chapterid);
                 req2.input('timespent',sql.VarChar, "");
 
                 //Update Current Topic
