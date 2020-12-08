@@ -45,6 +45,7 @@ router.post("/", function(request, response){
         .then((result) => {
               var resp = {};
             /*Add Chapter Unlock Mapping*/
+            
             const req_chapter = new sql.Request(dbConnection);
 
             req_chapter.input('customerid',sql.NVarChar(200), customerid);
@@ -60,7 +61,7 @@ router.post("/", function(request, response){
                     //     data:err.message
                     // });
                 }else{
-
+                    /*
                     const req2 = new sql.Request(dbConnection);
 
                     req2.input('customerid',sql.Int, customerid);
@@ -72,7 +73,7 @@ router.post("/", function(request, response){
                     req2.execute("dbo.Update_CustomerEducationDetails").then((educationData)=>{
                         console.log(educationData.recordset);
                     });
-
+                    */
                     
                     response.status(200).json({
                         data:result
