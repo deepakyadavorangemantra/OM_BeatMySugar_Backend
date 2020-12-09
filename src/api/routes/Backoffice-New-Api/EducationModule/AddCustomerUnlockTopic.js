@@ -29,7 +29,9 @@ router.post("/", function(request, response){
             if(err){
                 console.log("Error while executing the SP - [error] " + err);
                 response.status(404).json({
-                    data:err.message
+                    data:err.message,
+                    success:false,
+                    error:true
                 });
             }else{
                 const req2 = new sql.Request(dbConnection);
