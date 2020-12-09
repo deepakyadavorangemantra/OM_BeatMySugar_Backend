@@ -24,8 +24,7 @@ router.post("/", function(request, response){
     var aboutbusiness = request.body.aboutbusiness;
     var updatedby = request.body.updatedby;
     var updatedon = request.body.updatedon;
-
-
+    
     try{
         const req = new sql.Request(dbConnection);
 

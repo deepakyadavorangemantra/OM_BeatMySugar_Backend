@@ -20,8 +20,10 @@ router.post("/", function(request, response){
     var approved = request.body.approved;
     var updatedby = request.body.updatedby;
     var updatedon = request.body.updatedon;
+    var countryoforigin=request.body.countryoforigin;
    
 
+    console.log(request.body)
 
     try{
         const req = new sql.Request(dbConnection);
@@ -39,6 +41,7 @@ router.post("/", function(request, response){
         req.input('approved',sql.NVarChar(10), approved);
         req.input('updatedon',sql.NVarChar(100), updatedon);
         req.input('updatedby',sql.Int, updatedby);
+        req.input('countryoforigin',sql.NVarChar(100), countryoforigin);
 
         req.execute("dbo.Add_BookItemMaster", function(err, data){
             if(err){

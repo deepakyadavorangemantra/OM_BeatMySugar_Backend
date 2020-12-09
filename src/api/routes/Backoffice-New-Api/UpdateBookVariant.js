@@ -30,9 +30,9 @@ router.post("/", function(request, response){
     var showonwebsite = request.body.showonwebsite;
     var updatedon = request.body.updatedon;
     var updatedby = request.body.updatedby;
+    var title = request.body.title;
 
-
-
+    console.log(request.body)
 
     try{
         const req = new sql.Request(dbConnection);
@@ -59,6 +59,7 @@ router.post("/", function(request, response){
         req.input('showonwebsite',sql.NVarChar(10), showonwebsite);
         req.input('updatedon',sql.NVarChar(200), updatedon);
         req.input('updatedby',sql.Int, updatedby);
+        req.input('title',sql.NVarChar(200), title);
        
     
         req.execute("dbo.Update_BookVariant", function(err, data){

@@ -12,7 +12,7 @@ router.post("/", function(request, response){
     var password = request.body.password;
 
 
-    // console.log(request.body)
+    console.log(request.body)
 
     
     try{

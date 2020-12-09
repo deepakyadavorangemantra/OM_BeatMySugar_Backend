@@ -9,6 +9,7 @@ router.post("/", function(request, response){
    
 
     var bookid = request.body.bookid;
+    var title = request.body.title;
     var typeid = request.body.typeid;
     var languageid = request.body.languageid;
     var length = request.body.length;
@@ -31,12 +32,13 @@ router.post("/", function(request, response){
     var updatedby = request.body.updatedby;
 
 
-
+    console.log(request.body)
 
     try{
         const req = new sql.Request(dbConnection);
     
         req.input('bookid',sql.Int, bookid);
+        req.input('title',sql.NVarChar(200), title);
         req.input('typeid',sql.Int, typeid);
         req.input('languageid',sql.Int, languageid);
         req.input('length',sql.Decimal(18,2), length);

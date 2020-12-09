@@ -24,6 +24,7 @@ router.post("/", function(request, response){
     var updatedon = request.body.updatedon;
     var countryoforigin = request.body.countryoforigin;
    
+    console.log(request.body)
 
 
     try{

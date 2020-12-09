@@ -25,6 +25,7 @@ router.post("/", function(request, response){
     var countryoforigin = request.body.countryoforigin;
    
 
+    // console.log(request.body)
 
     try{
         const req = new sql.Request(dbConnection);

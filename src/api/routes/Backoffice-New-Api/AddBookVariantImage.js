@@ -13,7 +13,7 @@ router.post("/", function(request, response){
     var updatedon = request.body.updatedon;
     var updatedby = request.body.updatedby;
 
-
+// console.log(request.body)
 
 
     try{

@@ -16,6 +16,8 @@ router.post("/", function(request, response){
     var updatedby = request.body.updatedby;
 
     var hashPassword = sha512(salt+password);
+   
+    console.log(request.body)
 
     try{
         const req = new sql.Request(dbConnection);
