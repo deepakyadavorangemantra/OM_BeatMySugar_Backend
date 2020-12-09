@@ -10,9 +10,10 @@ router.get("/", function(request, response){
 
     try{
         var promises = [];
+        var output = {};
         const req = new sql.Request(dbConnection);
         promises.push(req.execute("dbo.Get_CustomerEducationDashboardCustomerCompleted").then(function(data){
-            return data.recordset[0];
+            output['customer_completed_test']=data.recordset[0].customer_completed_test;
         }).catch((err)=>{
             console.log("Error while executing the SP - [error] " + err);
             response.status(404).json({
@@ -22,6 +23,7 @@ router.get("/", function(request, response){
         );
         
         promises.push(req.execute("dbo.Get_CustomerEducationDashboardChapterWise").then(function(data){            
+            output['chapter_list']=data.recordset;
             return  {
                 chapter_list:
                 data.recordset
@@ -35,7 +37,10 @@ router.get("/", function(request, response){
          );
 
         promises.push(req.execute("dbo.Get_CustomerEducationDashboardCustomersActive").then(function(data){
-             
+            output['customer']={
+                active:data.recordset[0].customer_active,
+                point:data.recordset[0].customer_active
+            };
              return {
                         customer:
                         {
@@ -52,7 +57,7 @@ router.get("/", function(request, response){
           );
 
         promises.push(req.execute("dbo.Get_CustomerEducationDashboardGiftHampersDelivery").then(function(data){
-            
+            output['gift_hamper']=data.recordset[0];
             return {
                 gift_hamper:data.recordset[0]
             }
@@ -66,7 +71,7 @@ router.get("/", function(request, response){
         );
 
         promises.push(req.execute("dbo.Get_CustomerEducationOverallRating").then(function(data){
-            
+            output['overall_rating']=4.5;
             return {
                 overall_rating:4.5
             }
@@ -86,7 +91,7 @@ router.get("/", function(request, response){
             //   resp['question'] = questionData.recordset[0];
             //   resp['options'] = result;
               response.status(200).json({
-                                data:result
+                                data:output
                             })
         })
 
