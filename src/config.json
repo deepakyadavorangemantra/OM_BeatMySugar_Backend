@@ -6,5 +6,6 @@
     "port" : "1433",
     "options" : {
         "encrypt" : false
-    }
+    },
+    "requestTimeout":300000
 }
